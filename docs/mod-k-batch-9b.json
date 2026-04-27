@@ -1,0 +1,1011 @@
+[
+  {
+    "slug": "emoliente-peru-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: kaynaklarda emoliente için arpa yanında keten tohumu temel bileşenlerden biri, mevcut listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Keten tohumu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "cookMinutes": 25,
+      "totalMinutes": 33,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Arpa ve keten tohumunu 5 su bardağı suyla kaynatın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tarçın çubuğunu ekleyip kısık ateşte 20 dakika pişirin.",
+          "timerSeconds": 1200
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "İçeceği süzüp bal ve limon suyuyla tatlandırın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.limaeasy.com/peruvian-food-guide/typical-drinks-beverages/emoliente",
+      "https://www.eatperu.com/emoliente/"
+    ],
+    "confidence": "high",
+    "reason": "Peru emoliente arpa, limon ve keten tohumu eksenine oturuyor. Mevcut tarif arpayı doğru kullanıyor ama keten tohumu eksik."
+  },
+  {
+    "slug": "empadao-de-frango",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 domates kullanıyor ama ingredient listesinde domates yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.recipica.org/2023/10/empadao-de-frango-recipe-of-brazil.html",
+      "https://www.oliviascuisine.com/empadao-de-frango-brazilian-chicken-pot-pie/"
+    ],
+    "confidence": "high",
+    "reason": "Brezilya tavuklu empadão yapısı hamur ve tavuklu içle uyumlu. Açık sorun, stepte geçen domatesin listede bulunmaması."
+  },
+  {
+    "slug": "empanada",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: empanada Türk mutfağı değil, mevcut cuisine tr yanıltıcı"
+    ],
+    "corrections": {
+      "cuisine": "ar"
+    },
+    "sources": [
+      "https://argentineasado.com/recipes/empanada/",
+      "https://www.acozykitchen.com/baked-empanadas"
+    ],
+    "confidence": "high",
+    "reason": "Kıymalı, yarım ay biçimli fırın empanada Arjantin çizgisiyle uyumlu. Cuisine kodu tr yerine ar olmalı."
+  },
+  {
+    "slug": "enchiladas-rojas",
+    "verdict": "PASS",
+    "reason": "Kırmızı sos, mısır tortilla, tavuk ve peynir yapısı enchiladas rojas kaynaklarıyla uyumlu. Süre, süt allergeni ve servis makul.",
+    "sources": [
+      "https://www.rickbayless.com/recipe/red-chile-enchiladas-with-chicken-and-melted-cheese/",
+      "https://www.chilipeppermadness.com/recipes/chicken-enchiladas-rojas/"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "enerji-toplari",
+    "verdict": "PASS",
+    "reason": "Hurma, yulaf, fındık ve kakao ile pişmeyen enerji topu yapısı kaynaklardaki date ball çizgisiyle uyumlu. Allergenler makul.",
+    "sources": [
+      "https://www.theguardian.com/food/2020/feb/05/david-athertons-recipe-for-banana-energy-balls",
+      "https://www.bbcgoodfood.com/recipes/energy-balls"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "enginarli-arpa-sehriye-corbasi-aydin-usulu",
+    "verdict": "PASS",
+    "reason": "Enginar, şehriye, limon ve dereotu birleşimi Ege tipi hafif çorba mantığıyla uyumlu. Gluten beyanı ve kısa süre makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/enginarli-corba/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/sebze-corbasi-tarifleri/enginar-corbasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "enginarli-bakla-ezmesi-aydin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 dereotu kullanıyor ama ingredient listesinde dereotu yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Dereotu",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/zeytinyagli-enginarli-bakla-tarifi",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/zeytinyagli-ic-baklali-enginar-tarifi/9645"
+    ],
+    "confidence": "high",
+    "reason": "Enginar, iç bakla, zeytinyağı ve limon çizgisi doğru. Ancak servis stepinde kullanılan dereotu malzeme listesinde eksik."
+  },
+  {
+    "slug": "enginarli-borulce-guveci-izmir-bag-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 2 soğan kullanıyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/zeytinyaglilar/zeytinyagli-enginarli-bakla-tarifi",
+      "https://www.nefisyemektarifleri.com/taze-borulce-yemegi/"
+    ],
+    "confidence": "medium",
+    "reason": "Börülce ve enginarla zeytinyağlı sebze yemeği makul. Açık veri sorunu, soğanın stepte olup ingredient listesinde olmaması."
+  },
+  {
+    "slug": "enginarli-domatesli-pide-manisa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step mayalı pide hamuru diyor ama maya, su ve tuz ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuru maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Ilık su",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/ramazan-pidesi/",
+      "https://www.misssgibi.com/enginarli-pilav/"
+    ],
+    "confidence": "medium",
+    "reason": "Enginarlı sebzeli pide fikri makul, fakat mayalı hamur stepinin temel malzemeleri listede eksik bırakılmış."
+  },
+  {
+    "slug": "enginarli-fava-izmir-usulu",
+    "verdict": "PASS",
+    "reason": "Kuru bakla, soğan, zeytinyağı ve enginarla fava hazırlığı kaynaklarla uyumlu. Vegan etiket, süre ve allergen beyanı makul.",
+    "sources": [
+      "https://www.ardaninmutfagi.com/yemek-tarifleri/zeytinyaglilar/enginarli-fava",
+      "https://www.efsanetarifler.com/tarif/enginarli-fava-tarifi"
+    ],
+    "confidence": "high"
+  },
+  {
+    "slug": "enginarli-ic-pilav-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 kuş üzümü ve baharat kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuş üzümü",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Yenibahar",
+          "amount": "0.25",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/enginarli-pirinc-pilavi/20579",
+      "https://ye-mek.net/tarif/enginarli-pilav"
+    ],
+    "confidence": "high",
+    "reason": "Enginarlı pirinç pilavı doğru temelde. İç pilav stepinde geçen kuş üzümü ve baharat listede olmadığı için veri eksik."
+  },
+  {
+    "slug": "enginarli-kuskus-salatasi-izmir-usulu",
+    "verdict": "PASS",
+    "reason": "Kuskus, enginar, limon, dereotu ve zeytinyağıyla soğuk salata yapısı makul. Gluten ve vegan beyanları ingredient ile uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/enginarli-kuskus-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/kuskus-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ensalada-de-aguacate",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: description Küba avokado salatası diyor ama cuisine tr kayıtlı"
+    ],
+    "corrections": {
+      "cuisine": "cu"
+    },
+    "sources": [
+      "https://www.cubarecipes.org/recipes/salads/cuban-avocado-salad",
+      "https://www.epicurious.com/recipes/food/views/avocado-salad-em-ensalada-de-aguacate-em-364811"
+    ],
+    "confidence": "high",
+    "reason": "Ensalada de aguacate Küba avokado salatası olarak doğrulanıyor. İçerik makul, ancak cuisine tr açık hatalı."
+  },
+  {
+    "slug": "ensalada-fria-de-coditos-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Dirsek makarna, mayonez, bezelye, havuç ve biberli soğuk salata Küba ensalada de coditos çizgisiyle uyumlu. Allergenler doğru.",
+    "sources": [
+      "https://www.cookedbyjulie.com/ensalada-de-coditos/",
+      "https://www.quericavida.com/recipes/ensalada-fria-de-coditos/fe7e366c-62f6-4c37-98cf-5b662d481527"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "ensalada-fria-de-papa-kuba-usulu",
+    "verdict": "PASS",
+    "reason": "Patates, mayonez ve bezelye ile soğuk patates salatası Küba ensalada de papa yapısına uyuyor. Yumurta allergeni mayonezden makul.",
+    "sources": [
+      "https://www.bigoven.com/recipe/ensalada-de-papa-cuban-potato-salad/82954",
+      "https://www.cookedbyjulie.com/ensalada-de-papa/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erik-eksili-mercimek-koftesi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: ingredient yeşil mercimek diyor ama step kırmızı mercimek kullanıyor",
+      "ingredients: step salça kullanıyor ama ingredient listesinde salça yok"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Yeşil mercimek"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Kırmızı mercimek",
+          "amount": "0.75",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Biber salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/mercimek-koftesi/",
+      "https://www.nutri-view.com/recipes/lunch/mercimek-koftesi-turkish-lentil-balls"
+    ],
+    "confidence": "high",
+    "reason": "Mercimek köftesinde kırmızı mercimek, ince bulgur ve salça temel yapı. Mevcut listede yeşil mercimek ve eksik salça çelişiyor."
+  },
+  {
+    "slug": "erik-konsantreli-soguk-serbet-elazig-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps erik, bal ve limonla gerçek pişirme akışını göstermiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Erikleri ikiye bölüp 4 su bardağı suyla tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Erikleri 6 dakika kaynatın, rengini ve ekşi tadını suya bıraksın.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Şerbeti süzüp 8 dakika ılıtın, sonra bal ve limon suyuyla karıştırıp buzla servis edin.",
+          "timerSeconds": 480
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erik-serbeti-tarifi/11817",
+      "https://www.nefisyemektarifleri.com/erik-serbeti-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Erik şerbeti kaynatılıp süzülerek hazırlanıyor. Mevcut step metni ingredient akışını yeterince karşılamıyor."
+  },
+  {
+    "slug": "erikli-bulgurlu-dolma-bilecik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step salça ve baharat kullanıyor ama ingredient listesinde yok",
+      "servingSuggestion: vegan tag taşıyan tarifte yoğurt öneriliyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Biber salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kuru nane",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "servingSuggestion": "Dolmaları ılık servis edin, yanında limon dilimleri sunun."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/erkl-yavan-dolma",
+      "https://www.sahrapsoysal.com/erikli-ic-bakla-dolmasi-tarifi-t-4984"
+    ],
+    "confidence": "high",
+    "reason": "Erikli bulgurlu dolma yapısı kaynaklarla uyumlu, fakat salça eksik ve vegan tarifte yoğurt önerisi çelişkili."
+  },
+  {
+    "slug": "erikli-dana-yahni-edirne-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 67 dakika, mevcut cookMinutes 44 dakika kısa kalıyor",
+      "ingredients: step kuru erik diyor ama ingredient adı sadece erik"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Erik"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Kuru erik",
+          "amount": "8",
+          "unit": "adet"
+        }
+      ],
+      "cookMinutes": 67,
+      "totalMinutes": 83
+    },
+    "sources": [
+      "https://www.nefisyemekler.net/et-yahni",
+      "https://www.youtube.com/watch?v=1HqQcmAlpe4"
+    ],
+    "confidence": "medium",
+    "reason": "Erikli yahni için et ve kuru erik uyumlu, fakat mevcut süre ve ingredient adı step akışıyla tutarlı değil."
+  },
+  {
+    "slug": "erikli-eksili-tavuk-bursa-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step domates ve limon suyu kullanıyor ama listede yok",
+      "ingredients: pirinç pilavı servis eşliği, ana ingredient gibi yazılmış",
+      "time: step timer toplamı 44 dakika, mevcut cookMinutes 30 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "ingredients_remove": [
+        "Pirinç pilavı"
+      ],
+      "ingredients_add": [
+        {
+          "name": "Domates",
+          "amount": "1",
+          "unit": "adet"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Karabiber",
+          "amount": "0.25",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "cookMinutes": 44,
+      "totalMinutes": 64
+    },
+    "sources": [
+      "https://www.sahrapsoysal.com/balli-murdum-erikli-tavuk-yahnisi-tarifi-t-3707",
+      "https://www.nepisirsem.com/resimliyemektarifi.aspx?yemekid=688"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk ve erik birlikte pişebilir, fakat stepteki domates ve limon eksik. Pilav ana ingredient değil, servis eşliği olmalı."
+  },
+  {
+    "slug": "erikli-feslegen-serbeti-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps erik ve fesleğenle gerçek şerbet pişirme akışını göstermiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Erikleri ikiye bölüp su ve şekerle tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Erikleri 8 dakika kaynatın, meyve suya rengini versin.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Şerbeti süzüp fesleğeni 5 dakika içinde bekletin, sonra buzla servis edin.",
+          "timerSeconds": 300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erik-serbeti-nasil-yapilir/21847",
+      "https://www.nefisyemektarifleri.com/erik-serbeti/"
+    ],
+    "confidence": "medium",
+    "reason": "Erik şerbetinde meyve kaynatılıp süzülüyor. Mevcut metin fesleğenli şerbetin fiili hazırlığını açıklamıyor."
+  },
+  {
+    "slug": "erikli-hamsi-salatasi-samsun-usulu",
+    "verdict": "PASS",
+    "reason": "Marine hamsi, roka, limon ve zeytinyağıyla soğuk salata yapısı makul. Deniz ürünleri allergeni ve kısa hazırlık süresi doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsi-marin/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/roka-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-hamsi-salatasi-trabzon-usulu",
+    "verdict": "PASS",
+    "reason": "Hamsi, roka, limon ve zeytinyağı Karadeniz balık salatası mantığıyla uyumlu. Süre ve deniz ürünleri allergeni makul.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/hamsi-tava/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/roka-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-hashasli-irmik-kup-macar-usulu",
+    "verdict": "PASS",
+    "reason": "Sütlü irmik tabanı, haşhaş ve erik katmanı Orta Avrupa tatlı çizgisiyle uyumlu. Gluten ve süt allergenleri doğru.",
+    "sources": [
+      "https://www.theguardian.com/lifeandstyle/2016/sep/22/traditional-polish-recipes-poppy-seed-buns-jagodzianki-zuza-zak-cook-residency",
+      "https://www.allrecipes.com/recipe/213518/hungarian-poppy-seed-filling/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-hashasli-krem-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: stepte 45 dakika soğutma var, totalMinutes 20 dakika kullanıcıyı yanıltıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 65
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-roll-makowiec/",
+      "https://www.theguardian.com/lifeandstyle/2016/sep/22/traditional-polish-recipes-poppy-seed-buns-jagodzianki-zuza-zak-cook-residency"
+    ],
+    "confidence": "high",
+    "reason": "Polonya haşhaşlı tatlı çizgisi makul, ancak tarifteki 45 dakikalık soğutma toplam sürede görünmüyor."
+  },
+  {
+    "slug": "erikli-ihlamur-serbeti-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: mevcut steps erik ve ıhlamurun nasıl demlenip süzüleceğini göstermiyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Erikleri ikiye bölüp 5 su bardağı suyla tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Erikleri 8 dakika kaynatın, su renk alınca ocağı kapatın.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Ihlamuru ekleyip 5 dakika demleyin, çiçek tadı acılaşmasın.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Şekeri karıştırıp şerbeti süzün ve buzla servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "totalMinutes": 21
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erik-serbeti-nasil-yapilir/21847",
+      "https://www.nefisyemektarifleri.com/ihlamur-cayi-nasil-yapilir/"
+    ],
+    "confidence": "medium",
+    "reason": "Erik şerbeti ve ıhlamur demleme tekniği ayrı ayrı makul. Mevcut steps şerbetin gerçek akışını açıklamıyor."
+  },
+  {
+    "slug": "erikli-kuskus-salata-sakarya-usulu",
+    "verdict": "PASS",
+    "reason": "Kuskus, yeşil erik, maydanoz, limon ve zeytinyağıyla soğuk salata yapısı makul. Gluten ve vegan beyanları uyumlu.",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/kuskus-salatasi",
+      "https://www.nefisyemektarifleri.com/kuskus-salatasi/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-kuzu-yahni-van-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 61 dakika, mevcut cookMinutes 26 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 61,
+      "totalMinutes": 79
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=1HqQcmAlpe4",
+      "https://www.nefisyemekler.net/et-yahni"
+    ],
+    "confidence": "medium",
+    "reason": "Kuzu, soğan, tereyağı ve kuru erikli yahni yapısı makul. Mevcut zamanlar stepteki pişirme süresini karşılamıyor."
+  },
+  {
+    "slug": "erikli-kuzu-yahnisi-malatya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 61 dakika, mevcut cookMinutes 30 dakika kısa kalıyor",
+      "ingredients: step salça kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "cookMinutes": 61,
+      "totalMinutes": 77
+    },
+    "sources": [
+      "https://www.youtube.com/watch?v=1HqQcmAlpe4",
+      "https://www.nefisyemekler.net/et-yahni"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru erikli kuzu yahni makul, ancak stepteki uzun pişirme süresi ve salça mevcut alanlarla tutarlı değil."
+  },
+  {
+    "slug": "erikli-lahana-salata-polonya-usulu",
+    "verdict": "PASS",
+    "reason": "Lahana, dereotu, sirke ve meyveyle tatlı ekşi salata Polonya surówka çizgisine uyuyor. Vegan etiket ve süre makul.",
+    "sources": [
+      "https://www.polonist.com/polish-coleslaw-surowka/",
+      "https://www.everydayhealthyrecipes.com/polish-coleslaw-salad/"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-makowiec-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: stepte 3 dakika erik pişirme ve 20 dakika soğutma var, mevcut totalMinutes 14 dakika kısa"
+    ],
+    "corrections": {
+      "cookMinutes": 3,
+      "totalMinutes": 37
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-roll-makowiec/",
+      "https://polishyourkitchen.com/polishrecipes/polish-poppyseed-roll-makowiec/"
+    ],
+    "confidence": "high",
+    "reason": "Makowiec kırıntısıyla kup tatlısı artık değerlendirme olarak makul, fakat erik pişirme ve soğutma toplam süreye eklenmeli."
+  },
+  {
+    "slug": "erikli-marul-piyazi-sakarya-usulu",
+    "verdict": "PASS",
+    "reason": "Marul, erik, soğan, zeytinyağı ve limonla hızlı salata yapısı makul. Vegan etiket, kısa süre ve allergen boşluğu uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/marul-salatasi-tarifi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/marul-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-nohut-yahnisi-malatya-bahce-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step salça kullanıyor ama ingredient listesinde yok",
+      "time: step timer toplamı 38 dakika, mevcut totalMinutes 34 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "cookMinutes": 30,
+      "totalMinutes": 50
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/nohut-yahnisi/",
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/erkl-yavan-dolma"
+    ],
+    "confidence": "medium",
+    "reason": "Nohut, erik ve soğanla ekşili yahni fikri makul, fakat salça eksik ve dinlenme süresi totalMinutes içinde görünmüyor."
+  },
+  {
+    "slug": "erikli-pancar-kavurmasi-samsun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 24 dakika, mevcut cookMinutes 16 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 24,
+      "totalMinutes": 38
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pancar-kavurmasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/sebze-yemekleri/diger-sebze-yemekleri/pancar-kavurmasi"
+    ],
+    "confidence": "medium",
+    "reason": "Pancar, soğan ve zeytinyağıyla kavurma doğru zeminde. Mevcut pişirme süresi step timer toplamını karşılamıyor."
+  },
+  {
+    "slug": "erikli-pazi-salatasi-sakarya-usulu",
+    "verdict": "PASS",
+    "reason": "Pazı, ceviz, yeşil erik ve zeytinyağıyla kısa haşlamalı salata makul. Ceviz için kuruyemiş allergeni doğru.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/pazi-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/pazi-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-peynirli-krep-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: hamur 15 dakika dinleniyor, mevcut totalMinutes 24 dakika bu beklemeyi ve pişirmeyi karşılamıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 32
+    },
+    "sources": [
+      "https://www.polonist.com/nalesniki-polish-crepes/",
+      "https://www.everyday-delicious.com/nalesniki-polish-crepes/"
+    ],
+    "confidence": "high",
+    "reason": "Polonya naleśniki tipi peynirli krep yapısı doğru, ancak hamur dinlendirme süresi toplam süreye yansıtılmamış."
+  },
+  {
+    "slug": "erikli-poppyseed-kup-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: stepte 25 dakika soğutma var, mevcut totalMinutes 20 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 43
+    },
+    "sources": [
+      "https://www.polonist.com/poppy-seed-roll-makowiec/",
+      "https://www.theguardian.com/lifeandstyle/2016/sep/22/traditional-polish-recipes-poppy-seed-buns-jagodzianki-zuza-zak-cook-residency"
+    ],
+    "confidence": "high",
+    "reason": "Haşhaşlı Polonya tatlı çizgisi makul. Tarifin 25 dakikalık soğutma süresi totalMinutes değerinde görünmeli."
+  },
+  {
+    "slug": "erikli-rezene-salatasi-izmir-usulu",
+    "verdict": "PASS",
+    "reason": "Rezene, yeşil erik, dereotu, limon ve zeytinyağıyla çiğ salata yapısı makul. Vegan etiket ve kısa süre uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/rezene-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/rezene-salatasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-seftali-salata-canakkale-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 zeytinyağı kullanıyor ama ingredient listesinde zeytinyağı yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Şeftali ve erikleri yıkayıp kurulayın, çekirdeklerini çıkarıp 1 cm kalınlığında dilimleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Rokayı sirkeli suda bekletip iki kez durulayın, yapraklar ıslak kalırsa meyve suyunu inceltir.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Zeytinyağı, limon suyu ve tuzu küçük kasede 30 saniye çırpın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Meyve dilimlerini roka ile geniş kasede alttan üste doğru harmanlayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Sosu servis öncesi gezdirin, iri dilimleri ezmeden tabağa aktarın ve bekletmeden sunun.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/seftali-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/seftali-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Meyveli roka salatası makul, ancak stepte kullanılan zeytinyağı listede yok. Bal çıkarılarak vegan etiket korunmalı."
+  },
+  {
+    "slug": "erikli-semizotu-salatasi-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps yoğurt ve sarımsak kullanıyor ama ingredient listesinde yok",
+      "tags: yoğurtlu step nedeniyle vegan tag yanlış",
+      "allergens: yoğurt kullanıldığı için SUT allergeni eksik"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Süzme yoğurt",
+          "amount": "1",
+          "unit": "su bardağı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Pul biber",
+          "amount": "0.25",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "tags_remove": [
+        "vegan"
+      ],
+      "allergens_add": [
+        "SUT"
+      ]
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/semizotu-yogurtlamasi",
+      "https://www.kirazinmutfagi.com.tr/tarif/semizotu-salatasi"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut step yoğurtlu semizotu salatası yapıyor. Bu durumda yoğurt ve sarımsak eklenmeli, vegan ve SUT beyanı düzeltilmeli."
+  },
+  {
+    "slug": "erikli-tavuk-paprikas-macar-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "time: step timer toplamı 36 dakika, mevcut cookMinutes 24 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "cookMinutes": 36,
+      "totalMinutes": 51
+    },
+    "sources": [
+      "https://www.daringgourmet.com/chicken-paprikash-paprikas-csirke/",
+      "https://www.offbeatbudapest.com/hungarian-food-recipes/chicken-paprikash/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, soğan, paprika ve kremalı bitiş Macar paprikas yapısıyla uyumlu. Ancak pişirme süreleri step timer toplamını karşılamıyor."
+  },
+  {
+    "slug": "erikli-tavuk-salata-kocaeli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 hardal kullanıyor ama ingredient listesinde hardal yok",
+      "allergens: hardal eklendiğinde HARDAL allergeni gerekir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Hardal",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "HARDAL"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuklu-salata/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/tavuklu-salata"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu yeşil salata yapısı doğru. Açık eksik, hardalın stepte yer alıp ingredient ve allergen beyanında bulunmaması."
+  },
+  {
+    "slug": "erikli-tavuk-sote-kirklareli-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 biber kullanıyor ama ingredient listesinde biber yok",
+      "time: step timer toplamı 21 dakika, mevcut cookMinutes 14 dakika kısa kalıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yeşil biber",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ],
+      "cookMinutes": 21,
+      "totalMinutes": 33
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuk-sote-tarifi/",
+      "https://www.sahrapsoysal.com/balli-murdum-erikli-tavuk-yahnisi-tarifi-t-3707"
+    ],
+    "confidence": "medium",
+    "reason": "Tavuk sote ve erik birleşimi makul, fakat stepteki biber listede yok ve pişirme süresi timer toplamına göre kısa."
+  },
+  {
+    "slug": "erikli-yaprak-sarma-yalova-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "servingSuggestion: vegan tag taşıyan tarifte yoğurt öneriliyor"
+    ],
+    "corrections": {
+      "servingSuggestion": "Sarmaları serin servis edin, yanında limon dilimleri sunun."
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/tokat/neyenir/erkl-yavan-dolma",
+      "https://www.sahrapsoysal.com/erikli-ic-bakla-dolmasi-tarifi-t-4984"
+    ],
+    "confidence": "high",
+    "reason": "Erikli yaprak sarma kaynaklarla uyumlu, ancak vegan etiketli tarifte yoğurt servis önerisi tutarsız."
+  },
+  {
+    "slug": "erikli-yarma-salata-igdir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 maydanoz ve taze soğan kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Maydanoz",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/bugday-salatasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/salata-ve-meze-tarifleri/salata-tarifleri/bugday-salatasi"
+    ],
+    "confidence": "medium",
+    "reason": "Haşlanmış yarma ile soğuk salata yapısı makul. Stepte kullanılan maydanoz ve taze soğan listede eksik."
+  },
+  {
+    "slug": "erikli-yogurt-asi-igdir-usulu",
+    "verdict": "PASS",
+    "reason": "Buğday, yoğurt ve nane ile yoğurt aşı yapısı doğru, erik ekşili varyasyon makul. Gluten ve süt allergenleri uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurt-asi-corbasi/",
+      "https://www.kulturportali.gov.tr/turkiye/igdir/neyenir/ayran-asi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-yogurtlu-tarhana-eskisehir-usulu",
+    "verdict": "PASS",
+    "reason": "Tarhana, yoğurt ve suyla ekşili çorba yapısı makul. Gluten ve süt allergenleri ingredient listesiyle uyumlu.",
+    "sources": [
+      "https://www.nefisyemektarifleri.com/yogurtlu-tarhana-corbasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/tarhana-corbasi-tarifleri/yogurtlu-tarhana-corbasi"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "slug": "erikli-zeytinyagli-pirasa-ayvalik-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step pirinç, limon suyu ve tuz kullanıyor ama ingredient listesinde yok",
+      "time: pişirme ve 10 dakika dinlenme toplamı mevcut totalMinutes değerini aşıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Pirinç",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        }
+      ],
+      "cookMinutes": 29,
+      "totalMinutes": 54
+    },
+    "sources": [
+      "https://ye-mek.net/tarif/zeytinyagli-pirasa",
+      "https://yemek.com/tarif/zeytinyagli-pirincli-pirasa-yemegi/"
+    ],
+    "confidence": "high",
+    "reason": "Zeytinyağlı pırasa pirinç, havuç ve limonla uyumlu, fakat mevcut listede pirinç ve limon yok. Süre de kısa kalıyor."
+  },
+  {
+    "slug": "eriste-corbasi-kastamonu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "allergens: erişte çoğunlukla yumurtalıdır, YUMURTA allergeni eksik"
+    ],
+    "corrections": {
+      "allergens_add": [
+        "YUMURTA"
+      ]
+    },
+    "sources": [
+      "https://www.nefisyemektarifleri.com/tavuklu-eriste-corbasi/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/corba-tarifleri/corba-tarifleri/eriste-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Erişte, tavuk suyu, tereyağı ve karabiberli çorba makul. Erişte yumurta içerme olasılığı yüksek olduğu için allergen eksik."
+  },
+  {
+    "slug": "eriste-ustu-kurutlu-yumurta-van-usulu",
+    "verdict": "PASS",
+    "reason": "Erişte, kurut, tereyağı ve yumurtalı sıcak tabak Van kahvaltı çizgisine uyuyor. Allergenler ve kısa süre makul.",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/van/neyenir/kurut-asi",
+      "https://www.nefisyemektarifleri.com/yumurtali-eriste/"
+    ],
+    "confidence": "medium"
+  }
+]

@@ -1,0 +1,800 @@
+[
+  {
+    "slug": "eriste-ustu-madimak-soteli-sivas-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 3. adım tereyağı kullanıyor ama ingredient listesinde tereyağı yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Sivas eriştesini kaynar tuzlu suda 8 dakika haşlayıp süzün.",
+          "timerSeconds": 480
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Madımağı ayıklayıp ince kıyın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Soğanı zeytinyağında 4 dakika kavurun.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Madımağı ekleyip 12 dakika pişirin, otun çiğ sertliği kalmasın.",
+          "timerSeconds": 720
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Erişteyi tabağa alın, madımak soteyi üstüne yayın.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.sivasyemekleri.com/madimak-yemegi-tarifi/",
+      "https://www.saribahce.com/madimak-yemegi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Madımak ve erişte uyumu makul, fakat adımda kullanılan tereyağı listede yok. Zeytinyağı zaten listede olduğu için en küçük düzeltme adımı düzeltmek."
+  },
+  {
+    "slug": "eristeli-kara-lahana-corbasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: soğan kavruluyor ama listede kavurma için yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/pancar--kara-lahana--corbasi",
+      "https://www.orduyorum.com/karadenizin-essiz-lezzeti-ordu-pancar-kara-lahana-corbasi-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Ordu kara lahana çorbası kaynaklarında soğan yağla başlıyor. Vegan etiketini bozmadan zeytinyağı eklemek step ve malzeme uyumunu sağlar."
+  },
+  {
+    "slug": "eristeli-un-corbasi-kirsehir-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzincan-corbasi-tarifi/17994",
+      "https://en.wikipedia.org/wiki/Kesme"
+    ],
+    "confidence": "medium",
+    "reason": "Erişte, unlu kıvam ve tereyağı çizgisi Anadolu kesme erişte çorbalarıyla uyumlu. Stepteki miktarlar ingredient listesiyle eşleşiyor."
+  },
+  {
+    "slug": "eristeli-yesil-mercimek-corbasi-yozgat-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://hasata.com.tr/eristeli-yesil-mercimek-corbasi",
+      "https://www.knorr.com/tr/r/eriteli-yeil-mercimek-orbas-tarifi.html/208398"
+    ],
+    "confidence": "high",
+    "reason": "Yeşil mercimek, erişte ve salçalı temel çorba yapısı kaynaklarla uyumlu. Süreler toplam süreye sığıyor ve alerjen beyanı doğru."
+  },
+  {
+    "slug": "eristeli-yesil-mercimek-pilavi-kirsehir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 3. adım bulgur ve sıcak su ekliyor ama ingredient listesinde bulgur ve su yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Su",
+          "amount": "2",
+          "unit": "su bardağı"
+        }
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Yeşil mercimeği yıkayıp 15 dakika haşlayın.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Erişteyi tereyağında 4 dakika kavurun.",
+          "timerSeconds": 240
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Mercimek ve sıcak suyu tencereye ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Pilavı 14 dakika pişirin, mercimek kabuğu ayrılmasın.",
+          "timerSeconds": 840
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Tencereyi 10 dakika dinlendirip karabiberle sıcak servis edin.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eristeli-yesil-mercimek/629",
+      "https://cookidoo.thermomix.com/recipes/recipe/en-us/r173356"
+    ],
+    "confidence": "high",
+    "reason": "Erişteli yeşil mercimek yapısı doğru, fakat bulgur listede yok. Su eksikliği de pişirme adımını uygulamayı imkansız hale getiriyor."
+  },
+  {
+    "slug": "eristeli-yesil-mercimek-salatasi-kayseri-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 4 taze soğan, kornişon ve limonlu sos kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        },
+        {
+          "name": "Kornişon turşu",
+          "amount": "4",
+          "unit": "adet"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "ingredients_remove": [
+        "Kuru soğan"
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/eristeli-yesil-mercimek-salatasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/yesil-mercimek-salatasi/1753"
+    ],
+    "confidence": "high",
+    "reason": "Salata tekniği kaynaklarla uyumlu, ancak mevcut stepte geçen taze soğan, kornişon ve limon listede yok. Kuru soğan bağlama uymuyor."
+  },
+  {
+    "slug": "erzincan-gasefe-kayisili",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.erzincannet.com/erzincanda-bir-kuru-kayisi-klasigi-gasefe-tatlisi",
+      "https://gastromanya.com/gasefe-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru kayısı, tereyağı, şeker ve ceviz temeli Erzincan gasefe kaynaklarıyla uyumlu. Kaymak servisi ek unsur olarak sorun oluşturmuyor."
+  },
+  {
+    "slug": "erzincan-kemahli-dutlu-eriste",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.influence.cool/tr/erzincan/otlukbeli/yerel-lezzetler/erzincan-usulu-dut-pekmezi/",
+      "https://www.akpinartulumpeyniri.com/urun/pekmez/"
+    ],
+    "confidence": "low",
+    "reason": "Dut ve ceviz Erzincan ürün bağlamına uyuyor, erişte tekniği de uygulanabilir. Özgül dutlu erişte kaynağı zayıf olduğu için güven düşük."
+  },
+  {
+    "slug": "erzincan-kesli-eriste-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.ee/tr/erzincan/ilic/yerel-lezzetler/kesme-corbasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzincan-corbasi-tarifi/17994"
+    ],
+    "confidence": "medium",
+    "reason": "Erişte, nohut ve yoğurtlu kesme çorbası çizgisi Erzincan çorbası ailesiyle uyumlu. Ingredient ve step miktarları çelişmiyor."
+  },
+  {
+    "slug": "erzincan-kesme-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://turkiye.ee/tr/erzincan/ilic/yerel-lezzetler/kesme-corbasi/",
+      "https://en.wikipedia.org/wiki/Kesme"
+    ],
+    "confidence": "medium",
+    "reason": "Kesme erişte, mercimek ve yoğurt terbiyesi Anadolu çorba tekniğiyle uyumlu. Süre ve alerjen alanlarında büyük çelişki yok."
+  },
+  {
+    "slug": "erzincan-kesme-corbasi-yogurtlu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzincan-corbasi-tarifi/17994",
+      "https://turkiye.ee/tr/erzincan/ilic/yerel-lezzetler/kesme-corbasi/"
+    ],
+    "confidence": "high",
+    "reason": "Ev kesmesi, mercimek, yoğurt ve naneli tereyağı yapısı bölgesel kesme çorbası kaynaklarıyla uyumlu. Süreler tutarlı görünüyor."
+  },
+  {
+    "slug": "erzsebet-sour-macar-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "cuisine: Erzsebet Sour için Macar mutfağı kaynağı bulunamadı; tarif kayısılı whiskey sour varyasyonuna benziyor",
+      "description: Macar usulü iması kaynakla desteklenmiyor"
+    ],
+    "corrections": {
+      "cuisine": "us",
+      "description": "Kayısılı whiskey sour, viski, kayısı likörü ve limonu kısa içimli, ekşi tatlı bir kokteylde birleştirir."
+    },
+    "sources": [
+      "https://www.liquor.com/apricot-ginger-whiskey-sour-cocktail-recipe-5075075",
+      "https://www.diffordsguide.com/cocktails/recipe/104/apricot-sour"
+    ],
+    "confidence": "medium",
+    "reason": "Kayısılı sour ailesi doğrulanıyor, ancak Erzsebet adı ve Macar kökeni doğrulanamadı. Title alanı değişmediği için manuel review gerekir."
+  },
+  {
+    "slug": "erzurum-ayran-asi",
+    "verdict": "PASS",
+    "sources": [
+      "https://erzurumportali.com/shf/241/Ayran-Asi-Corbasi-Deyip-Gecme",
+      "https://sehrimerzurum.com/tr-erzurum-mutfagi-tarifleri/serinletici-ayran-asi-corbasi-tarifi/469448"
+    ],
+    "confidence": "high",
+    "reason": "Yoğurt, buğday ve nohut temelli ayran aşı Erzurum kaynaklarıyla uyumlu. Yoğurdun kesilmesini önleyen ılıtma adımı doğru."
+  },
+  {
+    "slug": "erzurum-cag-kebabi-ev-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/cag-kebabi",
+      "https://www.kirazinmutfagi.com.tr/tarif/cag-kebabi-erzurum"
+    ],
+    "confidence": "high",
+    "reason": "Kuzu etinin soğanlı terbiyeyle beklemesi ve yatay pişirme uyumlu. TotalMinutes 12 saatlik beklemeyi prep ve cook dışında fark olarak içeriyor."
+  },
+  {
+    "slug": "erzurum-cag-kebabi-yatik-sis",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/cag-kebabi",
+      "https://en.wikipedia.org/wiki/Ca%C4%9F_kebab%C4%B1"
+    ],
+    "confidence": "high",
+    "reason": "Soğan, reyhan, kuzu eti ve kuyruk yağı kullanımı cağ kebabı kaynaklarıyla uyumlu. Bekleme süresi totalMinutes içinde doğru ayrılmış."
+  },
+  {
+    "slug": "erzurum-cag-otlu-kete",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/erzurum-ketesi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzurum-yoresi-kete/9480"
+    ],
+    "confidence": "medium",
+    "reason": "Kete hamuru, tereyağı ve fırın tekniği kaynaklarla uyumlu. Cağ otu yorumu yöresel varyasyon gibi duruyor, ana teknik bozulmuyor."
+  },
+  {
+    "slug": "erzurum-casir-otlu-lorlu-kete",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 maya, tuz ve ılık su kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Maya",
+          "amount": "1",
+          "unit": "tatlı kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Ilık su",
+          "amount": "1.5",
+          "unit": "su bardağı"
+        }
+      ]
+    },
+    "sources": [
+      "https://yemek.com/tarif/erzurum-ketesi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzurum-yoresi-kete/9480"
+    ],
+    "confidence": "high",
+    "reason": "Kete mantığı doğru, fakat hamurun kurulması için stepte geçen maya, tuz ve su ingredient listesinde yok. Bu uygulama hatası doğurur."
+  },
+  {
+    "slug": "erzurum-kadayif-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.erzurumhaber.com.tr/haber/10038783/erzurum-kadayif-dolmasi-nasil-yapilir-erzurum-kadayif-dolmasi-tarifi",
+      "https://erzurumsevdasi.com/2021/08/27/kadayif-dolmasi/"
+    ],
+    "confidence": "high",
+    "reason": "Kadayıf, ceviz, yumurta, kızartma yağı ve şerbet yapısı Erzurum kadayıf dolması kaynaklarıyla uyumlu. Alerjenler doğru beyan edilmiş."
+  },
+  {
+    "slug": "erzurum-lor-dolmasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://erzurumportali.com/shf/3612/Lor-Dolmasi",
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/cag-kebabi"
+    ],
+    "confidence": "medium",
+    "reason": "Pazı, lor, bulgur, tereyağı ve sarımsaklı yoğurt bileşimi lor dolması kaynağıyla uyumlu. İkinci kaynak Erzurum mutfak bağlamı için destekleyici."
+  },
+  {
+    "slug": "erzurum-tavada-cag-kebabi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/erzurum/neyenir/cag-kebabi",
+      "https://www.kirazinmutfagi.com.tr/tarif/cag-kebabi-erzurum"
+    ],
+    "confidence": "high",
+    "reason": "Tavada uyarlama olsa da kuzu, soğan suyu ve yoğurtlu bekletme cağ kebabı çizgisiyle uyumlu. İki saat bekleme totalMinutes içinde yer alıyor."
+  },
+  {
+    "slug": "escalivada-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://catalanfood.com/recipe/escalivada/",
+      "https://www.olivemagazine.com/recipes/vegetarian/escalivada/"
+    ],
+    "confidence": "high",
+    "reason": "Patlıcan, biber, soğan ve zeytinyağıyla közlenmiş sebze temeli escalivada kaynaklarıyla uyumlu. Oda sıcaklığında servis de doğru."
+  },
+  {
+    "slug": "escondidinho",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: escondidinho Brezilya yemeği, mevcut cuisine tr yanlış",
+      "ingredients: step 2 tereyağı kullanıyor ama listede yok"
+    ],
+    "corrections": {
+      "cuisine": "br",
+      "ingredients_add": [
+        {
+          "name": "Tereyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://braziliangrub.com/escondidinho-de-carne-seca-brazilian-creamy-cassava-and-dried-beef-casserole/",
+      "https://en.wikipedia.org/wiki/Escondidinho"
+    ],
+    "confidence": "high",
+    "reason": "Manyok püresi altında etli harç Brezilya escondidinho yapısıyla uyumlu. Yanlış alan mutfak kodu ve pürede kullanılan tereyağının eksikliği."
+  },
+  {
+    "slug": "eskisehir-balaban-kofte-pideli",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.anadolugazetesi.com/balaban-kofte-tarifi-73644.html",
+      "https://www.yemektekeyifvar.com/kofte-tarifleri/balaban-kofte-tarifi"
+    ],
+    "confidence": "high",
+    "reason": "Pideli servis, et suyu, yoğurt, domates sosu ve tereyağı kaynaklardaki Balaban köfte yapısıyla uyumlu. Süreler de makul."
+  },
+  {
+    "slug": "eskisehir-cig-borek-kiymali",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/eskisehir-cigboregi--ciborek-",
+      "https://yemek.com/tarif/cig-borek/"
+    ],
+    "confidence": "high",
+    "reason": "Kıymalı, soğanlı iç harç, ince hamur ve kızgın yağda yarım ay pişirme Eskişehir çiböreği kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "eskisehir-hashasli-mercimekli-bukme",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/eristeli-yesil-mercimek-salatasi/",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eristeli-yesil-mercimek/629"
+    ],
+    "confidence": "low",
+    "reason": "Haşhaşlı bükme için özgül kaynak zayıf, fakat hamur, haşhaş ezmesi ve mercimekli iç uygulanabilir. Açık malzeme-step çelişkisi yok."
+  },
+  {
+    "slug": "esmer-tereyagli-kopytka-polonya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.polonist.com/polish-kopytka-dumplings/",
+      "https://www.everyday-delicious.com/kopytka-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Patates, un ve yumurtalı hamurla haşlanan kopytka kaynaklarla uyumlu. Tereyağlı servis Polonya dumpling geleneğinde kabul edilebilir."
+  },
+  {
+    "slug": "espinacas-con-garbanzos",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 1 zeytinyağı, step 2 paprika, step 5 ekmek kırığı kullanıyor ama listede yok",
+      "allergens: ekmek kırığı kullanımı GLUTEN gerektirir"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Paprika",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Ekmek kırığı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "GLUTEN"
+      ]
+    },
+    "sources": [
+      "https://spanishsabores.com/espinacas-con-garbanzos-spinach-chickpeas/",
+      "https://www.196flavors.com/garbanzos-con-espinacas/"
+    ],
+    "confidence": "high",
+    "reason": "Ispanak, nohut, sarımsak ve baharat yapısı doğru. Ancak stepte geçen yağ, paprika ve ekmek listede olmadığı için uygulama eksik."
+  },
+  {
+    "slug": "espresso-martini",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: Espresso Martini Londra kökenli modern kokteyl, mevcut cuisine tr yanlış"
+    ],
+    "corrections": {
+      "cuisine": "gb"
+    },
+    "sources": [
+      "https://iba-world.com/iba-cocktail/espresso-martini/",
+      "https://www.liquor.com/recipes/espresso-martini-2/"
+    ],
+    "confidence": "high",
+    "reason": "Votka, kahve likörü, espresso ve şurup oranları IBA çizgisine yakın. Ana hata Türkiye mutfak kodu, içeceğin kökeni İngiltere."
+  },
+  {
+    "slug": "espresso-protein-shake",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cuisine: espresso protein shake için Türk mutfağı kodu yanıltıcı, tarif Amerikan fitness içeceği çizgisinde"
+    ],
+    "corrections": {
+      "cuisine": "us"
+    },
+    "sources": [
+      "https://diet.mayoclinic.org/us/motivational-tips/recipe-collections/healthy-desserts/espresso-banana-shake/",
+      "https://www.liquor.com/recipes/espresso-martini-2/"
+    ],
+    "confidence": "medium",
+    "reason": "Espresso, süt ve muzlu shake tekniği doğrulanıyor. Protein tozu eklenmiş modern içecek için tr kodu yerine us daha makul."
+  },
+  {
+    "slug": "espresso-tonic",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bhg.com/recipes/drinks/coffee/espresso-tonic/",
+      "https://www.vogue.com/article/espresso-tonic-trend"
+    ],
+    "confidence": "medium",
+    "reason": "Espresso, tonik ve buzla katmanlı soğuk kahve yapısı kaynaklarla uyumlu. Köken kodu net değil, fakat uygulama ve sürelerde sorun yok."
+  },
+  {
+    "slug": "esquites-con-queso",
+    "verdict": "PASS",
+    "sources": [
+      "https://mexicanfoodjournal.com/mexican-street-corn-esquites/",
+      "https://www.alecooks.com/esquites-mexican-street-food/"
+    ],
+    "confidence": "high",
+    "reason": "Sıcak mısır, tereyağı, mayonez, lime ve peynirle bardakta servis edilen yapı klasik esquites kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "esquites-meksika-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://mexicanfoodjournal.com/mexican-street-corn-esquites/",
+      "https://www.alecooks.com/esquites-mexican-street-food/"
+    ],
+    "confidence": "high",
+    "reason": "Mısır, tereyağı, lime, biber ve peynir bileşimi esquites için makul sadeleştirme. Süre kısa ama mısır hazırsa uygulanabilir."
+  },
+  {
+    "slug": "esquites-verde-meksika-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://mexicanfoodjournal.com/mexican-street-corn-esquites/",
+      "https://www.cafedelites.com/esquites-mexican-street-corn-cups/"
+    ],
+    "confidence": "medium",
+    "reason": "Yeşil salsa varyasyonu klasik esquites üzerine makul bir çeşitleme. Ana mısır, lime, tereyağı ve peynir dengesi korunuyor."
+  },
+  {
+    "slug": "etli-ekmek",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: step 3 soğan kullanıyor ama ingredient listesinde soğan yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Soğan",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/konya-etliekmek",
+      "https://www.konya.gov.tr/konya-etliekmek"
+    ],
+    "confidence": "high",
+    "reason": "Hamur, kıyma, domates ve biber yapısı Konya etli ekmek kaynaklarıyla uyumlu. Uygulama hatası, harçtaki soğanın listede olmaması."
+  },
+  {
+    "slug": "etli-ekmek-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/konya-etliekmek",
+      "https://www.konya.gov.tr/konya-etliekmek"
+    ],
+    "confidence": "high",
+    "reason": "Hamur, kıyma, sebze karışımı, uzun ince açma ve yüksek ısıda pişirme Konya etli ekmek tarifleriyle uyumlu."
+  },
+  {
+    "slug": "etli-erikli-bulgur-tava-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/portal/konya-etliekmek",
+      "https://www.konya.gov.tr/tirit"
+    ],
+    "confidence": "low",
+    "reason": "Bulgur, et ve kuru erik tavası için özgül kaynak zayıf, fakat Konya etli yemek bağlamında uygulanabilir. Açık süre veya malzeme çelişkisi yok."
+  },
+  {
+    "slug": "etli-firik-pilavi-gaziantep-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: tarif etli ama ingredient listesinde et yok",
+      "steps: 3. adım didiklenmiş et ekliyor ama listede et bulunmuyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Kuşbaşı kuzu eti",
+          "amount": "350",
+          "unit": "gr"
+        }
+      ],
+      "averageCalories": 430,
+      "protein": 23,
+      "carbs": 43,
+      "fat": 17
+    },
+    "sources": [
+      "https://www.biantep.com/kesfet/gaziantep-firik-pilavi-g1201",
+      "https://gaziantep.net/mutfak/firik-pilavi-nasil-yapilir.php"
+    ],
+    "confidence": "high",
+    "reason": "Gaziantep etli firik pilavında koyun eti temel bileşen. Mevcut tarifin adı ve step'i etli ama listede et olmadığı için net correction gerekir."
+  },
+  {
+    "slug": "etli-guvec",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/et-yemekleri/kirmizi-et-tarifleri/etli-sebze-guveci-tarifi",
+      "https://www.guvec.gen.tr/etli-guvec.html"
+    ],
+    "confidence": "high",
+    "reason": "Kuşbaşı et, patlıcan, domates, biber, soğan ve sarımsakla fırında uzun pişirme klasik etli güveç kaynaklarıyla uyumlu."
+  },
+  {
+    "slug": "etli-kuru-erikli-eriste-tava-kayseri-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Kesme",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/eristeli-yesil-mercimek/629"
+    ],
+    "confidence": "low",
+    "reason": "Etli erişte tava için özgül kaynak zayıf, fakat erişte ve etli tava tekniği uygulanabilir. Ingredient ve step alanları birbiriyle uyumlu."
+  },
+  {
+    "slug": "etli-kuru-fasulye",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 bir gece bekletme içeriyor ama totalMinutes sadece prep+cook toplamı kadar"
+    ],
+    "corrections": {
+      "totalMinutes": 590
+    },
+    "sources": [
+      "https://www.ktb.gov.tr/EN-98944/dry-bean-stew-with-meat.html",
+      "https://www.gimas.com/turkish-traditional-white-bean-stew-etli-kuru-fasulye"
+    ],
+    "confidence": "high",
+    "reason": "Etli kuru fasulye içeriği doğru, ancak gece ıslatma toplam sürede görünmüyor. Prep 20 ve cook 90 korunup bekleme farkı totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "etli-madimak-kavurmasi-sivas-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sivasyemekleri.com/madimak-yemegi-tarifi/",
+      "https://www.saribahce.com/madimak-yemegi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Madımak, et, soğan ve salça yapısı Sivas madımak kaynaklarıyla uyumlu. Etli varyasyon kaynaklarda seçenek olarak geçiyor."
+  },
+  {
+    "slug": "etli-nohut",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: nohut haşlanmış yazıyor ama step 1 bir gece ıslatma talimatı veriyor"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Haşlanmış nohudu süzüp tencereye eklemeye hazır edin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Eti tereyağında 6 dakika soteleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Nohut yemeği için soğanı ekleyip 5 dakika kavurun.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Salçayı ekleyip 2 dakika kavurun, çiğ tadı kalmasın.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Nohut ve sıcak suyu ekleyip 55 dakika kısık ateşte pişirin.",
+          "timerSeconds": 3300
+        }
+      ]
+    },
+    "sources": [
+      "https://www.almostturkishrecipes.com/2020/04/chickpea-and-beef-stew-etli-nohut.html",
+      "https://turkishhomemeals.com/recipes/nohut.html"
+    ],
+    "confidence": "high",
+    "reason": "Et, nohut, soğan ve salça yapısı doğru. Çelişki, haşlanmış nohut yazarken gece ıslatma adımı verilmesi; step düzeltmesi yeterli."
+  },
+  {
+    "slug": "etli-nohutlu-ic-pilav-osmaniye-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps 15 dakika pirinç bekletme ve 10 dakika dinlendirme içeriyor, totalMinutes bu süreleri karşılamıyor"
+    ],
+    "corrections": {
+      "totalMinutes": 59
+    },
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nohutlu-kuskus-pilavi/346",
+      "https://www.konya.gov.tr/tirit"
+    ],
+    "confidence": "low",
+    "reason": "Etli nohutlu iç pilav için özgül kaynak zayıf, ancak süre çelişkisi metnin kendi içinde net. Bekleme ve dinlendirme totalMinutes'a eklenmeli."
+  },
+  {
+    "slug": "etli-nohutlu-kuskus-tava-osmaniye-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.lezizyemeklerim.com/yemek-tarifi/nohutlu-kuskus-pilavi/346",
+      "https://www.almostturkishrecipes.com/2020/04/chickpea-and-beef-stew-etli-nohut.html"
+    ],
+    "confidence": "medium",
+    "reason": "Kuskus, nohut ve etli tek tencere yapısı uygulanabilir. Step süreleri totalMinutes içinde kalıyor ve gluten beyanı doğru."
+  },
+  {
+    "slug": "etli-tirit-konya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.konya.gov.tr/tirit",
+      "https://www.kulturportali.gov.tr/portal/konya-etliekmek"
+    ],
+    "confidence": "high",
+    "reason": "Bayat ekmek, et suyu, haşlanmış et, yoğurt ve tereyağı Konya tirit kaynağıyla uyumlu. Servis yapısı doğru ve süre çelişkisi yok."
+  },
+  {
+    "slug": "eton-mess",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nigella.com/recipes/eton-mess",
+      "https://www.epicurious.com/recipes/food/views/eton-mess-103204"
+    ],
+    "confidence": "high",
+    "reason": "Çilek, krema ve beze kırıklarıyla bekletmeden servis edilen yapı klasik Eton Mess kaynaklarıyla uyumlu. Alerjen beyanı da uygun."
+  },
+  {
+    "slug": "eton-mess-kup-ingiliz-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.nigella.com/recipes/eton-mess",
+      "https://www.bakingheritage.com/recipes/eton-mess"
+    ],
+    "confidence": "high",
+    "reason": "Kup sunumu, çilek, beze ve yumuşak çırpılmış krema klasik Eton Mess yapısını koruyor. Bekletmeden servis uyarısı doğru."
+  },
+  {
+    "slug": "evelikli-eriste-corbasi-kars-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Kesme",
+      "https://www.lezizyemeklerim.com/yemek-tarifi/erzincan-corbasi-tarifi/17994"
+    ],
+    "confidence": "low",
+    "reason": "Evelik için özgül kaynak zayıf, fakat erişte ve yoğurt terbiyeli ot çorbası tekniği uygulanabilir. Ingredient ve step uyumu var."
+  },
+  {
+    "slug": "ezogelin-corbasi",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.sahrapsoysal.com/ezogelin-corbasi-tarifi-t-3262",
+      "https://www.knorr.com/tr/r/ezogelin-%C3%A7orbas%C4%B1-tarifi.html/112739"
+    ],
+    "confidence": "high",
+    "reason": "Kırmızı mercimek, bulgur, pirinç, salça, nane ve pul biber yapısı ezogelin kaynaklarıyla uyumlu. Süreler ve alerjenler makul."
+  },
+  {
+    "slug": "fabada-asturiana",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: step 1 bir gece bekletme içeriyor ama totalMinutes bunu içermiyor",
+      "steps: 2. adım chorizo, morcilla ve domuz eti kullanıyor ama ingredient listesinde dana sucuk ve tütsülü et var"
+    ],
+    "corrections": {
+      "cookMinutes": 180,
+      "totalMinutes": 685,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Kuru fasulyeyi 8 saat soğuk suda bekletin.",
+          "timerSeconds": 28800
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Fasulyeyi dana sucuk ve tütsülü etle tencereye alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Safran ve soğuk suyu ekleyip köpüğünü alın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Fabada'yı 3 saat kısık ateşte pişirin.",
+          "timerSeconds": 10800
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Etleri dilimleyip 10 dakika dinlendirin, fasulye suyu koyulaşsın.",
+          "timerSeconds": 600
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bascofinefoods.com/spanish-recipes/fabada-asturiana/",
+      "https://www.thespanishchef.com/recipes/spanish-recipe-dinner-fabada-asturiana/"
+    ],
+    "confidence": "high",
+    "reason": "Fabada kaynakları gece ıslatma ve uzun pişirmeyi gösteriyor. Mevcut listede domuz ürünleri yokken stepte geçmesi de açık tutarsızlık."
+  }
+]

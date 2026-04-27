@@ -1,92 +1,82 @@
 # Mod K verify raporu
 
-Okunan dosya: 5 batch
-Toplam entry: 250
+Okunan dosya: 3 batch
+Toplam entry: 150
 
 ## Ozet (verdict)
 
-- PASS: **161** (64.4%)
-- CORRECTION: 84 (33.6%)
-- MAJOR_ISSUE: 5 (2.0%)
+- PASS: **75** (50.0%)
+- CORRECTION: 71 (47.3%)
+- MAJOR_ISSUE: 4 (2.7%)
 
 ## Confidence
 
-- high: 135, medium: 110, low: 5
+- high: 88, medium: 56, low: 6
 
 ## Format integrity
 
-- Apply'a hazir (clean format): **250**
+- Apply'a hazir (clean format): **150**
 - BLOCKED (format issue): 0
 
 ## MAJOR_ISSUE (manuel review zorunlu)
 
-### `dark-and-stormy`
+### `erzsebet-sour-macar-usulu`
 
-**Reason**: Koyu rom ve zencefil birası doğru, fakat Bermuda çıkışlı kokteyl Türk mutfağı altında duruyor. gb kodu geçici seçenek olarak manuel incelenmeli.
-
-**Issues**:
-- cuisine: Bermuda çıkışlı kokteyl tr cuisine koduyla kaydedilmiş
-- cuisine: Tarifle kod listesinde Bermuda yok, tr kodu kullanıcıyı yanıltır
-
-**Corrections** (sample):
-
-### `denizli-yen-boregi`
-
-**Reason**: Mevcut tarif kaynaklardaki yen böreğiyle temel malzeme ve teknik düzeyinde ayrışıyor. Bu tarif manuel inceleme gerektiren ciddi sorun taşıyor.
+**Reason**: Kayısılı sour ailesi doğrulanıyor, ancak Erzsebet adı ve Macar kökeni doğrulanamadı. Title alanı değişmediği için manuel review gerekir.
 
 **Issues**:
-- ingredient: kaynaklarda yen böreği mısır unlu mayalı hamurla yapılır, mevcut tarif buğday unu kullanıyor
-- ingredient: kaynaklarda kuzu kıyma ve iç yağı öne çıkıyor, mevcut tarif dana kıyma, tereyağı ve sıvı yağ kullanıyor
-- steps: kaynaklarda fırın böreği akışı var, mevcut tarif tavada kızartılan yufka rulosuna dönmüş
-- allergen: kaynaklara göre SUT alerjeni gerekmeyebilir, mevcut tereyağı nedeniyle SUT eklenmiş
+- cuisine: Erzsebet Sour için Macar mutfağı kaynağı bulunamadı; tarif kayısılı whiskey sour varyasyonuna benziyor
+- description: Macar usulü iması kaynakla desteklenmiyor
 
 **Corrections** (sample):
-- description: "Denizli yen böreği, mısır unlu mayalı hamur ve kıymalı içle fırında pişen yöresel bir börektir...."
+- description: "Kayısılı whiskey sour, viski, kayısı likörü ve limonu kısa içimli, ekşi tatlı bir kokteylde birleştirir...."
 
-### `dereotlu-patates-rosti-isvec-usulu`
+### `feijao-tropeiro-brezilya-usulu`
 
-**Reason**: Röşti adı İsviçre patates tavasına işaret ediyor; İsveç kodu ve başlık birlikte manuel review gerektiriyor.
+**Reason**: Kayıt klasik Feijão tropeiro adıyla geliyor, ama etsiz içerik ayrı vejetaryen kayıtla çakışıyor. Klasik kayıt için etiket ve içerik yanıltıcı.
 
 **Issues**:
-- title/description: röşti İsviçre kökenli bir ad; İsveç mutfağı iddiası yanıltıcı olabilir
-- cuisine: desteklenen kodlarda İsviçre yok, manuel karar gerekir
+- identity: Feijão tropeiro başlığı klasik yemeği çağırıyor ama tarif etsiz ve vejetaryen etiketli
+- ingredients: klasik kaynaklarda fasulye, manyok unu, yumurta yanında bacon veya sosis ve yeşillik bulunur
 
 **Corrections** (sample):
-- description: "Dereotlu patates röşti, rendelenmiş patatesi tavada gevrekleştirerek yoğurtla sunulan sıcak bir kahvaltı tabağı çıkarır...."
+- ingredients_add: 2
 
-### `domatesli-firik-pilavi-tekirdag-usulu`
+### `feslegenli-tavuklu-pirinc-tayland-usulu`
 
-**Reason**: Firik pilavı doğru, ancak Tekirdağ usulü iddiasını destekleyen kaynak bulunamadı; manuel review uygun.
+**Reason**: Mevcut kayıt Tayland fesleğenli tavuk iddiasını karşılamıyor. Sos ve allergen eklenmezse kullanıcıya sade tavuklu pilav gösterir.
 
 **Issues**:
-- description: firik pilavı genellikle Güneydoğu ve Anadolu bağlamında geçiyor; Tekirdağ atfı kaynakla doğrulanamadı
+- identity: Tayland fesleğenli tavuk kaynakları hızlı soslu tavuk sotesidir, mevcut tarif sade tavuklu pilav gibi yazılmış
+- ingredients: Tayland profili için sarımsak, acı biber, soya sosu ve balık sosu eksik
+- allergens: önerilen düzeltmede soya sosu ve balık sosu kullanıldığı için SOYA ve DENIZ_URUNLERI eklenmeli
 
 **Corrections** (sample):
-- description: "Domatesli firik pilavı, firik bulguru domates ve tereyağıyla pişirerek isli, tane tane ve sofralık bir pilav kurar...."
+- ingredients_add: 5
+- steps_replace: 6
 
-### `eggs-benedict`
+### `findikli-keskek-toplari-ordu-usulu`
 
-**Reason**: Klasik Eggs Benedict İngiliz muffin, poşe yumurta, hollandez ve Canadian bacon içerir; mevcut kayıt mutfak ve tag açısından yanıltıcı.
+**Reason**: Mevcut steps gerçek tarif anlatmıyor ve buğday pişirme süresi eksik. Bu kayıt apply öncesi mutlaka manuel gözden geçirilmeli.
 
 **Issues**:
-- cuisine: Eggs Benedict Amerikan brunch klasiğidir; cuisine 'tr' yanıltıcı
-- ingredients: klasik tarifte Canadian bacon veya jambon bulunur, mevcut ingredient listesinde yok
-- tags: klasik Eggs Benedict etli olduğu için vejetaryen tag yanıltıcı
+- steps: tüm adımlar tarif adına göre üretilmiş scaffold metin gibi, gerçek buğday pişirme ve şekillendirme akışı yok
+- cookMinutes: aşurelik buğday için 25 dakika gerçekçi değil, kaynaklarda buğday uzun süre pişirilir veya önceden ıslatılır
 
 **Corrections** (sample):
-- ingredients_add: 1
+- steps_replace: 5
 
 ## CORRECTION sample (ilk 10)
 
 | Slug | Conf | Issues count | Corrections fields |
 |---|---|---:|---|
-| `cizlak-balikesir-usulu` | medium | 1 | ingredients_add |
-| `cizleme-trakya-usulu` | high | 4 | ingredients_add, totalMinutes, tags_remove |
-| `clam-chowder-abd-sahil-usulu` | high | 1 | ingredients_add |
-| `coban-salatasi` | high | 3 | ingredients_amount_change |
-| `cokelekli-biber-dolmasi-mugla-usulu` | high | 2 | steps_replace |
-| `cokelekli-corek-tokat-firin` | medium | 3 | ingredients_add, totalMinutes |
-| `cokelekli-katmer-tokat-usulu` | medium | 2 | ingredients_add, totalMinutes |
-| `cokelekli-pide-tokat-usulu` | medium | 1 | totalMinutes |
-| `cokertme-kebabi-mugla-usulu` | high | 2 | allergens_add, totalMinutes |
-| `com-tam` | high | 4 | ingredients_add, allergens_add, totalMinutes |
+| `eriste-ustu-madimak-soteli-sivas-usulu` | high | 1 | steps_replace |
+| `eristeli-kara-lahana-corbasi-ordu-usulu` | high | 1 | ingredients_add |
+| `eristeli-yesil-mercimek-pilavi-kirsehir-usulu` | high | 1 | ingredients_add, steps_replace |
+| `eristeli-yesil-mercimek-salatasi-kayseri-usulu` | high | 1 | ingredients_add, ingredients_remove |
+| `erzurum-casir-otlu-lorlu-kete` | high | 1 | ingredients_add |
+| `escondidinho` | high | 2 | cuisine, ingredients_add |
+| `espinacas-con-garbanzos` | high | 2 | ingredients_add, allergens_add |
+| `espresso-martini` | high | 1 | cuisine |
+| `espresso-protein-shake` | medium | 1 | cuisine |
+| `etli-ekmek` | high | 1 | ingredients_add |

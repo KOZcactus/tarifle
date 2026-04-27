@@ -1,0 +1,1021 @@
+[
+  {
+    "slug": "fagioli-all-uccelletto",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.whats4eats.com/vegetables/fagioli-all-uccelletto-recipe",
+      "https://www.giallozafferano.com/recipes/Beans-with-tomato-sauce.html"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz fasulye, domates, sarımsak, adaçayı ve zeytinyağı çizgisi Toskana kaynaklarıyla uyumlu. Süre, vegan etiket ve allergen alanı makul."
+  },
+  {
+    "slug": "fairy-bread-avustralya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.penguin.com.au/recipes/4905-fairy-bread",
+      "https://www.cookingwithnanaling.com/fairy-bread-australia/"
+    ],
+    "confidence": "high",
+    "reason": "Beyaz ekmek, tereyağı ve renkli şekerleme üçlüsü Avustralya fairy bread kaynaklarıyla örtüşüyor. Allergen ve kısa hazırlık süresi doğru."
+  },
+  {
+    "slug": "falafel",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 12 saat nohut ıslatma ve 30 dakika dinlendirme var, toplam süre 50 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 800
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/5-ingredient-falafel",
+      "https://www.bonappetit.com/recipe/homemade-falafel-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Kuru nohutlu falafel kaynakları 12 saat ıslatma ister. Aktif süre ve pişirme makul, fakat bekleme totalMinutes farkı olarak görünmeli."
+  },
+  {
+    "slug": "farinata-italyan-sokak-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 1 saat hamur dinlendirme ve 5 dakika son dinlendirme var, toplam süre 32 dakika kalmış",
+      "cookMinutes: tepsi ısıtma adımı 5 dakika pişirme süresine dahil edilmemiş"
+    ],
+    "corrections": {
+      "cookMinutes": 27,
+      "totalMinutes": 97
+    },
+    "sources": [
+      "https://www.giallozafferano.com/recipes/Chickpea-farinata.html",
+      "https://www.greatitalianchefs.com/recipes/farinata-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Farinata içeriği doğru, ama hamur dinlendirme ve sıcak tepsi adımı zaman çizelgesinde eksik. Bekleme totalMinutes içinde fark olarak kalmalı."
+  },
+  {
+    "slug": "farofa",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.epicurious.com/recipes/food/views/toasted-manioc-flour-with-eggs-and-scallions-359470",
+      "https://www.oliviascuisine.com/brazilian-farofa/"
+    ],
+    "confidence": "high",
+    "reason": "Manyok ununun tereyağı ve soğanla kavrulması farofa kaynaklarıyla uyumlu. Süt allergen tereyağından doğru işaretlenmiş."
+  },
+  {
+    "slug": "fasolada-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.greekboston.com/food/soups/fasolada-soup-recipe/",
+      "https://www.thegreekfood.com/soup/fasolada-greek-bean-soup/"
+    ],
+    "confidence": "high",
+    "reason": "Fasolada için fasulye, domates, havuç, zeytinyağı ve su tabanı kaynaklarla uyumlu. Vegan etiket ve süreler mevcut hazır fasulye kullanımına göre makul."
+  },
+  {
+    "slug": "fasolakia",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/greek-green-beans-fasolakia/",
+      "https://www.greatbritishchefs.com/recipes/fasolakia-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Taze fasulye, domates, soğan ve zeytinyağı ile uzun pişirme fasolakia kaynaklarıyla örtüşüyor. Allergen ve vegan etiket doğru."
+  },
+  {
+    "slug": "fasolka-po-bretonsku-polonya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 3. adım paprika kullanıyor ama ingredient listesinde paprika yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Tatlı toz biber",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.polishyourkitchen.com/polish-beans-and-sausage-fasolka-po-bretonsku/",
+      "https://www.everyday-delicious.com/polish-beans-sausage/"
+    ],
+    "confidence": "high",
+    "reason": "Fasolka po bretońsku fasulye, domates ve sosisle doğru. Ancak kaynaklarda yaygın olan biberli baharat stepte geçip listede eksik kalmış."
+  },
+  {
+    "slug": "fasulye-diblesi-giresun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.giresunhakkinda.com/yoresel-yemekler/fasulye-diblesi",
+      "https://www.kolaylezzet.com/kolay-yemek-tarifleri/sebze-yemekleri/147-taze-fasulye-diblesi-trabzon-giresun-ordu"
+    ],
+    "confidence": "high",
+    "reason": "Taze fasulye, pirinç, soğan ve az suyla pişirme Giresun diblesi kaynaklarıyla uyumlu. Zeytinyağlı vegan uyarlama tutarlı."
+  },
+  {
+    "slug": "fasulye-diblesi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://ordu.net.tr/yazi/88/taze-fasulye-diblesi/",
+      "https://turkiye.influence.cool/tr/ordu/gulyali/yerel-lezzetler/fasulye-diblesi/"
+    ],
+    "confidence": "high",
+    "reason": "Ordu kaynaklarında taze fasulye, pirinç ve soğan tabanı görülüyor. Mevcut zeytinyağlı versiyon etiketler ve sürelerle uyumlu."
+  },
+  {
+    "slug": "fasulye-diblesi-trabzon-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kolaylezzet.com/kolay-yemek-tarifleri/sebze-yemekleri/147-taze-fasulye-diblesi-trabzon-giresun-ordu",
+      "https://www.misssgibi.com/fasulye-diblesi/"
+    ],
+    "confidence": "high",
+    "reason": "Trabzon için kullanılan taze fasulye, pirinç, soğan ve demleme mantığı diblesi kaynaklarıyla uyumlu. Vegan allergen alanı doğru."
+  },
+  {
+    "slug": "fasulye-tursulu-cavdar-corbasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps toplamında 10 dakika bekleme, 4 dakika kavurma, 25 dakika pişirme ve 10 dakika son kaynatma var, toplam süre 34 dakika kalmış"
+    ],
+    "corrections": {
+      "cookMinutes": 39,
+      "totalMinutes": 49
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/fasulye-tursusu-diblesi815613",
+      "https://www.e-sehir.com/yemek_tarifleri/fasulye-tursusu-diblesi-ordu-tarifi.html"
+    ],
+    "confidence": "medium",
+    "reason": "Fasulye turşusu ve tahıllı Karadeniz çorbası çizgisi makul, fakat adımlardaki süreler mevcut totalMinutes değerini aşıyor."
+  },
+  {
+    "slug": "fasulyeli-melocan-corbasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2. adımda soğan çevriliyor ama listede kavurma için yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/melocan-kavurmasi",
+      "https://www.nefisyemektarifleri.com/melocan-kavurmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Melocan ve fasulye birleşimi yöresel olarak makul. Soğanın çevrildiği adım için yağ eksik, vegan etiketi korunarak zeytinyağı eklenmeli."
+  },
+  {
+    "slug": "fasulyeli-misir-ekmegi-durumu-trabzon-yayla-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/misir-ekmegi",
+      "https://www.giresunhakkinda.com/yoresel-yemekler/fasulye-diblesi"
+    ],
+    "confidence": "medium",
+    "reason": "Mısır ekmeği ve fasulye Karadeniz mutfağıyla uyumlu. Tereyağı SUT allergeniyle işaretli, süre ve içerik basit kahvaltı düzeyinde makul."
+  },
+  {
+    "slug": "fasulyeli-misir-yarmasi-corbasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/beyaz-misir-corbasi",
+      "https://turkiye.influence.cool/tr/ordu/korgan/yerel-lezzetler/misir-corbasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Ordu beyaz mısır çorbası kaynaklarında mısır yarması ve kuru fasulye tabanı var. Mevcut tarif yoğurtsuz vegan uyarlama olarak tutarlı."
+  },
+  {
+    "slug": "fasulyeli-pazi-diblesi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2. adımda soğan ve fasulye çevriliyor ama listede yağ yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://ordu.net.tr/yazi/88/taze-fasulye-diblesi/",
+      "https://www.sofra.com.tr/tarifler/corbalar/yarmali-ve-taze-fasulyeli-yogurt-corbasi"
+    ],
+    "confidence": "medium",
+    "reason": "Dible mantığı ve pazılı yeşil taban makul, ama kavurma adımında yağ eksik. Zeytinyağı eklemek vegan etiketi ve macro ile uyumlu."
+  },
+  {
+    "slug": "fatteh",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/fatteh-spiced-chickpeas-with-crispy-pita-and-garlicky-yogurt/",
+      "https://www.pbs.org/food/recipes/fattet-hummus"
+    ],
+    "confidence": "high",
+    "reason": "Nohut, çıtır pide, yoğurt ve tahin tabaklaması klasik fatteh kaynaklarıyla uyumlu. Gluten, süt ve susam allergenleri doğru."
+  },
+  {
+    "slug": "fatteh-djej",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 3. adım limon ve sarımsak kullanıyor ama ingredient listesinde yok",
+      "cookMinutes: 8 dakika pide ve 25 dakika tavuk pişirme toplamı 20 dakikalık cookMinutes değerini aşıyor"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        }
+      ],
+      "cookMinutes": 33,
+      "totalMinutes": 53
+    },
+    "sources": [
+      "https://www.themediterraneandish.com/fatteh-spiced-chickpeas-with-crispy-pita-and-garlicky-yogurt/",
+      "https://www.linsfood.com/chickpea-fatteh-fattet-hummus/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuklu fatteh katmanları doğru, fakat sos malzemeleri ve pişirme süreleri listede eksik. Küçük eklemelerle kayıt tutarlı olur."
+  },
+  {
+    "slug": "fattoush",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2. ve 3. adımlar nar ekşisi, sarımsak, turp, taze soğan, nane ve maydanoz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Nar ekşisi",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sarımsak",
+          "amount": "1",
+          "unit": "diş"
+        },
+        {
+          "name": "Turp",
+          "amount": "4",
+          "unit": "adet"
+        },
+        {
+          "name": "Taze soğan",
+          "amount": "2",
+          "unit": "dal"
+        },
+        {
+          "name": "Nane",
+          "amount": "0.25",
+          "unit": "demet"
+        },
+        {
+          "name": "Maydanoz",
+          "amount": "0.25",
+          "unit": "demet"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bonappetit.com/recipe/fattoush-salad",
+      "https://www.simplyscratch.com/fattoush-salad/"
+    ],
+    "confidence": "high",
+    "reason": "Fattoush kaynakları sumaklı pide salatasını doğruluyor. Mevcut adımlar klasik ek malzemeleri kullanıyor, fakat listede eksik bırakmış."
+  },
+  {
+    "slug": "fava-izmir-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde 30 dakika buzdolabında bekletme var, toplam süre 50 dakika kalmış"
+    ],
+    "corrections": {
+      "totalMinutes": 80
+    },
+    "sources": [
+      "https://yemek.com/tarif/fava/",
+      "https://www.nefisyemektarifleri.com/fava-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Kuru bakla, zeytinyağı, soğan ve dereotu fava çizgisi doğru. Servis öncesi 30 dakika soğutma totalMinutes değerine eklenmeli."
+  },
+  {
+    "slug": "fava-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.santoriniexperts.com/santorini-fava-recipe/",
+      "https://www.greekboston.com/food/soups/fava-pea-puree-recipe/"
+    ],
+    "confidence": "high",
+    "reason": "Sarı bezelye, soğan, zeytinyağı ve limonla püre yapımı Santorini favası kaynaklarıyla uyumlu. Vegan ve allergen alanı doğru."
+  },
+  {
+    "slug": "feijao-tropeiro-brezilya-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Feijão tropeiro başlığı klasik yemeği çağırıyor ama tarif etsiz ve vejetaryen etiketli",
+      "ingredients: klasik kaynaklarda fasulye, manyok unu, yumurta yanında bacon veya sosis ve yeşillik bulunur"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Dana füme et",
+          "amount": "120",
+          "unit": "gr"
+        },
+        {
+          "name": "Kara lahana",
+          "amount": "1",
+          "unit": "su bardağı"
+        }
+      ],
+      "tags_remove": [
+        "vejetaryen"
+      ],
+      "averageCalories": 410,
+      "protein": 21,
+      "carbs": 32,
+      "fat": 21
+    },
+    "sources": [
+      "https://recipes.fandom.com/wiki/Feijao_Tropeiro",
+      "https://www.196flavors.com/brazil-feijao-tropeiro/"
+    ],
+    "confidence": "high",
+    "reason": "Kayıt klasik Feijão tropeiro adıyla geliyor, ama etsiz içerik ayrı vejetaryen kayıtla çakışıyor. Klasik kayıt için etiket ve içerik yanıltıcı."
+  },
+  {
+    "slug": "feijao-tropeiro-vejetaryen-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 1. adım biber doğratıyor ama ingredient listesinde biber yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Yeşil biber",
+          "amount": "1",
+          "unit": "adet"
+        }
+      ]
+    },
+    "sources": [
+      "https://recipes.fandom.com/wiki/Feijao_Tropeiro",
+      "https://www.thekitchn.com/feijao-tropeiro-recipe-23406582"
+    ],
+    "confidence": "medium",
+    "reason": "Vejetaryen uyarlama başlıkta açık olduğu için kabul edilebilir. Sadece adımda kullanılan biber ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "feijoada",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: steps içinde bir gece fasulye bekletme var, toplam süre 190 dakika kalmış",
+      "ingredients: 4. adım sarımsak kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "4",
+          "unit": "diş"
+        }
+      ],
+      "cookMinutes": 156,
+      "totalMinutes": 676
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/feijoada",
+      "https://www.tasteatlas.com/feijoada"
+    ],
+    "confidence": "high",
+    "reason": "Siyah fasulye ve etli güveç doğru, ama bir gece ıslatma totalMinutes içinde görünmeli. Sarımsak da stepte var, listede eksik."
+  },
+  {
+    "slug": "feijoada-pirinc-koftesi-brezilya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 10 dakika harç soğutma adımı toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 42
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/feijoada",
+      "https://www.tasteatlas.com/feijoada"
+    ],
+    "confidence": "medium",
+    "reason": "Artan fasulye ve pirinci köfte yapmak mutfak pratiği olarak makul. Ancak 10 dakikalık soğutma totalMinutes farkına eklenmeli."
+  },
+  {
+    "slug": "fellah-kofteli-ispanak-tavasi-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 1. adım salça kullanıyor ama ingredient listesinde salça yok",
+      "totalMinutes: 10 dakika köfte bekletme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Domates salçası",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "totalMinutes": 48
+    },
+    "sources": [
+      "https://yemek.com/tarif/fellah-koftesi/",
+      "https://www.nefisyemektarifleri.com/fellah-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "Fellah köftesi tabanı bulgur, un ve salçayla uyumlu. Salça ingredient listesinde eksik, kısa bekleme de toplam sürede görünmeli."
+  },
+  {
+    "slug": "fellah-kofteli-yesil-mercimek-tavasi-mersin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "cookMinutes: steps içindeki haşlama ve sos pişirme süreleri 34 dakika, cookMinutes 18 kalmış"
+    ],
+    "corrections": {
+      "cookMinutes": 34,
+      "totalMinutes": 54
+    },
+    "sources": [
+      "https://yemek.com/tarif/fellah-koftesi/",
+      "https://www.nefisyemektarifleri.com/yesil-mercimekli-fellah-koftesi/"
+    ],
+    "confidence": "high",
+    "reason": "Mercimekli fellah uyarlaması makul, ama mercimek ve köfte haşlama süreleri cookMinutes değerini belirgin aşıyor."
+  },
+  {
+    "slug": "fellah-koftesi",
+    "verdict": "PASS",
+    "sources": [
+      "https://yemek.com/tarif/fellah-koftesi/",
+      "https://www.nefisyemektarifleri.com/fellah-koftesi-tarifi/"
+    ],
+    "confidence": "high",
+    "reason": "İnce bulgur, un, salça, sarımsaklı domates sosu ve parmak çukuru fellah köftesi kaynaklarıyla uyumlu. Süre ve allergen doğru."
+  },
+  {
+    "slug": "fellah-koftesi-mersin-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/mersin/neyenir/fellah-koftesi",
+      "https://yemek.com/tarif/fellah-koftesi/"
+    ],
+    "confidence": "high",
+    "reason": "Mersin usulü fellah köftesi bulgur, un, sarımsaklı domates ve zeytinyağıyla uyumlu. Gluten allergen ve vegan etiket doğru."
+  },
+  {
+    "slug": "fes-tavuk-tagine",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: steps içinde zeytinyağı, kimyon, karabiber ve tuz kullanılıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Zeytinyağı",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Kimyon",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Karabiber",
+          "amount": "0.5",
+          "unit": "çay kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "çay kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/chicken-tagine-lemons-olives-pomegranates",
+      "https://taste.co.za/recipes/moroccan-chicken-tagine-with-preserved-lemon-and-olives/"
+    ],
+    "confidence": "high",
+    "reason": "Tavuk, korunmuş limon, zeytin, safran ve bal Fas tagine çizgisiyle uyumlu. Stepte geçen baharat ve yağlar listede eksik kalmış."
+  },
+  {
+    "slug": "feslegenli-karpuz-salatasi-antalya-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 4. adım limon suyu ve tuz kullanıyor ama ingredient listesinde yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tuz",
+          "amount": "1",
+          "unit": "tutam"
+        }
+      ]
+    },
+    "sources": [
+      "https://www.bigoven.com/recipe/watermelon-feta-and-basil-salad/298439",
+      "https://www.glamour.com/story/haylie-duff-salad-recipe"
+    ],
+    "confidence": "high",
+    "reason": "Karpuz, beyaz peynir, fesleğen ve zeytinyağı yaz salatası olarak doğru. Limonlu sos adımı ingredient listesinde tamamlanmalı."
+  },
+  {
+    "slug": "feslegenli-limonata",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.loveandlemons.com/basil-lemonade/",
+      "https://www.tasteofhome.com/recipes/basil-lemonade/"
+    ],
+    "confidence": "high",
+    "reason": "Limon suyu, şeker şurubu, su, fesleğen ve buzla yapılan aromalı limonata kaynaklarla uyumlu. Süre ve allergen alanı doğru."
+  },
+  {
+    "slug": "feslegenli-tavuklu-pirinc-tayland-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "identity: Tayland fesleğenli tavuk kaynakları hızlı soslu tavuk sotesidir, mevcut tarif sade tavuklu pilav gibi yazılmış",
+      "ingredients: Tayland profili için sarımsak, acı biber, soya sosu ve balık sosu eksik",
+      "allergens: önerilen düzeltmede soya sosu ve balık sosu kullanıldığı için SOYA ve DENIZ_URUNLERI eklenmeli"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Sarımsak",
+          "amount": "3",
+          "unit": "diş"
+        },
+        {
+          "name": "Acı biber",
+          "amount": "2",
+          "unit": "adet"
+        },
+        {
+          "name": "Soya sosu",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Balık sosu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Sıvı yağ",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "allergens_add": [
+        "SOYA",
+        "DENIZ_URUNLERI"
+      ],
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pirinci 3 su bardağı suyla 15 dakika sade pilav gibi pişirin.",
+          "timerSeconds": 900
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Tavuğu küçük doğrayın, sarımsak ve acı biberi ince kıyın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Sarımsak ve biberi yağda 1 dakika çevirin.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Tavuğu ekleyip 6 dakika yüksek ateşte soteleyin.",
+          "timerSeconds": 360
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Soya sosu ve balık sosunu ekleyip 2 dakika çektirin.",
+          "timerSeconds": 120
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Fesleğeni ocaktan almadan hemen önce karıştırın ve pilavla servis edin.",
+          "timerSeconds": null
+        }
+      ],
+      "cookMinutes": 18,
+      "totalMinutes": 30
+    },
+    "sources": [
+      "https://usa.lkk.com/en/recipes/pad-kra-pao-recipe---thai-basil-chicken",
+      "https://www.kitchenstories.com/en/recipes/pad-kra-pao-thai-basil-chicken-e06c"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut kayıt Tayland fesleğenli tavuk iddiasını karşılamıyor. Sos ve allergen eklenmezse kullanıcıya sade tavuklu pilav gösterir."
+  },
+  {
+    "slug": "feta-zeytinli-yumurta-tava-yunan-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.themediterraneandish.com/greek-scrambled-eggs/",
+      "https://www.olivetomato.com/greek-style-scrambled-eggs-with-feta/"
+    ],
+    "confidence": "high",
+    "reason": "Yumurta, feta, zeytin ve zeytinyağı Yunan kahvaltı profiliyle uyumlu. Süt ve yumurta allergenleri doğru, süreler makul."
+  },
+  {
+    "slug": "fideua-ispanya-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.saforturisme.org/es/gastronom%C3%ADa/receta-de-cocina-fideua-de-gandia/",
+      "https://www.themediterraneandish.com/fideua-spanish-seafood-vermicelli/"
+    ],
+    "confidence": "high",
+    "reason": "Kısa erişte, balık suyu, karides, domates ve zeytinyağı fideuà kaynaklarıyla uyumlu. Gluten ve deniz ürünleri allergenleri doğru."
+  },
+  {
+    "slug": "filmjolk-meyveli-smoothie",
+    "verdict": "PASS",
+    "sources": [
+      "https://nourishedkitchen.com/filmjolk/",
+      "https://www.196flavors.com/filmjolk/"
+    ],
+    "confidence": "medium",
+    "reason": "Filmjölk fermente süt ürünü olarak doğru tanımlanmış. Meyve, bal ve yulaflı smoothie kullanımında süt ve gluten allergenleri uygun."
+  },
+  {
+    "slug": "filmjolk-musli-kasesi-isvec-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://nourishedkitchen.com/filmjolk/",
+      "https://www.196flavors.com/filmjolk/"
+    ],
+    "confidence": "medium",
+    "reason": "Filmjölk ve müsli İsveç kahvaltı kullanımıyla uyumlu. Yulaflı müsli, süt ve badem nedeniyle allergen listesi doğru."
+  },
+  {
+    "slug": "filtre-kahve",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.soundcoffee.ie/brew-guide/",
+      "https://mabo.coffee/en-eu/pages/ghiduri-de-preparare"
+    ],
+    "confidence": "high",
+    "reason": "30 gr kahveye 500 ml su ve 3-4 dakika süzülme filtre kahve kaynaklarıyla uyumlu. Allergen yok, kalori ihmal edilebilir düzeyde."
+  },
+  {
+    "slug": "findikli-ayva-muhallebisi-rize-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 1. ve 2. adımlar limon ve şeker kullanıyor ama ingredient listesinde yok",
+      "totalMinutes: 40 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "3",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Limon suyu",
+          "amount": "1",
+          "unit": "yemek kaşığı"
+        }
+      ],
+      "cookMinutes": 12,
+      "totalMinutes": 62
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/pastane-usulu-findikli-muhallebi-tarifi",
+      "https://www.nefisyemektarifleri.com/ayvali-muhallebi/"
+    ],
+    "confidence": "medium",
+    "reason": "Ayva, sütlü muhallebi ve fındık uyumu makul. Fakat stepteki şeker, limon ve 40 dakika soğutma listede ve zamanda eksik."
+  },
+  {
+    "slug": "findikli-elma-salatasi-sinop-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 4. adım yoğurt ve bal kullanıyor ama tarif vegan ve ingredient listesinde bu malzemeler yok"
+    ],
+    "corrections": {
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Elmaları kabuklu ince dilimleyin ve kararmasın diye limon suyuyla harmanlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Fındıkları iri kırın, küçük parçalar elmanın ferahlığını bastırmasın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Roka yapraklarını yıkayıp kurutun, servis kasesinin tabanına yayın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Limon suyu ve zeytinyağını çırpıp ince bir sos hazırlayın.",
+          "timerSeconds": 30
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Elma dilimlerini rokayla karıştırın, fındık ve sosu üstten ekleyip bekletmeden servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.tarifibasit.com/fistikli-roka-salatasi-tarifi/",
+      "https://www.vogue.com/article/summer-salad-recipe-rose-bakery-haricot-vert-tomato-ricotta"
+    ],
+    "confidence": "medium",
+    "reason": "Elma, roka, fındık, limon ve zeytinyağı salata olarak tutarlı. Yoğurtlu step vegan etiketi bozduğu için listedeki sosla değişmeli."
+  },
+  {
+    "slug": "findikli-fasulye-kavurmasi-ordu-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/ordu/neyenir/fasulye-tursusu-kavurmasi",
+      "https://www.giresunhakkinda.com/yoresel-yemekler/fasulye-diblesi"
+    ],
+    "confidence": "medium",
+    "reason": "Fasulye kavurması ve Karadeniz fındığı birleşimi yöresel profil olarak makul. Fındık allergen, zeytinyağı ve vegan etiket uyumlu."
+  },
+  {
+    "slug": "findikli-incir-kup-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2. adım şeker kullanıyor ama ingredient listesinde şeker yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Şeker",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        }
+      ]
+    },
+    "sources": [
+      "https://asif.org/en/recipes/dried-fig-malabi-milk-pudding/",
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/pastane-usulu-findikli-muhallebi-tarifi"
+    ],
+    "confidence": "medium",
+    "reason": "Kuru incirli sütlü kup fikri makul, süt ve fındık allergenleri doğru. Stepte kullanılan şeker ingredient listesine eklenmeli."
+  },
+  {
+    "slug": "findikli-incir-uyutmasi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 10 dakika incir yumuşatma, 2 saat uyutma ve 1 saat soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 200
+    },
+    "sources": [
+      "https://valleyfig.com/dried-fig-recipes/fig-pudding-incir-uyutmasi/",
+      "https://cookingorgeous.com/blog/turkish-fig-pudding/"
+    ],
+    "confidence": "high",
+    "reason": "İncir uyutması süt ve incirin ılık ortamda beklemesiyle doğru. Pasif uyutma ve soğutma süresi totalMinutes değerine eklenmeli."
+  },
+  {
+    "slug": "findikli-karalahana-sarmasi-giresun-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "totalMinutes: 2 dakika yaprak haşlama ve 8 dakika dinlendirme toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "cookMinutes": 32,
+      "totalMinutes": 68
+    },
+    "sources": [
+      "https://giresunbilgi.com.tr/giresun-findikli-sarma/",
+      "https://turkiye.influence.cool/tr/giresun/sebinkarahisar/yerel-lezzetler/karalahana-sarmasi/"
+    ],
+    "confidence": "medium",
+    "reason": "Karalahana sarması ve fındıklı harç Giresun profiline uyuyor. Yaprak haşlama ve son dinlendirme süreleri zaman çizelgesinde eksik."
+  },
+  {
+    "slug": "findikli-kaygana-durumu-giresun-usulu",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.kulturportali.gov.tr/turkiye/trabzon/neyenir/kaygana",
+      "https://www.nefisyemektarifleri.com/kaygana-tarifi/"
+    ],
+    "confidence": "medium",
+    "reason": "Yumurta, un ve sütlü ürünle yapılan kaygana tabanı kaynaklarla uyumlu. Fındık ve peynir dolgusu açık uyarlama, allergenler doğru."
+  },
+  {
+    "slug": "findikli-keskek-toplari-ordu-usulu",
+    "verdict": "MAJOR_ISSUE",
+    "issues": [
+      "steps: tüm adımlar tarif adına göre üretilmiş scaffold metin gibi, gerçek buğday pişirme ve şekillendirme akışı yok",
+      "cookMinutes: aşurelik buğday için 25 dakika gerçekçi değil, kaynaklarda buğday uzun süre pişirilir veya önceden ıslatılır"
+    ],
+    "corrections": {
+      "cookMinutes": 60,
+      "totalMinutes": 80,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Aşurelik buğdayı yıkayıp tencereye alın, üstünü geçecek kadar su ekleyin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Buğdayı 55 dakika yumuşayana kadar pişirin, suyu azalırsa sıcak su ekleyin.",
+          "timerSeconds": 3300
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Süzülen buğdayı tereyağı ve tuzla ezerek yapışkan bir harç haline getirin.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Fındığı ekleyip harcı 5 dakika ılındırın, el yakmayacak kıvama gelsin.",
+          "timerSeconds": 300
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Harçtan küçük toplar yapın ve üstüne kırık fındık serperek ılık servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://ordu.net.tr/yazi/80/keskek-gendeme/",
+      "https://www.sahrapsoysal.com/keskek-tarifi-t-3730"
+    ],
+    "confidence": "high",
+    "reason": "Mevcut steps gerçek tarif anlatmıyor ve buğday pişirme süresi eksik. Bu kayıt apply öncesi mutlaka manuel gözden geçirilmeli."
+  },
+  {
+    "slug": "findikli-laz-boregi-artvin-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "ingredients: 2. adım nişasta kullanıyor ama ingredient listesinde yok",
+      "ingredients: 4. adım yağlanmış yufka diyor ama yufka katları için yağ veya tereyağı listede yok"
+    ],
+    "corrections": {
+      "ingredients_add": [
+        {
+          "name": "Mısır nişastası",
+          "amount": "2",
+          "unit": "yemek kaşığı"
+        },
+        {
+          "name": "Tereyağı",
+          "amount": "80",
+          "unit": "gr"
+        }
+      ]
+    },
+    "sources": [
+      "https://turkiye.influence.cool/tr/rize/findikli/yerel-lezzetler/laz-boregi/",
+      "https://www.sahrapsoysal.com/fistikli-laz-boregi-tarifi-t-5237"
+    ],
+    "confidence": "high",
+    "reason": "Laz böreği sütlü muhallebi ve yufkayla doğru. Nişasta ve kat yağlama malzemesi stepte kullanılıyor, ingredient listesinde eksik."
+  },
+  {
+    "slug": "findikli-pancar-salatasi-ordu-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: yoğurt ve sarımsak kullanılıyor ama ingredient listesi sirke ve zeytinyağlı vegan salata olarak kurulmuş",
+      "cookMinutes: 1. adım pancarı 25 dakika haşlıyor, cookMinutes 18 kalmış"
+    ],
+    "corrections": {
+      "cookMinutes": 25,
+      "totalMinutes": 37,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Pancarları kabuklarıyla 25 dakika haşlayın, bıçak zorlanmadan girince sudan alın.",
+          "timerSeconds": 1500
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Pancarları soğutup kabuklarını soyun, iri rendeleyin ve fazla suyunu hafifçe süzdürün.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Elma sirkesi ve zeytinyağını 1 dakika çırpıp keskin bir sos hazırlayın.",
+          "timerSeconds": 60
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Rendelenmiş pancarı sosla karıştırın, renk eşit dağılana kadar spatula kullanın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Fındığı iri kırıp üstüne serpin, yağını salmasın diye servis öncesi ekleyin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://savaskitchen.com/turkish-beet-salad-with-yogurt-pancar-salatasi/",
+      "https://www.bonappetit.com/recipe/beet-and-hazelnut-dip"
+    ],
+    "confidence": "high",
+    "reason": "Pancar ve fındık uyumu makul, ancak mevcut ingredient listesi vegan. Yoğurtlu adımlar çıkarılmalı ve haşlama süresi düzeltilmeli."
+  },
+  {
+    "slug": "findikli-sicak-cikolata",
+    "verdict": "PASS",
+    "sources": [
+      "https://www.bbcgoodfood.com/recipes/hazelnut-cream-hot-chocolate",
+      "https://www.aldi.us/recipes/drinks/non-alcoholic-drinks/hazelnut-hot-chocolate"
+    ],
+    "confidence": "high",
+    "reason": "Süt, çikolata ve fındık ezmesiyle sıcak içecek kaynaklarla uyumlu. Süt ve fındık allergenleri doğru, süreler makul."
+  },
+  {
+    "slug": "findikli-sutlu-puding-kasesi-trabzon-usulu",
+    "verdict": "CORRECTION",
+    "issues": [
+      "steps: 2. adım şeker kullanıyor ama ingredient listesinde bal var, şeker yok",
+      "totalMinutes: 45 dakika soğutma toplam süreye dahil edilmemiş"
+    ],
+    "corrections": {
+      "totalMinutes": 67,
+      "steps_replace": [
+        {
+          "stepNumber": 1,
+          "instruction": "Fındıkları iri parçalar halinde kırıp servis için ayırın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 2,
+          "instruction": "Fındıklı puding tabanı için süt ve nişastayı soğukken çırpın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 3,
+          "instruction": "Pudingi 10 dakika koyulaşana kadar pişirin.",
+          "timerSeconds": 600
+        },
+        {
+          "stepNumber": 4,
+          "instruction": "Balı ocaktan aldıktan sonra ekleyin, aroması uçmasın.",
+          "timerSeconds": null
+        },
+        {
+          "stepNumber": 5,
+          "instruction": "Trabzon pudingini kaselere paylaştırıp fındıkla süsleyin ve 45 dakika soğutun.",
+          "timerSeconds": 2700
+        },
+        {
+          "stepNumber": 6,
+          "instruction": "Servisten önce üstüne ince bal çizgisi çekin ve soğuk servis edin.",
+          "timerSeconds": null
+        }
+      ]
+    },
+    "sources": [
+      "https://www.lezzet.com.tr/yemek-tarifleri/tatli-tarifleri/sutlu-tatlilar/pastane-usulu-findikli-muhallebi-tarifi",
+      "https://www.sahrapsoysal.com/karamelli-findikli-muhallebi-tarifi-t-5174"
+    ],
+    "confidence": "high",
+    "reason": "Süt, nişasta, bal ve fındıklı puding mantığı doğru. Step şeker yerine listedeki balı kullanmalı, soğutma süresi totalMinutes içinde görünmeli."
+  }
+]

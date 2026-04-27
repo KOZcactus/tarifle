@@ -1,17 +1,25 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 26 (28 Nis 2026, 2 commit, P1 SEO landing batch 2).**
-> 7 yüksek trafik sayfasında intro derinlik revize: tatlilar (470+),
+> **Oturum 26 (28 Nis 2026, 4 commit, P1 SEO batch 2 + Mod K v2
+> 5 batch).** P1 SEO landing batch 2 (7 sayfa): tatlilar (470+),
 > kahvaltiliklar (310+), tavuk-yemekleri (yaklaşık 160), et-yemekleri
 > (350+), hamur-isleri (350+), italyan (yaklaşık 50), vejetaryen
-> (2400+). Pattern oturum 25 top 5 ile aynı: 150-250 kelime, somut
-> sayı + otorite (USDA, Slow Food, Verace Pizza Napoletana, AND 2016)
-> + pratik öngörü. Kelime sayıları 186-208 (target band). Browser
-> smoke 7/7 PASS, em-dash 0 ihlal, console 0 error. Top 5 → top 12
-> done, 26 landing sayfası kaldı. Em-dash guard NEW_SESSION_MESSAGE.md
-> skip eklendi (kullanıcı brief kopyası untracked false-positive
-> önlemek için). Commits: `c8aa01a` SEO batch2 + `3d31034` em-dash
-> skip list.
+> (2400+). Browser smoke 7/7 PASS. Top 5 → top 12 done. Em-dash
+> guard NEW_SESSION_MESSAGE.md skip eklendi.
+>
+> Mod K v2 Batch 7a + 7b + 8a + 8b + 9a apply (commit `1c1dccf`):
+> 250 entry, 161 PASS (%64) / 84 CORRECTION / 5 MAJOR_ISSUE / 0
+> BLOCKED. 84 prod CORRECTION uygulandı. Total Mod K progress 17/71
+> sub-batch (~405 correction prod). Spot-check DB query ile 3
+> critical (elazig-lobik-corbasi 85→565 dk pasif bekleme + çoban
+> salatası miktar + cizleme maya/tuz) doğrulandı. 5 MAJOR_ISSUE
+> manuel review listesinde: dark-and-stormy (Bermuda enum yok),
+> denizli-yen-boregi (içerik sapması mini-rev gerek), dereotlu-
+> patates-rosti-isvec-usulu (röşti İsviçre kökenli), domatesli-
+> firik-pilavi-tekirdag-usulu (yöre atfı kaynaksız), eggs-benedict
+> (cuisine + vejetaryen tag yanıltıcı). Commits: `c8aa01a` SEO
+> batch2 + `3d31034` em-dash skip + `b81f9e3` docs + `1c1dccf` Mod
+> K 5 batch.
 
 > **Oturum 25 SONU (27 Nis 2026, oturum 24'ün devamı), 26 commit,
 > GPT 5 Pro audit + Mod K v2 maratonu.** **GPT 5 Pro tam analiz

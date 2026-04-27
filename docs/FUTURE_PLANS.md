@@ -28,7 +28,30 @@ Sıradaki batch 3 (5-7 sayfa): salatalar (269), baklagil-yemekleri (113),
 makarna-pilav (244), sebze-yemekleri (187), atistirmaliklar (69),
 fransiz, japon. Multi-session iş, oturum 27-30+ tamamlanır.
 
-### Mod K v2 (Tarif Kontrol, oturum 25 itibariyle 12/71 sub-batch done = %16.9)
+### Mod K v2 (Tarif Kontrol, oturum 26 itibariyle 17/71 sub-batch done = %23.9)
+
+**Oturum 26 progress**: Batch 7a + 7b + 8a + 8b + 9a apply
+(commit `1c1dccf`), 84 ek correction prod. PASS oranı %64 (oturum 25
+ortalaması %48'in üstünde). 5 MAJOR_ISSUE manuel review listesi:
+
+- `dark-and-stormy` (7a): Bermuda kokteyli, CUISINE_CODES enum'da
+  Bermuda yok. Karar: skip kalıcı (1 tarif için bm enum mantıksız).
+- `denizli-yen-boregi` (7a): kaynak içerik ciddi sapması (mısır unu
+  vs buğday, kuzu vs dana, fırın vs tava). Codex'ten mini-rev iste.
+- `dereotlu-patates-rosti-isvec-usulu` (7b/8a): röşti İsviçre kökenli,
+  İsveç cuisine yanıltıcı. Codex'ten mini-rev iste (cuisine değiş,
+  başlık revize).
+- `domatesli-firik-pilavi-tekirdag-usulu` (8a/8b): firik pilavı
+  Güneydoğu/Anadolu, Tekirdağ atfı kaynaksız. Mini-rev "Tekirdağ
+  usulü" ifadesini kaldır.
+- `eggs-benedict` (8a/9a): cuisine 'tr' yanıltıcı (us brunch klasiği),
+  vejetaryen tag yanıltıcı (klasik Canadian bacon içerir). Codex'ten
+  mini-rev iste (cuisine us, vejetaryen tag kaldır, ingredient
+  bacon ekle).
+
+**Aşağıdaki eski oturum 25 başlığı kaldı (referans):**
+
+### Mod K v2 (eski, oturum 25 itibariyle 12/71 sub-batch done = %16.9)
 
 **Durum**: 12 sub-batch v2 tam pipeline (1a + 1b + 2a + 2b + 3a + 3b
 + 4a + 4b + 5a + 5b + 6a + 6b = ~321 yeni correction prod oturum 25).

@@ -13,8 +13,9 @@ import fs from "node:fs";
 neonConfig.webSocketConstructor = ws;
 dotenv.config({ path: path.resolve(".env.local"), override: true });
 
-// Jenerik scaffold pattern'leri (paketi 16-24 deneyiminden)
+// Jenerik scaffold pattern'leri (paketi 16-36 deneyiminden + oturum 31 yeni keşif)
 const SCAFFOLD_PATTERNS = [
+  // Mevcut 13 (paketi 16-24 deneyiminden)
   "kalan malzemeleri ölçün ve kesilecek sebze",
   "son tuz, yağ ve ekşi dengesini kontrol",
   "tabakta su salıp dokusu kaymasın",
@@ -28,6 +29,15 @@ const SCAFFOLD_PATTERNS = [
   "peynirli doku sertleşir",
   "tuz, baharat ve ekşi malzemeyi ayrı kapta birleştirin",
   "servis tabağını ve yan malzemeleri hazırlayın",
+  // 8 yeni pattern (oturum 31 keşif, find-new-boilerplate-patterns.ts)
+  "ılık tabaklara alın, yanında çayla",
+  "son dokusunu kontrol edip tabaklayın",
+  "ritim bozulmasın",
+  "gluten gevşesin",
+  "akışı için",
+  "sıcak servis kıvamı korur",
+  "sıcak adımlarda arama yapılmasın",
+  "akışında kullanılacak tava",
 ];
 
 async function main() {
@@ -37,16 +47,16 @@ async function main() {
   });
   console.log("DB:", new URL(url).host);
 
-  // Closed slug listesi (paketi 1-36)
+  // Closed slug listesi (paketi 1-37)
   const closedSlugs = new Set<string>();
-  for (let i = 1; i <= 36; i++) {
+  for (let i = 1; i <= 37; i++) {
     const file = path.resolve(`scripts/fix-mini-rev-batch-${i}.ts`);
     if (!fs.existsSync(file)) continue;
     const content = fs.readFileSync(file, "utf-8");
     const matches = content.matchAll(/slug: "([^"]+)"/g);
     for (const m of matches) closedSlugs.add(m[1]);
   }
-  console.log(`Closed slugs (paketi 1-36): ${closedSlugs.size}`);
+  console.log(`Closed slugs (paketi 1-37): ${closedSlugs.size}`);
 
   // Tüm prod tariflerini çek, scaffold pattern içerenleri filter
   const recipes = await prisma.recipe.findMany({
@@ -76,7 +86,7 @@ async function main() {
 
   hits.sort((a, b) => b.matchedPatterns.length - a.matchedPatterns.length);
 
-  console.log(`\n=== Hit count: ${hits.length} (jenerik scaffold pattern, paketi 1-36'te kapatılmamış) ===`);
+  console.log(`\n=== Hit count: ${hits.length} (jenerik scaffold pattern, paketi 1-37'te kapatılmamış) ===`);
   console.log(`Top 30 (matched count desc):\n`);
   hits.slice(0, 30).forEach((h, i) => {
     console.log(`${i + 1}. ${h.slug}`);

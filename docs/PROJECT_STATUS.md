@@ -1,63 +1,93 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), 9 commit
-> (8 mini-rev + 1 docs), MİNİ-REV VERIFY-UNTRACKED %100 KAPANIŞ
-> 🏁 + 8 ardışık paket maraton günü.**
+> **Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), 17+
+> commit, MİNİ-REV ÇİFT KUYRUK %100 KAPANIŞ 🏁🏁 + 15 ardışık paket
+> maraton + Mod A v2 brief güncelleme + lhci baseline + yeni audit
+> metodoloji ile yeni kuyruk %100 kapanış günü.**
 >
-> **Toplam 9 commit, 4 büyük başarı:**
+> **Toplam 17+ commit, 5 büyük başarı:**
 >
-> 1. **Verify-untracked jenerik scaffold kuyruğu %100 KAPANIŞ
->    (paketi 25-36, 12 ardışık paket, 80 tarif)**: Oturum 30'da
->    bulunan yeni audit metodoloji `scripts/find-jenerik-scaffold.ts`
->    ile başlayan kuyruk paketi 25-28'de top 28 + paketi 29-36'da
->    kalan 51 + 1 revisit = 80 tarif kapandı. Audit hit count: 0
->    (kuyruk %100 boş). Pattern hazır, yeni boilerplate keşfedilirse
->    aynı disiplinle yeni paketler açılır.
+> 1. **İki audit kuyruğu da %100 KAPANIŞ 🏁🏁**:
+>    a) **Verify-tracked MAJOR kuyruk** (mod-k-verify-report-*.md):
+>       0/116 (paketi 24'te kapandı, oturum 30).
+>    b) **Verify-untracked jenerik scaffold kuyruk** (find-jenerik-
+>       scaffold.ts 21 pattern, oturum 30 keşif + oturum 31 yeni 8
+>       pattern eklemesi): 0/127 (paketi 25-43, 19 ardışık paket,
+>       128 tarif).
 >
-> 2. **8 ardışık mini-rev paketi (29-36) + 50 tarif**: Mini-rev
->    kümülatif 190 → **241** (+51 oturum 31'de). Toplam 198+
->    ingredient_add + 1 ingredient_remove + 318+ step replace + 35+
->    BOILERPLATE LEAK FIX. Paketi 31'de 1 jenerik 'Baharatlar' REMOVE
->    (somut baharat hiyerarşisi). Paketi 34'te 2 SLUG LEAK FIX (slug
->    DB'ye yazılmış cümleler) + 1 DATA ANOMALI FIX ('Su 0 amount').
+> 2. **15 ardışık mini-rev paketi (29-43) + 99 tarif**: Mini-rev
+>    kümülatif 190 → **289** (+99 oturum 31'de, %52 sıçrama).
+>    Toplam ~280 ingredient_add + 1 ingredient_remove + ~580 step
+>    replace + ~85 BOILERPLATE LEAK FIX. Oturum 30'da 13 pattern,
+>    oturum 31'de 8 yeni pattern eklendi (find-new-boilerplate-
+>    patterns.ts ile keşif): "ılık tabaklara alın yanında çayla"
+>    (25 hit), "son dokusunu kontrol" (21), "ritim bozulmasın" (16),
+>    "gluten gevşesin" (15), "akışı için" (slug-leak indirect, 9),
+>    "sıcak servis kıvamı korur" (9), "sıcak adımlarda arama
+>    yapılmasın" (6), "akışında kullanılacak tava" (2). 5 SLUG LEAK
+>    FIX + 1 jenerik 'Baharatlar' REMOVE + 1 DATA ANOMALI FIX ('Su 0
+>    amount') + 1 DUPLICATE STEP FIX (paketi 41 tulumlu-lor 'Karabiber
+>    serpip' iki defa).
 >
-> 3. **Kritik essential keşifler**: Levant musakhan-bowl soğan,
->    Sichuan denge toz şeker+susam yağı, Peru sofrito kimyon, K.Maraş
->    yöre Maraş biberi, Welsh rarebit Worcestershire sosu, Rus
->    syrniki toz şeker, Edirne saray kuş üzümü+badem+tarçın, iç pilav
->    kuş üzümü, US BBQ paprika rub, tortilla española sarımsak.
->    Klasik kanonik formul tamamlama disiplini.
+> 3. **Mod A v2 Quality-First brief güncellemesi (oturum 31, ZORUNLU
+>    default)**: 13 mod cycle (B/C/D/E/F/FA/G/H/I/IA/IB/M/K) ve ~1700
+>    prod correction sonrası kök neden tespiti. v2 = 20 tarif × 5
+>    paket (Na-Ne) + 7 GATE (uniqueness + kaynak + klasik formul +
+>    step↔ingredient match + anti-boilerplate 21 pattern + slug-leak
+>    yasak + em-dash yasak). docs/CODEX_BATCH_BRIEF.md §5.0.0 yeni
+>    alt başlık. Mevcut §5.0+ tüm kurallar geçerli kalır.
 >
-> 4. **Push disiplini**: 6 commit batch (paketi 29-34) + 3 commit
->    (paketi 35-36 + docs). Vercel build quota tasarrufu. Pre-push
->    6 katman temiz tüm 9 commit (lint + content:validate + JSON
->    dupe + em-dash + allergen source + tsc).
+> 4. **Kritik essential keşifler (oturum 31 boyunca)**: Levant
+>    musakhan-bowl soğan, Sichuan denge toz şeker+susam yağı, Peru
+>    sofrito kimyon, K.Maraş yöre Maraş biberi, Welsh rarebit
+>    Worcestershire sosu, Rus syrniki toz şeker (smetana servis),
+>    Edirne saray kuş üzümü+badem+tarçın, iç pilav kuş üzümü, US BBQ
+>    paprika rub, tortilla española sarımsak, Hatay zahter sumak+nane,
+>    Kilis kuru nane, Trabzon dible sarımsak, Şanlıurfa demirhindi
+>    limon suyu+toz şeker, Macar túrós batyu vanilya+limon kabuğu,
+>    Kars otlu kete lor peyniri, Erzurum su böreği süt+tuz, Brezilya
+>    pamonha hindistan cevizi sütü, Norveç rømmegrøt tereyağı (smjør),
+>    Avustralya brunch frenk soğanı, Çin tea egg karanfil+koyu soya,
+>    Brezilya pancake (placki) soğan, mısır ekmeği kabartma tozu,
+>    İspanya tortilla con cebolla soğan, Welsh rarebit bake fırın
+>    varyantı.
 >
-> **Final state**: Mini-rev kümülatif **241** (+51 oturum 31) +
-> verify-tracked kuyruk **0/116** (paketi 24'te kapandı) + verify-
-> untracked jenerik scaffold kuyruğu **0/79+** (KAPANDI 🏁) + Prod
-> **3508** tarif (sabit) + Cuisine **41** (sabit) + Pre-push 6
-> katman temiz. Site **LAUNCH-READY**.
+> 5. **Push disiplini + lint geçmiş**: 6 commit batch (paketi 29-34)
+>    + 3 commit (paketi 35-36 + docs) + 1 commit paketi 37 + 2
+>    commit (38-39) + 1 docs brief Mod A v2 + 2 commit (40-41) + 2
+>    commit (42-43 FINAL) = toplam ~17 commit. Pre-push 6 katman
+>    temiz tüm commit'lerde. 1 em-dash guard yakaladı (paketi 43
+>    comment'te düzeltildi). Vercel build quota tasarrufu disiplin
+>    pattern'i `feedback_batch_push.md` memory ile uyumlu.
 >
-> **Sıradaki oturum 32 öncelik**: (a) Codex Mod A tetik (oturum 27-
-> 31'de yapılmadı, prod 3508 sabit, aktif tek mod), (b) SEO landing
-> batch 6 (kalan ~7 sayfa: ingiliz/polonya/küba/avustralya + diet
-> derinleştirme), (c) yeni blog yazıları (57 sabit oturum 25'ten),
-> (d) lhci regression baseline kontrol (12 paket sonrası), (e) yeni
-> audit metodoloji potansiyeli (mevcut 13 boilerplate pattern dışı
-> yeni keşifler için scripts/find-jenerik-scaffold.ts genişletme).
+> **Final state**: Mini-rev kümülatif **289** (+99 oturum 31) +
+> verify-tracked kuyruk **0/116** (KAPANDI paketi 24) + verify-
+> untracked jenerik scaffold kuyruk **0/127** (KAPANDI paketi 25-43
+> 🏁) + Prod **3508** tarif (sabit) + Cuisine **41** (sabit) + Pre-
+> push 6 katman temiz tüm commit. Site **LAUNCH-READY**. Codex Mod
+> A v2 Batch 40a paralel çalışıyor (5-6 saat).
 >
-> Commit özet (oturum 31, ters kronoloji, 8 mini-rev): `3b04e1a`
-> paketi 36 FINAL (verify-untracked KAPANIŞ 2 tarif, 2 BOILERPLATE
-> LEAK) + `687622e` paketi 35 (7 tarif, 6 BOILERPLATE LEAK + iç
-> pilav kuş üzümü) + `9cd46a6` paketi 34 (7 tarif, 2 SLUG LEAK +
-> 1 DATA ANOMALI + 8 BOILERPLATE LEAK) + `3a28095` paketi 33 (7
-> tarif, 10 BOILERPLATE LEAK + Welsh Worcestershire) + `0710153`
-> paketi 32 (7 tarif, 4 BOILERPLATE LEAK + US BBQ rub) + `009f051`
-> paketi 31 (7 tarif, 5 BOILERPLATE LEAK + jenerik 'Baharatlar'
-> REMOVE) + `d56e782` paketi 30 (7 tarif, K.Maraş + Sichuan + Peru
-> sofrito + Kilis nane) + `d4d5031` paketi 29 (7 tarif, Levant
-> musakhan + Edirne saray + tatlı ekşi + 1 BOILERPLATE LEAK).
+> **Sıradaki oturum 32 öncelik**: (a) Codex Mod A v2 Batch 40a
+> teslim verify+apply (7 GATE pipeline), (b) Mod A v2 Batch 40b-40e
+> ardışık (Codex teslimi sonrası), (c) SEO landing batch 6 (kalan
+> ~7 sayfa), (d) yeni blog yazısı, (e) lhci regression baseline
+> kontrol (15 paket sonrası), (f) yeni audit metodoloji genişletme
+> (mevcut 21 pattern dışı yeni keşifler için).
+>
+> Commit özet (oturum 31, ters kronoloji, 15 mini-rev + 1 brief +
+> 1 docs): `faa3782` paketi 43 FINAL (6 tarif, 12 BOILERPLATE LEAK,
+> kuyruk %100 KAPANIŞ) + `ad0a246` paketi 42 (7 tarif, 13 BOILERPLATE
+> LEAK + Polonya placki + İspanya tortilla con cebolla) + `b02037c`
+> paketi 41 (7 tarif, 1 DUPLICATE STEP FIX + 13 BOILERPLATE LEAK) +
+> `981e019` paketi 40 (7 tarif, 12 BOILERPLATE LEAK + Macar túrós
+> vanilya) + `eedfcc0` brief Mod A v2 (§5.0.0 + 7 GATE) + `ef0c656`
+> paketi 39 (7 tarif, 14 BOILERPLATE LEAK + syrniki smetana + Konya
+> yağ somunu maya) + `40ace1f` paketi 38 (7 tarif, 12 BOILERPLATE +
+> 1 SLUG LEAK + Welsh rarebit Worcestershire) + `fcc33be` paketi 37
+> + audit script genişletme (7 tarif, 17 BOILERPLATE LEAK + 3 SLUG
+> LEAK + Elazığ kenger 4 pattern!) + `68f445c` docs oturum 31 SONU
+> + `3b04e1a` paketi 36 FINAL (paketi 25-36 KAPANIŞ) + paketi 35-29
+> diğer commits.
 
 > **Oturum 30 SONU (28 Nis 2026, oturum 29 aynı gün devamı), 8 commit,
 > Mini-rev verify-tracked kuyruk %100 KAPANIŞ + yeni audit metodoloji

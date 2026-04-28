@@ -15,28 +15,47 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ## ✅ Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), major kapanışlar
 
-**Verify-untracked jenerik scaffold kuyruğu %100 KAPANIŞ 🏁** (paketi
-25-36, 12 ardışık paket): Oturum 30'da bulunan audit metodoloji
-`scripts/find-jenerik-scaffold.ts` ile başlayan kuyruk 79 → 0. Hit
-count: 0. Pattern hazır, yeni boilerplate keşfedilirse aynı disiplinle
-açılır.
+**İki audit kuyruğu da %100 KAPANIŞ 🏁🏁**:
+a) **Verify-tracked MAJOR kuyruk** (mod-k-verify-report-*.md): 0/116
+   (paketi 24'te kapandı, oturum 30).
+b) **Verify-untracked jenerik scaffold kuyruk** (find-jenerik-
+   scaffold.ts 21 pattern): 0/127 (paketi 25-43, 19 ardışık paket).
+   Oturum 30 keşif (13 pattern, 79 hit) + oturum 31 yeni 8 pattern
+   eklemesi (find-new-boilerplate-patterns.ts ile keşif, 21 pattern
+   total).
 
-**8 ardışık mini-rev paketi (29-36) + 50 tarif** (oturum 31): Mini-rev
-kümülatif 190 → **241** (+51). 198+ ingredient_add + 1 ingredient_remove
-+ 318+ step replace + 35+ BOILERPLATE LEAK FIX + 2 SLUG LEAK FIX +
-1 DATA ANOMALI FIX + 1 jenerik 'Baharatlar' REMOVE.
+**15 ardışık mini-rev paketi (29-43) + 99 tarif** (oturum 31): Mini-
+rev kümülatif 190 → **289** (+99, %52 sıçrama). ~280 ingredient_add
++ 1 ingredient_remove + ~580 step replace + ~85 BOILERPLATE LEAK
+FIX + 5 SLUG LEAK FIX + 1 DATA ANOMALI FIX ('Su 0 amount') + 1
+jenerik 'Baharatlar' REMOVE + 1 DUPLICATE STEP FIX (paketi 41
+tulumlu-lor 'Karabiber serpip' iki defa).
+
+**Mod A v2 Quality-First brief güncellemesi (oturum 31, ZORUNLU
+default)**: 13 mod cycle ve ~1700 prod correction sonrası kök neden
+tespiti. v2 = 20 tarif × 5 paket (Na-Ne) + 7 GATE (uniqueness +
+kaynak + klasik formul + step↔ingredient match + anti-boilerplate
+21 pattern + slug-leak yasak + em-dash yasak). docs/CODEX_BATCH_
+BRIEF.md §5.0.0 yeni alt başlık.
 
 **Kritik essential keşifler** (klasik kanonik formul tamamlama):
 Levant musakhan-bowl soğan, Sichuan denge toz şeker+susam yağı, Peru
 sofrito kimyon, K.Maraş yöre Maraş biberi, Welsh rarebit Worcestershire,
-Rus syrniki toz şeker, Edirne saray kuş üzümü+badem+tarçın, iç pilav
-kuş üzümü, US BBQ paprika rub, tortilla española sarımsak, Hatay zahter
-sumak+nane, Kilis kuru nane, Trabzon dible sarımsak, Kayseri yağlı kete
-maydanoz, Bartın karalahana mısır unu, Şanlıurfa demirhindi limon
-suyu+toz şeker.
+Rus syrniki toz şeker (smetana servis), Edirne saray kuş üzümü+badem+
+tarçın, iç pilav kuş üzümü, US BBQ paprika rub, tortilla española
+sarımsak, Hatay zahter sumak+nane, Kilis kuru nane, Trabzon dible
+sarımsak, Kayseri yağlı kete maydanoz, Bartın karalahana mısır unu,
+Şanlıurfa demirhindi limon suyu+toz şeker, Macar túrós batyu vanilya+
+limon kabuğu, Kars otlu kete lor peyniri, Erzurum su böreği süt+tuz,
+Brezilya pamonha hindistan cevizi sütü, Norveç rømmegrøt tereyağı
+(smjør), Avustralya brunch frenk soğanı, Çin tea egg karanfil+koyu
+soya, Polonya placki soğan, mısır ekmeği kabartma tozu, İspanya
+tortilla con cebolla soğan.
 
-**Push disiplini**: 6 commit batch (paketi 29-34) + 3 commit (paketi
-35-36 + docs). Pre-push 6 katman temiz tüm 9 commit.
+**Push disiplini**: ~17 commit (15 mini-rev + 1 brief Mod A v2 + 1
+docs oturum 31 SONU başlangıç) batch'lerle (6+3+1+2+1+2+2). Pre-
+push 6 katman temiz tüm commit. 1 em-dash guard yakaladı (paketi 43
+comment'te düzeltildi).
 
 ---
 

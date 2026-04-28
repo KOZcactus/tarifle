@@ -19,23 +19,10 @@ import { recipes } from "./seed-recipes";
  * this list means a regression.
  */
 const SKIP_FINDINGS = new Set<string>([
-  // Oturum 32: audit-deep CRITICAL paket fix (DB'ye allergen eklendi ama
-  // source ingredient adları rule keyword'leriyle eşleşmiyor; source-DB
-  // drift). DB'de Tereyağı var, source'ta yok gibi durumlar. Source
-  // ingredient sync ayrı paket olarak ele alınır (scripts/sync-source-
-  // from-db.ts kullanımı). Geçici skip: gerçek over-tag değil, source
-  // sürümün eski olduğunu gösterir.
-  "mafis-tatlisi-balikesir-usulu:over-tag:KUSUYEMIS",
-  "turos-barack-kup-macar-usulu:over-tag:GLUTEN",
-  "tahinli-soganlama-kayseri-usulu:over-tag:SUT",
-  "sumakli-yumurta-kapama-kilis-usulu:over-tag:SUT",
-  "sakizli-kavun-kasesi-cesme-usulu:over-tag:KUSUYEMIS",
-  "sumakli-soganli-tavuk-tepsi-orta-dogu-usulu:over-tag:KUSUYEMIS",
-  "tavuklu-yesil-mercimek-pilavi-yozgat-usulu:over-tag:SUT",
-  "tavuklu-bulgurlu-nohut-pilavi-siirt-usulu:over-tag:SUT",
-  "zeytinli-labneli-kahvalti-ekmegi-fas-usulu:over-tag:SUSAM",
-  "tavuklu-mantarli-kesme-makarna-zonguldak-usulu:over-tag:SUT",
-  "nar-eksili-cokelek-salatasi-hatay-usulu:over-tag:SUSAM",
+  // (empty baseline; oturum 32 source-DB ingredient sync ile 11 drift
+  // entry kalıcı temizlendi. sync-11-skip-source.ts source ingredient
+  // listelerini DB ile uyumlu hale getirdi, allergen array'leri tetikler.
+  // Future drift should appear as real findings rather than being ignored.)
 ]);
 
 function main() {

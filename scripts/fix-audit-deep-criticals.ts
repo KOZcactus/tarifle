@@ -116,6 +116,9 @@ const ALLERGEN_ADDS: { slug: string; allergen: Allergen }[] = [
   { slug: "rize-pepecura-uzum-tatlisi", allergen: "GLUTEN" },
   // Round 3 (allergen-matching rafine sonrası kalan gerçek):
   { slug: "kete-kirigi-tava-ardahan-usulu", allergen: "YUMURTA" },
+  // Round 4 (source-DB sync sonrası: yeni ingredient'lar allergen tetikledi):
+  { slug: "tahinli-soganlama-kayseri-usulu", allergen: "KUSUYEMIS" },
+  { slug: "sumakli-soganli-tavuk-tepsi-orta-dogu-usulu", allergen: "GLUTEN" },
 ];
 
 const SOURCE = path.resolve("scripts/seed-recipes.ts");

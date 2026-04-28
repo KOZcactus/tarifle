@@ -25,7 +25,10 @@ dotenv.config({ path: path.resolve(".env.local"), override: true });
 // Allergen ingredient anahtar kelimeler (hangi malzeme hangi allergen).
 // Rafine: false positive azaltma için negative lookbehind/lookahead.
 const ALLERGEN_KEYWORDS: Record<string, string[]> = {
-  GLUTEN: ["un", "buğday", "bulgur", "irmik", "yufka", "ekmek", "makarna", "lavaş", "simit", "bazlama", "kete", "katmer", "börek", "lazanya", "milföy", "panko", "galeta"],
+  // 'lavaş' keyword GATE B'den çıkarıldı: çoğu kez "lavaş yanında/üzerinde
+  // servis edin" pattern'inde geçer (eşlik), ingredient ise zaten audit-deep
+  // yakalar. Step text mention çoğu zaman servis öneri.
+  GLUTEN: ["un", "buğday", "bulgur", "irmik", "yufka", "ekmek", "makarna", "simit", "bazlama", "kete", "katmer", "börek", "lazanya", "milföy", "panko", "galeta"],
   SUT: ["süt", "yoğurt", "peynir", "tereyağı", "kaymak", "krema", "labne", "ayran", "kefir", "lor", "kaşar", "mozzarella", "ricotta", "tulum"],
   YUMURTA: ["yumurta"],
   KUSUYEMIS: ["badem", "ceviz", "fındık", "kestane", "antep fıstığı", "fıstık", "kaju", "macadamia"],
@@ -40,40 +43,67 @@ const ALLERGEN_KEYWORDS: Record<string, string[]> = {
 // False positive exclude pattern'leri (allergen başına tekstte görünen
 // ama allergen olmayan bitkisel/jenerik ifadeler).
 const ALLERGEN_EXCLUDE: Record<string, string[]> = {
-  SUT: [
-    "hindistan cevizi sütü", "hindistan cevizi süt", "badem sütü", "soya sütü",
-    "yulaf sütü", "pirinç sütü", "kaju sütü", "fındık sütü", "süt mavisi",
-    "anne sütü", "süt çikolatası dışı", "süt fiyatı",
-  ],
   KUSUYEMIS: [
     // 'fıstık' yer fıstığı olabilir (ayrı allergen)
     "yer fıstığı", "yer fistigi",
     // 'kestane' bazen kestane şekeri/jenerik referans
     "kestane şekeri",
+    // Ölçü ifadeleri: "fındık/ceviz büyüklüğünde", ingredient değil
+    "fındık büyüklüğünde", "fındık büyüklüğü",
+    "ceviz büyüklüğünde", "ceviz büyüklüğü",
+    "fındık tanesi", "ceviz tanesi",
+    // Renk ifadesi: "fındık rengi", kavurma teknik referans
+    "fındık rengi", "fındık renginde",
+    // Mantar olabilir: kestane mantarı (var zaten allergen-matching'de)
+    "kestane mantarı", "kestane mantar",
   ],
   GLUTEN: [
     // 'un' bazen mısır unu (glutensiz), kestane unu, pirinç unu
     "mısır unu", "pirinç unu", "kestane unu", "badem unu", "nohut unu",
     "hindistan cevizi unu", "tapyoka", "tapioka",
-    // bulgur yerine mısır?
+    // Servis önerisi eşlikleri (ekmek/lavaş): tarif kendisi içermez,
+    // sadece servis yanında. Allergen rule'u tetiklemesin.
+    "lavaşla", "lavaş ekmeği", "lavaş ekmeğiyle",
+    "yufka ekmeği", "yufka ekmeğiyle", "yufkayla servis",
+    "ekmekle servis", "ekmek dilimleriyle", "naan ile servis",
+    "pita ile servis", "tortilla ile servis",
+  ],
+  SUT: [
+    "hindistan cevizi sütü", "hindistan cevizi süt", "badem sütü", "soya sütü",
+    "yulaf sütü", "pirinç sütü", "kaju sütü", "fındık sütü", "süt mavisi",
+    "anne sütü", "süt çikolatası dışı", "süt fiyatı",
+    // Servis önerisi: tereyağı sürerek servis (eşlik), tarif içermez
+    "tereyağı sürün", "tereyağı sürerek", "tereyağıyla servis",
+    "tereyağıyla beraber servis", "tereyağında kızartılmış ekmekle",
+    // "tereyağı yerine X" deyimi: tarif tereyağı KULLANMIYOR (allergen-matching
+    // yerine handler ile yakalanıyor, audit-recipe-quality için de exclude)
+    "tereyağı yerine",
   ],
   HARDAL: [
     "hardal yaprağı", // bazen ot olarak, ama yine HARDAL allergen kapsamında
   ],
 };
 
+// Turkish-aware word boundary: \b ASCII default Turkish karakterlere uyum
+// vermiyor. "tavuğun" → "un" match ediyor çünkü ğ word char değil. Custom
+// lookbehind/lookahead Turkish letters (a-zçğıöşüâîû) için.
+const TR_WORD_CHARS = "a-zA-ZçğıöşüâîûÇĞİÖŞÜÂÎÛ";
+
 function hasAllergenMention(allText: string, allergen: string, keywords: string[]): { hit: boolean; mention?: string } {
   const excludes = ALLERGEN_EXCLUDE[allergen] || [];
   for (const kw of keywords) {
-    const pattern = new RegExp(`\\b${kw}\\b`, "i");
+    // Turkish-aware boundary: kw'nin öncesi ve sonrası TR word char olmamalı
+    const pattern = new RegExp(`(?<![${TR_WORD_CHARS}])${kw}(?![${TR_WORD_CHARS}])`, "i");
     const match = allText.match(pattern);
     if (match) {
       // Exclude check: kelime exclude listesindeki bir compound içinde mi
       const idx = allText.toLocaleLowerCase("tr").indexOf(kw.toLocaleLowerCase("tr"));
       if (idx >= 0) {
-        // 30 char öncesi kontrol et
+        // 30 char öncesi + 30 char sonrası kontrol et (compound için
+        // "fındık büyüklüğünde" gibi sonrası ifadeler de yakala)
         const ctxStart = Math.max(0, idx - 25);
-        const ctx = allText.substring(ctxStart, idx + kw.length + 5).toLocaleLowerCase("tr");
+        const ctxEnd = Math.min(allText.length, idx + kw.length + 30);
+        const ctx = allText.substring(ctxStart, ctxEnd).toLocaleLowerCase("tr");
         const inExclude = excludes.some((ex) => ctx.includes(ex.toLocaleLowerCase("tr")));
         if (!inExclude) return { hit: true, mention: kw };
       }

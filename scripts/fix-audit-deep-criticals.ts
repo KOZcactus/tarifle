@@ -119,6 +119,9 @@ const ALLERGEN_ADDS: { slug: string; allergen: Allergen }[] = [
   // Round 4 (source-DB sync sonrası: yeni ingredient'lar allergen tetikledi):
   { slug: "tahinli-soganlama-kayseri-usulu", allergen: "KUSUYEMIS" },
   { slug: "sumakli-soganli-tavuk-tepsi-orta-dogu-usulu", allergen: "GLUTEN" },
+  // Round 5 (GATE B triage: step text'te tereyağı kullanan, allergen eksik):
+  { slug: "tavuklu-nohutlu-arpa-pilavi-ankara-usulu", allergen: "SUT" },
+  { slug: "siirt-kitel", allergen: "SUT" },
 ];
 
 const SOURCE = path.resolve("scripts/seed-recipes.ts");

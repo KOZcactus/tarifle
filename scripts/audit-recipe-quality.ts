@@ -194,6 +194,8 @@ async function main() {
       cuisine: true,
       type: true,
       totalMinutes: true,
+      prepMinutes: true,
+      cookMinutes: true,
       averageCalories: true,
       protein: true,
       carbs: true,
@@ -206,18 +208,40 @@ async function main() {
   });
   console.log(`Total prod recipes: ${recipes.length}\n`);
 
-  // GATE A: SÜRE TUTARSIZLIĞI
-  console.log("=== GATE A: SÜRE TUTARSIZLIĞI (totalMinutes vs step süreleri) ===");
-  const sureIssues: { slug: string; totalMin: number; stepMin: number; diff: number }[] = [];
+  // GATE A: SÜRE TUTARSIZLIĞI (rafine algoritma, oturum 32):
+  //   expected = prepMinutes + cookMinutes + waitMinutes (marine/dinlenme)
+  //   waitMinutes = sum of timerSeconds where >= 30 dk (1800s)
+  //   activeMinutes = sum of timerSeconds where < 30 dk
+  //   Hit if |totalMinutes - expected| > %10 ratio AND > 10 dk absolute
+  // Mantık: marine süresi totalMinutes'a dahil edilmesi brief uyumlu, ama
+  // active step süreleri prepMinutes+cookMinutes'la uyumlu olmalı.
+  console.log("=== GATE A: SÜRE TUTARSIZLIĞI (totalMinutes vs prep+cook+marine) ===");
+  const sureIssues: { slug: string; totalMin: number; expected: number; diff: number; reason: string }[] = [];
+  const WAIT_THRESHOLD_SEC = 1800; // 30 dakika
   for (const r of recipes) {
     if (!r.totalMinutes) continue;
-    const stepMinutes = r.steps.reduce((sum, s) => sum + (s.timerSeconds ? s.timerSeconds / 60 : 0), 0);
-    if (stepMinutes === 0) continue;
-    const diff = Math.abs(r.totalMinutes - stepMinutes);
-    const diffRatio = diff / r.totalMinutes;
-    // Toleransli, sadece 50%+ sapma yakala (büyük tutarsızlıklar)
-    if (diffRatio > 0.5 && diff > 15) {
-      sureIssues.push({ slug: r.slug, totalMin: r.totalMinutes, stepMin: Math.round(stepMinutes), diff: Math.round(diff) });
+    const prepMin = r.prepMinutes ?? 0;
+    const cookMin = r.cookMinutes ?? 0;
+    if (prepMin === 0 && cookMin === 0) continue;
+    let waitMinutes = 0;
+    let activeMinutes = 0;
+    for (const s of r.steps) {
+      if (!s.timerSeconds) continue;
+      const min = s.timerSeconds / 60;
+      if (s.timerSeconds >= WAIT_THRESHOLD_SEC) {
+        waitMinutes += min;
+      } else {
+        activeMinutes += min;
+      }
+    }
+    const expected = prepMin + cookMin + waitMinutes;
+    const diff = Math.abs(r.totalMinutes - expected);
+    const diffRatio = expected > 0 ? diff / expected : 0;
+    if (diffRatio > 0.1 && diff > 10) {
+      const reason = waitMinutes > 0
+        ? `prep ${prepMin} + cook ${cookMin} + wait ${Math.round(waitMinutes)} = ${Math.round(expected)}`
+        : `prep ${prepMin} + cook ${cookMin} = ${Math.round(expected)}`;
+      sureIssues.push({ slug: r.slug, totalMin: r.totalMinutes, expected: Math.round(expected), diff: Math.round(diff), reason });
     }
   }
   console.log(`  Hit count: ${sureIssues.length}`);
@@ -225,7 +249,7 @@ async function main() {
     sureIssues.sort((a, b) => b.diff - a.diff);
     console.log(`  Top 10 (max sapma):`);
     for (const i of sureIssues.slice(0, 10)) {
-      console.log(`    ${i.slug}: total=${i.totalMin} dk, step=${i.stepMin} dk, sapma=${i.diff} dk`);
+      console.log(`    ${i.slug}: total=${i.totalMin} dk, expected=${i.expected} dk (${i.reason}), sapma=${i.diff} dk`);
     }
   }
   console.log();

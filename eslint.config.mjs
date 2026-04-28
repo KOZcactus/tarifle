@@ -40,6 +40,9 @@ const eslintConfig = defineConfig([
     ".tmp*",
     "tmp_*",
     "tmp-*",
+    // Logo design exploration scripts (.cjs, sharp + require() style).
+    // Tasarım keşif dosyaları, lint scope dışı.
+    "logo/**",
   ]),
 ]);
 

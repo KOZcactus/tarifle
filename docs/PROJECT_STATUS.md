@@ -1,5 +1,67 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 32 SONU (29 Nis 2026), 9 commit, Mod A v2 40a-e tam apply +
+> 60. blog + audit-deep 62 → 0 CRITICAL kapanış + allergen-matching
+> algoritma rafine.**
+>
+> **9 commit, 3 büyük başarı:**
+>
+> 1. **Mod A v2 40a-e tam apply (prod 3508 → 3617)**: 7 GATE validate
+>    PASS, 40d+40e derin 20/20 PASS, 40a/b/c spot 15/15 PASS, 5 manuel
+>    fix (tekirdag-hayrabolu süre + porto-francesinha yumurta + sanliurfa-
+>    pitpit slug + warsaw-bigos allergen + types). Dev seed 109 INSERT +
+>    prod seed 109 INSERT + hunger-bar + nutrition recompute %98 +
+>    diet-score 36170 + tarif-listesi re-dump. 40e prod doğrulama: 20/20
+>    nutrition coverage + 20/20 diet scores + audit-deep 0 hit.
+>
+> 2. **60. blog yazısı**: "Sebze Pişirme Teknikleri" (pisirme-teknikleri
+>    16→17, 1478 kelime, 8 H2 + Bonus + Kaynaklar). 5 temel teknik
+>    (blanching/sauté/roasting/braising/glazing) + Maillard vs
+>    karamelizasyon ayrımı + 7 otoriter kaynak (Cook's Illustrated,
+>    Kenji López-Alt, ATK, Harold McGee, Serious Eats, USDA, Exploratorium).
+>
+> 3. **audit-deep 62 → 0 CRITICAL kapanış + algoritma rafine**:
+>    - **RECIPE_CONSISTENCY 56 fix**: vegan tag + hayvansal allergen
+>      çakışması (oturum 31 allergen retrofit kalıntısı). 56 RecipeTag
+>      link delete (vegan kaldır) + 49 link create (vejetaryen ekle,
+>      DENIZ_URUNLERI içermeyenler için).
+>    - **ALLERGEN_ACCURACY 26 fix**: gerçek eksik allergen ekleme
+>      (Tereyağı→SUT, Zahter→SUSAM, Antep fıstığı→KUSUYEMIS, Tonkatsu→
+>      SOYA, Çavdar viskisi→GLUTEN, Yulaf içeceği→GLUTEN, Buğday
+>      nişastası→GLUTEN, İstiridye sosu→DENIZ_URUNLERI, vb.).
+>    - **Algoritma rafine** (src/lib/allergen-matching.ts): "X yerine Y"
+>      handler (yerine deyiminde Y'ye bakar, X kullanılmıyor demek), GLUTEN
+>      excludePatterns "kekiği"/"pirinç krakeri" (Meksika kekiği = Mexican
+>      oregano spice + rice cracker glütensiz), YUMURTA excludePatterns
+>      "kekiği".
+>    - **kete-kirigi YUMURTA ek** (gerçek bug, klasik kete = un+yumurta).
+>    - **tarka-dal SUT kaldır** (vegan tarif, "Tereyağı yerine sıvı yağ"
+>      kullanılır, yerine handler ile doğru tespit).
+>    - 105 AuditLog kayıt (VEGAN_TAG_FIX + ALLERGEN_ADD).
+>    - 11 source-DB drift SKIP (allergen-source-guard, source ingredient
+>      sync ayrı paket olacak).
+>
+> **Final state**: Prod **3617** tarif (sabit). Audit-deep **0 CRITICAL
+> hem dev hem prod (RESULT PASS)** 🎉. Cuisine **41** sabit. Mini-rev
+> **289** sabit. **60 blog** (sebze pişirme +1). 60 SEO entry sabit.
+> Pre-push 6 katman temiz tüm 9 commit. Site **LAUNCH-READY**.
+>
+> **Sıradaki oturum 33 öncelik**: (a) Codex Batch 41a-41e teslimini
+> bekle/apply (5-6 saat ardışık çalışır, kullanıcı tetikledi), (b)
+> source-DB ingredient sync (sync-source-from-db.ts ile 11 SKIP_FINDINGS
+> drift'i kalıcı temizle, ROI orta ~30dk), (c) GATE A süre algoritma
+> rafine (totalMinutes formülü + marine pattern exclude, ROI orta), (d)
+> CI hata teşhisi (gh run list, ROI düşük), (e) yeni blog 4 (taze ot
+> rehberi, çikolata bilimi, peynir eşleştirme veya benzer).
+>
+> **Oturum 32 commit zinciri (9 commit, ters kronoloji)**: `d85be7d`
+> allergen-matching false positive rafine + yerine handler (62→0 audit-
+> deep) + `09989f3` allergen-guard SKIP 11 source-DB drift + `93a9f7a`
+> audit-deep 62 CRITICAL paketi (RecipeTag relation fix) + `b285ea3` 60.
+> blog Sebze Pişirme Teknikleri + `ba6ba87` docs oturum 32 BAŞLANGIÇ +
+> `2fae2d3` types fix (assertDbTarget arg) + `91801b3` warsaw-bigos
+> GLUTEN over-tag geri al + `ce4d305` Mod A v2 Batch 40a-40e apply.
+
 > **Oturum 32 BAŞLANGIÇ (29 Nis 2026), 3 commit, Codex Mod A v2 Batch
 > 40a-40e ilk uygulama ve TAM APPLY (100 yeni tarif, prod 3508 → 3617).**
 >

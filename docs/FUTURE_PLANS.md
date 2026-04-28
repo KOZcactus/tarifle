@@ -13,6 +13,41 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 32 SONU (29 Nis 2026), 9 commit, audit-deep 62→0 + algoritma rafine
+
+**Oturum 32 final başarı zinciri (9 commit, prod 3508→3617 + audit PASS):**
+
+1. **Mod A v2 40a-e tam apply (commit ce4d305 + 91801b3 + 2fae2d3)**:
+   100 yeni tarif, 7 GATE validate PASS, 40d+40e derin 20/20 PASS,
+   40a/b/c spot 15/15 PASS, 5 manuel fix, full pipeline dev+prod seed
+   + hunger-bar + nutrition recompute + diet-score + tarif-listesi
+   re-dump. 40e prod doğrulama 20/20 nutrition + 20/20 diet.
+
+2. **60. blog yazısı (commit b285ea3)**: "Sebze Pişirme Teknikleri"
+   pisirme-teknikleri 16→17, 1478 kelime, 5 temel teknik + Maillard
+   vs karamelizasyon + 7 otoriter kaynak.
+
+3. **audit-deep 62 → 0 CRITICAL kapanış (commit 93a9f7a + 09989f3 +
+   d85be7d)**: 56 vegan tag fix (RecipeTag relation) + 26 allergen
+   ek + algoritma rafine ("X yerine Y" handler, "kekiği" / "pirinç
+   krakeri" excludePatterns) + kete YUMURTA gerçek bug fix + tarka-
+   dal SUT kaldır + 105 AuditLog + 11 source-DB drift SKIP.
+
+**Aktif/Planlı (oturum 33+):**
+
+- **Codex Batch 41a-41e teslimini bekle/apply** (kullanıcı tetikledi,
+  5-6 saat ardışık, geldiğinde validate-mod-a-batch + apply pipeline)
+- **Source-DB ingredient sync** (scripts/sync-source-from-db.ts ile 11
+  SKIP_FINDINGS drift'i kalıcı temizle, ROI orta, ~30-45dk)
+- **GATE A süre algoritma rafine** (totalMinutes formülü + marine
+  pattern exclude, ROI orta)
+- **CI hata teşhisi** (gh run list failed log'lar, ROI düşük)
+- **Yeni blog 4** (taze ot rehberi / çikolata bilimi / peynir
+  eşleştirme; mutfak-rehberi 19, malzeme-tanima 17, pisirme-teknikleri
+  17, kategoriler dengeli)
+
+---
+
 ## ✅ Oturum 32 BAŞLANGIÇ (29 Nis 2026), Mod A v2 Batch 40a-40e ilk uygulama tam apply
 
 **Oturum 32 başarı (3 commit, prod 3508 → 3617):**

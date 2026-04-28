@@ -13,7 +13,7 @@ neonConfig.webSocketConstructor = ws;
 dotenv.config({ path: path.resolve(".env.local") });
 
 async function main() {
-  assertDbTarget();
+  assertDbTarget("fix-warsaw-bigos-allergen");
   const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: process.env.DATABASE_URL! }) });
   const recipe = await prisma.recipe.findUnique({ where: { slug: "warsaw-bigos" }, select: { id: true, allergens: true } });
   if (!recipe) {

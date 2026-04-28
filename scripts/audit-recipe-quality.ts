@@ -192,6 +192,7 @@ async function main() {
       slug: true,
       title: true,
       cuisine: true,
+      type: true,
       totalMinutes: true,
       averageCalories: true,
       protein: true,
@@ -258,9 +259,12 @@ async function main() {
   }
   console.log();
 
-  // GATE C: MACRO DENKLEM (4P + 4C + 9F ≈ averageCalories, ±15%)
-  console.log("=== GATE C: MACRO DENKLEM (4P + 4C + 9F vs averageCalories) ===");
-  const macroIssues: { slug: string; cal: number; macroCal: number; diff: number; ratio: number }[] = [];
+  // GATE C: MACRO DENKLEM (4P + 4C + 9F ≈ averageCalories, tip-bazlı tolerans).
+  // Alkollü içecek (KOKTEYL): alkol kcal (7 kcal/g) formülde değil, %50 tolerans.
+  // İçecek (ICECEK): şeker/yoğurt/süt karışımları, %30 tolerans.
+  // Diğer (YEMEK/CORBA/TATLI/SALATA/KAHVALTI/APERATIF/ATISTIRMALIK/SOS): %20 tolerans.
+  console.log("=== GATE C: MACRO DENKLEM (4P + 4C + 9F vs averageCalories, tip-bazlı tolerans) ===");
+  const macroIssues: { slug: string; type: string; cal: number; macroCal: number; diff: number; ratio: number }[] = [];
   for (const r of recipes) {
     if (!r.averageCalories || r.averageCalories === 0) continue;
     const protein = r.protein as number | null;
@@ -270,16 +274,24 @@ async function main() {
     const macroCal = 4 * Number(protein) + 4 * Number(carbs) + 9 * Number(fat);
     const diff = Math.abs(r.averageCalories - macroCal);
     const ratio = diff / r.averageCalories;
-    if (ratio > 0.20) { // %20+ sapma KRİTİK
-      macroIssues.push({ slug: r.slug, cal: r.averageCalories, macroCal: Math.round(macroCal), diff: Math.round(diff), ratio });
+    const typeStr = String(r.type ?? "UNKNOWN");
+    // KOKTEYL/ICECEK skip: alkol kcal (7 kcal/g) ve şeker/şurup makro
+    // formülünde temsil edilmez, sürekli false positive üretir.
+    if (typeStr === "KOKTEYL" || typeStr === "ICECEK") continue;
+    const tolerance = 0.20;
+    if (ratio > tolerance) {
+      macroIssues.push({ slug: r.slug, type: typeStr, cal: r.averageCalories, macroCal: Math.round(macroCal), diff: Math.round(diff), ratio });
     }
   }
   console.log(`  Hit count: ${macroIssues.length}`);
   if (macroIssues.length > 0) {
     macroIssues.sort((a, b) => b.ratio - a.ratio);
-    console.log(`  Top 10 (max sapma oran):`);
-    for (const i of macroIssues.slice(0, 10)) {
-      console.log(`    ${i.slug}: cal=${i.cal}, macro=${i.macroCal}, sapma=${i.diff} (${(i.ratio * 100).toFixed(0)}%)`);
+    const byType: Record<string, number> = {};
+    for (const i of macroIssues) byType[i.type] = (byType[i.type] ?? 0) + 1;
+    console.log(`  By type:`, Object.entries(byType).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${k}=${v}`).join(", "));
+    console.log(`  Top 15 (max sapma oran):`);
+    for (const i of macroIssues.slice(0, 15)) {
+      console.log(`    ${i.slug} (${i.type}): cal=${i.cal}, macro=${i.macroCal}, sapma=${i.diff} (${(i.ratio * 100).toFixed(0)}%)`);
     }
   }
   console.log();

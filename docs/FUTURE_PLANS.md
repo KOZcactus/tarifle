@@ -13,6 +13,33 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), major kapanışlar
+
+**Verify-untracked jenerik scaffold kuyruğu %100 KAPANIŞ 🏁** (paketi
+25-36, 12 ardışık paket): Oturum 30'da bulunan audit metodoloji
+`scripts/find-jenerik-scaffold.ts` ile başlayan kuyruk 79 → 0. Hit
+count: 0. Pattern hazır, yeni boilerplate keşfedilirse aynı disiplinle
+açılır.
+
+**8 ardışık mini-rev paketi (29-36) + 50 tarif** (oturum 31): Mini-rev
+kümülatif 190 → **241** (+51). 198+ ingredient_add + 1 ingredient_remove
++ 318+ step replace + 35+ BOILERPLATE LEAK FIX + 2 SLUG LEAK FIX +
+1 DATA ANOMALI FIX + 1 jenerik 'Baharatlar' REMOVE.
+
+**Kritik essential keşifler** (klasik kanonik formul tamamlama):
+Levant musakhan-bowl soğan, Sichuan denge toz şeker+susam yağı, Peru
+sofrito kimyon, K.Maraş yöre Maraş biberi, Welsh rarebit Worcestershire,
+Rus syrniki toz şeker, Edirne saray kuş üzümü+badem+tarçın, iç pilav
+kuş üzümü, US BBQ paprika rub, tortilla española sarımsak, Hatay zahter
+sumak+nane, Kilis kuru nane, Trabzon dible sarımsak, Kayseri yağlı kete
+maydanoz, Bartın karalahana mısır unu, Şanlıurfa demirhindi limon
+suyu+toz şeker.
+
+**Push disiplini**: 6 commit batch (paketi 29-34) + 3 commit (paketi
+35-36 + docs). Pre-push 6 katman temiz tüm 9 commit.
+
+---
+
 ## ✅ Oturum 30 SONU (28 Nis 2026, oturum 29 aynı gün devamı), major kapanışlar
 
 **Verify-tracked MAJOR kuyruk %100 KAPANIŞ (paketi 24, 116/116)**:
@@ -108,17 +135,19 @@ coverage.
 
 ## 🎯 Aktif (oturum 31+ kısa vade)
 
-### Mini-rev kuyruk (verify-tracked %100 KAPANDI, verify-untracked ~51 kalan)
+### Mini-rev kuyruk (verify-tracked %100 + verify-untracked %100 🏁)
 
-8 paket boyunca KRİTİK kandidatların büyük kısmı kapatıldı, kalan
-~110 MAJOR çoğunlukla jenerik "yöre yumuşatma" pattern. Paketi 16-25
-arası 7 tarif/paket pattern devam edebilir. Pattern script
-`scripts/fix-mini-rev-batch-15.ts` referans (`ingredients_amount_
-change` field paketi 12'de eklendi).
+Oturum 31 sonrası mini-rev kümülatif **241**. İki ana audit kuyruğu
+da %100 kapalı:
+- **verify-tracked MAJOR kuyruk** (mod-k-verify-report-*.md): 116/116
+  KAPANDI (paketi 24, oturum 30).
+- **verify-untracked jenerik scaffold kuyruk** (find-jenerik-scaffold.
+  ts, 13 boilerplate pattern): 79+/79+ KAPANDI (paketi 25-36, oturum
+  30+31, hit count 0).
 
-KRİTİK kandidat azaldı: kalan KRİTİK olanlar ekstra cuisine fix +
-KIBE-MUMBAR pattern + definition fix yer yer. 2 paralel agent +
-20+ kaynak/paket disiplini sürer.
+Yeni paketler için tetik: yeni boilerplate pattern keşfedilirse
+`scripts/find-jenerik-scaffold.ts`'e ekle, audit re-run, top N seç,
+paketi N script'i (paketi 36 referans) yaz. Pattern hazır.
 
 ### SEO landing batch 5+ (top 29 → top 36+, 12 kalan sayfa)
 

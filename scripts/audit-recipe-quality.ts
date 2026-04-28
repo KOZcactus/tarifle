@@ -82,27 +82,102 @@ function hasAllergenMention(allText: string, allergen: string, keywords: string[
   return { hit: false };
 }
 
-// Cuisine slug pattern (slug'ta geçen yöre/cuisine ipucu)
-const CUISINE_SLUG_HINTS: Record<string, string[]> = {
-  italyan: ["italya", "italyan", "roma", "milano", "napoli", "sicilya"],
-  fransiz: ["fransiz", "fransa", "paris", "provence"],
-  ispanyol: ["ispanya", "ispanyol", "madrid", "barselona", "endulus"],
-  yunan: ["yunanistan", "yunan", "atina"],
-  japon: ["japon", "japonya", "tokyo", "osaka", "kyoto"],
-  cn: ["cin", "cinli", "beijing", "shanghai", "kanton", "sichuan"],
-  kore: ["kore", "kore", "seoul"],
-  tay: ["tay", "tayland", "bangkok"],
-  hint: ["hindistan", "hint", "delhi", "mumbai"],
-  meksika: ["meksika", "meksikan", "azteca"],
-  abd: ["amerika", "ABD", "amerikan", "new-york", "california"],
-  vietnam: ["vietnam", "hanoi", "saigon"],
-  ingiltere: ["ingilizce", "ingiltere", "ingiliz", "londra"],
-  portekiz: ["portekiz", "lizbon", "porto"],
-  brezilya: ["brezilya"],
-  peru: ["peru", "lima"],
-  rus: ["rusya", "rus", "moskova"],
-  macar: ["macaristan", "macar", "budapest"],
-  alman: ["almanya", "alman"],
+// Cuisine slug pattern: slug'ta geçen yöre/cuisine ipucu → DB cuisine kodu.
+// Map: slug hint → expected cuisine code (DB'deki 2-3 harfli kod).
+// CUISINE_CODES referans: tr, it, fr, es, gr, jp, cn, kr, th, in, mx, us,
+// vn, gb, pt, br, pe, ru, hu, ma, me, se, no, dk, fi, cl, ge, at, ca, pl,
+// cu, au, de, id, ng, et, pk, tn, ir, ar, za.
+const CUISINE_SLUG_TO_CODE: Record<string, string> = {
+  // İtalyan
+  "italya": "it", "italyan": "it", "roma": "it", "milano": "it", "napoli": "it", "sicilya": "it",
+  // Fransız
+  "fransiz": "fr", "fransa": "fr", "paris": "fr", "provence": "fr",
+  // İspanyol
+  "ispanya": "es", "ispanyol": "es", "madrid": "es", "barselona": "es", "endulus": "es",
+  // Yunan
+  "yunanistan": "gr", "atina": "gr",
+  // Japon
+  "japon": "jp", "japonya": "jp", "tokyo": "jp", "osaka": "jp", "kyoto": "jp",
+  // Çin
+  "cinli": "cn", "beijing": "cn", "shanghai": "cn", "kanton": "cn", "sichuan": "cn",
+  // Kore
+  "korea": "kr", "seoul": "kr", "kore-": "kr",
+  // Tay (DİKKAT: 'hatay' içeren slug'larda 'tay' substring yakalanır, exclude logic gerek)
+  "tayland": "th", "bangkok": "th",
+  // Hint
+  "hindistan": "in", "delhi": "in", "mumbai": "in",
+  // Meksika
+  "meksika": "mx", "meksikan": "mx", "azteca": "mx",
+  // ABD
+  "abd": "us", "amerikan": "us", "new-york": "us", "california": "us",
+  // Vietnam
+  "vietnam": "vn", "hanoi": "vn", "saigon": "vn",
+  // İngiltere
+  "ingilizce": "gb", "ingiltere": "gb", "ingiliz": "gb", "londra": "gb",
+  // Portekiz
+  "portekiz": "pt", "lizbon": "pt", "porto": "pt",
+  // Brezilya
+  "brezilya": "br", "saopaulo": "br",
+  // Peru
+  "peru-": "pe", "lima": "pe",
+  // Rus
+  "rusya": "ru", "moskova": "ru",
+  // Macar
+  "macaristan": "hu", "macar": "hu", "budapest": "hu",
+  // Alman
+  "almanya": "de", "alman": "de",
+  // Tunus
+  "tunus": "tn", "tunis": "tn",
+  // İran
+  "iran": "ir", "tahran": "ir",
+  // Pakistan
+  "pakistan": "pk", "lahore": "pk", "karachi": "pk",
+  // Arjantin
+  "arjantin": "ar", "buenos-aires": "ar",
+  // Avusturya
+  "avusturya": "at", "vienna": "at", "viyana": "at", "linz": "at",
+  // Polonya
+  "polonya": "pl", "warsaw": "pl",
+  // Küba
+  "kuba": "cu", "havana": "cu",
+  // Avustralya
+  "avustralya": "au", "sidney": "au",
+  // Endonezya
+  "endonezya": "id", "jakarta": "id",
+  // Nijerya
+  "nijerya": "ng", "lagos": "ng",
+  // Etiyopya
+  "etiyopya": "et", "addis-ababa": "et",
+  // Şili
+  "santiago": "cl", "sili": "cl",
+  // Gürcü
+  "gurcu": "ge", "tbilisi": "ge",
+  // Kanada
+  "kanada": "ca", "ontario": "ca", "quebec": "ca",
+  // İskandinav (DB CUISINE_CODES: se var, dk var, no/fi YOK).
+  // Kuzey ülke yemekleri 'se' İskandinav umbrella kabul edilir.
+  // dk: Danimarka için ayrı kod var.
+  "stockholm": "se", "isvec": "se",
+  "oslo": "se", "norvec": "se", // no kodu yok, se umbrella
+  "kopenhag": "dk", "danimarka": "dk",
+  // fi yok, helsinki/finlandiya 'se' umbrella sayılır
+  "helsinki": "se", "finlandiya": "se",
+  // Levant / Orta Doğu
+  "lubnan": "me", "beyrut": "me", "filistin": "me", "suriye": "me",
+  // Kuzey Afrika (Fas/Marakeş)
+  "fas": "ma", "marakes": "ma", "kazablanka": "ma",
+};
+
+// Tay false positive (slug'ta 'tay' geçen ama Türk yöresi olan)
+const TAY_FALSE_POSITIVES = ["hatay", "altay", "kutay"];
+
+// Cuisine hint exclude pattern: slug'ta hint geçse bile şu kelimeler
+// varsa false positive (hindistan = coconut, lima = limon, santiago =
+// İspanya'daki Santiago de Compostela).
+const CUISINE_EXCLUDE_PATTERNS: Record<string, string[]> = {
+  "hindistan": ["hindistan-cevizi", "hindistan-cevizli"],
+  "lima": ["sopa-de-lima", "key-lime", "limaki"],
+  "santiago": ["tarta-de-santiago", "santiago-de-compostela"],
 };
 
 async function main() {
@@ -209,26 +284,48 @@ async function main() {
   }
   console.log();
 
-  // GATE D: CUISINE YANLIŞ (slug pattern vs cuisine)
+  // GATE D: CUISINE YANLIŞ (slug pattern vs cuisine code, RAFINE)
   console.log("=== GATE D: CUISINE YANLIŞ (slug pattern vs cuisine code) ===");
-  const cuisineIssues: { slug: string; current: string; suggested: string }[] = [];
+  const cuisineIssues: { slug: string; current: string; suggested: string; hint: string }[] = [];
   for (const r of recipes) {
     const slugLower = r.slug.toLocaleLowerCase("tr");
-    for (const [expectedCuisine, hints] of Object.entries(CUISINE_SLUG_HINTS)) {
-      if (r.cuisine === expectedCuisine) continue;
-      for (const hint of hints) {
-        if (slugLower.includes(hint)) {
-          cuisineIssues.push({ slug: r.slug, current: r.cuisine ?? "null", suggested: expectedCuisine });
-          break;
-        }
+    // Tay false positive exclude (hatay, altay, kutay)
+    let tayFalsePositive = false;
+    for (const fp of TAY_FALSE_POSITIVES) {
+      if (slugLower.includes(fp)) {
+        tayFalsePositive = true;
+        break;
       }
+    }
+    for (const [hint, expectedCode] of Object.entries(CUISINE_SLUG_TO_CODE)) {
+      // Tay false positive
+      if (expectedCode === "th" && tayFalsePositive) continue;
+      // Word boundary check: hint slug'ta `-` ayraç ile token olarak geçmeli
+      // (substring match değil). Pattern: (^|-)hint(-|$)
+      const escapedHint = hint.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const wbPattern = new RegExp(`(^|-)${escapedHint}(-|$)`, "i");
+      if (!wbPattern.test(slugLower)) continue;
+      // Cuisine hint exclude: slug'ta exclude pattern varsa false positive
+      const excludes = CUISINE_EXCLUDE_PATTERNS[hint] || [];
+      const isExcluded = excludes.some((ex) => slugLower.includes(ex));
+      if (isExcluded) continue;
+      // Cuisine kodu zaten doğruysa atla (eşleşme)
+      if (r.cuisine === expectedCode) continue;
+      // Mismatch! Bu gerçek REJECT
+      cuisineIssues.push({
+        slug: r.slug,
+        current: r.cuisine ?? "null",
+        suggested: expectedCode,
+        hint,
+      });
+      break; // Tarif başına 1 hit yeter
     }
   }
   console.log(`  Hit count: ${cuisineIssues.length}`);
   if (cuisineIssues.length > 0) {
-    console.log(`  Top 15:`);
-    for (const i of cuisineIssues.slice(0, 15)) {
-      console.log(`    ${i.slug}: current='${i.current}', slug suggests '${i.suggested}'`);
+    console.log(`  Top 30:`);
+    for (const i of cuisineIssues.slice(0, 30)) {
+      console.log(`    ${i.slug}: current='${i.current}', expected '${i.suggested}' (hint '${i.hint}')`);
     }
   }
   console.log();

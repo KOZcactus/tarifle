@@ -109,6 +109,13 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "mısır tortilla", "tortilla cipsi",
       // Herb "kekik" (thyme) is gluten-free, collides with "kek" substring:
       "kekik", "taze kekik", "kuru kekik", "kekik otu",
+      // Possessive form "kekiği" (Meksika kekiği = Mexican oregano,
+      // Lippia graveolens spice). "kekik" + iyelik eki olarak ortaya
+      // çıkar, "kek" yumurtası/glüteniyle ilgisi yok.
+      "kekiği", "kekigi",
+      // Pirinç krakeri: rice cracker, pirinç bazlı glütensiz. "kraker"
+      // keyword'i yakalar ama pirinç bazlı varyant glütensiz.
+      "pirinç krakeri", "pirinc krakeri",
       // Çörekotu (nigella sativa) is a spice, gluten-free; collides with
       // "çörek" substring (which IS gluten in standalone form).
       "çörekotu", "çörek otu", "corekotu", "corek otu",
@@ -200,6 +207,9 @@ export const ALLERGEN_RULES: AllergenRule[] = [
       "pirinç keki",
       // "kete" substring "keten tohumu"nu yakalar:
       "keten", "keten tohumu",
+      // Possessive form "kekiği" (Meksika kekiği = Mexican oregano spice).
+      // "kekik" iyelik eki, "kek" yumurtasıyla ilgisi yok.
+      "kekiği", "kekigi",
     ],
   },
   {
@@ -295,6 +305,14 @@ export function ingredientMatchesAllergen(
   ingredientName: string,
   rule: AllergenRule,
 ): boolean {
+  // "X yerine Y" deyimi: tarif X'i KULLANMIYOR, Y'yi kullanıyor. Sadece
+  // Y kısmını allergen kontrolüne sok. Örn "Tereyağı yerine sıvı yağ"
+  // tarifi tereyağı içermez, sıvı yağ kullanır.
+  const yerineMatch = ingredientName.match(/^(.+?)\s+yerine\s+(.+)$/i);
+  if (yerineMatch) {
+    return ingredientMatchesAllergen(yerineMatch[2], rule);
+  }
+
   const lower = trLower(ingredientName);
   const asciiLower = asciiNormalize(ingredientName);
 

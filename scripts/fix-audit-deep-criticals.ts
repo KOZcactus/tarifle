@@ -114,6 +114,8 @@ const ALLERGEN_ADDS: { slug: string; allergen: Allergen }[] = [
   { slug: "bangkok-pad-see-ew", allergen: "DENIZ_URUNLERI" },
   { slug: "london-fish-and-chips", allergen: "SUT" },
   { slug: "rize-pepecura-uzum-tatlisi", allergen: "GLUTEN" },
+  // Round 3 (allergen-matching rafine sonrası kalan gerçek):
+  { slug: "kete-kirigi-tava-ardahan-usulu", allergen: "YUMURTA" },
 ];
 
 const SOURCE = path.resolve("scripts/seed-recipes.ts");

@@ -13,6 +13,36 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 30 SONU (28 Nis 2026, oturum 29 aynı gün devamı), major kapanışlar
+
+**Verify-tracked MAJOR kuyruk %100 KAPANIŞ (paketi 24, 116/116)**:
+Mod K verify reports'tan tracked tüm 116 MAJOR slug kapatıldı. Paketi
+24 = 6 tarif atypical kapanış (kalan tüm verify-tracked MAJOR slug'lar).
+
+**Yeni audit metodoloji**: `scripts/find-jenerik-scaffold.ts` ile prod'da
+13 boilerplate pattern içeren slug tarama. 79 hit. Paketi 25-28 ile top
+28 slug kapatıldı (79 → 51 kalan).
+
+**5 ardışık mini-rev paketi (24-28) + 34 tarif kapatıldı**: Mini-rev
+kümülatif 156 → 190 (+34). 168 ingredient_add + 220 step replace + 4
+amount change. 1 cuisine fix (paketi 25 tavuklu-noodle tr→cn).
+
+**Kritik fix'ler**: 1 KRİTİK TYPO (paketi 24 Köplenmiş→Közlenmiş +
+közlenmiş kapya biber), 4 KRİTİK TUTARSIZLIK (paketi 24 + 25 + 28 + 23
+TRIPLE), 4 BOILERPLATE LEAK FIX (paketi 24, 25, 28 + jenerik scaffold
+ortak), 1 ŞERBET EKSIK FIX (paketi 24 Tekirdağ revani), 1 KIBE-MUMBAR
+FULL pattern (musakhan).
+
+**Lhci regression baseline**: Oturum 30 başında 5/5 URL × 2 run = 10
+run PASS (perf ≥0.85 + a11y ≥0.95 + bp ≥0.9 + seo ≥0.95). Oturum 29
+SONU sonrası baseline güvende.
+
+**Push disiplini + lint fix kalıcı çözüm**: 8 commit prod'a push (3+4+
+1 docs). `eslint.config.mjs`'e `logo/**` ignore kalıcı eklendi (her
+yeni .cjs için eslint-disable yorumu yerine config tek satır).
+
+---
+
 ## ✅ Oturum 29 SONU (28 Nis 2026, oturum 28 aynı gün devamı), major kapanışlar
 
 **8 mini-rev paketi (paketi 16-23) + 56 tarif kapatıldı**: Mini-rev
@@ -76,9 +106,9 @@ coverage.
 
 ---
 
-## 🎯 Aktif (oturum 30+ kısa vade)
+## 🎯 Aktif (oturum 31+ kısa vade)
 
-### Mini-rev kuyruk (~54 MAJOR, paketi 24-30 civarı)
+### Mini-rev kuyruk (verify-tracked %100 KAPANDI, verify-untracked ~51 kalan)
 
 8 paket boyunca KRİTİK kandidatların büyük kısmı kapatıldı, kalan
 ~110 MAJOR çoğunlukla jenerik "yöre yumuşatma" pattern. Paketi 16-25

@@ -1,5 +1,67 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 30 SONU (28 Nis 2026, oturum 29 aynı gün devamı), 8 commit,
+> Mini-rev verify-tracked kuyruk %100 KAPANIŞ + yeni audit metodoloji
+> (verify-untracked jenerik scaffold pattern) + 5 ardışık paket günü.**
+>
+> **Toplam 8 commit, 4 büyük başarı:**
+>
+> 1. **Verify-tracked MAJOR kuyruk %100 KAPANIŞ (paketi 24, 116/116)**:
+>    Mod K verify reports'tan tracked tüm 116 MAJOR slug kapatıldı.
+>    Paketi 24 = 6-tarif atypical kapanış paketi (kalan tüm verify-
+>    tracked MAJOR slug'ları). 1 KRİTİK TYPO (Köplenmiş→Közlenmiş),
+>    2 KRİTİK TUTARSIZLIK (#1 Adıyaman + #4 Siirt), 1 BOILERPLATE
+>    LEAK FIX (#2 Kayseri çörek cümlesi soğanlamada), 1 ŞERBET EKSIK
+>    FIX (#6 Tekirdağ revani pattern eksik).
+>
+> 2. **Yeni audit metodoloji: verify-untracked jenerik scaffold
+>    pattern**: `scripts/find-jenerik-scaffold.ts` ile prod'da 13
+>    boilerplate pattern içeren slug'ları tarama. 79 hit. Paketi 25-
+>    28 ile top 28 slug kapatıldı (79 → 51 kalan). Pattern: klasik
+>    kanonik kanıtlı tarifler + jenerik step 2+5+6+7 boilerplate +
+>    eksik klasik baharat/aromatik. Hızlı disiplin: agent yerine
+>    direkt klasik formul + step rewrite.
+>
+> 3. **5 ardışık mini-rev paketi (24-28) + 34 tarif kapatıldı**:
+>    Mini-rev kümülatif 156 → **190** (+34). Toplam 168 ingredient_
+>    add + 220 step replace + 4 amount change. Pattern oturum 29 ile
+>    aynı (idempotent + AuditLog + Cascade delete + transaction-
+>    based). 1 cuisine fix (#2 paketi 25 tavuklu-noodle tr→cn Asya
+>    Esintili).
+>
+> 4. **Lhci regression baseline + push disiplini + lint fix**: Oturum
+>    30 başında lhci 5/5 URL × 2 run = 10 run PASS (oturum 29 SONU
+>    sonrası baseline güvende). 8 commit prod'a push (toplu push 3
+>    commit + 4 commit + 1 docs kapanış). 2 lint fix paketi
+>    (`b833bf4` pattern + `eslint.config.mjs` logo/ ignore kalıcı
+>    çözüm). Pre-push 6 katman temiz tüm 8 commit.
+>
+> **Final state**: Mini-rev kapanan **190** (+34 oturum 30) + verify-
+> tracked kuyruk **0/116** (KAPANDI) + verify-untracked jenerik
+> scaffold kuyruğu **51/79** kalan + Prod **3508** tarif (sabit) +
+> Cuisine **41** (sabit) + Pre-push 6 katman temiz tüm 8 commit. Site
+> **LAUNCH-READY** (lhci baseline güvende, 0 P0 blocker).
+>
+> **Sıradaki oturum 31 öncelik**: (a) Mini-rev paketi 29 devam (~51
+> verify-untracked kuyruk + ek audit metodolojiler için potansiyel),
+> (b) Codex Mod A tetik (oturum 27-30'da yapılmadı, prod 3508 sabit),
+> (c) SEO landing batch 6 (kalan ~7 sayfa: ingiliz/polonya/küba/
+> avustralya + diet derinleştirme), (d) yeni blog yazıları (57 sabit
+> oturum 25'ten), (e) marketing/topluluk (launch sonrası, hala launch
+> acelesi yok).
+>
+> Commit özet (oturum 30, ters kronoloji, 8 commit): `800b5ac` paketi
+> 28 (1 BOILERPLATE LEAK + Levant/Fas/Japon/Mersin CI/İspanya/Fas/
+> Macar/modern karnabahar) + `58bb234` paketi 26 (Hatay tepsi oruk +
+> Peru tallarines + Hatay tepsi kebabı + Hint tarka dal + Türk döner +
+> Levant shawarma + UNESCO 2011 keşkek) + `6930804` lint logo/ ignore
+> + `0d2bdf7` paketi 27 (Hint biryani dum pukht + Türk şiş + Meksikan
+> fajita + Türk tencere + Japon tantanmen + Türk milföy + Şırnak
+> dolma) + `9d887db` paketi 25 (1 cuisine fix + 1 TUTARSIZLIK + 7
+> klasik kanonik baharat) + `876876e` paketi 24 (verify-tracked
+> kapanış 6 tarif, TYPO + 2 TUTARSIZLIK + BOILERPLATE LEAK + ŞERBET
+> EKSIK).
+
 > **Oturum 29 SONU (28 Nis 2026, oturum 28 aynı gün devamı), 9 commit,
 > MOD K v2 sonrası MİNİ-REV maraton + SEO landing batch 5 + Lhci
 > regression baseline günü.**

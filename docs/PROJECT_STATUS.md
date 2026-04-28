@@ -1,6 +1,104 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), 17+
+> **Oturum 31 SONU FINAL (28 Nis 2026, oturum 30 aynı gün devamı),
+> ~28 commit, ÇİFT KUYRUK %100 KAPANIŞ 🏁🏁 + Mod A v2 Quality-First
+> pipeline canlı + 5 GATE yeni audit metodoloji + 658 prod kayıt
+> iyileşme + 2 yeni blog + SEO batch 6+7 + Codex 40a-40d apply-ready
+> günü.**
+>
+> **~28 commit (oturum 31 son hali). 8 büyük başarı:**
+>
+> 1. **İki audit kuyruğu da %100 KAPANIŞ 🏁🏁**:
+>    a) Verify-tracked MAJOR (mod-k-verify-report-*.md): 0/116 (paketi
+>       24'te kapandı, oturum 30).
+>    b) Verify-untracked jenerik scaffold (find-jenerik-scaffold.ts
+>       21 pattern): 0/127 (paketi 25-43, 19 ardışık paket).
+>
+> 2. **15 ardışık mini-rev paketi (29-43) + 99 tarif**: Mini-rev
+>    kümülatif 190 → **289**. Oturum 30'da 13 pattern, oturum 31'de
+>    yeni 8 pattern (find-new-boilerplate-patterns.ts ile keşif).
+>    5 SLUG LEAK FIX + 1 'Baharatlar' jenerik REMOVE + 1 DATA ANOMALI
+>    + 1 DUPLICATE STEP FIX.
+>
+> 3. **Mod A v2 Quality-First brief + pipeline (oturum 31 yeni
+>    standart)**: 13 mod cycle ve ~1700 prod correction sonrası kök
+>    neden tespiti. v2 = 20 tarif × 5 paket (Na-Ne) + 7 GATE. docs/
+>    CODEX_BATCH_BRIEF.md §5.0.0 + GATE 1.5 false positive whitelist
+>    + KRİTİK REJECT pattern alt başlıklar. scripts/validate-mod-a-
+>    batch.ts kalıcı 7 GATE validation tool (auto git diff slug
+>    detect). İlk uygulama Codex Batch 40a-40d 60 tarif teslim, GATE
+>    1+4+5+6+7 PASS, 5+2 KRİTİK REJECT retrofit (afyon-ilibada,
+>    addis-ababa-shiro, artvin-pucuko, bartin-pumpum, lagos-egusi
+>    ilk; santiago-pastel + stockholm-skagen ikinci) doğru çözüldü.
+>
+> 4. **Yeni audit metodoloji 5 GATE (scripts/audit-recipe-quality.ts)**:
+>    - GATE A SÜRE: 393 hit (false positive yoğun, düşük öncelik)
+>    - GATE B ALLERGEN: **254 prod allergen ek (TIBBİ RİSK fix)** —
+>      KUSUYEMIS=68, SUT=60, GLUTEN=50, YUMURTA=37, SUSAM=18, DENIZ=
+>      10, HARDAL=8, SOYA=2, KEREVIZ=1. SUT için 'hindistan cevizi
+>      sütü' exclude rafine.
+>    - GATE C MACRO: 106→3 (KOKTEYL/ICECEK skip), 3 scale-up fix.
+>    - GATE D CUISINE: 606→0 (word boundary regex + compound exclude
+>      pattern + CUISINE_CODES uyumlu), 4 cuisine fix (fas, kuba x3).
+>    - GATE E FEATURED: %11.3→%10.0 (46 unfeatured, viewCount=0
+>      seçim).
+>
+> 5. **2 yeni blog yazısı (57 → 59)**:
+>    - 'Aromatik Sebze Tabanı: Mirepoix, Sofrito ve Dünya Mutfaklarının
+>      Başlangıç Üçlüsü' (mutfak-rehberi, 1262 kelime, Mod K essential
+>      keşifleriyle bağ).
+>    - 'Pirinç Çeşitleri Rehberi: Hangi Pilav, Risotto veya Sushi
+>      İçin Hangi Tip' (malzeme-tanima, 1351 kelime, baldo+osmancık+
+>      basmati+jasmine+arborio+koshihikari+glutinous 10 tip).
+>
+> 6. **SEO landing batch 6 + 7 (48 → 60 entry)**:
+>    - Batch 6 (commit `94949ed`): 7 yeni cuisine entry (polonya 80,
+>      kuba 72, avustralya 69, alman 12, endonezya 9, nijerya 6,
+>      etiyopya 6 tarif). Top SEO derinlik 34 → 41.
+>    - Batch 7 (commit `525620e`): 5 yeni cuisine (pakistan/tunus/
+>      iran/arjantin/avusturya) + 3 diet revize (vegan/vejetaryen/
+>      glutensiz). Top SEO derinlik 41 → 49.
+>    - UNESCO ICH/TSG/PGI tescilleri: kuskus 2020, harissa 2022,
+>      Wiener Schnitzel TSG 2009, Wiener Kaffeehauskultur 2011, asado
+>      UNESCO aday, ceviche 2023.
+>
+> 7. **Lhci regression baseline kontrolü (oturum 31'de 2 kez)**: 5
+>    URL × 2 run = 10 PASS (perf ≥0.85 + a11y ≥0.95 + bp ≥0.9 + seo
+>    ≥0.95). Mini-rev paketi 29-43 + SEO batch 6+7 + 2 blog + audit
+>    fix sonrası baseline güvende, regression yok.
+>
+> 8. **Kümülatif prod iyileşme (~658 kayıt)**: 99 mini-rev rewrite
+>    + 254 allergen retrofit + 4 cuisine fix + 3 macro fix + 46
+>    featured iniş + 2 blog + 12 SEO entry + brief polish + memory
+>    güncelleme.
+>
+> **Final state**: Mini-rev kümülatif **289** + verify-tracked
+> 0/116 + verify-untracked 0/127 + audit 5 GATE 4'ü ✅ (sadece A
+> meşru bekleme süreleri) + Prod **3508** tarif (sabit) + Cuisine
+> **41** (sabit) + 60 SEO entry + 59 blog + Pre-push 6 katman temiz.
+> Site **LAUNCH-READY**. Codex Mod A v2 Batch 40a-40d 60 tarif
+> apply-ready (40e bekleniyor, sonra 100 tarif tek seferde seed).
+>
+> **Sıradaki oturum 32 öncelik**: (a) Codex 40e teslim + tüm 80-100
+> tarif tek apply pipeline (dev seed + prod seed + AuditLog), (b)
+> Codex Batch 41a-41e tetik (Mod A v2 sonraki 100 tarif), (c) 3.
+> blog yazısı (çikolata bilimi, taze otlar, sebze pişirme), (d)
+> GATE A süre algoritma rafine (totalMinutes=prepMinutes+cookMinutes
+> + marine pattern exclude), (e) CI hata teşhisi (GITHUB_TOKEN ile
+> log çekme).
+>
+> **Oturum 31 commit özet (28 commit, ters kronoloji)**: `6446922`
+> GATE C macro + GATE E featured fix (3 macro + 46 unfeatured) +
+> `8191e7d` GATE D cuisine fix (606→0, 4 cuisine fix) + `4e48162`
+> blog 59 (Pirinç Çeşitleri) + brief polish (GATE 1.5 whitelist) +
+> `daa00d9` audit + allergen retrofit (254 ek, TIBBİ RİSK) +
+> `52aef31` validate-mod-a-batch.ts (7 GATE pipeline tool) +
+> `e400011` blog 58 (Aromatik Sebze Tabanı) + `05b5044` docs oturum
+> 31 SONU başlangıç + `94949ed` SEO batch 6 (7 cuisine) + `525620e`
+> SEO batch 7 (5 cuisine + 3 diet) + paketi 29-43 mini-rev (15
+> commit) + brief Mod A v2 + docs.
+
+> **Oturum 31 SONU başlangıç (28 Nis 2026, oturum 30 aynı gün devamı), 17+
 > commit, MİNİ-REV ÇİFT KUYRUK %100 KAPANIŞ 🏁🏁 + 15 ardışık paket
 > maraton + Mod A v2 brief güncelleme + lhci baseline + yeni audit
 > metodoloji ile yeni kuyruk %100 kapanış günü.**

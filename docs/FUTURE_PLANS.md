@@ -13,7 +13,61 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
-## ✅ Oturum 31 SONU (28 Nis 2026, oturum 30 aynı gün devamı), major kapanışlar
+## ✅ Oturum 31 SONU FINAL (28 Nis 2026, oturum 30 aynı gün devamı), major kapanışlar
+
+**Oturum 31 final başarı zinciri (~28 commit, 658 prod kayıt iyileşme):**
+
+1. **İki audit kuyruğu da %100 KAPANIŞ 🏁🏁** (verify-tracked
+   0/116 + verify-untracked jenerik scaffold 0/127, paketi 25-43
+   19 ardışık paket).
+
+2. **15 ardışık mini-rev paketi (29-43) + 99 tarif**: Mini-rev
+   kümülatif 190 → **289** (+99). 8 yeni boilerplate pattern keşfi
+   (find-new-boilerplate-patterns.ts). 5 SLUG LEAK + 1 'Baharatlar'
+   REMOVE + 1 DATA ANOMALI + 1 DUPLICATE STEP FIX.
+
+3. **Mod A v2 Quality-First pipeline**: 20 tarif × 5 paket + 7 GATE
+   brief güncelleme (CODEX_BATCH_BRIEF.md §5.0.0 + GATE 1.5
+   whitelist). Validate tool (scripts/validate-mod-a-batch.ts auto
+   git diff slug detect). İlk uygulama: Codex Batch 40a-40d 60 tarif
+   teslim, 5+2 KRİTİK REJECT retrofit doğru çözüldü, 60 tarif
+   apply-ready.
+
+4. **Yeni audit metodoloji 5 GATE (scripts/audit-recipe-quality.ts)**:
+   GATE B 254 prod allergen ek (TIBBİ RİSK fix); GATE C 3 macro
+   scale-up; GATE D 4 cuisine fix (606→0 word boundary); GATE E 46
+   featured iniş (%11.3→%10.0). Toplam 307 prod quality fix.
+
+5. **2 yeni blog yazısı (57 → 59)**: Aromatik Sebze Tabanı + Pirinç
+   Çeşitleri Rehberi. Mod K essential keşifleriyle bağ.
+
+6. **SEO landing batch 6 + 7 (48 → 60 entry)**: 12 yeni cuisine +
+   3 diet revize. Top SEO derinlik 34 → 49 cuisine kapsama.
+
+7. **Lhci 10/10 PASS (2 kez kontrol)**: oturum 31 boyunca 28 commit
+   sonrası baseline regression yok.
+
+**Critical essential keşifler oturum 31 boyunca (~25)**: Levant
+musakhan-bowl soğan, Sichuan denge toz şeker+susam yağı, Peru
+sofrito kimyon, K.Maraş Maraş biberi, Welsh rarebit Worcestershire,
+Rus syrniki toz şeker (smetana servis), Edirne saray kuş üzümü+badem
++tarçın, iç pilav kuş üzümü, US BBQ paprika rub, tortilla española
+sarımsak, Hatay zahter sumak+nane, Kilis kuru nane, Trabzon dible
+sarımsak, Şanlıurfa demirhindi limon suyu+toz şeker, Macar túrós
+batyu vanilya+limon kabuğu, Kars otlu kete lor peyniri, Erzurum su
+böreği süt+tuz, Brezilya pamonha hindistan cevizi sütü, Norveç
+rømmegrøt tereyağı (smjør), Avustralya brunch frenk soğanı, Çin tea
+egg karanfil+koyu soya, Polonya placki soğan, mısır ekmeği kabartma
+tozu, İspanya tortilla con cebolla soğan, Welsh rarebit bake fırın
+varyantı.
+
+**Push disiplini**: ~28 commit, batch'lerle (6+3+1+2+1+2+2+1+1+1+1+
+1+...). Pre-push 6 katman temiz tüm commit. 1 em-dash guard
+yakaladı (paketi 43 comment'te düzeltildi).
+
+---
+
+## ✅ Oturum 31 SONU başlangıç (oturum 30 aynı gün devamı), major kapanışlar
 
 **İki audit kuyruğu da %100 KAPANIŞ 🏁🏁**:
 a) **Verify-tracked MAJOR kuyruk** (mod-k-verify-report-*.md): 0/116

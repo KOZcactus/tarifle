@@ -1,129 +1,207 @@
 Merhaba, Tarifle projesinde devam ediyoruz. Yeni session olduğu için
 başlamadan önce projeye iyice hâkim olman lazım. Bir önceki oturumda
-(28 Nis 2026, oturum 30, oturum 29'un aynı günü devamı) **8 commit'lik
-mini-rev verify-tracked kuyruk %100 KAPANIŞ + yeni audit metodoloji
-günü** oldu: **Verify-tracked MAJOR kuyruk %100 KAPANDI (116/116)** 🎉,
-paketi 24 atypical 6-tarif kapanış paketi; **Yeni audit metodoloji**
-`scripts/find-jenerik-scaffold.ts` ile prod'da 13 boilerplate pattern
-tarama (79 hit, paketi 25-28 ile top 28 kapatıldı, 79→51 kalan); **5
-ardışık mini-rev paketi (24-28) ile 34 tarif kapatıldı** (kümülatif
-**190**, oturum 27 SONU 100 → oturum 29 SONU 156 → oturum 30 SONU
-**190**); **1 KRİTİK TYPO** (paketi 24 Köplenmiş→Közlenmiş, kapya biber
-köz), **4 KRİTİK TUTARSIZLIK** (paketi 24 Adıyaman+Siirt, paketi 25
-Vietnam noodle TUTARSIZLIK + cuisine tr→cn fix, paketi 28 İspanya
-sandviç boilerplate), **4 BOILERPLATE LEAK FIX**, **1 ŞERBET EKSIK
-FIX** (paketi 24 Tekirdağ revani pattern eksik), **1 KIBE-MUMBAR
-FULL** pattern. **Lhci regression baseline 5/5 URL × 2 run = 10 run
-PASS** (oturum 30 başında, oturum 29 SONU sonrası baseline güvende).
-**Push disiplini + lint fix kalıcı**: 8 commit prod'a push, eslint.
-config.mjs'e logo/ ignore eklendi (kalıcı çözüm). Prod tarif **3508**
-(sabit). Cuisine **41** (sabit). Site **LAUNCH-READY**.
+(28 Nis 2026, oturum 31, oturum 30'un aynı günü devamı) **~28
+commit'lik ÇİFT KUYRUK %100 KAPANIŞ + Mod A v2 Quality-First pipeline
+canlı + 5 GATE yeni audit metodoloji + 658 prod kayıt iyileşme +
+2 yeni blog + SEO batch 6+7 + Codex Batch 40a-40d apply-ready
+günü** oldu.
 
-**Oturum 30 kritik sonuçlar (önemli, ilk oku):**
+**Oturum 31 SONU FINAL kritik sonuçlar (önemli, ilk oku):**
 
-1) **Verify-tracked MAJOR kuyruk %100 KAPANIŞ (116/116)**. Paketi 24
-   (commit `876876e`) atypical 6-tarif kapanış paketi (verify reports'
-   tan kalan tüm tracked MAJOR slug). Verify-tracked kuyruk
-   `mod-k-verify-report-*.md` dosyalarındaki MAJOR_ISSUE entry'leri.
-   1 KRİTİK TYPO (#1 Adıyaman 'Köplenmiş'→'Közlenmiş'), 2 KRİTİK
-   TUTARSIZLIK (#1 Adıyaman sarımsak/yoğurt + #4 Siirt tuz/baharat
-   listede yok), 1 BOILERPLATE LEAK FIX (#2 Kayseri 'soğursa gevrek
-   kenarlar yumuşar' çörek cümlesi soğanlama tarif), 1 ŞERBET EKSIK
-   FIX (#6 Tekirdağ kesme tatlısı şekersiz hamur + şerbetsiz, klasik
-   revani pattern eksikti).
+1) **İki audit kuyruğu da %100 KAPANIŞ 🏁🏁**:
+   - Verify-tracked MAJOR (mod-k-verify-report-*.md): 0/116 (paketi
+     24'te kapandı, oturum 30).
+   - Verify-untracked jenerik scaffold (find-jenerik-scaffold.ts
+     **21 pattern**): 0/127 (paketi 25-43, 19 ardışık paket). Oturum
+     30'da 13 pattern, oturum 31'de **8 yeni pattern** keşfedildi
+     (find-new-boilerplate-patterns.ts ile): "ılık tabaklara alın
+     yanında çayla" (25 hit), "son dokusunu kontrol edip tabaklayın"
+     (21), "ritim bozulmasın" (16), "gluten gevşesin" (15), "akışı
+     için" slug-leak indirect (9), "sıcak servis kıvamı korur" (9),
+     "sıcak adımlarda arama yapılmasın" (6), "akışında kullanılacak
+     tava" (2).
 
-2) **Yeni audit metodoloji: `scripts/find-jenerik-scaffold.ts`**.
-   Verify-tracked kuyruk %100 kapandığı için yeni MAJOR'ları yakalamak
-   için scriptte 13 boilerplate pattern arama (paketi 16-23'te
-   öğrendiğimiz: 'kalan malzemeleri ölçün ve kesilecek', 'son tuz yağ
-   ve ekşi dengesini', 'tabakta su salıp dokusu kaymasın', 'tavayı
-   orta ateşte 2 dakika ısıtın', 'sosunu veya bağlayıcı harcını ayrı
-   kapta', 'şekil verecek kıvama gelene kadar', 'tüm malzemeyi servis
-   öncesi hazırlayın', 'sıvılarını ve aromatiklerini dengeli biçimde
-   karıştırın', 'kuru ve yaş malzemeleri ayırın', 'soğursa gevrek
-   kenarlar yumuşar', 'peynirli doku sertleşir', 'tuz, baharat ve ekşi
-   malzemeyi ayrı kapta', 'servis tabağını ve yan malzemeleri
-   hazırlayın'). 79 slug hit (>=2 pattern). Top 28 paketi 25-28'de
-   kapatıldı.
+2) **15 ardışık mini-rev paketi (29-43) + 99 tarif**: Mini-rev
+   kümülatif 190 → **289** (oturum 30 SONU 190 → oturum 31 SONU
+   **289**, +99). 5 SLUG LEAK FIX + 1 jenerik 'Baharatlar' REMOVE +
+   1 DATA ANOMALI ('Su 0 amount') + 1 DUPLICATE STEP FIX (paketi
+   41 tulumlu-lor 'Karabiber serpip' iki defa). ~25 kritik essential
+   keşif: Levant musakhan-bowl SOĞAN, Sichuan denge TOZ ŞEKER+SUSAM
+   YAĞI, Peru sofrito KIMYON, K.Maraş MARAŞ BİBERİ, Welsh rarebit
+   WORCESTERSHIRE, Rus syrniki TOZ ŞEKER+SMETANA, Edirne saray
+   KUŞ ÜZÜMÜ+BADEM+TARÇIN, US BBQ PAPRIKA rub, tortilla con cebolla
+   SOĞAN, Hatay zahter SUMAK+NANE, Kilis kuru NANE, Trabzon dible
+   SARIMSAK, Macar túrós batyu VANILYA+LIMON KABUĞU, Kars otlu kete
+   LOR, Erzurum su böreği SÜT+TUZ, Brezilya pamonha HİNDİSTAN CEVİZİ
+   SÜTÜ, Norveç rømmegrøt TEREYAĞI/smjør, Avustralya brunch FRENK
+   SOĞANI, Çin tea egg KARANFİL+KOYU SOYA, Polonya placki SOĞAN,
+   mısır ekmeği KABARTMA TOZU.
 
-3) **Mini-rev paketi 25** (commit `9d887db`). Verify-untracked top
-   1-7 (sezar wrap + tavuklu noodle + sultan kebabı + taze fasulye
-   bulgur + adıyaman tepsi oruk + tay fesleğenli + ingiliz pie). 1
-   KRİTİK CUISINE FIX (#2 tavuklu-noodle: cuisine 'tr' YANLIŞ Asya
-   stir-fry, soya+susam yağı = Çin/Tay, tr→cn + title 'Asya Esintili
-   Tavuklu Noodle' disambiguate). 1 KRİTİK TUTARSIZLIK (#2 servingS.
-   'taze soğan' listede yok). 32 ingredient_add + 41 step replace.
-   Plus 1 lint fix `6930804`: logo/ klasörü 5 .cjs dosya require()
-   error → `eslint.config.mjs`'e `logo/**` ignore kalıcı eklendi.
+3) **Mod A v2 Quality-First brief + pipeline (oturum 31 yeni
+   ZORUNLU default)**: 13 mod cycle (B/C/D/E/F/FA/G/H/I/IA/IB/M/K)
+   ve ~1700 prod correction sonrası kök neden tespiti: Mod A v1
+   (50+50 tarif) hız > kalite, retrofit downstream'a aktı. v2 = inline
+   gate, retrofit yerine doğum-anında doğru. Format: **20 tarif × 5
+   paket** (Na/Nb/Nc/Nd/Ne, toplam 100 tarif) + **7 GATE**:
+   - GATE 1 UNIQUENESS (slug + cuisine 41 sabit + title semantik
+     benzerlik)
+   - GATE 1.5 KRİTİK REJECT pattern + false positive whitelist
+     (oturum 31 Batch 40a/40b dersi, brief §5.0.0 alt başlık)
+   - GATE 2 KAYNAK (2-3 web kaynak + Kültür Portalı/CI yöre zorunlu)
+   - GATE 3 KLASIK FORMUL (essential ingredients, ~25 örnek)
+   - GATE 4 STEP↔INGREDIENT MATCH
+   - GATE 5 ANTI-BOILERPLATE 21 pattern blacklist
+   - GATE 6 SLUG-LEAK YASAĞI
+   - GATE 7 EM-DASH YASAĞI
 
-4) **Mini-rev paketi 26** (commit `58bb234`). Verify-untracked top
-   7-14 (Hatay tepsi oruk + Peru tallarines verdes + Hatay tepsi
-   kebabı + Hint tarka dal + Türk tavuk döner + Levant shawarma +
-   UNESCO 2011 keşkek). 0 cuisine fix, 0 title değişimi (7 klasik
-   kimlik kanıtlı korunur). 29 ingredient_add + 38 step replace
-   klasik kanonik baharat tamamlama (Hatay tepsi oruk irmik+isot+
-   kimyon, Peru ají amarillo, Levant shawarma 7 baharat).
+   docs/CODEX_BATCH_BRIEF.md §5.0.0 yeni alt başlık (mevcut §5.0+
+   tüm kurallar geçerli). scripts/validate-mod-a-batch.ts kalıcı
+   pipeline tool (auto git diff slug detect, 7 GATE check). İlk
+   uygulama: Codex Batch 40a-40d 60 tarif teslim, 5+2 KRİTİK
+   REJECT retrofit doğru çözüldü:
+   - Batch 40a 5 retrofit: afyon-ilibada-dolmasi → kilis-gerebic;
+     addis-ababa-shiro-wat → atakilt-wat-sebze-yahni; artvin-pucuko
+     → isparta-zulbiye; bartin-pumpum-corbasi → kilis-mikla; lagos-
+     egusi-corbasi → lagos-moi-moi.
+   - Batch 40b 2 retrofit: santiago-pastel-de-choclo → santiago-
+     humitas; stockholm-toast-skagen → stockholm-gubbrora.
 
-5) **Mini-rev paketi 27** (commit `0d2bdf7`). Verify-untracked top
-   15-21 (Hint biryani dum pukht + Türk şiş + Meksikan fajita + Türk
-   tencere + Japon tantanmen + Türk milföy + Şırnak dolma). 28
-   ingredient_add + 38 step replace klasik kanonik (Biryani whole
-   spices tarçın+karanfil+kakule, fajita Meksikan sarımsak+oregano).
+   60 tarif (40a-40d) GATE 1+4+5+6+7 PASS, GATE 1.5 hit'leri brief
+   whitelist'e uyuyor (false positive). **40e bekleniyor**, sonra
+   100 tarif tek seferde apply (dev seed + prod seed).
 
-6) **Mini-rev paketi 28** (commit `800b5ac`). Verify-untracked top
-   22-28 (Levant/Fas shakshuka + Japon katsu + Mersin Tantunisi CI
-   211 + İspanya tortilla + Fas tagine + Macar hortobagyi + modern
-   karnabahar). 1 BOILERPLATE LEAK FIX (#4 İspanya sandviç çörek
-   cümlesi). 28 ingredient_add + 37 step replace.
+4) **Yeni audit metodoloji 5 GATE (scripts/audit-recipe-quality.ts)**:
+   - **GATE A SÜRE** (totalMinutes vs step süreleri): 393 hit, çoğu
+     meşru bekleme (marine 8 saat) totalMinutes'a dahil ama
+     timerSeconds'a değil. False positive yoğun. Düşük öncelik,
+     algoritma rafine sonraki oturum.
+   - **GATE B ALLERGEN** (step text vs allergen array): 198 rafine
+     hit. **254 prod allergen ek (TIBBİ RİSK fix)** uygulandı.
+     KUSUYEMIS=68, SUT=60, GLUTEN=50, YUMURTA=37, SUSAM=18, DENIZ_
+     URUNLERI=10, HARDAL=8, SOYA=2, KEREVIZ=1. SUT için 'hindistan
+     cevizi sütü' exclude rafine. OVER-flag > UNDER-flag tıbbi etik
+     prensibi.
+   - **GATE C MACRO** (4P+4C+9F vs averageCalories): 106 hit →
+     **3 fix** (KOKTEYL/ICECEK skip alkol kcal formülde değil).
+     Scale-up: yaglama-corbasi-kayseri (1.94), yesil-soganli-omlet-
+     vietnam (1.33), zingil-tatlisi-siirt (1.30). AuditLog action
+     'MACRO_FIX'.
+   - **GATE D CUISINE** (slug pattern vs cuisine code): **606 → 0**
+     (word boundary regex `(^|-)hint(-|$)` + compound exclude
+     'hindistan-cevizi'/'sopa-de-lima'/'tarta-de-santiago' + CUISINE_
+     CODES uyumlu se umbrella). 4 cuisine fix: zeytinli-labneli-fas
+     'me'→'ma', 3 kuba 'mx'→'cu'. AuditLog 'CUISINE_FIX'.
+   - **GATE E FEATURED** (>%10 brief ihlal): %11.3 → **%10.0**.
+     46 prod unfeatured (viewCount=0 + en eski updatedAt). AuditLog
+     'FEATURED_OVERFLOW_FIX'.
 
-**Oturum 30 önemli mimari/tooling değişiklikler:**
+5) **2 yeni blog yazısı (57 → 59)**:
+   - Blog 58 'Aromatik Sebze Tabanı: Mirepoix, Sofrito ve Dünya
+     Mutfaklarının Başlangıç Üçlüsü' (mutfak-rehberi, 1262 kelime,
+     8 H2 + Kaynaklar). 8 farklı mutfaktan üçlü karşılaştırma
+     (mirepoix FR, sofrito ES/Latin/Peru, soffritto IT, holy trinity
+     Cajun, suppengrün DE, włoszczyzna PL, Türk başlangıç). Mod K
+     essential keşifleriyle bağ.
+   - Blog 59 'Pirinç Çeşitleri Rehberi: Hangi Pilav, Risotto veya
+     Sushi İçin Hangi Tip' (malzeme-tanima, 1351 kelime). 10 pirinç
+     tipi (baldo, osmancık, kırmızı, basmati, jasmine, arborio,
+     carnaroli, vialone nano, koshihikari/calrose, glutinous).
+     Pişirme oran/süre tablosu + 12 yemek-pirinç önerisi.
 
-- **scripts/find-jenerik-scaffold.ts** (yeni): kalıcı audit tool,
-  prod'da 13 boilerplate pattern içeren slug tarama. Yeni paketler
-  için pattern.
-- **eslint.config.mjs** logo/ ignore: 5 yeni .cjs dosya için her
-  birine eslint-disable yorumu yerine config'e tek satır kalıcı
-  ignore eklendi (`logo/**`).
-- **scripts/fix-mini-rev-batch-{24..28}.ts**: 5 yeni paketi script'i,
-  paketi 23 ile aynı pattern (idempotent + AuditLog `MOD_K_MANUAL_REV`
-  + Cascade delete + transaction-based).
+6) **SEO landing batch 6 + 7 (48 → 60 entry)**:
+   - Batch 6 (commit `94949ed`): 7 yeni cuisine (polonya 80, kuba
+     72, avustralya 69, alman 12, endonezya 9, nijerya 6, etiyopya
+     6 tarif). Top SEO derinlik 34 → 41.
+   - Batch 7 (commit `525620e`): 5 yeni cuisine (pakistan, tunus,
+     iran, arjantin, avusturya) + 3 diet revize (vegan, vejetaryen,
+     glutensiz). Top SEO derinlik 41 → 49.
+   - UNESCO ICH/TSG/PGI tescilleri: kuskus 2020, harissa 2022,
+     Wiener Schnitzel TSG 2009, Wiener Kaffeehauskultur 2011, asado
+     UNESCO aday, ceviche 2023.
 
-**Oturum 31+ ilk önce yapılması gerekenler (öncelik sırası):**
+7) **Lhci regression baseline kontrolü (oturum 31'de 2 kez)**: 5
+   URL × 2 run = 10 PASS (perf ≥0.85 + a11y ≥0.95 + bp ≥0.9 + seo
+   ≥0.95). Mini-rev paketi 29-43 + SEO + 2 blog + audit fix sonrası
+   baseline güvende.
 
-1. **Mini-rev paketi 29+ (~51 verify-untracked kuyruk)**. Paketi 25-
-   28 disiplini devam: top 29-35 + 36-42 + ... pattern script
-   `scripts/fix-mini-rev-batch-28.ts` referans. Audit script
-   `scripts/find-jenerik-scaffold.ts` ile yeni adaylar yakala.
-   Verify-untracked kuyruk 51 → 0 tahmini 7-8 paket.
+8) **Kümülatif prod iyileşme (~658 kayıt)**: 99 mini-rev rewrite +
+   254 allergen retrofit + 4 cuisine fix + 3 macro fix + 46 featured
+   iniş + 2 blog + 12 SEO entry + brief polish + memory yeni.
 
-2. **Mod A. Batch (yeni tarif)**. Oturum 27-30'da Mod A yapılmadı,
-   prod 3508'de sabit. Brief §5, tetik docs/CODEX_NEW_CHAT_INTRO.md
-   Bölüm 2.
+**Oturum 31 önemli mimari/tooling değişiklikler:**
 
-3. **SEO landing batch 6 (top 34 → top 41, 7 kalan)**. Adaylar:
-   ingiliz (40+), polonya, avustralya (cuisine'lar) + diet/sutsuz,
-   diet/alkolsuz derinleştirme. Pattern script `scripts/seo-revise-
-   batch5.mjs`.
+- **scripts/find-new-boilerplate-patterns.ts** (yeni, oturum 31):
+  audit pattern keşif tool, prod step text'lerden yeni boilerplate
+  cümleleri yakalar. 8 yeni pattern bulundu, find-jenerik-scaffold.
+  ts'e kalıcı eklendi (13 → 21 pattern).
+- **scripts/audit-recipe-quality.ts** (yeni, oturum 31): 5 GATE
+  sistematik kalite audit (süre + allergen + macro + cuisine +
+  featured). Word boundary regex + compound exclude pattern + tip-
+  bazlı tolerans rafine.
+- **scripts/validate-mod-a-batch.ts** (yeni, oturum 31): Mod A v2
+  Codex teslim sonrası 7 GATE validation. Auto git diff scripts/
+  seed-recipes.ts → slug listesi detect, 7 GATE çalıştır.
+- **scripts/fix-mini-rev-batch-{29..43}.ts**: 15 yeni mini-rev paketi
+  (idempotent + AuditLog MOD_K_MANUAL_REV).
+- **scripts/fix-allergen-mismatch.ts**: 254 prod allergen retrofit
+  (AuditLog 'ALLERGEN_RETROFIT').
+- **scripts/fix-cuisine-mismatch.ts**: 4 cuisine fix (AuditLog
+  'CUISINE_FIX').
+- **scripts/fix-macro-mismatch.ts**: 3 macro scale-up fix (AuditLog
+  'MACRO_FIX').
+- **scripts/fix-featured-overflow.ts**: 46 unfeatured (AuditLog
+  'FEATURED_OVERFLOW_FIX').
+- **scripts/seo-revise-batch{6,7}.mjs**: 12 yeni cuisine + 3 diet
+  revize.
+- **content/blog/aromatik-sebze-tabani-mirepoix-sofrito-dunya-
+  mutfaklari.mdx** + **pirinc-cesitleri-rehberi-hangi-pilav-icin-
+  hangi-tip.mdx**: 2 yeni blog.
+- **docs/CODEX_BATCH_BRIEF.md** §5.0.0 yeni alt başlık + GATE 1.5
+  whitelist + KRİTİK REJECT pattern (oturum 31 Mod A v2 dersi).
 
-4. **Yeni blog yazıları** (57 sabit oturum 25'ten). Kategori dengesi:
-   pisirme-teknikleri (16) + malzeme-tanima (16) + mutfak-rehberi (18).
+**Oturum 32+ ilk önce yapılması gerekenler (öncelik sırası):**
 
-5. **Cloud TTS API entegrasyonu (P2 future)**. Windows OS-level TTS
-   limitation: kadın TR voice yüklü değilse erkek fallback. UX
-   iyileştirme: Azure / Google Cloud TTS veya UI uyarısı.
+1. **Codex Mod A v2 Batch 40e teslim bekleme + apply pipeline**: 40e
+   geldiğinde 80-100 tarif tek seferde apply (dev seed + prod seed +
+   AuditLog). scripts/validate-mod-a-batch.ts ile son tüm 100 tarif
+   final 7 GATE check.
 
-**Codex komutları (oturum 30 sonu güncel):**
+2. **Codex Batch 41a-41e tetik (Mod A v2 sonraki 100 tarif)**.
+   Brief §5.0.0 default scope, Codex tek mesajla "Mod A v2. Batch
+   41a-41e" tetiği yeterli.
 
-- `Mod A. Batch Na/Nb.` → Yeni tarif. Brief §5, tetik docs/
-  CODEX_NEW_CHAT_INTRO.md Bölüm 2. Oturum 27-30'da yapılmadı, prod
-  3508'de sabit. **Aktif kalan tek Codex modu.**
-- `Mod B/C/D/E/F/FA/G/H/I/IA/IB/M/K` → Hepsi KAPANDI (Mod K oturum
-  28'de %100 kapandı; mini-rev paketleri Mod K'nın manuel uzantısı,
-  Codex işi değil).
-- Tüm modlarda em-dash (— U+2014) YASAK (`AGENTS.md`). Yerine
-  virgül, noktalı virgül, nokta, parantez, iki nokta.
+3. **3. blog yazısı**: çikolata bilimi (kakao yüzdesi, temperleme,
+   eritme) veya taze ot rehberi (maydanoz/kişniş/dereotu/fesleğen/
+   kekik/biberiye) veya sebze pişirme teknikleri (blanching/glazing/
+   roasting/braising). Mevcut 59 blog, kategori dengesi pisirme-
+   teknikleri (16) + malzeme-tanima (17) + mutfak-rehberi (19).
 
-**Pre-push 6 katman (stable, oturum 30'da tüm 8 commit'te temiz):**
+4. **GATE A süre algoritma rafine**: totalMinutes = prepMinutes +
+   cookMinutes formülü kontrol + marine/bekleme step pattern exclude.
+   Mevcut 393 hit'in büyük kısmı false positive (meşru bekleme),
+   rafine sonrası ~30-50 gerçek REJECT yakalanabilir. ROI orta.
+
+5. **CI hata teşhisi**: GitHub Actions'ta failed run'lar var
+   (oturum 30/31 kontrol edildi, lokal her şey yeşil). GITHUB_TOKEN
+   ile API'den log çekme veya gh CLI kurma.
+
+6. **Cloud TTS API entegrasyonu (P2 future)**: Windows OS-level TTS
+   limitation, kadın TR voice yüklü değilse erkek fallback.
+
+**Codex komutları (oturum 31 SONU güncel):**
+
+- **Mod A v2. Batch Na/Nb/Nc/Nd/Ne.** (örn. `Mod A v2. Batch 41a-
+  41e.`) → Yeni tarif Quality-First default. **20 tarif × 5 paket
+  = 100 tarif, 7 GATE zorunlu**. Codex 5-6 saat ardışık çalışır,
+  her paket sonrası "Batch Na hazır, GATE 1-7 PASS" der. scripts/
+  validate-mod-a-batch.ts otomatik validation. Brief §5.0.0.
+- Mod B/C/D/E/F/FA/G/H/I/IA/IB/M/K → **HEPSI KAPANDI**, sadece
+  Mod A v2 aktif.
+- Tüm modlarda em-dash (— U+2014) ve en-dash (– U+2013) YASAK
+  (AGENTS.md). Yerine virgül, noktalı virgül, nokta, parantez,
+  iki nokta.
+
+**Pre-push 6 katman (oturum 31 boyunca tüm 28 commit'te temiz):**
 
 1) lint (ESLint) - logo/ klasörü ignore (oturum 30 kalıcı fix)
 2) content:validate (Zod, staple severity WARNING)
@@ -132,7 +210,9 @@ config.mjs'e logo/ ignore eklendi (kalıcı çözüm). Prod tarif **3508**
 5) allergen source guard
 6) tsc --noEmit --pretty false
 
-Bypass: `git push --no-verify` (sadece pre-existing drift için).
+Oturum 31'de 1 em-dash guard yakaladı (paketi 43 comment'te '—'),
+hızlı düzeltme + tekrar push. Pattern: error tespit + fix + commit
++ push tekrar.
 
 **Em-dash yasağı istisnaları (mevcut em-dash'lerin temizlik dışı):**
 
@@ -151,8 +231,8 @@ brand-voice, data, finance, marketing, bio-research, cowork-plugin-
 management. MCP server tool'ları (calendar, Claude Preview, Claude
 in Chrome, mcp-registry) ve deferred tool'lar (ToolSearch ile
 yüklenebilir) mevcut. Browser preview MCP UX test için kullanılabilir.
-Plus WebSearch web research (oturum 29'da paralel agent disiplini,
-oturum 30'da klasik kanonik tarifler için agent yerine direkt klasik
+Plus WebSearch web research (oturum 29-30'da paralel agent disiplini,
+oturum 31'de klasik kanonik tarifler için agent yerine direkt klasik
 formul yeterli oldu, hız avantajı). Cloudflare DNS, Sentry API token
 .env.local'de mevcut.
 
@@ -173,85 +253,88 @@ tarifle\memory\MEMORY.md` ve link verdiği TÜM dosyaları:
   acelesi YOK)
 - feedback_output_format.md (her mesaj sonu 3 blok: Özet + Sonuç +
   Sıradaki işler, önerim ile)
-- **feedback_batch_push.md** (oturum 29 yeni; 3-4 bağımsız iş paketi
-  commit'i topla → tek push, Vercel build quota tasarrufu, acil push
-  gerektiğinde net uyarı: "⚠️ Bu işlem kesin push gerektiriyor, önerim
-  hemen push yapalım")
+- feedback_batch_push.md (3-4 bağımsız iş paketi commit'i topla →
+  tek push, Vercel build quota tasarrufu)
+- **feedback_codex_mod_a_v2.md** (oturum 31 yeni; Codex Mod A v2
+  7 GATE pipeline workflow, GATE 1.5 false positive whitelist +
+  KRİTİK REJECT pattern, validate-mod-a-batch.ts referansı)
 - reference_sentry_api.md (.env.local'de SENTRY_AUTH_TOKEN)
 - reference_codex_workflow.md (Codex aynı klasörü kullanır)
 - reference_tarif_listesi.md (docs/tarif-listesi.txt alfabetik)
 
 **Proje docs'larının tamamı .md, MUTLAKA oku (sıra önemli):**
 
-- **docs/PROJECT_STATUS.md** → header oturum 30 SONU güncel + 8
-  commit + 4 büyük başarı + verify-tracked %100 KAPANIŞ + yeni audit
-  metodoloji + 5 paketi detay. İlk 200 satır yeterli.
-- **docs/CODEX_BATCH_BRIEF.md** (~3700+ satır) → Mod K (KAPANDI)
-  + Mod A aktif. Mini-rev paketi pattern brief §20.12'de.
-- **docs/CODEX_NEW_CHAT_INTRO.md** → Mod A aktif tek mod.
-- **docs/TARIFLE_ULTIMATE_PLAN.md** → single source of truth, ana
-  yapı oturum 15'ten değişmedi.
+- **docs/PROJECT_STATUS.md** → header oturum 31 SONU FINAL güncel
+  + 28 commit + 8 büyük başarı + iki kuyruk %100 KAPANIŞ + Mod A
+  v2 pipeline + 5 GATE audit + 2 blog + SEO 6+7 + Codex 40a-40d
+  apply-ready. İlk 200 satır yeterli.
+- **docs/CODEX_BATCH_BRIEF.md** → Mod A v2 §5.0.0 + GATE 1.5
+  whitelist + KRİTİK REJECT pattern (oturum 31 yeni alt başlıklar).
+  Mod B/C/D/E/F/FA/G/H/I/IA/IB/M/K HEPSI KAPALI.
+- **docs/CODEX_NEW_CHAT_INTRO.md** → Mod A v2 aktif tek mod.
+- **docs/TARIFLE_ULTIMATE_PLAN.md** → single source of truth.
 - **docs/DIET_SCORE_PLAN.md** → 14 bölüm, USDA coverage %99.97.
-- **docs/FUTURE_PLANS.md** → güncel: Oturum 30 SONU özet + ~51
-  verify-untracked kuyruk + SEO 7 kalan + Mod A devam + paketi 29+.
+- **docs/FUTURE_PLANS.md** → Oturum 31 SONU FINAL özet + 40e
+  bekleme + 41a-41e tetik + 3. blog + GATE A rafine + CI teşhis.
 - **docs/TEST_PLAN.md** → 11 bölüm test stratejisi.
 - **docs/BLOG_CONTENT_GUIDE.md** → editöryal standart + table format.
-- **docs/CHANGELOG.md** → kategorik akış, oturum 30 SONU header.
+- **docs/CHANGELOG.md** → kategorik akış, oturum 31 SONU FINAL header.
 - **docs/all-recipe-titles.md** → cuisine+type grup, Mod I baz.
-- **docs/tarif-listesi.txt** → 3508 tarif alfabetik flat.
-- **docs/mod-k-batch-{1a-36a + 22b/24b}.json** → 71 sub-batch arşivi.
-- **docs/nutrition-anomaly-report.md** → anomali raporu.
-- **scripts/fix-mini-rev-batch-{1..28}.ts** → 28 mini-rev paketi
-  script (idempotent + AuditLog + Cascade delete + ingredients_amount
-  _change). Yeni paketi 29 için pattern olarak kullan
-  (scripts/fix-mini-rev-batch-28.ts en güncel referans).
-- **scripts/find-jenerik-scaffold.ts** (oturum 30 yeni) → verify-
-  untracked MAJOR audit tool, kalıcı.
-- **scripts/find-zero-match.ts** (oturum 28) → nutrition matchedRatio=0
-  teşhis tool.
+- **docs/tarif-listesi.txt** → 3508 tarif alfabetik flat (sabit
+  oturum 31 boyunca, 40a-40d apply edilmedi yet).
+- **scripts/fix-mini-rev-batch-{1..43}.ts** → 43 mini-rev paketi
+  script. Yeni paketi 44 için pattern paketi 43 referans.
+- **scripts/find-jenerik-scaffold.ts** → 21 pattern audit tool
+  (oturum 31 8 yeni pattern eklendi).
+- **scripts/find-new-boilerplate-patterns.ts** (oturum 31 yeni) →
+  audit pattern keşif tool, yeni boilerplate cümleleri yakalar.
+- **scripts/audit-recipe-quality.ts** (oturum 31 yeni) → 5 GATE
+  sistematik kalite audit.
+- **scripts/validate-mod-a-batch.ts** (oturum 31 yeni) → Mod A v2
+  7 GATE validation pipeline.
+- **scripts/fix-{allergen,cuisine,macro,featured}-mismatch.ts**
+  (oturum 31 yeni) → 4 GATE fix scripts.
 
 **Projenin özeti:** Tarifle (tarifle.app), Türkçe tarif platformu.
 Next.js 16 + Prisma 7 + Vercel-managed Neon PostgreSQL + Vercel
 Pro + Cloudflare DNS + Sentry + Cloudinary + Resend. GitHub repo
-PRIVATE (KOZcactus/tarifle). Codex ChatGPT Max üzerinden Mod A ile
-çalışıyor (B/C/D/E/F/FA/G/H/I/IA/IB/M/K HEPSI KAPANDI).
+PRIVATE (KOZcactus/tarifle). Codex ChatGPT Max üzerinden Mod A v2
+ile çalışıyor (B/C/D/E/F/FA/G/H/I/IA/IB/M/K HEPSI KAPANDI).
 
-**Prod skor kartı (oturum 30 SONU, son commit `800b5ac`):**
+**Prod skor kartı (oturum 31 SONU FINAL):**
 
-- 3508 tarif prod (sabit, oturum 30'da silme yok)
-- Mini-rev kümülatif **190** tarif (paketi 1-28; 100 (oturum 27)
-  → 156 (oturum 29) → **190** (oturum 30))
-- Mini-rev verify-tracked kuyruk **0/116** (KAPANDI paketi 24)
-- Mini-rev verify-untracked jenerik scaffold kuyruğu **51/79**
-  (top 28 paketi 25-28'de kapatıldı)
-- Mod K v2 %100 KAPANIŞ (oturum 28)
+- **3508 tarif prod sabit** (40a-40d 60 tarif henüz apply edilmedi,
+  40e bekleniyor; 100 tamamlanınca tek seferde 3508 → 3608)
+- Mini-rev kümülatif **289** tarif (paketi 1-43; oturum 30 SONU 190
+  → oturum 31 SONU **289**, +99)
+- Mini-rev verify-tracked kuyruk **0/116** (KAPALI paketi 24)
+- Mini-rev verify-untracked jenerik scaffold kuyruğu **0/127**
+  (KAPALI paketi 25-43, 21 pattern)
+- Mod A v2 pipeline canlı: 60 tarif (40a-40d) apply-ready, 40e
+  bekleniyor
+- Yeni audit metodoloji 5 GATE: 4'ü ✅ (sadece A meşru bekleme
+  süreleri)
+- **254 prod allergen ek (TIBBİ RİSK fix)** + 4 cuisine + 3 macro
+  + 46 featured iniş = 307 prod quality fix
 - CUISINE_CODES **41** (sabit oturum 28'den)
-- 57 blog (sabit oturum 25'ten)
-- Test Campaign **8/8 KAPANIŞ** (oturum 28)
-- SEO landing top 34/41 done + 5 SEO FAQ entry tamamlandı + 5 yeni
-  cuisine batch 5 (oturum 29)
-- Pre-push 6 katman temiz (oturum 30 8 commit/8 temiz)
-- Lhci 5/5 URL × 2 run = 10 run PASS (oturum 30 başında)
+- **59 blog** (oturum 31'de +2: Aromatik Sebze Tabanı + Pirinç
+  Çeşitleri)
+- **60 SEO landing entry** (oturum 31'de +12: batch 6+7, top SEO
+  derinlik 49 cuisine kapsama)
+- Test Campaign 8/8 KAPANIŞ (oturum 28)
+- Pre-push 6 katman temiz (oturum 31 28 commit/28 temiz)
+- Lhci 5/5 URL × 2 run = 10 run PASS (oturum 31'de 2 kez kontrol)
 - 41 mutfak, 17 kategori, 10 allergen, 15 tag, 11 rozet, 4 cron
-- 180+ unit test PASS
+- 180+ unit test PASS, 925 vitest PASS
 - Diet-score özelliği: 10 preset prod, 311 NutritionData (%99.97)
 - IngredientGuide tablosu: 250 ingredient
 - /admin/kalite composite quality skor route
 - Newsletter haftalık cron canlı
-- /mutfak/{portekiz,sili,gurcu,avusturya,kanada} programatik landing
-  prod canlı
+- /mutfak/{portekiz,sili,gurcu,avusturya,kanada,polonya,kuba,
+  avustralya,alman,endonezya,nijerya,etiyopya,pakistan,tunus,iran,
+  arjantin} programatik landing prod canlı
 - TTS Web Speech API locale-aware (oturum 28 K8 fix)
 - Prod nutrition recompute güncel (3508 row %98 matchedRatio>=0.5)
-
-**Önemli teknik dosyalar (oturum 30 yeni):**
-
-- scripts/fix-mini-rev-batch-{24..28}.ts, 5 yeni paketi script (idempotent
-  + AuditLog MOD_K_MANUAL_REV)
-- scripts/find-jenerik-scaffold.ts (oturum 30 yeni), verify-untracked
-  MAJOR audit tool (13 boilerplate pattern, 79 hit)
-- eslint.config.mjs, logo/ ignore kalıcı eklendi (.cjs require() error
-  bypass için her dosyaya eslint-disable yorumu yerine config tek
-  satır)
 
 **Tarifle mimari (oturum 15'ten değişmedi):**
 
@@ -264,55 +347,63 @@ PRIVATE (KOZcactus/tarifle). Codex ChatGPT Max üzerinden Mod A ile
 - Tailwind 4 @custom-variant dark
 - @dnd-kit admin drag-drop
 
-**Kritik oturum 30 dersleri (kalıcı):**
+**Kritik oturum 31 dersleri (kalıcı):**
 
-1) Verify-tracked vs verify-untracked kuyruk ayrımı. Verify-tracked
-   kuyruk = mod-k-verify-report-*.md MAJOR_ISSUE entry'leri (paketi
-   24'te %100 kapandı). Verify-untracked kuyruk = audit script ile
-   yakalanan jenerik scaffold pattern (oturum 30 yeni metodoloji).
+1) **Mod A v1 → v2 dönüşümü**: 13 mod cycle ve ~1700 prod correction
+   sonrası kök neden = Mod A v1'de hız > kalite, retrofit downstream'a
+   aktı. v2 = inline gate, retrofit yerine doğum-anında doğru. 20
+   tarif × 5 paket + 7 GATE. ROI yüksek (5+2 KRİTİK REJECT ilk
+   teslimde yakalandı, retrofit cycle önlendi).
 
-2) Find-jenerik-scaffold.ts kalıcı audit tool. 13 boilerplate pattern
-   listesi. >=2 pattern içeren slug = MAJOR aday. Top N seçim ile
-   pakete eklenir. Yeni pattern ortaya çıkarsa script'e ekle.
+2) **Audit metodoloji çeşitlendirmesi**: 21 boilerplate pattern
+   text-based audit + 5 GATE structured audit (allergen/macro/
+   cuisine/featured/süre). Tıbbi etik prensibi: OVER-flag > UNDER-
+   flag (kullanıcı false alarm tolere edebilir, gerçek alerji UNDER-
+   flag riskli).
 
-3) Klasik kanonik tarifler için web research yerine direkt klasik
-   formul yeter. Paketi 25-28'de hepsi kanıtlı klasik (Caesar 1924 +
-   Sultan Kebabı + Hatay tepsi oruk + biryani + tagine + tantanmen)
-   olduğu için 2 paralel agent yerine direkt script yazıldı, hız
-   avantajı sağlandı. Web research disiplini sadece kanıt zayıf
-   yöre claim'leri için (paketi 16-23 pattern).
+3) **Find-new-boilerplate-patterns.ts pattern keşif workflow**:
+   Mevcut audit kuyruğu kapandığında yeni pattern aramak için tool
+   yazılır (manuel inspect output'tan token frequency analysis).
+   Oturum 31'de 8 yeni pattern bulundu, kuyruğu canlı tutmak için
+   pattern.
 
-4) Eslint config kalıcı çözüm pattern'i. Her yeni .cjs dosya için
-   eslint-disable yorumu eklemek yerine config'e tek satır ignore
-   eklemek long-term doğru çözüm. logo/** pattern'i.
+4) **Word boundary regex faydası**: Cuisine algoritma 606 hit
+   (substring match) → 0 hit (word boundary `(^|-)hint(-|$)` +
+   compound exclude). Slug pattern matching'de critical.
 
-5) Pre-push lint'in error vermesi push fail olur, hızlı düzeltip
-   tekrar push yeterli (oturum 30 2 lint fix bu pattern). Pattern:
-   error tespit + fix + commit + push tekrar. Üretim yıkımı yok.
+5) **Compound exclude pattern**: 'hindistan-cevizi' (coconut) 'sopa-
+   de-lima' (Yucatan) gibi domain-specific yanlış eşleşmeleri
+   önlemek için compound word listesi tutmak şart.
 
-6) Push disiplini: 3-4 bağımsız iş paketi commit'i topla → tek push
-   (memory feedback_batch_push.md). Acil push gerekirse net uyarı
-   ver: "⚠️ Bu işlem kesin push gerektiriyor, önerim hemen push
-   yapalım". Oturum 30'da bu disiplin 3+4+1 toplu push pattern
-   olarak uygulandı.
+6) **Tip-bazlı tolerans**: KOKTEYL/ICECEK macro denklem skip (alkol
+   kcal formülde değil), YEMEK/CORBA/TATLI %20 tolerans. Audit
+   algoritmaları tarif tipine göre rafine edilebilir.
 
-7) "AI yorgunluk" yok ama metodolojik tazelik var. 5 ardışık paket
-   sonrası pattern monotonisi başlıyor; yeni oturum çeşitlilik için
-   sağlıklı (yeni audit metodolojisi, Mod A, SEO, blog rotasyonu).
+7) **GATE 1.5 false positive whitelist disiplini**: 7 desen
+   öğrenildi (aynı yöre prefiksi farklı yemek, klasik vs varyant,
+   dana/tavuk versiyon, farklı yöre aynı yemek, dolma vs kavurma,
+   klasik orijinal vs ülke varyantı, bölgesel yöre versiyonu). Brief
+   §5.0.0'a kalıcı eklendi.
+
+8) **Codex teslim flow**: Her batch ayrı session, ayrı mesaj.
+   Validate auto git diff → REJECT varsa retrofit mesajı → re-
+   validate → tüm GATE PASS olunca apply pipeline. 5-6 saat ardışık
+   Codex süreç + ben paralelde mini-rev/blog/audit ile devam.
 
 İyice öğren projeyi. Acele etme, docs'ları + memory'yi sırayla oku,
 prod durumunu anla. Plugin + skill'lerin Claude directory'de kurulu
 olduğunu unutma. Em-dash yasağı aktif (NEW_SESSION_MESSAGE.md + logo/
-skip listede). Pre-push 6 katman aktif. Mod B/C/D/E/F/FA/G/H/I/IA/IB/
-M/K HEPSI KAPANDI. Mod A devam (oturum 27-30'da yapılmadı). Mini-rev
-verify-tracked kuyruk %100 KAPANDI (paketi 24, 116/116). Verify-
-untracked jenerik scaffold kuyruğu paketi 25-28'de top 28 kapatıldı,
-~51 kalan. Site LAUNCH-READY (lhci baseline güvende, 0 P0 blocker).
+skip listede). Pre-push 6 katman aktif. Mod B/C/D/E/F/FA/G/H/I/IA/
+IB/M/K HEPSI KAPANDI. **Mod A v2 Quality-First aktif tek Codex
+modu**. Verify-tracked + verify-untracked çift kuyruk %100 KAPALI
+🏁🏁. 5 GATE yeni audit metodoloji canlı (4'ü %0/OK). Site LAUNCH-
+READY (lhci baseline güvende, 0 P0 blocker).
 
-Ek bilgi: Verify-untracked kuyruk paketi 29+ ile devam edebilir
-(scripts/find-jenerik-scaffold.ts ile yeni adaylar). Mod A yeni tarif
-aktif tek mod (Codex tetiği bekliyor). SEO landing top 34/41 done,
-~7 kalan batch 6 ile. Yeni blog yazısı opsiyonel (57 sabit oturum 25).
+Ek bilgi: Codex Batch 40a-40d 60 tarif apply-ready, 40e bekleniyor.
+40e geldiğinde tüm 100 tarif tek seferde apply (dev seed + prod
+seed + AuditLog). Yeni Codex Batch 41a-41e tetik (Mod A v2 sonraki
+100 tarif). 3. blog yazısı opsiyonel (çikolata/taze ot/sebze
+pişirme). GATE A süre algoritma rafine ROI orta.
 
 Projeyi iyice anla, sonra sıradaki işleri listeler misin, hangi
 öncelikte ne yapabileceğimizi söyle. Tercihime göre başlarız.

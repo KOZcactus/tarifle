@@ -1,5 +1,46 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 32 BAŞLANGIÇ (29 Nis 2026), 3 commit, Codex Mod A v2 Batch
+> 40a-40e ilk uygulama ve TAM APPLY (100 yeni tarif, prod 3508 → 3617).**
+>
+> **3 commit, 1 büyük başarı:**
+>
+> 1. **Mod A v2 ilk uygulama prod'da canlı (5 paket × 20 = 100 tarif)**:
+>    - 7 GATE validate PASS (validate-mod-a-batch.ts otomatik): GATE 1
+>      0 dupe, GATE 1.5 10 hit hepsi brief whitelist false positive,
+>      GATE 4/5/6/7 hepsi 0 hit
+>    - 40d derin kontrol 20/20 PASS, 40e derin kontrol 20/20 PASS,
+>      40a/b/c spot 15 tarif PASS
+>    - 5 manuel fix: tekirdag-hayrabolu totalMinutes 115→100 + porto-
+>      francesinha yumurta+step+macro + sanliurfa-pitpit slug normalize
+>      + warsaw-bigos GLUTEN→[] (pre-push allergen-source-guard yakaladı,
+>      brief whitelist proje guard ile çakıştı, guard öncelikli) + types
+>      fix
+>    - Apply pipeline: dev seed 109 INSERT + prod seed 109 INSERT
+>      (--confirm-prod) + hunger-bar 153 row + nutrition recompute 3617
+>      row %98 matchedRatio + diet-score 36170 işlem + tarif-listesi.txt
+>      prod re-dump
+>    - Yeni tool: scripts/check-batch-recipe.ts (single-recipe inspector,
+>      Mod A v2 manuel kalite kontrol disiplini için)
+>
+> **Final state**: Prod **3508 → 3617** tarif (109 INSERT: 100 yeni
+> 40a-e + 9 önceki sync). Cuisine **41** sabit. Mini-rev **289** sabit.
+> Pre-push 6 katman temiz tüm 3 commit (1 allergen guard + 1 tsc fail
+> yakaladı, ikisi de düzeltildi). Mod A v2 ilk uygulama validation:
+> Quality-First disiplini ROI yüksek (5+2 KRİTİK REJECT oturum 31'de
+> retrofit çözüldü + 5 minor fix oturum 32'de yakalandı + 0 prod hata).
+>
+> **Sıradaki oturum 32 öncelik**: (a) Codex Batch 41a-41e tetik (Mod A v2
+> sonraki 100 tarif, 5-6 saat ardışık), (b) 3. blog (sebze pişirme
+> teknikleri, pisirme-teknikleri kategorisini dengeler), (c) audit-deep
+> 62 önceden var olan CRITICAL paket (mevcut prod tariflerinde
+> RECIPE_CONSISTENCY 36 + ALLERGEN_ACCURACY 26 kalite borcu), (d) GATE A
+> süre algoritma rafine.
+>
+> **Oturum 32 commit özet**: `2fae2d3` types fix (assertDbTarget arg) +
+> `91801b3` warsaw-bigos GLUTEN over-tag geri al + `ce4d305` Mod A v2
+> 40a-e apply 100 tarif.
+
 > **Oturum 31 SONU FINAL (28 Nis 2026, oturum 30 aynı gün devamı),
 > ~28 commit, ÇİFT KUYRUK %100 KAPANIŞ 🏁🏁 + Mod A v2 Quality-First
 > pipeline canlı + 5 GATE yeni audit metodoloji + 658 prod kayıt

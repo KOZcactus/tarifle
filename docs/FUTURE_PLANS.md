@@ -13,6 +13,42 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 32 BAŞLANGIÇ (29 Nis 2026), Mod A v2 Batch 40a-40e ilk uygulama tam apply
+
+**Oturum 32 başarı (3 commit, prod 3508 → 3617):**
+
+1. **Mod A v2 ilk uygulama prod canlı (100 yeni tarif)**: 5 paket × 20 =
+   100 tarif (40a-40e). 7 GATE validate PASS (GATE 1 0 dupe, GATE 1.5 10
+   whitelist, GATE 4/5/6/7 0). 40d+40e derin 40/40 PASS + 40a/b/c spot
+   15 PASS. 5 manuel fix: tekirdag-hayrabolu totalMinutes 115→100 +
+   porto-francesinha yumurta klasik servis + sanliurfa-pitpit slug
+   normalize + warsaw-bigos GLUTEN→[] (allergen-source-guard çakışması)
+   + types fix.
+
+2. **Apply pipeline tam akış**: dev seed 109 INSERT + prod seed 109
+   INSERT (--confirm-prod) + hunger-bar dev 168 + prod 153 + nutrition
+   recompute 3617 row %98 matchedRatio + diet-score 36170 işlem + tarif-
+   listesi.txt prod re-dump 3617. Pre-push 6 katman temiz tüm 3 commit.
+
+3. **Yeni tool**: scripts/check-batch-recipe.ts (single-recipe inspector,
+   Mod A v2 manuel kalite kontrol disiplini için kalıcı).
+
+**Aktif/Planlı:**
+
+- **Codex Batch 41a-41e tetik** (Mod A v2 sonraki 100 tarif, 5-6 saat
+  ardışık paralel)
+- **3. blog yazısı** (sebze pişirme teknikleri: blanching/glazing/
+  braising/roasting/sauté, pisirme-teknikleri kategorisini dengeler 16→17,
+  Mod K essential keşifleriyle bağ)
+- **audit-deep 62 önceden var olan CRITICAL paket** (mevcut prod
+  tariflerinde RECIPE_CONSISTENCY 36 + ALLERGEN_ACCURACY 26, sonraki
+  oturum bir paket halinde fix)
+- **GATE A süre algoritma rafine** (totalMinutes formülü + marine
+  pattern exclude, ROI orta)
+- **CI hata teşhisi** (gh run list, ROI düşük)
+
+---
+
 ## ✅ Oturum 31 SONU FINAL (28 Nis 2026, oturum 30 aynı gün devamı), major kapanışlar
 
 **Oturum 31 final başarı zinciri (~28 commit, 658 prod kayıt iyileşme):**

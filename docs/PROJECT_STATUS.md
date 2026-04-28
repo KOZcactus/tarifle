@@ -1,5 +1,191 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 29 SONU (28 Nis 2026, oturum 28 aynı gün devamı), 9 commit,
+> MOD K v2 sonrası MİNİ-REV maraton + SEO landing batch 5 + Lhci
+> regression baseline günü.**
+>
+> **Toplam 9 commit, 4 büyük başarı:**
+>
+> 1. **8 mini-rev paketi (paketi 16-23) + 56 tarif kapatıldı**: 2
+>    paralel web research agent + 18-25 kaynak/paket disiplini. Mini-
+>    rev kümülatif 100 → **156** (+56). Kuyruk ~110 → **~54**.
+>    Pattern: dev DRY-RUN + dev APPLY + idempotent verify + prod APPLY
+>    + tarif-listesi dump. AuditLog action MOD_K_MANUAL_REV.
+>
+> 2. **5 KRİTİK CI KEŞİF**: (a) Mersin Tantunisi CI 211 (21.03.2017
+>    mahreç, paketi 19); (b) Uşak Tarhanası CI 209 (Menşe Adı, 21 gün
+>    fermente, paketi 19); (c) Şanlıurfa İsotu CI 109 (2009 tescil,
+>    paketi 19); (d) Antep Katmeri CI 86 (22.09.2008, çatışma fix
+>    paketi 20); (e) Adana Şalgam Suyu CI 53 (24.02.2003 mahreç,
+>    paketi 21); (f) Beypazarı Kurusu CI 65 + Tarhanası CI 230 (paketi
+>    21); (g) Sivas Gürün CI 269 + Şarkışla CI 282 (paketi 21);
+>    (h) Aydın İnciri CI 119, Bursa Siyah İnciri CI 268, Diyarbakır
+>    İnciri CI 232 (paketi 23 referans).
+>
+> 3. **2 DATA CORRUPTION FIX + 1 TRIPLE TUTARSIZLIK + 8 TUTARSIZLIK +
+>    4 BOILERPLATE LEAK + 3 SÜRE FIX + 1 GIDA GÜVENLİĞİ + 1 TYPE FIX +
+>    1 KIBE-MUMBAR FULL**:
+>    - **DATA CORRUPTION** (paketi 17 musakhan + paketi 23 Batman
+>      firik): "kuzu pembesi tabaka" scaffold leak (tavuk tariflerinde
+>      kuzu metni)
+>    - **TRIPLE TUTARSIZLIK** (paketi 23 Ardahan): 3 ayrı eksik step
+>      ingredient tek tarifte
+>    - **TUTARSIZLIK** (paketi 18-23): step'te bahsi geçen ama listede
+>      olmayan malzemeler (limon/tuz/tahin/baharat patternleri)
+>    - **BOILERPLATE LEAK** (paketi 18-21): "peynirli doku sertleşir"
+>      çörek tariflerinde, "fırında pişsin" sarma soğuk meze tarifinde
+>    - **SÜRE FIX**: keşkek 50→540 dk (paketi 17), sikhye 45→275 dk
+>      (paketi 15), papatya 12→50 dk (paketi 20)
+>    - **GIDA GÜVENLİĞİ** (paketi 16): kayısı çekirdeği amigdalin
+>      REMOVE (EFSA 2016 siyanür)
+>    - **TYPE FIX** (paketi 22): Bingöl fasulye ezmesi SOS → APERATIF
+>    - **KIBE-MUMBAR FULL** (paketi 17 musakhan + paketi 18-21 çeşitli)
+>
+> 4. **SEO landing batch 5 + Lhci regression baseline**:
+>    - 5 yeni cuisine entry (brezilya/peru/iskandinav/rus/macar) + 20
+>      yeni FAQ; pattern 200-220 kelime intro + 4 FAQ/sayfa (somut sayı
+>      + UNESCO/CI/otorite + pratik öngörü). seo-copy-v1.json 43 → 48
+>      entry, top SEO derinlik 29 → 34 kapsama.
+>    - Lhci 5/5 URL × 2 run = 10 run PASS (perf ≥0.85 + a11y ≥0.95 +
+>      bp ≥0.9 + seo ≥0.95). Mod K + 8 mini-rev sonrası **baseline
+>      regression YOK**.
+>
+> **Final state**: Mini-rev kapanan **156** (+56 oturum 29) + kuyruk
+> **~54** kalan + Prod **3508** tarif (sabit, oturum 29'da silme yok)
+> + Cuisine **41** (sabit, paketi 16-23'te yeni cuisine eklenmedi
+> sadece esin atfı disambiguate). Pre-push 6 katman temiz tüm 9
+> commit. Site **LAUNCH-READY** (0 P0 blocker, lhci baseline güvende).
+>
+> **Sıradaki oturum 30 öncelik**: (a) Mini-rev paketi 24 devam (~54
+> MAJOR kuyruk, KRİTİK kandidat azaldı çoğu yöre yumuşatma), (b)
+> Codex Mod A tetik (oturum 27-29'da yapılmadı, prod 3508 sabit), (c)
+> SEO landing batch 6 (kalan ~7 sayfa: ingiliz/polonya/küba/avustralya
+> + diet derinleştirme), (d) yeni blog yazıları (57 sabit oturum
+> 25'ten), (e) marketing/topluluk (launch sonrası, hala launch
+> acelesi yok).
+>
+> Commit özet (oturum 29, ters kronoloji, 9 commit): `8f1ed32` paketi
+> 23 (1 DATA CORRUPTION + 1 TRIPLE TUTARSIZLIK + 2 TUTARSIZLIK + 3
+> yöre düşür) + `53d96d1` paketi 22 (3 TUTARSIZLIK + 1 TYPE FIX) +
+> `d006a45` paketi 21 (1 BOILERPLATE LEAK + 1 TUTARSIZLIK + 3 CI atıf
+> + 2 yumuşat) + `fd9938e` SEO batch 5 (5 yeni cuisine + 20 FAQ) +
+> `0c4cb51` paketi 20 (1 CI çatışma + 1 STEP eksik + 1 BOILERPLATE
+> LEAK + 1 TUTARSIZLIK + 3 yumuşat) + `b5b2d6c` paketi 18 (2
+> TUTARSIZLIK + 1 BOILERPLATE LEAK + 4 yumuşat) + `0bb7b6c` paketi 19
+> (2 CI keşif + 2 TUTARSIZLIK + 3 yumuşat) + `23674a0` paketi 17 (1
+> KIBE-MUMBAR FULL + 1 SÜRE FIX + 1 KRİTİK CI + 4 yumuşat/definition)
+> + `a9645a3` paketi 16 (1 GIDA GÜVENLİĞİ + 2 KIBE-MUMBAR + 1
+> definition + 3 yumuşat).
+
+> **Oturum 28 SONU (28 Nis 2026, oturum 27 ertesi gün devam), 20
+> commit, MOD K v2 %100 KAPANIŞ + Test Campaign 8/8 KAPANIŞ + 4 yeni
+> cuisine code + 8 mini-rev paketi günü.**
+>
+> **Toplam 20 commit, 5 büyük başarı:**
+>
+> 1. **Mod K v2 %100 KAPANIŞ (71/71 sub-batch)**: Codex'ten kalan 14
+>    sub-batch (27b/28a/28b/29a/29b/30a/30b/31a/31b/32a/32b/33a/33b/
+>    34a/34b/35a/35b/36a + 22b/24b yeniden teslim) verify+apply
+>    pipeline. Kümülatif Mod K correction prod ~1130 → **~1701**
+>    (+571 oturum 28). 0 BLOCKED 20 commit/20 temiz. Apply pipeline'da
+>    PASS no-op + CORRECTION otomatik + MAJOR mini-rev kuyruğa pattern
+>    sağlıklı.
+>
+> 2. **4 yeni cuisine code eklendi (CUISINE_CODES 37 → 41)**:
+>    - **`cl` (Şili)** paketi 8 — santiago-misirli-pastel-de-choclo
+>      cuisine fix mx→cl, latin-america region
+>    - **`ge` (Gürcü)** paketi 9 — tkemali cuisine fix ru→ge, caucasus
+>      yeni cluster
+>    - **`at` (Avusturya)** paketi 11 — viyana-kaiserschmarrn cuisine
+>      fix hu→at + viena-tavuk-schnitzel BONUS de→at, west-europe
+>    - **`ca` (Kanada)** paketi 14 — toronto-akcaagacli-yulaf-bar
+>      cuisine fix us→ca, anglo-americas (us+au ile aynı küme)
+>    Her birinde 9 location migration (CUISINE_CODES + LABEL + SLUG +
+>    DESCRIPTION_TR/EN + FLAG + REGION + 8 SLUG_PATTERNS + 9
+>    TEXT_KEYWORDS) + i18n tr/en + verify-mod-k VALID_CUISINES + 3
+>    yeni test (49→58 PASS).
+>
+> 3. **8 mini-rev paketi (paketi 8-15) + 55 tarif kapatıldı**: 2
+>    paralel web research agent + ortalama 20+ kaynak/paket. Toplam
+>    **38 KRİTİK fix** (oturum 27: 3 → oturum 28: **38**, +35):
+>    - **5 KIBE-MUMBAR data corruption full rewrite**: kibe-mumbar
+>      (zaten oturum 27), tatar-boregi-eskisehir (boş hamur değil
+>      kıymalı klasik), su-boregi (yalancı→klasik el açma), yaglama-
+>      corbasi-kayseri (CORBA→YEMEK kat kat yufka), sumakli-kabak-
+>      sinkonta-manisa (Kültür Portalı resmi balkabağı+sos+200°C 60dk),
+>      mugla-sundirme (turp otu, peynir değil), tokat-bati (yeşil
+>      mercimek eksik), urfa-agzi-acik (Şanlıurfa CI 7 ingredient
+>      eksik), sirnak-serbidev (yarma+çökelek değil köfteli yoğurt
+>      yanlış)
+>    - **8 cuisine fix** (toplam 8): santiago-pastel-de-choclo mx→cl,
+>      tkemali ru→ge, kaiserschmarrn hu→at, viena-schnitzel de→at,
+>      zeytinli-labneli-fas ma→me (Levant), siyah-fasulyeli-tostada
+>      cu→mx, toronto-akcaagacli us→ca + paketi 7'den pina-colada/
+>      pupusa
+>    - **4 definition fix**: çılbır yoğurtsuz (paketi 10), mahluta
+>      bulgur+pirinçsiz (paketi 10), banh-mi đồ chua-cilantro
+>      eksik (paketi 11), muhallebi vanilya+şeker eksik (paketi 12)
+>    - **2 GIDA GÜVENLİĞİ + SÜRE FIX**: sardalya çiğ→pişirme zorunlu
+>      (paketi 14), sikhye 45dk→275dk 4 saat enzimleme (paketi 15)
+>    - **5 type değişimi**: uzum-pekmezli-keskek KAHVALTI→TATLI
+>      (paketi 10), yaglama-corbasi CORBA→YEMEK (paketi 11) + diğer
+>    - **3 KRİTİK keşif**: "Şimşir"=küçük kaşık adı çörek değil
+>      (paketi 15), Vatapa tipNote/serving "tavuk + kuzu" YANLIŞ
+>      metadata (paketi 10 data corruption fix), zingil-tatlisi
+>      Kültür Portalı'nda DİYARBAKIR kayıtlı Siirt değil (paketi 11)
+>
+> 4. **Test Campaign 8/8 KAPANDI**: K8 Cross-browser + PWA test
+>    yapıldı (kullanıcı desktop + Android Chrome). 1 P1 bug bulundu:
+>    TTS Web Speech API locale-unaware (`utter.lang = "tr-TR"`
+>    hardcoded). Fix `60439df`: useLocale() + dinamik ttsLang +
+>    pickTtsVoice locale parametresi + EN voice patterns + 5 yeni
+>    test (13→18 PASS). Browser preview verify TR `tr-TR` + EN
+>    `en-US` doğrulandı.
+>
+> 5. **5 SEO entry FAQ tamamlandı + 5 prod bug fix**:
+>    - SEO Sentry crash fix (`d8b9858`): 5 entry'de `faqs: []` boş,
+>      `buildFaqPageSchema(undefined).map()` crash. 3 katmanlı fix
+>      (defensive guard + 3 calling site + faqs:[] schema uyumu).
+>    - 5 SEO entry için 4'er gerçek FAQ yazıldı (paketi 14): toplam
+>      20 q+a (atistirmaliklar/sebze-yemekleri/smoothie-shake/soslar-
+>      dippler/portekiz)
+>    - RecipeCard footer "0" bug fix (`3c21dd0`): React `{0}` literal
+>      render, 3508 tarifte görünüyordu
+>    - Home CTA sayfa sonuna taşı (`7845476`): yeni-user dağınıklığı
+>    - Picanha nutrition matchedRatio fix (`d220083`): "Picanha dana
+>      eti" + "İri tuz" → NutritionData uyumlu adlar
+>    - Lint .cjs require imports (`b833bf4`): eslint-disable yorum
+>
+> **Final state**: Mod K v2 71/71 (%100) + mini-rev kapanan **100**
+> (paketi 1-15 toplam) + mini-rev kuyruğu **~110** + Prod **3508**
+> tarif (sabit, oturum 28'de silme yok) + Cuisine **41** (oturum 28
+> +4) + Cuisine tests **58/58** PASS + Voice picker tests **18/18**
+> PASS + Test Campaign **8/8 KAPANDI** + Pre-push 6 katman temiz tüm
+> 20 commit. Site **LAUNCH-READY** (0 P0 blocker).
+>
+> **Sıradaki oturum 29 öncelik**: (a) Mini-rev paketi 16-24 devam
+> (~110 kuyruk, KRİTİK kandidat azalıyor jenerik yöre yumuşatma
+> ağırlık), (b) Codex'ten yeni Mod A/K batch (oturum 28'de yeni Mod
+> A yapılmadı + Mod K %100 kapandı, gelecekte ek Mod A/K mantıklı),
+> (c) SEO landing batch 5 (top 29 → top 36, 12+ kalan), (d) Yeni
+> blog yazıları (57 sabit oturum 25'ten), (e) Marketing/topluluk
+> (launch sonrası, hala launch acelesi yok).
+>
+> Commit özet (oturum 28, ters kronoloji, 20 commit): `f00426c`
+> paketi 15 (7 KRİTİK) + `60439df` K8 TTS fix + `c0dbf7b` paketi 14
+> (7 KRİTİK + ca cuisine + 5 SEO FAQ) + `09c2438` paketi 13 (7
+> KRİTİK + em-dash skip logo) + `b9ce41a` paketi 12 (4 KRİTİK + 3
+> jenerik) + `d220083` picanha fix + `b833bf4` lint .cjs + `ecafcca`
+> 22b/24b apply (Mod K v2 %100) + `8261354` paketi 11 (7 KRİTİK + at
+> cuisine + BONUS de→at) + `aedc4f7` 34b/35a/35b/36a apply (101
+> correction) + `d8b9858` SEO Sentry crash fix + `7880a9e` paketi 10
+> (4 KRİTİK + 3 jenerik) + `eb7928b` 33a/33b/34a apply (94
+> correction) + `dd3af14` paketi 9 (7 KRİTİK + ge cuisine) +
+> `9b0ec71` 30b/31a/31b/32a/32b apply (131 correction) + `7845476`
+> Home CTA + `d6c8782` paketi 8 (5 KRİTİK + cl cuisine) + `ef92299`
+> 29a yeniden + `3c21dd0` RecipeCard "0" + `c8ab40f` 27b/28a/28b/29b/
+> 30a apply (143 correction).
+
 > **Oturum 27 SONU (27 Nis 2026, oturum 26'nın aynı gün devamı), 26
 > commit, MUTLAK REKOR Mod K v2 + mini-rev maraton günü.**
 >

@@ -13,6 +13,40 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 29 SONU (28 Nis 2026, oturum 28 aynı gün devamı), major kapanışlar
+
+**8 mini-rev paketi (paketi 16-23) + 56 tarif kapatıldı**: Mini-rev
+kümülatif 100 → **156** (+56). Kuyruk ~110 → **~54**. Pattern
+`scripts/fix-mini-rev-batch-{16..23}.ts`.
+
+**5 KRİTİK CI keşif**: Mersin Tantunisi CI 211 + Uşak Tarhanası CI 209
++ Şanlıurfa İsotu CI 109 + Antep Katmeri CI 86 (çatışma fix) + Adana
+Şalgam Suyu CI 53 + Beypazarı Kurusu CI 65 + Sivas Gürün CI 269.
+
+**2 DATA CORRUPTION FIX**: paketi 17 musakhan + paketi 23 Batman firik
+(her ikisinde de "kuzu pembesi tabaka halinde" scaffold leak, tavuk
+tariflerinde kuzu cümle).
+
+**1 TRIPLE TUTARSIZLIK** (paketi 23 Ardahan): step 2 domates+yeşillik
++ step 3 limon + step 5 soğan listede yoktu (3 ayrı tutarsızlık tek
+tarifte).
+
+**8 TUTARSIZLIK + 4 BOILERPLATE LEAK + 3 SÜRE FIX + 1 GIDA GÜVENLİĞİ +
+1 TYPE FIX + 1 KIBE-MUMBAR FULL**: SÜRE FIX (keşkek 50→540 dk + sikhye
+45→275 dk + papatya 12→50 dk), GIDA GÜVENLİĞİ (kayısı çekirdeği
+amigdalin REMOVE, EFSA 2016 siyanür), TYPE FIX (Bingöl fasulye ezmesi
+SOS→APERATIF).
+
+**SEO landing batch 5**: 5 yeni cuisine entry (brezilya/peru/iskandinav
+/rus/macar) + 20 yeni FAQ. seo-copy-v1.json 43 → 48 entry, top SEO
+derinlik 29 → 34 kapsama.
+
+**Lhci regression baseline**: 5 URL × 2 run = 10 run PASS (perf
+≥0.85 + a11y ≥0.95 + bp ≥0.9 + seo ≥0.95). Mod K + 8 mini-rev sonrası
+baseline regression YOK.
+
+---
+
 ## ✅ Oturum 28 SONU (28 Nis 2026), major kapanışlar
 
 **Mod K v2 71/71 (%100 KAPANIŞ)**: 1a-36a + 22b/24b yeniden teslim
@@ -42,9 +76,9 @@ coverage.
 
 ---
 
-## 🎯 Aktif (oturum 29+ kısa vade)
+## 🎯 Aktif (oturum 30+ kısa vade)
 
-### Mini-rev kuyruk (~110 MAJOR, paketi 16-25 civarı)
+### Mini-rev kuyruk (~54 MAJOR, paketi 24-30 civarı)
 
 8 paket boyunca KRİTİK kandidatların büyük kısmı kapatıldı, kalan
 ~110 MAJOR çoğunlukla jenerik "yöre yumuşatma" pattern. Paketi 16-25

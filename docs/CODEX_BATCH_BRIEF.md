@@ -555,6 +555,49 @@ ekler. Eski kurallardan vazgeçilmez.
   reddi (oturum 27 mini-rev pattern dersi).
 - Cuisine 41 kod sabit, yeni cuisine ekleme YASAK (§5.2).
 
+**GATE 1.5 KRİTİK REJECT pattern (oturum 31 Batch 40a/40b dersi):**
+Aşağıdaki desenler aynı yemek farklı slug suffix sayılır, yeni tarif
+KABUL EDİLMEZ:
+- "X" vs "X-misirli" / "X-bulgur-unlu" / "X-mantili" (sadece TR
+  açıklama farkı, aynı yemek): santiago-pastel-de-choclo vs santiago-
+  misirli-pastel-de-choclo, bartin-pumpum-corbasi vs bartin-pumpum-
+  corbasi-misir-unlu.
+- "X-soup" vs "X-corbasi" (dil farkı, aynı yemek): lagos-egusi-soup
+  vs lagos-egusi-corbasi.
+- "X" vs "X-nohutlu" / "X-tavuklu" / "X-kurutulmus-fasulye" (suffix
+  varyasyon değil, açıklama eki): addis-ababa-shiro-wat vs addis-
+  ababa-shiro-wat-nohutlu, artvin-pucuko vs artvin-pucuko-kurutulmus-
+  fasulye.
+- 3+ versiyon zaten varsa: stockholm-toast-skagen örneği (skagen-
+  toast + toast-skagen + toast-skagen-patates-kase + stockholm-
+  gravlax-toast 4 versiyon zaten mevcut, yenisi katma değer düşük).
+
+**GATE 1.5 false positive whitelist (oturum 31 Batch 40a dersi):**
+Aşağıdaki desenler YANLIŞ alarm sayılır, KABUL EDİLİR:
+- Aynı yöre prefiksli farklı yemek: jakarta-nasi-uduk vs jakarta-nasi-
+  goreng (Nasi uduk hindistan cevizi sütlü pirinç, Nasi goreng kızarmış
+  pirinç, farklı yemek).
+- Klasik vs varyant: buenos-aires-provoleta vs buenos-aires-kabakli-
+  provoleta (klasik provoleta vs kabaklı varyant, farklı tabak).
+- Yöresel + dana/tavuk versiyon: viyana-wiener-schnitzel (TSG dana
+  zorunlu) vs viena-tavuk-schnitzel (yasal olarak Schnitzel Wiener
+  Art, farklı tabak).
+- Farklı yöre aynı yemek: duzce-hamsili-ekmek vs hamsili-ekmek-rize-
+  usulu (Düzce ve Rize'nin yerel hamsili ekmeği farklı reçetelerle).
+- Farklı dolma/kavurma: bolu-kaldirik-dolmasi vs bolu-kaldirik-
+  kavurmasi-yumurtali (kaldırık otu, dolma vs kavurma farklı pişirme,
+  farklı tabak).
+- Klasik orijinal vs ülke varyantı: porto-caldo-verde (Portekiz
+  klasiği) vs caldo-verde-brezilya-usulu (Brezilya varyantı), her
+  ikisi geçerli ayrı tabak.
+- Bölgesel yöre versiyonu: jakarta-soto-ayam-betawi (Betawi yerli
+  halk versiyonu, hindistan cevizi sütlü) vs jakarta-soto-ayam-
+  tavuklu (jenerik), yöre belirteci varsa farklı tabak sayılır.
+
+Codex teslim sonrası `npx tsx scripts/validate-mod-a-batch.ts` 7 GATE
+kontrolü; Claude bu whitelist'e bakarak GATE 1.5 false positive ve
+KRİTİK REJECT'i ayırt eder.
+
 **GATE 2 — KAYNAK (mevcut §5.1 zorunluluk)**
 - Her tarif için **2-3 web kaynağı** (Wikipedia + resmi otorite +
   1 yemek portali). Yöre tarifi → Kültür Portalı (kulturportali.gov.

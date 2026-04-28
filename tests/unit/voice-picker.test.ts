@@ -72,4 +72,51 @@ describe("pickTtsVoice", () => {
     const noTr = [makeVoice("English", "en-US"), makeVoice("German", "de-DE")];
     expect(pickTtsVoice(noTr, "female")).toBeNull();
   });
+
+  // Oturum 28 K8 fix: locale parametresi (önceki versiyon hardcoded
+  // TR voice listesinden seçerdi, EN sayfasında bile Türkçe gelirdi).
+
+  it("picks English voice when lang=en-US", () => {
+    const mixed = [
+      makeVoice("Google Turkish (Female)", "tr-TR"),
+      makeVoice("Microsoft Zira", "en-US"),
+      makeVoice("Microsoft David", "en-US"),
+    ];
+    const picked = pickTtsVoice(mixed, "female", "en-US");
+    expect(picked?.name).toBe("Microsoft Zira");
+    expect(picked?.lang).toBe("en-US");
+  });
+
+  it("picks English male voice when preference=male and lang=en-US", () => {
+    const mixed = [
+      makeVoice("Google Turkish (Female)", "tr-TR"),
+      makeVoice("Microsoft Zira", "en-US"),
+      makeVoice("Microsoft David", "en-US"),
+    ];
+    const picked = pickTtsVoice(mixed, "male", "en-US");
+    expect(picked?.name).toBe("Microsoft David");
+  });
+
+  it("matches BCP-47 prefix (en-US matches en, en-GB)", () => {
+    const voices = [
+      makeVoice("Google UK Female", "en-GB"),
+      makeVoice("Generic English", "en"),
+    ];
+    const picked = pickTtsVoice(voices, "female", "en-US");
+    expect(picked?.name).toBe("Google UK Female");
+  });
+
+  it("returns null when locale doesn't match any voice", () => {
+    const trOnly = [makeVoice("Yelda", "tr-TR")];
+    expect(pickTtsVoice(trOnly, "female", "en-US")).toBeNull();
+  });
+
+  it("defaults to TR when lang param omitted (backward-compat)", () => {
+    const mixed = [
+      makeVoice("Google Turkish (Female)", "tr-TR"),
+      makeVoice("Microsoft Zira", "en-US"),
+    ];
+    const picked = pickTtsVoice(mixed, "female");
+    expect(picked?.name).toBe("Google Turkish (Female)");
+  });
 });

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { pickTtsVoice, type TtsGender } from "@/lib/tts/voice-picker";
 
 const TTS_AUTO_READ_KEY = "tarifle:cooking-mode:auto-read";
@@ -50,6 +50,11 @@ export function CookingMode({
 }: CookingModeProps) {
   const t = useTranslations("cookingMode");
   const tCard = useTranslations("recipes.card");
+  const locale = useLocale();
+  // BCP-47 lang tag, TTS Web Speech API için. Site locale 'en' iken
+  // utterance.lang 'en-US', 'tr' iken 'tr-TR' (oturum 28 K8 fix; ÖNCE
+  // hardcoded 'tr-TR' idi, EN sayfasında bile Türkçe okuyordu).
+  const ttsLang = locale === "en" ? "en-US" : "tr-TR";
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [timer, setTimer] = useState<number | null>(null);
@@ -112,21 +117,21 @@ export function CookingMode({
       if (typeof window === "undefined" || !window.speechSynthesis) return;
       window.speechSynthesis.cancel();
       const utter = new SpeechSynthesisUtterance(text);
-      utter.lang = "tr-TR";
+      utter.lang = ttsLang;
       utter.rate = 0.95;
       utter.pitch = 1;
       // Kullanıcı tercihine göre voice seç. Bazı platformlarda voices
       // asenkron yüklenir; getVoices ilk çağrıda boş olabilir, bu durumda
       // browser default ses kullanılır.
       const voices = window.speechSynthesis.getVoices();
-      const voice = pickTtsVoice(voices, ttsVoicePreference);
+      const voice = pickTtsVoice(voices, ttsVoicePreference, ttsLang);
       if (voice) utter.voice = voice;
       utter.onend = () => setIsSpeaking(false);
       utter.onerror = () => setIsSpeaking(false);
       window.speechSynthesis.speak(utter);
       setIsSpeaking(true);
     },
-    [ttsVoicePreference],
+    [ttsVoicePreference, ttsLang],
   );
 
   // Open/close

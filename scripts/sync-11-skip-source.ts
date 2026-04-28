@@ -56,7 +56,7 @@ function patchSourceForSlug(content: string, slug: string, dbIngs: DbIng[]): { c
   // Detect format: object first, then ing helper, then raw string-pipe.
   // ingredients: [...] (object {} or string-pipe ".."), optionally wrapped ing(...)
   const objMatch = line.match(/ingredients:\s*\[\{[^}]*\}(?:\s*,\s*\{[^}]*\})*\s*\]/);
-  // Match ingredients: ing(["..."]) — content is balanced inside [...]
+  // Match ingredients: ing(["..."]), content balanced inside [...]
   const ingHelperMatch = line.match(/ingredients:\s*ing\(\[[^\]]+\]\)/);
   // Match raw ingredients: ["..."]
   const stringMatch = line.match(/ingredients:\s*\["[^[\]]+\]/);

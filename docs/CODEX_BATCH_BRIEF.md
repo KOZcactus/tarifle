@@ -11,7 +11,7 @@
 
 | Kerem der | Sen anla | Git direkt | Çıktı |
 |---|---|---|---|
-| **"Mod A"**, "yeni batch", "batch N yaz", "100 tarif yaz" | **MOD A**, 100 yeni TR tarif yaz | §5 | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
+| **"Mod A"**, "yeni batch", "batch N yaz" | **MOD A v2 (oturum 31+ Quality-First)**, **20 tarif × 5 paket** (Na/Nb/Nc/Nd/Ne, toplam 100 tarif) yaz, ZORUNLU 7 GATE (uniqueness + kaynak + klasik formul + step↔ingredient match + anti-boilerplate 21 pattern + slug-leak yasak + em-dash yasak) | **§5.0.0** + §5 (mevcut kurallar) | `scripts/seed-recipes.ts` sonuna append + inline EN/DE title+description |
 | **"Mod B"**, "batch N çevirisi", "translations-batch-N.csv işle" | **MOD B**, CSV'yi okuyup JSON üret | §6 | `docs/translations-batch-N.json` (ingredients/steps/tipNote/servingSuggestion EN+DE) |
 | **"Mod C"**, "Kategori SEO", "SEO copy", "landing intro + FAQ" | **MOD C**, landing sayfaları için özgün TR giriş + FAQ yaz | §12 | `docs/seo-copy-v1.json` (17 kategori + 16 mutfak + 5 diyet = 38 item array) |
 | **"Mod D"**, "editoryal revize", "top 200 duzelt", "tipNote drift fix" | **MOD D**, mevcut tariflerin tipNote + servingSuggestion revize JSON | §13 | `docs/editorial-revisions-batch-N.json` (slug bazlı update array) |
@@ -21,12 +21,19 @@
 
 **Default'lar (soru sorma, direkt başla):**
 
-### Mod A default (Kerem "Mod A. Batch Na" / "Mod A. Batch Nb" derse):
-- **50 tarif** yaz (B30 Windows komut uzunluğu sınırı dersinden sonra
-  100→50 ikiye bölündü; tek teslim daha kontrollü, recurring block
-  riski azaldı)
-- Batch adı: **{N}a** ilk 50, **{N}b** sonraki 50 (örn. Batch 30a,
-  30b; 31a, 31b). Kerem her yarıyı ayrı tetikler.
+### Mod A default v2 (Quality-First, oturum 31+ ZORUNLU)
+
+**Kerem "Mod A. Batch Na/Nb/Nc/Nd/Ne" derse VEYA sadece "Mod A. Batch N" derse:**
+- **20 tarif × 5 paket** (Na/Nb/Nc/Nd/Ne, toplam 100 tarif). Eski
+  v1 (50+50) DEPRECATED. Oturum 31'de 13 mod cycle + ~1700 prod
+  correction'dan sonra: hız < kalite, retrofit yerine inline gate.
+- Batch adı: **{N}a / {N}b / {N}c / {N}d / {N}e**, her biri 20 tarif.
+  Örn. Batch 40a, 40b, 40c, 40d, 40e.
+- Kerem **tek tetik mesajıyla 5 paketi de ister** ("Mod A. Batch
+  40a-40e."), Codex 5-6 saat ardışık çalışır, her paket sonrası
+  "Batch 40a hazır" der ve sonraki pakete geçer.
+- §5.0.0 v2 7 GATE'in HEPSİ ZORUNLU. Gate ihlalı = REJECT, retrofit
+  istenmez (oturum 30-31 dersi: retrofit cycle iş 2x'liyor).
 - Dağılım: **~25 TR + ~25 uluslararası**. Sayı yaklaşık (23-27 TR kabul), tam matematiksel denge aranmaz.
 - **TR bölge dengesi KALDIRILDI (oturum 17 dersi, 33b+):** 7 bölgeden eşit
   paylaşım zorunluluğu yok. Çoğu bölge catalog'da dolu. Özgün TR tarif
@@ -257,12 +264,18 @@ flag'lemeye gerek yok, "acaba" diye durma.
   - **tipNote + servingSuggestion DOKUNULMAZ** (Mod D alanı).
 - Detay §14.
 
-**⚠️ Tek teslim kuralı (Mod A):** Kerem açıkça "kademeli gönder" veya "50'şer
-ver" demiyorsa, **100 tarifi TEK seferde tamamla**. Ortada durma, "25 hazır,
-devam edeyim mi?" diye sorma, Kerem zaten 100 istediğini biliyor, ara
-teslim zaman kaybı. Context window sıkışırsa bile **aynı mesajda devam et**;
-devam edemezsen sadece tek cümlelik "context doldu, kaldığım slug şu" bilgisi
-bırak, sonra kal. Ama mümkün olduğunca **100'ü bitirene kadar durma**.
+**⚠️ Tek teslim kuralı v2 (Mod A, oturum 31+ Quality-First):** Kerem
+"Mod A. Batch Na-Ne" derse 5 paket × 20 tarif = 100 tarif. **Her
+paket sonrası "Batch {N}a hazır, GATE 1-7 PASS" der ve ARDIŞIK
+sonraki pakete geçer**, onay beklemez. 5-6 saat ardışık çalışma.
+Toplam 100 tarif bitmeden 5 paketin tamamını tek tetikle teslim et.
+
+Eski v1 (50+50 tek teslim) DEPRECATED. v2'de paketler arası "ara
+teslim" tek bir cümlelik durum mesajıdır ("Batch {N}a hazır, GATE
+1-7 PASS, {N}b başlıyor"), Kerem onay vermez, devam edersin.
+
+Context window sıkışırsa "context doldu, kaldığım paket+slug şu"
+bilgisi bırak, sonra kal — ama 5 paketin tamamını bitirmek hedef.
 
 ---
 
@@ -512,6 +525,129 @@ geri dönüş referansı.
 
 ## 5. Mod A, Yeni TR tarif yazma
 
+### 5.0.0 Mod A v2 Quality-First (oturum 31+, ZORUNLU default, 7 GATE)
+
+**Bağlam (zorunlu okuma):** Oturum 17-30 boyunca Mod B/C/D/E/F/FA/G/H/I/IA/IB/M/K
+toplam 13 mod cycle ve ~1700 prod correction yapıldı. Mini-rev
+kümülatif 262 tarif (oturum 31 sonu). Kök neden: Mod A v1'de hız
+> kalite, retrofit downstream'a aktı. v2 = inline gate, retrofit
+yerine doğum-anında doğru.
+
+**Scope:** 20 tarif × 5 paket (Na/Nb/Nc/Nd/Ne) = 100 tarif. Eski
+50+50 (v1) DEPRECATED.
+
+**Aşağıdaki §5.0 (A+ standardı) + §5.1 (kaynak) + §5.2-§5.7 (cuisine/
+allergen/macro/step/etc.) + §6 (Step↔Ingredient match) + §7 (kalite
+çıtası) + §8 (self-review) + §9 (geçmiş hatalar) + §10 (yasaklar)
+HEPSİ AYNI ZORUNLULUKLA GEÇERLİ.** v2 sadece scope (20×5) + 4 yeni
+gate (uniqueness + anti-boilerplate + slug-leak + klasik formul)
+ekler. Eski kurallardan vazgeçilmez.
+
+**7 GATE (her tarif için, batch tesliminden ÖNCE Codex self-check):**
+
+**GATE 1 — UNIQUENESS (yeni)**
+- Slug `docs/tarif-listesi.txt`'de ARANMAZ (3508 mevcut prod alfabetik
+  liste). Slug çakışması = REJECT.
+- Title semantik benzerlik: "Tahin Pekmezli Pankek" varsa
+  "Tahinli Pekmezli Pankek" YASAK; "Sumaklı Tavuk Sote" varsa
+  "Sumaklı Tavuk Soteleme" YASAK; "Adana Sumaklı Patates Aşı" varsa
+  "Sumaklı Patates Tavası Adana" YASAK. Görsel/anlamsal yakınlık
+  reddi (oturum 27 mini-rev pattern dersi).
+- Cuisine 41 kod sabit, yeni cuisine ekleme YASAK (§5.2).
+
+**GATE 2 — KAYNAK (mevcut §5.1 zorunluluk)**
+- Her tarif için **2-3 web kaynağı** (Wikipedia + resmi otorite +
+  1 yemek portali). Yöre tarifi → Kültür Portalı (kulturportali.gov.
+  tr) VEYA coğrafi işaret (ci.turkpatent.gov.tr) ZORUNLU.
+- Halüsinasyon yasağı: yöresel iddia kanıtsızsa o tarif YAZILMAZ
+  (oturum 27 dersi: kayisava-trabzon, keskekli-istavrit-sinop,
+  kestaneli-hamsi-zonguldak Codex halüsinasyonu DELETE edildi).
+
+**GATE 3 — KLASIK FORMUL (yeni, oturum 30-31 mini-rev dersi)**
+- Klasik tarif essential malzemeleri ATLANMAZ. Örnek pattern (yarım
+  düzine örnek, hepsi mini-rev paketi 24-39 keşfi):
+  * Levant musakhan-bowl: SOĞAN + SUMAK BOL (essential)
+  * Welsh rarebit: WORCESTERSHIRE SOSU (essential, hardal yetmez)
+  * Rus syrniki: TOZ ŞEKER + EKŞİ KREMA (smetana servis essential)
+  * Edirne saray kapama: KUŞ ÜZÜMÜ + İÇ BADEM + TARÇIN (saray imzası)
+  * K.Maraş tava: MARAŞ BİBERİ (yöre essential, paprika yetmez)
+  * Sichuan soğuk noodle: SUSAM YAĞI + TOZ ŞEKER (Sichuan denge)
+  * Peru sofrito (arroz con pollo, tacu-tacu): SOĞAN + KIMYON
+  * Tortilla española: SOĞAN + ZEYTİNYAĞI confit
+  * Türk iç pilav: KUŞ ÜZÜMÜ (essential, yoksa iç pilav değil)
+  * Kilis sumaklı yoğurtlu köfte: KURU NANE (Kilis imzası)
+  * Erzurum su böreği: SÜT (haşlama tepsi sosu) + TUZ
+  * Brezilya pamonha: HİNDİSTAN CEVİZİ SÜTÜ
+  * Norveç rømmegrøt: TEREYAĞI (smjør, üst gezdirme essential)
+- Yöre tarifinde klasik essential atlandığında REJECT. Codex'in
+  bilmediği klasik = §5.1 web research ile öğrenilir.
+
+**GATE 4 — STEP↔INGREDIENT MATCH (mevcut §6 zorunluluk + tekrar)**
+- Step'te bahsi geçen HER malzeme listede olacak. "Tuz" geçiyorsa
+  ingredient list'te tuz olacak. "Domates rendesi" diyorsa ya
+  "Domates" ingredient yetmez, "Domates rendesi" olmalı veya step
+  "rendelenmiş domatesi" yazmalı (paketi 23 TRIPLE TUTARSIZLIK Ardahan
+  dersi: 3 ayrı eksik step ingredient tek tarifte = REJECT).
+- Tersi de: ingredient list'teki HER malzeme step'te kullanılmış
+  olmalı (orphan ingredient yasak).
+
+**GATE 5 — ANTI-BOILERPLATE 21 PATTERN BLACKLIST (yeni, oturum 30-31)**
+- Aşağıdaki 21 cümlenin HİÇBİRİ step'lerde geçmesin. Bunlar
+  `scripts/find-jenerik-scaffold.ts`'in tarama pattern'leri ve
+  oturum 30-31'de 262 tarif rewrite'ında temizlendi:
+  * "kalan malzemeleri ölçün ve kesilecek sebze"
+  * "son tuz, yağ ve ekşi dengesini kontrol"
+  * "tabakta su salıp dokusu kaymasın"
+  * "tavayı orta ateşte 2 dakika ısıtın, ilk temas yapışmasın"
+  * "sosunu veya bağlayıcı harcını ayrı kapta"
+  * "şekil verecek kıvama gelene kadar toparlayın"
+  * "tüm malzemeyi servis öncesi hazırlayın"
+  * "sıvılarını ve aromatiklerini dengeli biçimde karıştırın"
+  * "kuru ve yaş malzemeleri ayırın"
+  * "soğursa gevrek kenarlar yumuşar"
+  * "peynirli doku sertleşir"
+  * "tuz, baharat ve ekşi malzemeyi ayrı kapta birleştirin"
+  * "servis tabağını ve yan malzemeleri hazırlayın"
+  * "ılık tabaklara alın, yanında çayla"
+  * "son dokusunu kontrol edip tabaklayın"
+  * "ritim bozulmasın"
+  * "gluten gevşesin"
+  * "akışı için" (slug-leak indirect)
+  * "sıcak servis kıvamı korur"
+  * "sıcak adımlarda arama yapılmasın"
+  * "akışında kullanılacak tava"
+- Bu cümleler "tarif-özgü değil" generic scaffold'dur. Her step
+  tarifin kendine özel cümlelerle yazılır.
+
+**GATE 6 — SLUG-LEAK YASAĞI (yeni, oturum 31 keşfi)**
+- Step instruction'larında slug ASLA YAZILMAZ:
+  * ❌ "Yufkaları harçla katlayın, ricottali-misir-boregi-avustralya-
+       usulu akışı için."
+  * ❌ "Yumurtaları 8 dakika haşlayın, tea-eggs-cin-atistirmalik-
+       usulu akışı için."
+  * ❌ "Çörekleri pişirin, susamli-corek-eskisehir-usulu akışı için."
+- Slug DB internal identifier'dır, kullanıcıya gösterilen step
+  metni değil. Slug-leak = REJECT.
+
+**GATE 7 — EM-DASH YASAĞI (mevcut AGENTS.md kalıcı)**
+- Em-dash (—, U+2014) ve en-dash (–) YASAK. Hyphen (-) bitişik
+  birleşik kelimelerde kalır. Yerine virgül, noktalı virgül, nokta,
+  parantez, iki nokta. Tüm tarif metinleri (TR + en + de title +
+  description + steps + tipNote + servingSuggestion + ingredient
+  isimleri).
+
+**Self-check (Codex teslim öncesi)**: 7 GATE × 20 tarif = 140 kontrol.
+Her paket teslim mesajında "GATE 1-7: PASS, 0 REJECT" netliği
+söylenir. Gate ihlalı = REJECT, batch yeniden istenir.
+
+**Pipeline:**
+1. Codex 20 tarif yaz, GATE 1-7 self-check.
+2. Teslim: "Batch {N}a hazır, 20 tarif, GATE 1-7 PASS."
+3. Claude verify (`scripts/check-mod-a-batch.ts` + audit DB +
+   tarif-listesi cross-check) + apply (`scripts/seed-recipes.ts`
+   prod append).
+4. Sonraki paketle aynı.
+
 ### 5.0 A+ kalite standardı (oturum 18 Batch 36b + Retrofit-01 dersleri, ZORUNLU)
 
 Batch 36b ve Retrofit-01 audit'lerinde ortak örüntü: **Codex minimum
@@ -634,12 +770,12 @@ Kerem'e sor.
 
 ### Scope (Kerem'in açık talimatı yoksa default'u uygula)
 
-**Default scope (Kerem "Mod A. Batch Na" / "Mod A. Batch Nb" dediğinde):**
-- **50 tarif** (B30 dersi: Windows komut uzunluğu sınırı + recurring
-  block riski yüzünden 100→50 ikiye bölündü. {N}a = ilk 50, {N}b =
-  sonraki 50. Kerem her yarıyı ayrı tetikler, ikisi arası tarif
-  tekrar üretmezsin ama her yarıda kendi 25 TR + 25 int dağılımı)
-- **~25 TR + ~25 uluslararası** (uluslararasıda §5 cuisine
+**Default scope v2 (Kerem "Mod A. Batch Na/Nb/Nc/Nd/Ne" dediğinde, oturum 31+ ZORUNLU):**
+- **20 tarif × 5 paket** (Na/Nb/Nc/Nd/Ne, toplam 100 tarif). Eski v1
+  (50+50) DEPRECATED. v2 = §5.0.0 7 GATE Quality-First default.
+- Her paket bağımsız 20 tarif yaz; paketler arası tarif tekrar
+  üretmezsin. Her pakette kendi ~10 TR + ~10 uluslararası dağılımı.
+- **~10 TR + ~10 uluslararası** her pakette (uluslararasıda §5 cuisine
   tablosundan eksik olan kodlardan, genelde `se/hu/pe/gb/pl/au` az olanlar,
   ya da `ru/vn/es/cu` gibi gelişmekte olanlar)
 - **7 Türk bölgesi dengelensin** (Karadeniz, Ege, Güneydoğu, İç Anadolu,

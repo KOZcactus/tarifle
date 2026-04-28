@@ -37,16 +37,16 @@ async function main() {
   });
   console.log("DB:", new URL(url).host);
 
-  // Closed slug listesi (paketi 1-32)
+  // Closed slug listesi (paketi 1-34)
   const closedSlugs = new Set<string>();
-  for (let i = 1; i <= 32; i++) {
+  for (let i = 1; i <= 34; i++) {
     const file = path.resolve(`scripts/fix-mini-rev-batch-${i}.ts`);
     if (!fs.existsSync(file)) continue;
     const content = fs.readFileSync(file, "utf-8");
     const matches = content.matchAll(/slug: "([^"]+)"/g);
     for (const m of matches) closedSlugs.add(m[1]);
   }
-  console.log(`Closed slugs (paketi 1-32): ${closedSlugs.size}`);
+  console.log(`Closed slugs (paketi 1-34): ${closedSlugs.size}`);
 
   // Tüm prod tariflerini çek, scaffold pattern içerenleri filter
   const recipes = await prisma.recipe.findMany({
@@ -76,7 +76,7 @@ async function main() {
 
   hits.sort((a, b) => b.matchedPatterns.length - a.matchedPatterns.length);
 
-  console.log(`\n=== Hit count: ${hits.length} (jenerik scaffold pattern, paketi 1-32'te kapatılmamış) ===`);
+  console.log(`\n=== Hit count: ${hits.length} (jenerik scaffold pattern, paketi 1-34'te kapatılmamış) ===`);
   console.log(`Top 30 (matched count desc):\n`);
   hits.slice(0, 30).forEach((h, i) => {
     console.log(`${i + 1}. ${h.slug}`);

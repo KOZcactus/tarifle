@@ -13,20 +13,55 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
-## 🎯 Aktif (şu an çalışılıyor / kısa vade)
+## ✅ Oturum 28 SONU (28 Nis 2026), major kapanışlar
 
-### Test Campaign 7/8 done (oturum 26, K8 kullanıcı telefondan kaldı)
+**Mod K v2 71/71 (%100 KAPANIŞ)**: 1a-36a + 22b/24b yeniden teslim
+hepsi verify+apply. Kümülatif Mod K correction prod ~1701. Codex
+queue temiz, ek Mod K batch işi kalmadı.
 
-8 kategori plan (docs/TEST_CAMPAIGN_OTURUM_26.md) + 7 detaylı rapor
-(docs/TEST_REPORT_OTURUM_26_KATEGORI_{1,2,3,4,5,6,7}.md). 0 P0, 5 P1
-(HEPSİ FIX), 18 P2 (15 fix), 6 P3 (1 fix). 5 yanlış tanı dokümante.
-Site LAUNCH-READY.
+**Test Campaign 8/8 KAPANIŞ**: K8 yapıldı + 1 P1 TTS bug fix
+(`60439df`, useLocale + ttsLang dynamic + voice-picker BCP-47).
 
-**K8 kalan (Cross-browser + PWA, P2, ~45 dk)**: real cihaz test
-gerek (browser preview Chrome-only emulator). iOS Safari (TTS Web
-Speech API), Firefox (Gecko), Edge (Blink), Mobile Safari, Chrome
-Android, PWA install banner + standalone mode. Kullanıcı telefondan
-test eder, bulguları rapora geçirilir.
+**4 yeni cuisine code**: cl Şili (paketi 8) + ge Gürcü (paketi 9) +
+at Avusturya (paketi 11) + ca Kanada (paketi 14). CUISINE_CODES
+37 → 41. Cuisine tests 46 → 58 PASS.
+
+**8 mini-rev paketi (paketi 8-15)**: 55 tarif kapatıldı, kümülatif
+100. 38 KRİTİK fix (oturum 27: 3 + oturum 28: 35 yeni). Pattern
+`scripts/fix-mini-rev-batch-{8..15}.ts`.
+
+**5 SEO entry FAQ tamamlandı**: atistirmaliklar + sebze-yemekleri +
+smoothie-shake + soslar-dippler + portekiz, 20 q+a (paketi 14
+commit `c0dbf7b`).
+
+**5 prod bug fix**: RecipeCard "0" + Home CTA + SEO Sentry crash
++ TTS K8 + picanha nutrition.
+
+**Prod nutrition recompute prod**: 3508 row, %98 matchedRatio>=0.5
+coverage.
+
+---
+
+## 🎯 Aktif (oturum 29+ kısa vade)
+
+### Mini-rev kuyruk (~110 MAJOR, paketi 16-25 civarı)
+
+8 paket boyunca KRİTİK kandidatların büyük kısmı kapatıldı, kalan
+~110 MAJOR çoğunlukla jenerik "yöre yumuşatma" pattern. Paketi 16-25
+arası 7 tarif/paket pattern devam edebilir. Pattern script
+`scripts/fix-mini-rev-batch-15.ts` referans (`ingredients_amount_
+change` field paketi 12'de eklendi).
+
+KRİTİK kandidat azaldı: kalan KRİTİK olanlar ekstra cuisine fix +
+KIBE-MUMBAR pattern + definition fix yer yer. 2 paralel agent +
+20+ kaynak/paket disiplini sürer.
+
+### SEO landing batch 5+ (top 29 → top 36+, 12 kalan sayfa)
+
+Adaylar: vietnam (29), brezilya (15), küba (12), peru (15), rus
+(24), macar (12), iskandinav (18), ingiliz (40+), polonya (16),
+avustralya (cuisine'lar). diet/sutsuz, diet/alkolsuz (diet'lar).
+Pattern script `scripts/seo-revise-batch4.mjs`.
 
 ### P1 SEO landing intro derinlik (oturum 27 itibariyle top 29/41 done)
 

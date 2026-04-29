@@ -561,7 +561,7 @@ export default async function TarifPage({ params, searchParams }: TarifPageProps
         <img
           src={recipe.imageUrl}
           alt={translatedTitle}
-          className="mb-8 h-64 w-full rounded-xl object-cover sm:h-80"
+          className="mb-8 aspect-[4/3] w-full rounded-xl object-cover"
         />
       ) : (
         <div className="mb-8 flex h-64 items-center justify-center rounded-xl bg-bg-card sm:h-80">

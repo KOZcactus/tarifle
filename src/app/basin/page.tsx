@@ -111,7 +111,16 @@ export default async function BasinPage() {
         <p className="text-base leading-relaxed text-text">
           {t("brandAssetsDescription")}
         </p>
-        <p className="mt-4 text-sm text-text-muted">{t("brandAssetsComingSoon")}</p>
+        <p className="mt-6">
+          <a
+            href="/press-kit.zip"
+            download
+            className="inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-hover"
+          >
+            {t("brandAssetsDownload")}
+          </a>
+        </p>
+        <p className="mt-3 text-sm text-text-muted">{t("brandAssetsNote")}</p>
       </section>
 
       <section className="mb-12">

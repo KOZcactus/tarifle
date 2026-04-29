@@ -1,0 +1,350 @@
+[
+  {
+    "slug": "pavlova",
+    "title": "Pavlova",
+    "type": "TATLI",
+    "cuisine": "au",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Yumurta akı",
+      "Şeker",
+      "Nişasta",
+      "Sirke",
+      "Krema",
+      "Çilek"
+    ],
+    "servingSuggestion": "Çilek, kivi ve krema ile servis edin.",
+    "tipNote": "Yumurta akına sarı karışmamalı; beze hacim almaz."
+  },
+  {
+    "slug": "kunafa-arap-usulu",
+    "title": "Kunafa Arap Usulü",
+    "type": "TATLI",
+    "cuisine": "me",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Tel kadayıf",
+      "Tereyağı",
+      "Tuzsuz peynir",
+      "Şeker",
+      "Su",
+      "Antep fıstığı"
+    ],
+    "servingSuggestion": "Antep fıstığıyla sıcak servis edin.",
+    "tipNote": "Şerbeti sıcak tatlıya ılık dökün; kadayıf çıtırlığını korur."
+  },
+  {
+    "slug": "sigara-boregi",
+    "title": "Sigara Böreği",
+    "type": "APERATIF",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Yufka",
+      "Beyaz peynir",
+      "Maydanoz",
+      "Kızartma yağı"
+    ],
+    "servingSuggestion": "Yanına limon dilimi ve yoğurtlu dip koyup sıcak servis edin.",
+    "tipNote": "Yufka ucunu suyla kapatın; kızarırken rulo açılmadan sıkı kalır."
+  },
+  {
+    "slug": "kisir",
+    "title": "Kısır",
+    "type": "SALATA",
+    "cuisine": "tr",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "İnce bulgur",
+      "Nar ekşisi",
+      "Domates salçası",
+      "Limon suyu",
+      "Zeytinyağı",
+      "Maydanoz",
+      "Taze soğan",
+      "Domates",
+      "Sıcak su",
+      "Tuz",
+      "Pul biber",
+      "Taze nane"
+    ],
+    "servingSuggestion": "Marul yaprakları üzerinde servis edin.",
+    "tipNote": "Bulguru sıcak suyla ıslatın ama fazla su koymayın, kabarmasını bekleyin."
+  },
+  {
+    "slug": "patlican-salatasi",
+    "title": "Patlıcan Salatası",
+    "type": "SALATA",
+    "cuisine": "tr",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "Patlıcan",
+      "Sarımsak",
+      "Zeytinyağı",
+      "Limon suyu",
+      "Tuz",
+      "Maydanoz"
+    ],
+    "servingSuggestion": "Ekmek ile meze olarak servis edin.",
+    "tipNote": "Köz patlıcanı soyduktan sonra süzdürmek salatanın tabakta sulanmasını azaltır."
+  },
+  {
+    "slug": "sutlac",
+    "title": "Sütlaç",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Süt",
+      "Pirinç",
+      "Şeker",
+      "Nişasta",
+      "Vanilya"
+    ],
+    "servingSuggestion": "Soğuk servis edin, tarçın serpebilirsiniz.",
+    "tipNote": "Pirinci önceden haşlayıp süte ekleyin, daha pürüzsüz olur."
+  },
+  {
+    "slug": "cig-kofte",
+    "title": "Çiğ Köfte",
+    "type": "APERATIF",
+    "cuisine": "tr",
+    "categorySlug": "aperatifler",
+    "ingredients": [
+      "İnce bulgur",
+      "İsot (pul biber)",
+      "Domates salçası",
+      "Biber salçası",
+      "Soğan (rendelenmiş)",
+      "Taze soğan",
+      "Maydanoz",
+      "Zeytinyağı",
+      "Tuz",
+      "Kimyon",
+      "Marul"
+    ],
+    "servingSuggestion": "Marul yaprağı ve limon ile dürüm yaparak servis edin.",
+    "tipNote": "Bulgur macun gibi olana kadar 20 dakika yoğurun; isotu daha iyi bağlar."
+  },
+  {
+    "slug": "citir-patates",
+    "title": "Çıtır Patates",
+    "type": "ATISTIRMALIK",
+    "cuisine": "tr",
+    "categorySlug": "atistirmaliklar",
+    "ingredients": [
+      "Patates",
+      "Zeytinyağı",
+      "Tuz",
+      "Karabiber",
+      "Kekik",
+      "Sarımsak tozu"
+    ],
+    "servingSuggestion": "Fırından çıkar çıkmaz ince tuz serpip ketçap ya da aioli ile sunun.",
+    "tipNote": "Patatesleri 30 dk suda bekletip kurulamak çıtırlık sırrı."
+  },
+  {
+    "slug": "whiskey-sour",
+    "title": "Whiskey Sour",
+    "type": "KOKTEYL",
+    "cuisine": "us",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Bourbon viski",
+      "Taze limon suyu",
+      "Şeker şurubu",
+      "Buz",
+      "Kiraz (garnitür)"
+    ],
+    "servingSuggestion": "Kısa bardakta, üstüne birkaç damla bitters ve limon kabuğuyla sunun.",
+    "tipNote": "Yumurta akı eklerseniz kadifemsi bir köpük elde edersiniz."
+  },
+  {
+    "slug": "dugun-corbasi",
+    "title": "Düğün Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Kuzu gerdan",
+      "Su",
+      "Yoğurt",
+      "Yumurta sarısı",
+      "Un",
+      "Limon suyu",
+      "Tereyağı",
+      "Pul biber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Üstüne tereyağlı pul biber gezdirip limon dilimiyle sıcak derin kasede sunun.",
+    "tipNote": "Terbiyeyi çorbaya eklemeden önce sıcak et suyuyla ılıtın; yoğurt kesilmez."
+  },
+  {
+    "slug": "filtre-kahve",
+    "title": "Filtre Kahve",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "kahve-sicak-icecekler",
+    "ingredients": [
+      "Filtre kahve",
+      "Sıcak su"
+    ],
+    "servingSuggestion": "Ön ısıtılmış kupada, yanında küçük su bardağıyla şekersiz servis edin.",
+    "tipNote": "Suyu kaynar halde dökmeyin; 92-96°C aralığı acılığı azaltır."
+  },
+  {
+    "slug": "tavuk-suyu-corbasi",
+    "title": "Tavuk Suyu Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Tavuk but",
+      "Tavuk suyu",
+      "Tel şehriye",
+      "Yumurta sarısı",
+      "Limon suyu",
+      "Maydanoz",
+      "Un"
+    ],
+    "servingSuggestion": "Karabiber ve limonla sıcak servis edin.",
+    "tipNote": "Terbiyeyi sıcak tavuk suyuyla ılıtın; yumurta çorbada kesilmez."
+  },
+  {
+    "slug": "havuc-zencefil-corbasi",
+    "title": "Havuç Zencefil Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Havuç",
+      "Soğan",
+      "Taze zencefil",
+      "Sebze suyu",
+      "Portakal suyu",
+      "Zeytinyağı"
+    ],
+    "servingSuggestion": "Üzerine kabak çekirdeği serpin.",
+    "tipNote": "Zencefili ince rendeleyin; lifli parçalar çorbada kalmaz."
+  },
+  {
+    "slug": "balik-corbasi",
+    "title": "Balık Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Beyaz balık fileto",
+      "Havuç",
+      "Patates",
+      "Soğan",
+      "Yumurta sarısı",
+      "Limon suyu"
+    ],
+    "servingSuggestion": "Limon ve kıyılmış dereotuyla servis edin.",
+    "tipNote": "Balığı haşladıktan sonra kılçık kontrolü yapın; çorba pürüzsüz yenir."
+  },
+  {
+    "slug": "shakshuka-yumurta",
+    "title": "Shakshuka Yumurta",
+    "type": "KAHVALTI",
+    "cuisine": "ma",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Yumurta",
+      "Domates",
+      "Kırmızı biber",
+      "Soğan",
+      "Sarımsak",
+      "Zeytinyağı",
+      "Ekmek",
+      "Tuz",
+      "Kimyon"
+    ],
+    "servingSuggestion": "Taze ekmekle sıcak servis edin.",
+    "tipNote": "Yumurtaları sos koyulaştıktan sonra kırın; beyazlar dağılmadan pişer."
+  },
+  {
+    "slug": "sucuklu-menemen",
+    "title": "Sucuklu Menemen",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Sucuk",
+      "Yumurta",
+      "Domates",
+      "Yeşil biber",
+      "Tereyağı",
+      "Ekmek"
+    ],
+    "servingSuggestion": "Taze ekmekle tavada servis edin.",
+    "tipNote": "Domates suyunu çekmeden yumurtayı eklemeyin; menemen sulu kalır."
+  },
+  {
+    "slug": "mini-kis",
+    "title": "Mini Kiş",
+    "type": "APERATIF",
+    "cuisine": "tr",
+    "categorySlug": "aperatifler",
+    "ingredients": [
+      "Tart hamuru",
+      "Yumurta",
+      "Krema",
+      "Kaşar peyniri",
+      "Ispanak",
+      "Mantar"
+    ],
+    "servingSuggestion": "Brunch sofralarında ılık servis edin.",
+    "tipNote": "Hamur tabanlarını 8 dakika ön pişirin; harç eklendiğinde taban hamur kalmaz."
+  },
+  {
+    "slug": "salatalikli-naneli-ayran",
+    "title": "Salatalıklı Naneli Ayran",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Yoğurt",
+      "Soğuk su",
+      "Salatalık",
+      "Taze nane",
+      "Tuz"
+    ],
+    "servingSuggestion": "Baharatlı yemeklerin yanında servis edin.",
+    "tipNote": "Salatalığı rendeledikten sonra hafif sıkın; ayran fazla sulanmaz."
+  },
+  {
+    "slug": "spaghetti-carbonara",
+    "title": "Spaghetti Carbonara (Türk Pazarı Uyarlaması)",
+    "type": "YEMEK",
+    "cuisine": "it",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Spaghetti",
+      "Yumurta sarısı",
+      "Pecorino peyniri",
+      "Dana pastırması",
+      "Karabiber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Tabağa alır almaz servis edin; carbonara dinlendirilen değil, anında yenen bir yemektir. Yanına basit yeşil salata.",
+    "tipNote": "Yumurta sosu kesinlikle kapalı ocakta eklenir; tavadaki kalan ısı yeterlidir. Karıştırırken yumurta granül oluyorsa 1 yemek kaşığı daha haşlama suyu ekleyin."
+  },
+  {
+    "slug": "spanakopita",
+    "title": "Spanakopita",
+    "type": "YEMEK",
+    "cuisine": "gr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Yufka",
+      "Ispanak",
+      "Feta peyniri",
+      "Yumurta",
+      "Zeytinyağı"
+    ],
+    "servingSuggestion": "Ilık dilimleyip yoğurtla servis edin.",
+    "tipNote": "Yufka katlarını yağlayın; pişince yaprak yaprak ayrılır."
+  }
+]

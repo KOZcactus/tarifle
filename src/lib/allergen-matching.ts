@@ -305,6 +305,8 @@ export function ingredientMatchesAllergen(
   ingredientName: string,
   rule: AllergenRule,
 ): boolean {
+  // Defensive: undefined/empty ingredient name (source parse hatası)
+  if (!ingredientName || typeof ingredientName !== "string") return false;
   // "X yerine Y" deyimi: tarif X'i KULLANMIYOR, Y'yi kullanıyor. Sadece
   // Y kısmını allergen kontrolüne sok. Örn "Tereyağı yerine sıvı yağ"
   // tarifi tereyağı içermez, sıvı yağ kullanır.

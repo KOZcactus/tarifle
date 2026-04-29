@@ -4624,7 +4624,15 @@ referansı)**:
    idempotent, AuditLog MOD_K_MANUAL_REV / MOD_K_REJECT_DELETE)
 5. Dev test + idempotent re-run + prod apply (--env prod
    --confirm-prod)
-6. dump-tarif-listesi.ts (silme varsa)
+6. **Apply pipeline post-step (her Mod A/Mod K silme/ekleme sonrası
+   ZORUNLU)**:
+   - `npx tsx scripts/dump-tarif-listesi.ts` (alfabetik flat .txt,
+     manuel Ctrl+F için)
+   - `npx tsx scripts/dump-recipe-titles.ts` (cuisine+type grup .md,
+     Codex Mod A v2 brief duplicate audit için)
+   Her iki dosya prod'dan dump edilir, source-of-truth Codex'in
+   yeni batch yazarken referans alacağı list. Bu disiplin
+   olmadan Codex eski liste üzerinden çakışma yapabilir.
 7. Commit + push (pre-push 6 katman)
 
 **Sıradaki Codex tetik**: `Mod K. Batch 27b.` (Bölüm 6). 27b + 28a

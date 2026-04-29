@@ -13,6 +13,60 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## ✅ Oturum 32 SONU FINAL (29 Nis 2026), 26 commit, MARATON
+
+**Oturum 32 final başarı zinciri (26 commit, prod 3508→3714, +206 tarif):**
+
+1. **Mod A v2 40a-e + 41a-d apply (prod 3508 → 3714, +206 tarif)**:
+   100 tarif 40a-e + 84 tarif 41a-d (16 41e bekleniyor). Retrofit
+   pipeline ilk kullanım: 4 KRİTİK REJECT yakalandı + 4 yeni tarif
+   ile çözüldü (tabriz-kufteh-tabrizi, surabaya-rawon, cape-
+   waterblommetjie-bredie, bitlis-glorik).
+
+2. **audit-deep 62→0 CRITICAL kapanış** (commit 93a9f7a + 09989f3 +
+   d85be7d): 56 vegan tag fix + 26 allergen ek + algoritma rafine
+   (yerine handler + kekiği/pirinç krakeri excludePatterns + balığı
+   possessive + Turkish-aware word boundary + kete YUMURTA + tarka-
+   dal SUT kaldır).
+
+3. **GATE A 792→1 + GATE B 10→0** (commit 8aba17c + 245b889 +
+   74c5fda): 771 moderate fix toplu + 21 extreme manuel fix +
+   GATE B Turkish word boundary + lavaş keyword çıkar.
+
+4. **IIFE format homojenleştirme** (commit f3a99c9): 63 IIFE flat
+   array, scripts/lib/recipe-helpers.ts modülü, -740 satır
+   boilerplate, Codex tetik şablonu IIFE-free güncelleme (commit
+   05f097e).
+
+5. **Source-DB drift 13 SKIP entry kalıcı temizlik** (commit 4d82a65
+   + ed09971 + 6c0a4ca): sync-11-skip-source format-aware + 2 final
+   ingredient ek (Tereyağı). check-allergen-source SKIP_FINDINGS boş.
+
+6. **60. blog yazısı** (commit b285ea3): "Sebze Pişirme Teknikleri"
+   1478 kelime, 5 temel teknik + Maillard vs karamelizasyon.
+   docs/all-recipe-titles.md dump pipeline ile sync (commit a8a39cb).
+
+7. **Codex tetik şablonu IIFE-free güncelleme** (commit 05f097e):
+   docs/CODEX_BATCH_BRIEF.md + docs/CODEX_NEW_CHAT_INTRO.md helper
+   modülü direktifi.
+
+**Aktif/Planlı (oturum 33+):**
+
+- **Codex 41e teslim bekle/apply** (kalan 16 tarif, 41 paket toplam
+  100/100 tamamlama)
+- **Codex 42a-42e tetik** (Mod A v2 sonraki 100 tarif, brief §5.0.0
+  default scope, tek mesajla `Mod A v2. Batch 42a-42e.` tetiği)
+- **4. blog yazısı** (taze ot rehberi / çikolata bilimi / peynir
+  eşleştirme; mevcut 60 blog, kategori dengesi pisirme-teknikleri 17,
+  malzeme-tanima 17, mutfak-rehberi 19)
+- **GATE A 1 minor + GATE B 2 false positive triage** (ROI düşük,
+  audit-recipe-quality.ts kalan minor finding'ler)
+- **Lhci regression baseline kontrol** (oturum 32 sonu, 206 yeni
+  tarif sonrası, 5 URL × 2 run)
+- **CI hata teşhisi** (gh run list failed run'ları, ROI düşük)
+
+---
+
 ## ✅ Oturum 32 SONU (29 Nis 2026), 9 commit, audit-deep 62→0 + algoritma rafine
 
 **Oturum 32 final başarı zinciri (9 commit, prod 3508→3617 + audit PASS):**

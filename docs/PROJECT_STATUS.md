@@ -1,5 +1,127 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 32 SONU FINAL (29 Nis 2026), 26 commit, MARATON GÜNÜ:
+> Mod A v2 40a-e + 41a-d 4 paket apply (prod 3508 → 3714, +206 tarif) +
+> audit-deep 62→0 + GATE A 792→1 + IIFE format homojenleştirme +
+> source-DB drift 13 SKIP kalıcı temizlik + 60. blog + Codex tetik
+> şablonu IIFE-free güncelleme.**
+>
+> **26 commit, 7 büyük başarı:**
+>
+> 1. **Mod A v2 Batch 40a-40e + 41a-41d apply (prod 3508 → 3714)**:
+>    - 40a-e (100 tarif): 7 GATE PASS, 5 minor fix, dev+prod seed,
+>      hardaliye schema cap fix (48→24 saat fermente).
+>    - 41a (20 tarif): 7 GATE PASS, retrofit pipeline ilk kullanım.
+>    - 41b/c/d (59 tarif): 41d 4 KRİTİK REJECT yakalandı (aynı klasik
+>      tarif farklı slug: turkish-tirit-konya, budapest-paprikas-csirke,
+>      stockholm-janssons-frestelse, varsova-pierogi-ruskie).
+>    - 41d retrofit (4 yeni tarif): tabriz-kufteh-tabrizi, surabaya-
+>      rawon, cape-waterblommetjie-bredie, bitlis-glorik. 7 GATE PASS.
+>    - 41e bekleniyor (kalan 16 tarif, 100 paket toplam 84/100).
+>
+> 2. **audit-deep 62 → 0 CRITICAL kapanış**:
+>    - RECIPE_CONSISTENCY 56 fix (vegan tag + hayvansal allergen
+>      çakışması, RecipeTag relation üzerinden).
+>    - ALLERGEN_ACCURACY 26 fix (Tereyağı→SUT, Zahter→SUSAM, Antep
+>      fıstığı→KUSUYEMIS, Tonkatsu→SOYA, vb.).
+>    - allergen-matching algoritma rafine: "X yerine Y" handler,
+>      "kekiği"/"pirinç krakeri" excludePatterns, "balığı" possessive
+>      keyword, Turkish-aware word boundary.
+>    - kete-kirigi YUMURTA + tarka-dal SUT kaldır (gerçek bug fix).
+>
+> 3. **GATE A süre algoritma 792 → 1 hit kapanış**:
+>    - audit-recipe-quality.ts GATE A rafine: totalMinutes = prep +
+>      cook + waitMinutes (waitMinutes = >30dk timerSeconds, marine
+>      threshold). %10/10dk tolerans.
+>    - 771 moderate fix (toplu, otomatik formül uygulama).
+>    - 21 extreme manuel fix: turron/blueberry/lamington kup
+>      (cookMinutes'a soğutma) + hanoi-bun-cha (4h marine timer) +
+>      piyaz/sivas-peskutan/tokat-baklali/selanik/sinop (total fazla
+>      yüksek anomali fix).
+>    - GATE B Turkish word boundary fix (10→0 hit), 2 gerçek SUT ek
+>      (tavuklu-nohutlu-arpa, siirt-kitel) + 5 false positive
+>      excludePatterns + lavaş GATE B keyword listesinden çıkar.
+>
+> 4. **IIFE format homojenleştirme (commit f3a99c9)**:
+>    - Önceki: 63 IIFE bloğu spread, her birinde local helper (t/ing/
+>      st/r), 209 duplicate definition. Source-DB drift'lerinde format
+>      çatışması.
+>    - Yeni: scripts/lib/recipe-helpers.ts tek modül, top-level import.
+>      Tüm IIFE'ler regex transform ile flat array'e düzleştirildi
+>      (CRLF + trailing comma fix). 63 IIFE → 0 IIFE.
+>    - seed-recipes.ts 16009 → 15269 satır (-740 satır boilerplate).
+>    - Codex tetik şablonu güncelleme: docs/CODEX_BATCH_BRIEF.md +
+>      docs/CODEX_NEW_CHAT_INTRO.md → IIFE wrapper YOK, helper'lar
+>      modülden, doğrudan recipes[] sonuna r({...}) append.
+>
+> 5. **Source-DB drift 13 SKIP entry kalıcı temizlik**:
+>    - 11 SKIP entry oturum 32'de yakalandı (audit-deep DB'ye allergen
+>      ekledi ama source ingredient adlarıyla eşleşmiyordu).
+>    - sync-11-skip-source.ts (format-aware: object/ing helper/raw
+>      string-pipe) ile 9 slug source ingredient ek + 2 allergen
+>      düzeltme (mafis Antep fıstığı + nar-eksili SUSAM kaldır).
+>    - 2 final SKIP (tavuklu-nohutlu-arpa + siirt-kitel) format-aware
+>      sync (string-pipe r({}) + obj plain {}) + Tereyağı ingredient
+>      ek (legitimate SUT).
+>    - check-allergen-source.ts SKIP_FINDINGS boş (kuru baseline).
+>
+> 6. **60. blog yazısı + 2 dump dosyası pipeline**:
+>    - "Sebze Pişirme Teknikleri" (pisirme-teknikleri 16→17, 1478
+>      kelime, 5 temel teknik blanching/sauté/roasting/braising/
+>      glazing + Maillard vs karamelizasyon + 7 otoriter kaynak).
+>    - docs/all-recipe-titles.md re-dump pipeline'a eklendi (Codex
+>      duplicate audit referansı). Önceki sadece tarif-listesi.txt
+>      dump ediliyordu, all-recipe-titles 26 Nis'ten beri eski idi.
+>    - docs/CODEX_BATCH_BRIEF.md apply pipeline post-step zorunlu
+>      bölümüne her iki dump scripti direktifi.
+>
+> 7. **Push disiplini**: 26 commit, 4-5 ardışık zincir + her birinde
+>    pre-push 6 katman temiz. 1 em-dash guard yakalandı (sync-11-skip
+>    comment'te '—'), hızlı düzeltildi. allergen-source-guard 4-5 kez
+>    yakalandı (warsaw-bigos GLUTEN, veracruz balığı possessive,
+>    nar-eksili SUSAM, tavuklu-nohutlu Tereyağı, siirt-kitel Tereyağı),
+>    her seferinde algoritma rafine veya SKIP/source ek ile çözüldü.
+>    1 zod ERROR (siirt-kitel ingredient obj format) + 1 schema cap
+>    (hardaliye 1440 max) + 2 zod ERROR (ayas-efelek tag, lisbon-
+>    ameijoas categorySlug) düzeltildi.
+>
+> **Final state**: Prod **3508 → 3714** tarif (+206, %5.9 büyüme).
+> Cuisine **41** sabit. Mini-rev **289** sabit. **60 blog** (+1).
+> 60 SEO entry sabit. Pre-push 6 katman temiz tüm 26 commit. Audit-
+> deep dev+prod 0 CRITICAL (PASS). audit-recipe-quality 5 GATE: A=1
+> (minor extreme), B=2 (false positive), C=0, D=0, E=0. Source-guard
+> 0 over-tag, 0 missing, 3702 tarif. Site **LAUNCH-READY**. Codex
+> 41a-d 84/100 apply, 41e bekleniyor.
+>
+> **Oturum 32 commit zinciri (26 commit, ters kronoloji)**:
+>
+> 41 paketi: `05f097e` 41d retrofit + Codex tetik IIFE-free + `6c0a4ca`
+> Tereyağı ingredient ek + `ed09971` source-DB sync 2 SKIP +
+> `bdd12f9` balığı possessive + `39b70ea` 41b/c/d apply (59 tarif) +
+> `a8a39cb` all-recipe-titles dump pipeline + `ef7b18c` SKIP 2 +
+> `331bbad` nar-eksili SUSAM + `74c5fda` GATE B Turkish boundary +
+> `f06a531` hardaliye 1440 cap + `50260dd` 41a apply (20 tarif).
+>
+> Audit + IIFE: `f3a99c9` IIFE homojenleştirme (63→0 IIFE) + `35fe84a`
+> docs oturum 32 SONU + `4d82a65` source-DB sync 11 SKIP +
+> `9a43f35` GATE A süre rafine + `22fb37a` em-dash fix + `8aba17c`
+> GATE A 771 moderate + `245b889` GATE A 21 extreme + `93a9f7a`
+> audit-deep 62 CRITICAL + `09989f3` SKIP 11 + `d85be7d` allergen
+> matching rafine.
+>
+> Mod A v2 40a-e: `b285ea3` 60. blog Sebze Pişirme + `ba6ba87` docs
+> başlangıç + `2fae2d3` types fix + `91801b3` warsaw-bigos +
+> `ce4d305` Mod A v2 40a-e apply (100 tarif).
+>
+> **Sıradaki oturum 33 öncelik**: (a) Codex 41e teslim bekleme + apply
+> (kalan 16 tarif, 41 paket toplam 100/100 tamamlama), (b) PROJECT_
+> STATUS güncelleme oturum 32 SONU FINAL header (bu blok), (c) Codex
+> Batch 42a-42e tetik (Mod A v2 sonraki 100 tarif), (d) 4. blog
+> yazısı (taze ot rehberi / çikolata bilimi / peynir eşleştirme),
+> (e) GATE A 1 minor + GATE B 2 false positive triage (ROI düşük),
+> (f) lhci regression baseline kontrol (oturum 32 sonu, 206 yeni
+> tarif sonrası), (g) CI hata teşhisi.
+
 > **Oturum 32 SONU (29 Nis 2026), 9 commit, Mod A v2 40a-e tam apply +
 > 60. blog + audit-deep 62 → 0 CRITICAL kapanış + allergen-matching
 > algoritma rafine.**

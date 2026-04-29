@@ -1,6 +1,6 @@
 # Tarifle, tüm yayında tarif başlıkları
 
-Toplam: **3711 tarif** (cuisine + type bazında gruplanmış, alfabetik).
+Toplam: **3729 tarif** (cuisine + type bazında gruplanmış, alfabetik).
 Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 Üretildi: 2026-04-29
@@ -18,6 +18,10 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 - ⭐**Arjantin Locro Criollo** [argentina-locro-criollo] (15i/8s, 1060dk, 560kcal)
 - ⭐**Empanada** [empanada] (7i/6s, 70dk, 350kcal)
+
+## at / CORBA (1)
+
+- **Vienna Frittatensuppe** [vienna-frittatensuppe] (8i/7s, 35dk, 210kcal)
 
 ## at / TATLI (5)
 
@@ -316,8 +320,8 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Sebzeli Chow Mein** [sebzeli-chow-mein] (6i/5s, 22dk, 380kcal)
 - ⭐**Sebzeli Dumpling** [sebzeli-dumpling] (7i/6s, 70dk, 240kcal)
 - ⭐**Sesame Noodles** [sesame-noodles-cin-soguk-usulu] (7i/5s, 18dk, 288kcal)
-- **Sichuan Dan Dan Noodle** [sichuan-dan-dan-noodle] (9i/7s, 38dk, 560kcal)
 - **Sichuan Dan Dan Noodle** [sanghay-susamli-dan-dan-noodle] (12i/5s, 27dk, 560kcal)
+- **Sichuan Dan Dan Noodle** [sichuan-dan-dan-noodle] (9i/7s, 38dk, 560kcal)
 - **Sichuan Kung Pao Tavuk** [sichuan-kung-pao-tavuk] (10i/6s, 35dk, 420kcal)
 - **Sichuan Mapo Tofu** [sichuan-mapo-tofu] (10i/7s, 27dk, 310kcal)
 - **Sichuan Yeşil Fasulye** [sichuan-yesil-fasulye] (6i/6s, 22dk, 140kcal)
@@ -330,6 +334,10 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Şanghay Xiaolongbao** [shanghai-xiaolongbao-domuzlu] (11i/9s, 125dk, 360kcal)
 - **Şanghay Yer Fıstıklı Salatalık Noodle** [sanghay-yer-fistikli-salatalik-noodle] (6i/5s, 22dk, 370kcal)
 - **Şanghay Zencefilli Pak Choi Noodle** [sanghay-zencefilli-pak-choi-noodle] (5i/6s, 20dk, 335kcal)
+
+## co / APERATIF (1)
+
+- **Cartagena Arepa de Huevo** [cartagena-arepa-de-huevo] (6i/7s, 34dk, 330kcal)
 
 ## co / CORBA (1)
 
@@ -477,6 +485,10 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Ren Sauerbraten** [rhein-sauerbraten-dana] (11i/8s, 1655dk, 560kcal)
 - **Sauerbraten** [sauerbraten] (13i/6s, 4530dk, 480kcal)
 
+## dk / APERATIF (1)
+
+- **Kopenhag Smørrebrød Ringa** [kopenhag-smorrebrod-ringa] (7i/6s, 15dk, 310kcal)
+
 ## dk / KAHVALTI (1)
 
 - **Copenhagen Smorrebrod** [copenhagen-smorrebrod] (9i/5s, 15dk, 330kcal)
@@ -615,8 +627,9 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Atakilt Wat Sebze Yahni** [atakilt-wat-sebze-yahni] (12i/6s, 45dk, 260kcal)
 - **Gondar Yumurtalı Doro Wat** [gondar-doro-wat-yumurtali] (9i/6s, 180dk, 510kcal)
 
-## fr / APERATIF (5)
+## fr / APERATIF (6)
 
+- ⭐**Burgundy Gougères** [burgundy-gougeres] (8i/7s, 45dk, 210kcal)
 - **Fransız Mercimekli Hardallı Tartine** [fransiz-mercimekli-hardalli-tartine] (6i/4s, 30dk, 280kcal)
 - **Paris Croque Monsieur** [paris-croque-monsieur] (8i/7s, 45dk, 760kcal)
 - **Peynirli Mantar Dolması** [peynirli-mantar-dolmasi] (4i/5s, 33dk, 170kcal)
@@ -771,12 +784,13 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 - **Bezelyeli Naneli Ezme** [bezelyeli-naneli-ezme-ingiltere-usulu] (4i/5s, 14dk, 132kcal)
 
-## gb / TATLI (21)
+## gb / TATLI (22)
 
 - **Ahududulu Eton Kup** [ahududulu-eton-kup-ingiltere-usulu] (4i/6s, 12dk, 218kcal)
 - ⭐**Bakewell Tart** [bakewell-tart-ingiliz-usulu] (7i/5s, 50dk, 520kcal)
 - **Bal Kremalı Elma Kup** [bal-kremali-elma-kup-ingiltere-usulu] (5i/5s, 18dk, 208kcal)
 - **Banoffee Posset** [banoffee-posset-ingiliz-kadeh-usulu] (7i/5s, 200dk, 276kcal)
+- **Edinburgh Cranachan** [edinburgh-cranachan] (6i/6s, 50dk, 520kcal)
 - **Elmalı Crumble Kup** [elmali-crumble-kup-ingiltere-usulu] (5i/7s, 42dk, 248kcal)
 - **Eton Mess** [eton-mess] (4i/6s, 12dk, 224kcal)
 - **Eton Mess Kup** [eton-mess-kup-ingiliz-usulu] (4i/6s, 10dk, 196kcal)
@@ -795,7 +809,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **İngiliz Blackcurrant Fool** [blackcurrant-fool-ingiliz-usulu] (3i/5s, 20dk, 194kcal)
 - **İngiliz Rhubarb Yoğurt Fool** [rhubarb-yogurt-fool-ingiliz-usulu] (3i/5s, 18dk, 142kcal)
 
-## gb / YEMEK (27)
+## gb / YEMEK (28)
 
 - ⭐**Beef Wellington** [beef-wellington-mantarli] (11i/8s, 155dk, 780kcal)
 - **Belfast Champ** [belfast-champ] (6i/6s, 40dk, 330kcal)
@@ -818,6 +832,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Pırasalı Tavuk Pie** [pirasali-tavuk-pie-ingiltere-usulu] (5i/6s, 48dk, 318kcal)
 - **Rozmarinli Tavuk Tepsi** [rozmarinli-tavuk-tepsi-ingiliz-usulu] (8i/6s, 104dk, 318kcal)
 - **Sausage Rolls** [sausage-rolls] (4i/6s, 45dk, 304kcal)
+- **Scottish Rumbledethumps** [scottish-rumbledethumps] (8i/7s, 75dk, 320kcal)
 - **Tavuklu Mantarlı Pie Tava** [tavuklu-mantarli-pie-tava-ingiltere-usulu] (13i/6s, 47dk, 338kcal)
 - **Yorkshire Kuzu Shepherd's Pie** [yorkshire-kuzu-shepherds-pie] (9i/5s, 85dk, 590kcal)
 - **Yorkshire Toad in the Hole** [yorkshire-toad-in-the-hole] (7i/7s, 60dk, 620kcal)
@@ -1441,7 +1456,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Portakallı Tarçınlı İrmik Kup** [portakalli-tarcinli-irmik-kup-fas-usulu] (5i/5s, 24dk, 238kcal)
 - **Sellou** [sellou-fas-usulu] (6i/6s, 40dk, 228kcal)
 
-## ma / YEMEK (19)
+## ma / YEMEK (18)
 
 - **Bastilla** [bastilla] (9i/6s, 165dk, 470kcal)
 - **Casablanca Tavuk Tagine** [casablanca-tavuk-tagine] (8i/6s, 138dk, 540kcal)
@@ -1453,7 +1468,6 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Kefta Tagine** [kefta-tagine] (5i/5s, 50dk, 326kcal)
 - **Keftalı Bulgur Tava** [keftali-bulgur-tava-fas-usulu] (5i/7s, 36dk, 304kcal)
 - **Kuzu Tagine** [kuzu-tagine] (5i/7s, 195dk, 510kcal)
-- **Lagos Yer Fıstıklı Tatlı Patates Güveci** [lagos-yer-fistikli-tatli-patates-guveci] (6i/5s, 46dk, 365kcal)
 - **Limonlu Zeytinli Tavuk Tajin** [limonlu-zeytinli-tavuk-tajin-fas-usulu] (4i/6s, 36dk, 308kcal)
 - **Loubia** [loubia] (4i/6s, 650dk, 280kcal)
 - **Marakeş Tavuk Tajin** [marrakesh-chicken-tagine] (10i/7s, 155dk, 480kcal)
@@ -1542,7 +1556,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - ⭐**Kunafa Arap Usulü** [kunafa-arap-usulu] (6i/6s, 102dk, 420kcal)
 - **Umm Ali** [umm-ali] (6i/6s, 50dk, 420kcal)
 
-## me / YEMEK (19)
+## me / YEMEK (20)
 
 - **Arayes** [arayes-lubnan-usulu] (7i/6s, 32dk, 322kcal)
 - **Balila** [balila] (7i/5s, 25dk, 215kcal)
@@ -1558,6 +1572,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Maqluba** [maqluba] (5i/7s, 120dk, 520kcal)
 - **Mujaddara** [mujaddara] (5i/6s, 55dk, 310kcal)
 - **Musakhan** [musakhan] (6i/6s, 95dk, 560kcal)
+- ⭐**Riyadh Chicken Kabsa** [riyadh-chicken-kabsa] (19i/9s, 120dk, 640kcal)
 - **Shawarma Pilavı** [shawarma-pilavi] (10i/6s, 90dk, 540kcal)
 - **Shish Barak** [shish-barak] (7i/6s, 60dk, 304kcal)
 - **Shish Tawook** [shish-tawook] (7i/5s, 170dk, 330kcal)
@@ -1579,9 +1594,8 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Esquites** [esquites-meksika-usulu] (5i/4s, 18dk, 162kcal)
 - **Esquites con Queso** [esquites-con-queso] (5i/4s, 22dk, 232kcal)
 
-## mx / CORBA (7)
+## mx / CORBA (6)
 
-- **Lima Kinoalı Tavuk Aguadito** [lima-kinoali-tavuk-aguadito] (6i/5s, 44dk, 320kcal)
 - **Mexico City Pozole Rojo** [mexico-city-pozole-rojo] (8i/6s, 315dk, 520kcal)
 - **Pozole Rojo** [pozole-rojo] (5i/6s, 265dk, 310kcal)
 - **Sopa de Fideo** [sopa-de-fideo] (6i/6s, 30dk, 200kcal)
@@ -1656,12 +1670,16 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Veracruz Huachinango** [veracruz-huachinango] (13i/7s, 70dk, 430kcal)
 - **Yucatan Cochinita Pibil** [yucatan-cochinita-pibil] (10i/7s, 575dk, 520kcal)
 
+## ng / APERATIF (1)
+
+- **Lagos Akara** [lagos-akara] (6i/7s, 293dk, 260kcal)
+
 ## ng / CORBA (2)
 
 - **Lagos Egusi Soup** [lagos-egusi-soup] (10i/7s, 165dk, 670kcal)
 - **Lagos Pepper Soup** [lagos-pepper-soup-dana] (10i/7s, 150dk, 360kcal)
 
-## ng / YEMEK (6)
+## ng / YEMEK (7)
 
 - **Lagos Jollof Rice** [lagos-jollof-rice-firin] (9i/6s, 68dk, 360kcal)
 - **Lagos Moi Moi** [lagos-moi-moi] (9i/7s, 130dk, 340kcal)
@@ -1669,6 +1687,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Lagos Party Jollof Rice** [lagos-party-jollof-rice] (8i/5s, 75dk, 470kcal)
 - **Lagos Suya Şiş** [lagos-suya-sis] (8i/6s, 35dk, 430kcal)
 - **Lagos Tavuklu Jollof Pilavı** [lagos-tavuklu-jollof-pilavi] (7i/5s, 65dk, 510kcal)
+- **Lagos Yer Fıstıklı Tatlı Patates Güveci** [lagos-yer-fistikli-tatli-patates-guveci] (6i/5s, 46dk, 365kcal)
 
 ## pe / APERATIF (5)
 
@@ -1678,11 +1697,12 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Papa Rellena** [papa-rellena-peru-usulu] (10i/5s, 60dk, 286kcal)
 - ⭐**Papa a la Huancaína** [papa-a-la-huancaina-peru-usulu] (6i/5s, 33dk, 244kcal)
 
-## pe / CORBA (6)
+## pe / CORBA (7)
 
 - **Ají de Quinua** [aji-de-quinua-peru-usulu] (4i/5s, 30dk, 154kcal)
 - **Kinoalı Sebze Çorbası** [kinoali-sebze-corbasi-peru-usulu] (5i/5s, 30dk, 164kcal)
 - **Kişnişli Mısır Çorbası** [kisnisli-misir-corbasi-peru-usulu] (5i/6s, 30dk, 158kcal)
+- **Lima Kinoalı Tavuk Aguadito** [lima-kinoali-tavuk-aguadito] (6i/5s, 44dk, 320kcal)
 - **Mısırlı Kabak Çorbası** [misirli-kabak-corbasi-peru-usulu] (4i/5s, 28dk, 148kcal)
 - **Quinoa Chupe Çorbası** [quinoa-chupe-corbasi-peru-usulu] (5i/6s, 30dk, 178kcal)
 - **Sopa Criolla** [sopa-criolla] (10i/6s, 35dk, 212kcal)
@@ -1901,9 +1921,10 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - ⭐**Lisbon Pastel de Nata** [lisbon-pastel-de-nata] (8i/7s, 49dk, 335kcal)
 - **Lizbon Portakallı Badem Keki** [lizbon-portakalli-badem-keki] (5i/5s, 80dk, 310kcal)
 
-## pt / YEMEK (5)
+## pt / YEMEK (6)
 
 - **Lisbon Ameijoas Bulhao Pato** [lisbon-ameijoas-bulhao-pato] (8i/7s, 58dk, 260kcal)
+- **Lisbon Arroz de Pato** [lisbon-arroz-de-pato] (11i/8s, 120dk, 610kcal)
 - **Lisbon Bacalhau a Bras** [lisbon-bacalhau-a-bras] (9i/7s, 534dk, 480kcal)
 - **Lizbon Bifana** [lisbon-bifana] (11i/7s, 65dk, 430kcal)
 - ⭐**Porto Bacalhau à Brás** [porto-bacalhau-a-bras] (11i/8s, 1490dk, 540kcal)
@@ -2003,10 +2024,9 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Stroganoff Dana Kasesi** [stroganoff-dana-kasesi-rus-usulu] (8i/5s, 32dk, 318kcal)
 - **Vareniki** [vareniki] (8i/6s, 75dk, 380kcal)
 
-## se / APERATIF (10)
+## se / APERATIF (9)
 
 - ⭐**Dereotlu Kür Somon** [dereotlu-kur-somon] (4i/4s, 1460dk, 220kcal)
-- **Kopenhag Smørrebrød Ringa** [kopenhag-smorrebrod-ringa] (7i/6s, 15dk, 310kcal)
 - ⭐**Skagen Toast** [skagen-toast] (6i/4s, 20dk, 260kcal)
 - **Skagenröra** [skagenrora] (5i/4s, 15dk, 260kcal)
 - **Stockholm Gravlax Toast** [stockholm-gravlax-toast] (7i/5s, 18dk, 330kcal)
@@ -2232,7 +2252,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 - **Tunisian Slata Mechouia** [slata-mechouia] (6i/6s, 40dk, 120kcal)
 
-## tr / APERATIF (115)
+## tr / APERATIF (116)
 
 - **Adana Susamlı Kabak Çiçeği Tava** [susamli-kabak-cicegi-tava-adana-usulu] (7i/5s, 26dk, 192kcal)
 - **Adıyaman Cevizli Biber Kavurması** [cevizli-biber-kavurmasi-adiyaman-usulu] (5i/4s, 22dk, 164kcal)
@@ -2313,6 +2333,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Paçanga Böreği** [pacanga-boregi] (6i/4s, 25dk, 420kcal)
 - **Peynir Topları** [peynir-toplari] (6i/5s, 20dk, 280kcal)
 - **Peynirli Milföy** [peynirli-milfoy] (5i/5s, 35dk, 320kcal)
+- **Pırasa Mücveri** [pirasa-mucveri] (8i/7s, 31dk, 230kcal)
 - **Pırasalı Mihaliç Mücveri** [pirasali-mihalic-mucveri-bursa-usulu] (5i/6s, 24dk, 202kcal)
 - ⭐**Rize Mincili Laz Böreği** [mincili-laz-boregi-rize-ev-usulu] (5i/4s, 49dk, 244kcal)
 - **Sakarya Domatesli Mısır Çöreği** [domatesli-misir-coregi-sakarya-usulu] (5i/4s, 75dk, 184kcal)
@@ -2728,7 +2749,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - ⭐**Şalgam Suyu** [salgam-suyu] (2i/3s, 5dk, 30kcal)
 - **Şeftalili Yoğurt Smoothie** [seftalili-yogurt-smoothie] (4i/3s, 5dk, 165kcal)
 
-## tr / KAHVALTI (275)
+## tr / KAHVALTI (276)
 
 - **Adana Biberli Bulgur Omleti** [biberli-bulgur-omleti-adana-usulu] (4i/5s, 16dk, 214kcal)
 - **Adıyaman Acılı Susamlı Yumurta Ekmeği** [acili-susamli-yumurta-ekmegi-adiyaman-usulu] (6i/5s, 18dk, 248kcal)
@@ -2795,7 +2816,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Fındıklı Kaygana Dürümü** [findikli-kaygana-durumu-giresun-usulu] (5i/5s, 22dk, 286kcal)
 - **Fırınlanmış Yulaf** [firinlanmis-yulaf] (4i/5s, 35dk, 260kcal)
 - **Gaziantep Biberli Yumurta Katmeri** [biberli-yumurta-katmeri-gaziantep-usulu] (4i/6s, 35dk, 286kcal)
-- **Giresun Mısır Unlu Yağlı Ekmek** [misir-unlu-yagli-ekmek-giresun-usulu] (5i/6s, 30dk, 178kcal)
+- **Giresun Mısır Unlu Yağlı Ekmek** [misir-unlu-yagli-ekmek-giresun-usulu] (5i/3s, 30dk, 178kcal)
 - **Giresun Yağlısı** [yaglisi-giresun-usulu] (9i/5s, 64dk, 274kcal)
 - **Granola Kasesi** [granola-kasesi] (5i/5s, 8dk, 430kcal)
 - **Güneydoğu Esintili Sumaklı Yumurta Kapama** [sumakli-yumurta-kapama-kilis-usulu] (7i/5s, 14dk, 188kcal)
@@ -2808,6 +2829,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Haşhaşlı Peynirli Gözleme** [hashasli-peynirli-gozleme-eskisehir-usulu] (4i/5s, 28dk, 278kcal)
 - **Haşhaşlı Yumurta Dürümü** [hashasli-yumurta-durumu-afyon-usulu] (4i/5s, 18dk, 312kcal)
 - **Hellimli Bazlama Pizza** [hellimli-bazlama-pizza-isparta-usulu] (4i/5s, 20dk, 246kcal)
+- **Ispanaklı Yumurta** [ispanakli-yumurta] (8i/7s, 28dk, 220kcal)
 - **Kabak Çiçekli Peynirli Omlet** [kabak-cicekli-peynirli-omlet-izmir-usulu] (4i/5s, 16dk, 242kcal)
 - **Kaldirikli Yumurtalı Tava** [kaldirikli-yumurtali-tava-samsun-usulu] (5i/5s, 18dk, 248kcal)
 - **Kaldırıklı Mısır Ekmeği Tostu** [kaldirikli-misir-ekmegi-tostu-ordu-usulu] (5i/5s, 20dk, 244kcal)
@@ -3491,7 +3513,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Şanlıurfa Arap Şıllığı** [sanliurfa-arap-silligi-pekmezli] (5i/7s, 18dk, 520kcal)
 - **Şekerpare** [sekerpare] (7i/6s, 60dk, 460kcal)
 
-## tr / YEMEK (759)
+## tr / YEMEK (765)
 
 - **Adana Fırın Domatesli Bulgur Köftesi** [firin-domatesli-bulgur-koftesi-adana-usulu] (5i/7s, 45dk, 202kcal)
 - ⭐**Adana Kebap** [adana-kebap] (7i/5s, 110dk, 570kcal)
@@ -3690,6 +3712,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Eskişehir Haşhaşlı Mercimekli Bükme** [eskisehir-hashasli-mercimekli-bukme] (7i/5s, 148dk, 380kcal)
 - **Eskişehir Tatar Böreği** [tatar-boregi-eskisehir-usulu] (11i/6s, 80dk, 266kcal)
 - **Eskişehir Çibörek** [eskisehir-cig-borek-kiymali] (8i/7s, 53dk, 415kcal)
+- **Etli Bezelye** [etli-bezelye] (11i/7s, 75dk, 430kcal)
 - **Etli Ekmek** [etli-ekmek] (6i/5s, 100dk, 520kcal)
 - **Etli Erikli Bulgur Tava** [etli-erikli-bulgur-tava-konya-usulu] (4i/5s, 36dk, 328kcal)
 - **Etli Güveç** [etli-guvec] (8i/5s, 205dk, 410kcal)
@@ -3799,6 +3822,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - ⭐**Kabak Çiçekli Peynirli Börek** [kabak-cicekli-peynirli-borek-mugla-usulu] (4i/6s, 40dk, 268kcal)
 - **Kabak Çiçeği Dolması** [kabak-cicegi-dolmasi] (4i/5s, 70dk, 220kcal)
 - **Kabaklı Yalancı Mantı** [kabakli-yalanci-manti-kocaeli-usulu] (5i/5s, 34dk, 232kcal)
+- ⭐**Kadınbudu Köfte** [kadinbudu-kofte] (11i/8s, 78dk, 430kcal)
 - **Kahramanmaraş Eli Böğründe** [eli-bogrunde-kahramanmaras-usulu] (5i/6s, 105dk, 356kcal)
 - **Kapuska** [kapuska] (8i/5s, 100dk, 260kcal)
 - **Karabük Cevizli Keşli Yayım** [karabuk-cevizli-kesli-yayim] (6i/7s, 50dk, 540kcal)
@@ -3906,6 +3930,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - ⭐**Kuzu Tandır** [kuzu-tandir] (7i/7s, 410dk, 560kcal)
 - **Kuşbaşılı Bulgurlu Firik Tava** [kusbasili-bulgurlu-firik-tava-sanliurfa-usulu] (4i/6s, 36dk, 344kcal)
 - ⭐**Kuşbaşılı Firikli Domates Tava** [kusbasili-firikli-domates-tava-sanliurfa-usulu] (4i/7s, 36dk, 336kcal)
+- **Köfteli Patates Yemeği** [kofteli-patates-yemegi] (13i/7s, 55dk, 520kcal)
 - ⭐**Köz Patlıcanlı Kuzu Kapama** [koz-patlicanli-kuzu-kapama-urfa-usulu] (5i/7s, 44dk, 328kcal)
 - **Kütahya Cimcik Mantısı** [kutahya-cimcik-mantisi-yogurtlu] (8i/7s, 63dk, 390kcal)
 - **Kütahya Ilıbada Dolması** [kutahya-ilibada-dolmasi] (11i/8s, 63dk, 260kcal)
@@ -3920,6 +3945,9 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Kırşehir Yumurtalı Erişte Kavurması** [yumurtali-eriste-kavurmasi-kirsehir-usulu] (4i/6s, 22dk, 262kcal)
 - ⭐**Kırşehir Çullama** [kirsehir-cullama] (9i/7s, 100dk, 360kcal)
 - **Kırşehir İçli Saç Böreği** [kirsehir-icli-sac-boregi] (12i/8s, 67dk, 360kcal)
+- ⭐**Kıymalı Kabak Sandal** [kiymali-kabak-sandal] (14i/8s, 60dk, 410kcal)
+- ⭐**Kıymalı Karnabahar Yemeği** [kiymali-karnabahar-yemegi] (10i/7s, 43dk, 260kcal)
+- **Kıymalı Patates Yemeği** [kiymali-patates-yemegi] (10i/7s, 35dk, 390kcal)
 - **Kıymalı Pide** [kiymali-pide] (11i/6s, 98dk, 560kcal)
 - **Lahana Sarması** [karadeniz-lahana-sarmasi] (4i/6s, 155dk, 260kcal)
 - ⭐**Lahmacun** [lahmacun] (10i/5s, 75dk, 230kcal)
@@ -4204,8 +4232,8 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Zeytinyağlı İç Bakla** [zeytinyagli-ic-bakla] (8i/5s, 45dk, 200kcal)
 - **Zonguldak Kiremitte Mantar Kavurma** [kiremitte-mantar-kavurma-zonguldak-usulu] (4i/6s, 24dk, 132kcal)
 - **Zonguldak Lahanalı Mantar Güveci** [lahanali-mantar-guveci-zonguldak-maden-usulu] (5i/7s, 40dk, 146kcal)
-- **Zonguldak Malay** [zonguldak-malay] (7i/6s, 32dk, 360kcal)
 - **Zonguldak Malay** [zonguldak-malay-misir-unlu] (7i/7s, 28dk, 340kcal)
+- **Zonguldak Malay** [zonguldak-malay] (7i/6s, 32dk, 360kcal)
 - **Zonguldak Mancar Diblesi** [mancar-diblesi-zonguldak-usulu] (5i/6s, 43dk, 176kcal)
 - **Zonguldak Mantarlı Mısır Yarması** [mantarli-misir-yarmasi-zonguldak-usulu] (5i/6s, 36dk, 188kcal)
 - **Çanakkale Domatesli Sardalya Pilaki** [domatesli-sardalya-pilaki-canakkale-usulu] (5i/6s, 32dk, 224kcal)
@@ -4386,11 +4414,12 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 - **Maracaibo Tumbarrancho** [maracaibo-tumbarrancho] (10i/7s, 60dk, 520kcal)
 
-## ve / YEMEK (3)
+## ve / YEMEK (4)
 
 - **Caracas Asado Negro** [caracas-asado-negro] (12i/7s, 340dk, 590kcal)
 - ⭐**Caracas Hallaca** [caracas-hallaca] (14i/8s, 390dk, 390kcal)
 - **Caracas Pabellon Criollo** [caracas-pabellon-criollo] (13i/8s, 870dk, 610kcal)
+- ⭐**Caracas Reina Pepiada** [caracas-reina-pepiada] (11i/7s, 53dk, 520kcal)
 
 ## vn / APERATIF (5)
 
@@ -4513,8 +4542,9 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 - **Soweto Chakalaka** [soweto-chakalaka] (14i/5s, 35dk, 150kcal)
 
-## za / TATLI (1)
+## za / TATLI (2)
 
+- **Cape Town Koeksisters** [cape-town-koeksisters] (11i/8s, 155dk, 360kcal)
 - ⭐**Cape Town Malva Pudding** [cape-town-malva-pudding] (11i/7s, 97dk, 430kcal)
 
 ## za / YEMEK (3)

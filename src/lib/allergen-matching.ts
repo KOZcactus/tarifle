@@ -263,7 +263,7 @@ export const ALLERGEN_RULES: AllergenRule[] = [
   {
     allergen: "DENIZ_URUNLERI",
     keywords: [
-      "balık", "somon", "levrek", "hamsi", "karides", "midye", "kalamar",
+      "balık", "balığı", "somon", "levrek", "hamsi", "karides", "midye", "kalamar",
       "ahtapot", "karidesli", "palamut", "istavrit",
       "yengeç", "deniz tarağı", "ançüez", "bonito", "istiridye",
       // "ton" alone collides with "tonik suyu", use "ton balığı" possessive:

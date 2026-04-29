@@ -58,6 +58,25 @@ const FIXES: { slug: string; from: string; to: string; reason: string }[] = [
     to: "cu",
     reason: "Slug 'kuba-usulu' Küba mutfağına işaret ediyor; siyah fasulye + tostada Küba klasiği (frijoles negros + tostada cubana). 'mx' yerine 'cu' doğru.",
   },
+  // Oturum 33 nihai temizlik audit GATE D 3 yeni hit
+  {
+    slug: "lagos-yer-fistikli-tatli-patates-guveci",
+    from: "ma",
+    to: "ng",
+    reason: "Lagos = Nijerya en büyük şehri. Yer fıstıklı tatlı patates güveci Batı Afrika klasiği. 'ma' (Fas/Mağrib) yerine 'ng' (Nijerya) doğru kod.",
+  },
+  {
+    slug: "lima-kinoali-tavuk-aguadito",
+    from: "mx",
+    to: "pe",
+    reason: "Lima = Peru başkenti. Aguadito Peru klasik tavuk çorbası, kinoa And bölgesi. 'mx' (Meksika) yerine 'pe' (Peru) doğru kod.",
+  },
+  {
+    slug: "kopenhag-smorrebrod-ringa",
+    from: "se",
+    to: "dk",
+    reason: "Kopenhag = Danimarka başkenti. Smørrebrød Danimarka açık sandviç klasiği. 'se' (İsveç) yerine 'dk' (Danimarka) doğru kod.",
+  },
 ];
 
 async function main() {

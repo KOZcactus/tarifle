@@ -116,12 +116,13 @@ export default async function RootLayout({
   // Aktif duyurular RSC olarak burada çekilir, client banner sadece
   // localStorage dismissal state'ini izler. Boş liste ise banner hiç render
   // edilmez (hydration sonrası). Cache: RSC per-request.
-  const [announcements, locale, messages, tMeta, leaderboardOn] =
+  const [announcements, locale, messages, tMeta, tA11y, leaderboardOn] =
     await Promise.all([
       getActiveAnnouncements(),
       getLocale(),
       getMessages(),
       getTranslations("metadata.site"),
+      getTranslations("a11y"),
       isLeaderboardEnabled(),
     ]);
 
@@ -141,6 +142,19 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col antialiased">
+        {/*
+          Skip-to-content link (WCAG 2.4.1 Bypass Blocks, A level).
+          Klavye kullanıcısı tab tuşuna ilk bastığında görünür olur,
+          uzun nav menülerini bypass edip ana içeriğe atlar. sr-only
+          default, focus:not-sr-only ile odaklandığında ekrana çıkar.
+          Marka renk #a03b0f (--color-primary) yüksek kontrast.
+        */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[#a03b0f] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg focus:outline-2 focus:outline-offset-2 focus:outline-white"
+        >
+          {tA11y("skipToContent")}
+        </a>
         {siteSchemas.map((schema, i) => (
           <script
             key={i}

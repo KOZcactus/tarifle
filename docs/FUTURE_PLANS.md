@@ -13,6 +13,71 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## 🌐 SEO + A11Y AUDIT BULGULARI (oturum 33, Planlı)
+
+**Statü**: Audit yapıldı, kritik fix uygulandı (skip-to-content link),
+2 sıralı iyileştirme defer.
+
+**Yapılan fix**:
+- ✅ Skip-to-content link layout.tsx'e eklendi (WCAG 2.4.1 A level)
+  - `messages/{tr,en}.json` "a11y.skipToContent" key
+  - Tab tuşu ile odaklanınca görünür, "#main-content"'a atlar
+  - Brand renk #a03b0f + white outline, yüksek kontrast
+
+**Defer edilen iyileştirme 1: hreflang / language alternates**
+
+Google'a "bu URL TR + EN her ikisi destekli" sinyalini vermek için
+`<link rel="alternate" hreflang="tr">` + `hreflang="en"` + `x-default`
+eksik. Tarifle next-intl cookie-based locale switching kullanıyor
+(URL aynı, cookie ile dil değişir), bu yüzden hreflang aynı URL'i
+gösterse de Google'a sinyal değer.
+
+Çözüm: Helper fonksiyon (`buildHreflangAlternates(path)`) yarat,
+tüm 60 generateMetadata'ya `alternates.languages = { tr-TR: ..., en-US:
+..., x-default: ... }` ek.
+
+**Süre**: ~1-1.5 saat (helper + 60 generateMetadata güncelleme +
+sitemap.xml hreflang ek + Google Search Console doğrulama).
+
+**ROI**: Orta. Cookie-based locale switching SEO'ya tam friendly değil
+ama hreflang ek değer sağlar. Web launch öncesi yapılması iyi.
+
+**Defer edilen iyileştirme 2: Form input label coverage rapor**
+
+74 input grep ile bulundu, 0 input aria-label/aria-labelledby/id ile.
+Ancak bu grep multi-line `<label>...<input>...</label>` pattern'i
+göremedi, yanlış pozitif olabilir. Manuel inceleme gerek:
+
+- `src/components` altındaki tüm form input'ları manual incele
+- `<label htmlFor="">` + `<input id="">` ya da `<label><input/></label>`
+  pattern var mı kontrol et
+- Eksik olanları aria-label veya `<label>` ile sar
+
+**Süre**: ~1 saat manuel review + 30dk fix.
+
+**ROI**: Orta-Yüksek. WCAG 1.3.1 (Info & Relationships, A) + 4.1.2
+(Name/Role/Value, A) için kritik. Screen reader kullanıcısı için
+input ne olduğunu söylüyor mu açıklığa kavuşur.
+
+**Audit özeti (PASS)**:
+- ✅ HTML lang attribute (locale-aware)
+- ✅ focus-visible CSS pattern
+- ✅ 363 aria-* attribute kullanımı (yüksek coverage)
+- ✅ Modal focus trap (useFocusTrap hook + role="dialog" +
+  aria-modal pattern)
+- ✅ Skip-to-content link (yeni eklendi)
+- ✅ JSON-LD: Organization + WebSite + Recipe + Article +
+  BreadcrumbList + FAQPage hepsi production-ready
+- ✅ Sitemap.xml dinamik (recipes + categories + cuisines + tags +
+  blog kapsamlı)
+- ✅ Robots.txt production-ready (admin/api disallow + crawl trap
+  parametre disallow + sitemap link + host)
+- ✅ Tarif detay generateMetadata: title + description + OG + Twitter
+- ✅ Canonical URL pattern her major route'ta
+- ✅ Dynamic OG image route (`/tarif/[slug]/opengraph-image/[locale]`)
+
+---
+
 ## 🚀 WEB LAUNCH CHECKLIST (oturum 33+, Planlı, web platform tamamlanınca)
 
 **Statü**: Plan aşaması, henüz iş yok. Tarifle teknik olarak şu an hazır

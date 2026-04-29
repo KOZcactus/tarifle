@@ -43,6 +43,39 @@ export default async function IletisimPage() {
         </section>
 
         <section>
+          <h2 className="text-lg font-semibold text-text">{t("supportHeading")}</h2>
+          <p className="mt-2 text-sm text-text-muted">{t("supportHelp")}</p>
+          <a
+            href="mailto:destek@tarifle.app"
+            className="mt-3 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            destek@tarifle.app
+          </a>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-text">{t("editorHeading")}</h2>
+          <p className="mt-2 text-sm text-text-muted">{t("editorHelp")}</p>
+          <a
+            href="mailto:editor@tarifle.app"
+            className="mt-3 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            editor@tarifle.app
+          </a>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-text">{t("pressHeading")}</h2>
+          <p className="mt-2 text-sm text-text-muted">{t("pressHelp")}</p>
+          <a
+            href="mailto:basin@tarifle.app"
+            className="mt-3 inline-block text-sm font-medium text-primary underline-offset-4 hover:underline"
+          >
+            basin@tarifle.app
+          </a>
+        </section>
+
+        <section>
           <h2 className="text-lg font-semibold text-text">{t("kvkkHeading")}</h2>
           <p className="mt-2 text-sm text-text-muted">{t("kvkkHelp")}</p>
           <a

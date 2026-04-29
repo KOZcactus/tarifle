@@ -1,11 +1,19 @@
 # Tarifle, Proje Durumu
 
-> **Oturum 33 SONU FINAL (29 Nis 2026), 18 commit, LAUNCH-READY GÜNÜ:
-> TIER 1+2 duplicate temizlik (4+1 sil) + CSP browser-noise filter +
-> 41e apply 18+2 retrofit (prod 3711→3731) + Mod R görsel altyapı +
-> mobile app master plan + Phase 0 prep (JWT spec + image URL helper +
-> AASA/assetlinks routes) + GATE A 5→0 + GATE E %10.62→%10.0 +
-> GATE D 3 cuisine fix.**
+> **Oturum 33 SONU FINAL (29-30 Nis 2026), 27 commit, LAUNCH-READY +
+> Mod R GÖRSEL PIPELINE GÜNÜ: TIER 1+2 duplicate temizlik (4+1 sil) +
+> CSP browser-noise filter + 41e apply 18+2 retrofit (prod 3711→3731)
+> + Mod R görsel altyapı (brief + scripts + queue) + pilot Batch 0
+> (5 görsel) + Batch 1 + Batch 2 apply (45 görselli prod) + mobile
+> app master plan + Phase 0 prep (JWT spec + image URL helper +
+> AASA/assetlinks routes + workspaces skeleton) + GATE A 5→0 +
+> GATE B mumbai/sikhye false positive fix + GATE E %10.62→%10.0 +
+> GATE D 3 cuisine fix + skip-to-content link (WCAG 2.4.1) + SEO
+> hreflang 23 route + form input aria-label coverage + 4. blog
+> (çikolata bilimi) + /basin sayfası + sosyal medya brand voice +
+> content calendar + Sentry feedback widget + email templates +
+> /iletisim sayfa genişletme (5 section) + email adres planı +
+> web launch playbook FUTURE_PLANS.md.**
 >
 > **18 commit, 8 büyük başarı:**
 >
@@ -111,12 +119,126 @@
 > hazır + Phase 0 prep deploy edildi (AASA/assetlinks DNS+SSL cache 24h
 > şimdiden başladı).
 >
-> **Sıradaki oturum 34 öncelik**: (a) Codex Mod R pilot çıktısını bekle/
-> kontrol (5 görsel aesthetic kilitleme), (b) Mod R Batch 1+ rollout
-> (featured 390 + popular ~500), (c) Web launch checklist (basın kit,
-> sosyal medya, ilk 100 kullanıcı planı), (d) Mod A v2 Batch 42a-42e
-> tetik (kullanıcı kararı, opsiyonel), (e) GATE B mumbai algoritma fix
-> (ROI orta, defer).
+> **Oturum 33 nihai başarı zinciri (27 commit, 30 Nis 2026 sabah-gece):**
+>
+> 9. **4. blog yazısı: Çikolata Bilimi** (commit 9fea97a):
+>    malzeme-tanima 17→18 (toplam blog 60→61). 1427 kelime, 6 bölüm
+>    (kakao yüzdesi etiketi + 5 tür ayrımı + 3 eritme yöntemi +
+>    temperleme bilimi 6 kristal form + 3 temperleme tekniği + 4
+>    yaygın hata + saklama + mutfak özet). 8 otoriter kaynak (Harold
+>    McGee, Kenji López-Alt, Callebaut, Valrhona, ICCO, Modernist
+>    Cuisine, The Spruce Eats, Cook's Illustrated).
+>
+> 10. **A11y skip-to-content link (WCAG 2.4.1)** (commit dcfb40b):
+>     layout.tsx body başına sr-only + focus:not-sr-only link, brand
+>     renk #a03b0f, i18n 'a11y.skipToContent' tr+en. Tab tuşu ile
+>     odaklanınca görünür, '#main-content' anchor.
+>
+> 11. **SEO hreflang language alternates 23 route** (commit 8d2d440):
+>     src/lib/seo/hreflang.ts helper (buildLanguageAlternates) +
+>     21 yeni route'a tr-TR + en-US + x-default. Bulk sed migration.
+>     Cookie-based locale switching ama Google'a bilingual sinyali.
+>
+> 12. **Form input aria-label 5 high-priority fix** (commit 39f1d54):
+>     74 input scan, 33 grep window flag, spot-check ile 5 gerçek
+>     eksik (SearchBar + SaveMenu + PantryClient + 2x AiAssistantForm
+>     ingredient/exclude). 'a11y' i18n namespace 6 yeni string.
+>     WCAG 1.3.1 + 4.1.2 PASS.
+>
+> 13. **Lint cleanup 8→0 + Mobile Phase 0 skeleton** (commit 41c9feb):
+>     scripts/audit-deep + audit-recipe-quality + smart-source-clean +
+>     smoke-test + verify-mod-k-batch + diet-scoring/profiles + 2 e2e
+>     test '_'-prefix mute. apps/mobile Expo SDK 52 + packages/{shared,
+>     api-client, design-tokens, i18n} skeleton (workspaces ready).
+>     Root tsconfig exclude apps + packages.
+>
+> 14. **Web launch playbook + email + sosyal medya altyapısı**:
+>     - docs/FUTURE_PLANS.md WEB LAUNCH CHECKLIST (commit 18bb087):
+>       11 bölüm, basın kit, sosyal medya, ilk 100 user, KPI, risk
+>       matrisi, sprint çizelgesi
+>     - /basin sayfası (commit 9479426): src/app/basin/page.tsx,
+>       6 bölüm pitch + hikaye + faktoidler + brand assets + story
+>       angles + iletişim. i18n 'press' namespace 28 string. Footer
+>       'Kurumsal' kolonuna 'Basın' link.
+>     - docs/SOCIAL_MEDIA_BRAND_VOICE.md + SOCIAL_MEDIA_CONTENT_
+>       CALENDAR.md (yeni, 200+ satır + 250+ satır). 28 post backlog.
+>     - Sentry feedback widget aktif (instrumentation-client.ts):
+>       'Geri bildirim' butonu sayfa sağ alt, Türkçe label, brand
+>       renk, screenshot=true Replay PII koruma.
+>     - docs/EMAIL_TEMPLATES.md (commit 3574f02, 400+ satır): 6
+>       email adres planı (iletisim/destek/kvkk/basin/editor/
+>       noreply) + Cloudflare Email Routing setup + 10 email
+>       template TR+EN paralel.
+>     - /iletisim sayfa 2→5 section: destek + editor + basin yeni.
+>     - tarifle.com → tarifle.app domain düzeltme.
+>
+> 15. **Mod R görsel pipeline canlı** (commit 67b898d, 91ddf35,
+>     78cd54c, fc1e243, 8bde719, 503d2c0, d02049d, cf9d64b):
+>     - docs/CODEX_MOD_R_BRIEF.md (350+ satır self-contained):
+>       7 bölüm preamble + decision tables + workflow + self-check
+>       + anti-pattern + reference protocol + pilot özel dikkat
+>     - Aesthetic v2 KALICI: emerald velvet booth + clear glass
+>       bistro table (transparent + reflective, ahşap YASAK) +
+>       charcoal linen napkin (sadece bu) + 3/4 high angle 35-40°
+>       + warm tungsten 3200K + dish 50-55% frame width + 4:3
+>       1600×1200 WebP + NO LAMP + NO STEAM + NO BRASS HOLDER
+>     - public/recipe-images/{generated,manual}/ klasör + .gitkeep
+>       + README.md
+>     - scripts/dump-recipe-image-queue.ts + apply-recipe-images.ts
+>       (queue üret + DB imageUrl set + AuditLog)
+>     - Pilot Batch 0 (5 görsel): adana-kebap + ezogelin-corbasi +
+>       baklava + menemen + aperol-spritz. Aesthetic kilitlendi.
+>     - Steam YOK + lamp YOK kuralı kullanıcı geri bildirimi ile
+>       kalıcı kural oldu (Batch 1 retry sonrası)
+>     - Batch 1 apply (20 tarif): manti, lahmacun, iskender-kebap,
+>       kuru-fasulye, mercimek-corbasi, karniyarik, imam-bayildi,
+>       yaprak-sarma, sucuklu-yumurta, coban-salatasi, mojito,
+>       tacos-al-pastor, feijoada, mercimek-koftesi, boza, soguk-cay,
+>       etli-kuru-fasulye, icli-kofte, hatay-kaytaz-boregi,
+>       firinda-karniyarik
+>     - Batch 2 apply (20 tarif): kunefe, margarita, ayran, anzac-
+>       biscuits, salgam-suyu, yayla-corbasi, su-boregi, muzlu-
+>       milkshake, asure, akdeniz-salatasi, tavuk-sote, humus,
+>       limonata, kabak-mucveri, butter-chicken, kai-yang, turk-
+>       kahvesi, mango-smoothie, kuzu-tandir (retry), kuymak
+>     - Reference v2 yenilendi: iskender-kebap + mojito + sucuklu-
+>       yumurta (3 type çeşitliliği YEMEK + KOKTEYL + KAHVALTI,
+>       lamp-free + steam-free)
+>     - Batch 3 queue hazır (oturum 34 başlangıcı için): pavlova,
+>       kunafa-arap-usulu, sigara-boregi, kisir, patlican-salatasi,
+>       sutlac, cig-kofte, citir-patates, whiskey-sour, dugun-
+>       corbasi, filtre-kahve, tavuk-suyu-corbasi, havuc-zencefil-
+>       corbasi, balik-corbasi, shakshuka-yumurta, sucuklu-menemen,
+>       mini-kis, salatalikli-naneli-ayran, spaghetti-carbonara,
+>       spanakopita
+>     - **Prod görselli tarif: 45/3731 (%1.21), Featured 45/372
+>       (%12.1)**
+>
+> **Final state oturum 33 SONU**: prod 3731 + 45 görselli + audit-
+> recipe-quality A=1 (defer edge ayvalik şevketibostan) + B=0 + C=0
+> + D=0 + E=10.00 + audit-deep PASS + Lhci 5×2 PASS + a11y skip
+> link + SEO hreflang 23 route + form aria-label 5 fix + 61 blog +
+> 60 SEO entry + Mod A v2 cycle 100/100 tamam + Mod R Batch 0+1+2
+> cycle prod live + Mobile Phase 0 skeleton + web launch playbook
+> tam dokümante. Pre-push 6 katman temiz tüm 27 commit.
+>
+> **Sıradaki oturum 34 öncelik**:
+> 1. **Mod R Batch 3+ rollout devam** (sen Codex'e Template 1 +
+>    Template 2 N=3 yapıştır, 20 görsel daha gelir, sonra Batch 4
+>    queue hazırla). Rollout devam → featured 372 tarif tam görselli
+>    olunca durabilir (Batch 17-18 sonrası), sonra popular ~500.
+> 2. **Cloudflare Email Routing setup** (kullanıcı manuel, T-7 gün
+>    lansman öncesi): iletisim + destek + kvkk + basin + editor 5
+>    alias + Gmail send-as. docs/EMAIL_TEMPLATES.md §1 detay.
+> 3. **5. blog yazısı**: taze ot rehberi / peynir eşleştirme. Mevcut
+>    61 blog. Kategori dengesi: pisirme-teknikleri 17, malzeme-tanima
+>    18, mutfak-rehberi 19.
+> 4. **Codex Mod A v2 Batch 42a-42e tetik** (kullanıcı kararı,
+>    opsiyonel sonraki 100 tarif). 'Codex'e mola' demişti, mola
+>    bittiğinde tetiklenir.
+> 5. **Mobile app development başlangıç** (Phase 0): web launch
+>    sonrası, Apple Developer enrollment + EAS init + auth API impl
+>    + workspaces migration. docs/FUTURE_PLANS.md mobile master plan.
 
 > **Oturum 32 SONU FINAL (29 Nis 2026), 26 commit, MARATON GÜNÜ:
 > Mod A v2 40a-e + 41a-d 4 paket apply (prod 3508 → 3714, +206 tarif) +

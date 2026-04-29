@@ -19,10 +19,12 @@ import { recipes } from "./seed-recipes";
  * this list means a regression.
  */
 const SKIP_FINDINGS = new Set<string>([
-  // (empty baseline; oturum 32 source-DB ingredient sync ile 11 drift
-  // entry kalıcı temizlendi. sync-11-skip-source.ts source ingredient
-  // listelerini DB ile uyumlu hale getirdi, allergen array'leri tetikler.
-  // Future drift should appear as real findings rather than being ignored.)
+  // Oturum 32 round 5: GATE B triage'da yakalanan 2 gerçek tereyağı kullanan
+  // tarif. DB'de SUT eklendi (audit-deep doğru) ama source eski sürüm
+  // (4 ingredient/3 step), tereyağı içermiyor. Source-DB drift, sync-source-
+  // from-db.ts paketi ile ayrı tur kalıcı temizlik.
+  "tavuklu-nohutlu-arpa-pilavi-ankara-usulu:over-tag:SUT",
+  "siirt-kitel:over-tag:SUT",
 ]);
 
 function main() {

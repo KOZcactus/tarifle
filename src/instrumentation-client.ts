@@ -25,6 +25,40 @@ if (dsn) {
         maskAllInputs: true,
         blockAllMedia: true,
       }),
+      // Sentry User Feedback widget (oturum 33+, web launch playbook §4).
+      // Sayfa sağ alt köşede sabit "Geri bildirim" butonu, kullanıcı
+      // tıklayınca modal açılır (isim + email + mesaj alanı). Form submit
+      // Sentry'ye user feedback event'i olarak push edilir, prod hatalarını
+      // raporlama dışındaki "kullanım sorusu / öneri / şikayet" akışı için.
+      // Brand renk #a03b0f, Türkçe metinler. screenshot=true Replay ile
+      // birlikte arıza nedeniyle başvuran kullanıcının ekran görüntüsü
+      // otomatik eklenir, debug süresi kısalır. PII koruma için Replay
+      // mask kuralları zaten aktif (yukarıdaki replayIntegration).
+      Sentry.feedbackIntegration({
+        colorScheme: "system",
+        showBranding: false,
+        autoInject: true,
+        triggerLabel: "Geri bildirim",
+        triggerAriaLabel: "Geri bildirim formu aç",
+        formTitle: "Geri bildirim",
+        submitButtonLabel: "Gönder",
+        cancelButtonLabel: "İptal",
+        confirmButtonLabel: "Onayla",
+        addScreenshotButtonLabel: "Ekran görüntüsü ekle",
+        removeScreenshotButtonLabel: "Ekran görüntüsünü kaldır",
+        nameLabel: "İsim",
+        namePlaceholder: "Adınız (opsiyonel)",
+        emailLabel: "E-posta",
+        emailPlaceholder: "ornek@email.com (opsiyonel, yanıt için)",
+        messageLabel: "Mesaj",
+        messagePlaceholder: "Sorun, öneri veya görüşünüzü yazın",
+        successMessageText: "Teşekkürler, geri bildiriminiz alındı.",
+        isRequiredLabel: "(zorunlu)",
+        themeLight: {
+          accentBackground: "#a03b0f",
+          accentForeground: "#ffffff",
+        },
+      }),
     ],
     replaysOnErrorSampleRate: 0.5,
     replaysSessionSampleRate: 0,

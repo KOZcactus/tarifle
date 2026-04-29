@@ -65,6 +65,14 @@ export async function Footer() {
                   {t("linkContact")}
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/basin"
+                  className="text-sm text-text-muted transition-colors hover:text-text"
+                >
+                  {t("linkPress")}
+                </Link>
+              </li>
             </ul>
           </div>
 

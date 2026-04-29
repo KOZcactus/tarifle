@@ -43,6 +43,39 @@ interface CspViolationReport {
   };
 }
 
+/**
+ * Browser-induced CSP noise prefix listesi. Kullanıcının tarayıcısı veya
+ * eklentileri kendi başına enjekte ettikleri ve bizim app kodumuzla ilgisi
+ * olmayan kaynaklar. Sentry'ye forward edilmez (signal kirletmesin) ama
+ * yine de console.warn ile loglanır.
+ *
+ * Eklenen pattern'ler:
+ * - translate.google.com / translate.googleapis.com / translate-pa.googleapis.com:
+ *   Chrome / Android WebView "sayfayı çevir" özelliği. Sayfayı çevirirken
+ *   Translate widget'ı kendi telemetry/beacon çağrılarını yapar
+ *   (connect-src + img-src violation). Bizim app çevirmiyor; user-induced.
+ *   (oturum 33, 28-29 Nis 2026 prod alarmları sonrası filtrelendi)
+ * - chrome-extension://, moz-extension://, safari-extension://: kullanıcı
+ *   tarayıcı eklentilerinin enjekte ettiği script/img/connect kaynakları.
+ *   Bizim kontrolümüzde değil.
+ * - webkit-masked-url://: Safari'nin gizli URL maskeleme şeması.
+ */
+const BROWSER_NOISE_PREFIXES = [
+  "https://translate.google.com",
+  "https://translate.googleapis.com",
+  "https://translate-pa.googleapis.com",
+  "chrome-extension://",
+  "moz-extension://",
+  "safari-extension://",
+  "safari-web-extension://",
+  "webkit-masked-url://",
+];
+
+function isBrowserNoise(blockedUri: string | undefined): boolean {
+  if (!blockedUri) return false;
+  return BROWSER_NOISE_PREFIXES.some((p) => blockedUri.startsWith(p));
+}
+
 export async function POST(request: Request): Promise<NextResponse> {
   // Rate limit by IP (vercel `x-forwarded-for` ilk IP veya fallback)
   const fwd = request.headers.get("x-forwarded-for") ?? "unknown";
@@ -73,6 +106,14 @@ export async function POST(request: Request): Promise<NextResponse> {
     line: report["line-number"],
   };
   console.warn("[csp-report]", JSON.stringify(summary));
+
+  // Browser-induced gürültüyü Sentry'ye forward etme. Bizim app kodumuzdan
+  // gelmeyen, kullanıcının tarayıcı/eklenti davranışından kaynaklanan
+  // violation'lar (Google Translate auto-translate, browser extensions vs.)
+  // signal kirletir; Sentry alert quota'sı + dikkat dağıtır.
+  if (isBrowserNoise(report["blocked-uri"])) {
+    return new NextResponse(null, { status: 204 });
+  }
 
   // Sentry'ye message + context (Report-Only toplama aşamasında issue grouping)
   Sentry.withScope((scope) => {

@@ -40,6 +40,37 @@ test.describe("CSP Report endpoint /api/csp-report", () => {
     expect(body).toBe("");
   });
 
+  test("browser-noise blocked-uri (Google Translate) → 204, Sentry'ye gitmez", async ({ request }) => {
+    // Oturum 33 (29 Nis 2026): Android WebView üzerinde Chrome auto-translate
+    // tetikledi, translate.googleapis.com + translate.google.com CSP block
+    // edildi. Bizim app kodu değil, browser-induced. Sentry'ye forward
+    // edilmesi signal kirletir; filter eklendi.
+    const noiseExamples = [
+      "https://translate.googleapis.com/element/log?format=json",
+      "https://translate.google.com/gen204?nca=te_li",
+      "https://translate-pa.googleapis.com/v1/translate",
+      "chrome-extension://abcdef/inject.js",
+      "moz-extension://xyz/script.js",
+      "safari-extension://com.example/banner.png",
+      "webkit-masked-url://hidden/",
+    ];
+    for (const blocked of noiseExamples) {
+      const res = await request.post("/api/csp-report", {
+        headers: { "Content-Type": "application/csp-report" },
+        data: JSON.stringify({
+          "csp-report": {
+            "document-uri": "https://tarifle.app/",
+            "violated-directive": "connect-src",
+            "effective-directive": "connect-src",
+            "blocked-uri": blocked,
+            "original-policy": "default-src 'self'",
+          },
+        }),
+      });
+      expect(res.status()).toBe(204);
+    }
+  });
+
   test("missing 'csp-report' field → 400 invalid", async ({ request }) => {
     const res = await request.post("/api/csp-report", {
       headers: { "Content-Type": "application/json" },

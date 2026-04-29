@@ -45,10 +45,14 @@ BACKGROUND:
 - Subtle dark wood paneling or linen wallpaper texture in upper area
 
 FOREGROUND:
-- Round dark walnut bistro table, ~60cm diameter, subtle reflective
-  polish, edge of frame visible at bottom
+- Round clear glass bistro table, ~60cm diameter, transparent and
+  highly polished, edge of frame visible at bottom
+- Glass surface reflects the dish gently from below; emerald booth
+  visible softly through the transparent glass
 - Optional small detail: charcoal linen napkin corner OR single brass
   candle holder at frame edge, subtle, never dominant
+- Avoid wood, marble, or stone surfaces; the table is glass and
+  transparent
 
 CAMERA:
 - 35mm full-frame equivalent, 50mm prime lens
@@ -222,7 +226,7 @@ Her görseli teslim etmeden önce SEN kontrol et:
 | # | Check | Fail = ne yap |
 |---|---|---|
 | 1 | Görsel doğru yemek mi? (slug + title ile uyumlu) | Regenerate, daha specific prompt |
-| 2 | Aesthetic preamble matched mi? (emerald velvet booth, dark walnut table, 3/4 high angle, warm tungsten lighting) | Regenerate, preamble'ı verbatim ver |
+| 2 | Aesthetic preamble matched mi? (emerald velvet booth, clear glass bistro table, 3/4 high angle, warm tungsten lighting) | Regenerate, preamble'ı verbatim ver |
 | 3 | AI artifact var mı? (deformed parmak, garip yazı, çarpık çatal-bıçak, eklem hataları) | Regenerate |
 | 4 | Aspect ratio 4:3 (1600×1200) mı? | Resize veya yeniden üret |
 | 5 | WebP format mı, quality 85 mi? | Convert + save |
@@ -248,7 +252,7 @@ Kaydedilenler:
 - lahmacun → public/recipe-images/generated/lahmacun.webp ✅
 - iskender-kebap → public/recipe-images/generated/iskender-kebap.webp ✅
 - ...
-Self-check: hepsi 1600x1200 WebP, hepsi emerald booth + walnut table + 3/4 high angle, 0 AI artifact
+Self-check: hepsi 1600x1200 WebP, hepsi emerald booth + glass table + 3/4 high angle, 0 AI artifact
 
 Notlar: ...
 ```
@@ -319,7 +323,8 @@ Pilot 5/5 PASS olduktan sonra Claude en iyi 3'ü reference'a alır, ardından Ba
 - **Aspect ratio 4:3 fix**, deviate etme (mobile crop'lar 1:1 ya da 16:9 frontend'de yapılır).
 - **Lighting "warm tungsten side from camera-left"** sabit, "natural daylight" ya da "overhead studio" YASAK.
 - **Background "deep emerald green button-tufted velvet booth"** sabit, başka renk/desen YASAK.
-- **Table "round dark walnut bistro"** sabit, mermer/cam/beyaz masa YASAK.
+- **Table "round clear glass bistro"** sabit (transparent + polished),
+  ahşap/mermer/beyaz/koyu taş masa YASAK.
 - **Camera angle "3/4 high 35-40°"** sabit, top-down YASAK, eye-level YASAK.
 
 12 kuralın hepsi self-check §6'da listelendi, teslim öncesi sırayla doğrula.

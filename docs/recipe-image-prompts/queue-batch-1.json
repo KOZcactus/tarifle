@@ -1,0 +1,386 @@
+[
+  {
+    "slug": "boza",
+    "title": "Boza",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Darı unu",
+      "Şeker",
+      "Su",
+      "Yaş maya",
+      "Leblebi"
+    ],
+    "servingSuggestion": "Leblebi ve tarçınla, kalın cam bardakta akşamüstü iyice soğuk servis edin.",
+    "tipNote": "Mayalanma süresi sıcaklığa göre değişir, 2-3 gün bekleyebilir."
+  },
+  {
+    "slug": "enginarli-domatesli-pide-manisa-usulu",
+    "title": "Enginarlı Domatesli Pide",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Enginar kalbi",
+      "Domates",
+      "Zeytinyağı",
+      "Kuru maya",
+      "Ilık su",
+      "Tuz"
+    ],
+    "servingSuggestion": "Enginarlı domatesli pideyi uzun dilimleyip enginar kalpleri ezilmeden tahta servis tahtasına alın.",
+    "tipNote": "Domatesi çekirdeklerini alarak kullanmak pidenin ortasının sulanmasını önler."
+  },
+  {
+    "slug": "lahmacun",
+    "title": "Lahmacun",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Su",
+      "Maya",
+      "Kıyma",
+      "Soğan",
+      "Domates",
+      "Biber salçası",
+      "Maydanoz",
+      "Pul biber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Sumaklı soğan, maydanoz ve ayranla fırından çıkar çıkmaz sunun.",
+    "tipNote": "Hamuru mümkün olduğunca ince açın; 8 dakikada daha çıtır pişer."
+  },
+  {
+    "slug": "manti",
+    "title": "Mantı",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Yumurta",
+      "Su",
+      "Kıyma",
+      "Soğan (rendelenmiş)",
+      "Yoğurt",
+      "Sarımsak",
+      "Tereyağı",
+      "Pul biber",
+      "Karabiber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Sarımsaklı yoğurt ve pul biberli tereyağı ile servis edin.",
+    "tipNote": "Hamuru kapatırken kenarları iki kez bastırın; haşlarken açılmadan formunu korur."
+  },
+  {
+    "slug": "coban-salatasi",
+    "title": "Çoban Salatası",
+    "type": "SALATA",
+    "cuisine": "tr",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "Domates",
+      "Salatalık",
+      "Sivri biber",
+      "Soğan",
+      "Maydanoz",
+      "Zeytinyağı",
+      "Limon",
+      "Tuz"
+    ],
+    "servingSuggestion": "Izgara etlerin yanında, soğuk tabakta ve son anda limonlayarak servis edin.",
+    "tipNote": "Malzemeleri doğrayıp sosu en son ekleyin; önce karıştırırsanız salatalık ve domates su bırakır, kase sulanır."
+  },
+  {
+    "slug": "kuzu-tandir",
+    "title": "Kuzu Tandır",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Kuzu kol",
+      "Zeytinyağı",
+      "Sarımsak",
+      "Biberiye",
+      "Tuz",
+      "Karabiber",
+      "Su"
+    ],
+    "servingSuggestion": "İç pilav ve közlenmiş biberle servis edin.",
+    "tipNote": "Eti yağlı kağıt ve folyo ile sıkı kapatın; düşük ısıda kendi suyuyla pişer."
+  },
+  {
+    "slug": "karniyarik",
+    "title": "Karnıyarık",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Patlıcan",
+      "Kıyma",
+      "Soğan",
+      "Domates",
+      "Biber salçası",
+      "Sivri biber",
+      "Sarımsak",
+      "Tuz",
+      "Karabiber",
+      "Sıvı yağ"
+    ],
+    "servingSuggestion": "Pirinç pilavı ve cacıkla, salçalı suyunu üstüne gezdirerek sunun.",
+    "tipNote": "Patlıcanları tuzlu suda bekletmek hem acılığını alır hem de yağ çekmesini azaltır."
+  },
+  {
+    "slug": "iskender-kebap",
+    "title": "İskender Kebap",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Kuzu eti (ince dilim)",
+      "Pide ekmeği",
+      "Süzme yoğurt",
+      "Domates",
+      "Tereyağı",
+      "Biber salçası",
+      "Tuz",
+      "Karabiber"
+    ],
+    "servingSuggestion": "Közlenmiş yeşil biber ve domates ile servis edin.",
+    "tipNote": "Tereyağını en son kızgın şekilde üzerine gezdirin, cızırdaması önemli."
+  },
+  {
+    "slug": "beyti-sarma",
+    "title": "Beyti Sarma",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Dana kıyma",
+      "Soğan",
+      "Sarımsak",
+      "Kimyon",
+      "Lavaş",
+      "Domates sosu",
+      "Yoğurt",
+      "Tereyağı",
+      "Tuz"
+    ],
+    "servingSuggestion": "Üstüne yoğurt ve tereyağlı sos gezdirip sıcak servis edin.",
+    "tipNote": "Köfte harcını 10 dakika yoğurun; şişte dağılmayan sıkı bir doku oluşur."
+  },
+  {
+    "slug": "mojito",
+    "title": "Mojito",
+    "type": "KOKTEYL",
+    "cuisine": "cu",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Beyaz rom",
+      "Lime",
+      "Nane yaprakları",
+      "Şeker",
+      "Soda",
+      "Buz"
+    ],
+    "servingSuggestion": "Uzun bardakta, bol buz ve taze nane dalıyla hemen servis edin.",
+    "tipNote": "Nane yapraklarını ezmeden bastırın; acılaşmadan yağını ve kokusunu bardağa bırakır."
+  },
+  {
+    "slug": "su-boregi",
+    "title": "Su Böreği",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Beyaz peynir",
+      "Maydanoz",
+      "Yumurta",
+      "Tereyağı",
+      "Un (hamur için)",
+      "Yumurta (hamur için)",
+      "Su (hamur için, ılık)",
+      "Tuz (hamur ve haşlama suyu için)",
+      "Lor peyniri"
+    ],
+    "servingSuggestion": "Sıcak servis edin, yanına demli çay ve isteğe göre yoğurt veya cevizli yeşillik salata. Bayram sofrası ve özel gün böreği olarak sunulur.",
+    "tipNote": "Yufkaları tek tek haşlayın, üst üste haşlamayın yapışırlar. Haşlama suyu mutlaka tuzlu olmalı; tuz hamurun parlaklığını ve elastikiyetini korur. En alttaki ve en üstteki yufka kuru kalmalı; aksi halde börek dağılır."
+  },
+  {
+    "slug": "empanada",
+    "title": "Empanada",
+    "type": "YEMEK",
+    "cuisine": "ar",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Tereyağı",
+      "Su",
+      "Dana kıyma",
+      "Soğan",
+      "Kırmızı biber",
+      "Yumurta sarısı"
+    ],
+    "servingSuggestion": "Domatesli acı sosla servis edin.",
+    "tipNote": "İç harcı soğutmadan hamura koymayın; sıcak harç hamuru yumuşatır."
+  },
+  {
+    "slug": "imam-bayildi",
+    "title": "İmam Bayıldı",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Patlıcan",
+      "Soğan",
+      "Domates",
+      "Sarımsak",
+      "Zeytinyağı",
+      "Tuz",
+      "Şeker",
+      "Maydanoz"
+    ],
+    "servingSuggestion": "Oda sıcaklığında, üstüne maydanoz serperek zeytinyağlı tabağında ekmekle birlikte sunun.",
+    "tipNote": "Patlıcanların yarıklarını geniş açın; soğanlı iç pişerken içine daha rahat yerleşir."
+  },
+  {
+    "slug": "yaprak-sarma",
+    "title": "Yaprak Sarma",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Asma yaprağı",
+      "Pirinç",
+      "Soğan",
+      "Zeytinyağı",
+      "Domates salçası",
+      "Nane",
+      "Maydanoz",
+      "Limon suyu",
+      "Tuz",
+      "Karabiber",
+      "Yenibahar"
+    ],
+    "servingSuggestion": "Limon dilimi ve süzme yoğurtla, zeytinyağlı tabağında soğuk servis edin.",
+    "tipNote": "Yaprakları çok sıkı sarmayın, pirinç pişerken şişer."
+  },
+  {
+    "slug": "mercimek-corbasi",
+    "title": "Mercimek Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Kırmızı mercimek",
+      "Soğan",
+      "Havuç",
+      "Patates",
+      "Domates salçası",
+      "Su",
+      "Tereyağı",
+      "Tuz",
+      "Karabiber",
+      "Kimyon"
+    ],
+    "servingSuggestion": "Üstüne naneli tereyağı gezdirip limon dilimiyle sıcak çorba kasesinde sunun.",
+    "tipNote": "Blender sonrası 1 taşım kaynatın; kıvam toparlanır, mercimek tadı daha yuvarlak olur."
+  },
+  {
+    "slug": "limonata",
+    "title": "Limonata",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Limon",
+      "Şeker",
+      "Su",
+      "Nane"
+    ],
+    "servingSuggestion": "Soğuk sürahide, bol buz ve nane yapraklarıyla yaz sofralarına çıkarın.",
+    "tipNote": "Soğuk servis edilecekse karışımı buzdolabında en az 2 saat dinlendirmek aromanın oturmasını sağlar."
+  },
+  {
+    "slug": "moussaka",
+    "title": "Moussaka",
+    "type": "YEMEK",
+    "cuisine": "gr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Patlıcan",
+      "Dana kıyma",
+      "Domates püresi",
+      "Un",
+      "Süt",
+      "Yumurta",
+      "Kuru soğan",
+      "Tereyağı",
+      "Muskat",
+      "Tarçın",
+      "Tuz"
+    ],
+    "servingSuggestion": "Dilimleri 10 dakika dinlendirip yanında salata ve ekmekle sıcak ana tabakta sunun.",
+    "tipNote": "Fırından çıkan moussakayı 15 dakika bekletin; katlar dağılmadan kesilir."
+  },
+  {
+    "slug": "acai-bowl",
+    "title": "Açai Bowl",
+    "type": "ICECEK",
+    "cuisine": "br",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Açai püresi",
+      "Donmuş muz",
+      "Yaban mersini",
+      "Granola",
+      "Badem"
+    ],
+    "servingSuggestion": "Üzerine granola ve taze meyve dizin.",
+    "tipNote": "Muz ve açai püresi donuk olursa kase kaşıkla yenebilir koyulukta kalır."
+  },
+  {
+    "slug": "mole-poblano",
+    "title": "Mole Poblano",
+    "type": "YEMEK",
+    "cuisine": "mx",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk but",
+      "Kuru acı biber",
+      "Bitter çikolata",
+      "Yer fıstığı",
+      "Susam",
+      "Badem",
+      "Kuru soğan",
+      "Sarımsak",
+      "Domates",
+      "Tavuk suyu",
+      "Kuru üzüm",
+      "Tarçın",
+      "Karanfil",
+      "Tuz"
+    ],
+    "servingSuggestion": "Pilav ve mısır tortilla ile servis edin.",
+    "tipNote": "Sosu pürüzsüz çekip süzün; mole kadifemsi dokusunu böyle alır."
+  },
+  {
+    "slug": "simit-tost",
+    "title": "Simit Tost",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Simit",
+      "Kaşar peyniri",
+      "Domates",
+      "Tereyağı"
+    ],
+    "servingSuggestion": "Yanına sıcak çayla servis edin.",
+    "tipNote": "Simit içini çok doldurmayın; preslenirken peynir dışarı taşmaz."
+  }
+]

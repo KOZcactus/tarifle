@@ -31,7 +31,10 @@ const ALLERGEN_KEYWORDS: Record<string, string[]> = {
   GLUTEN: ["un", "buğday", "bulgur", "irmik", "yufka", "ekmek", "makarna", "simit", "bazlama", "kete", "katmer", "börek", "lazanya", "milföy", "panko", "galeta"],
   SUT: ["süt", "yoğurt", "peynir", "tereyağı", "kaymak", "krema", "labne", "ayran", "kefir", "lor", "kaşar", "mozzarella", "ricotta", "tulum"],
   YUMURTA: ["yumurta"],
-  KUSUYEMIS: ["badem", "ceviz", "fındık", "kestane", "antep fıstığı", "fıstık", "kaju", "macadamia"],
+  // Bare "fıstık" YER_FISTIGI kısa formu olabilir (mumbai-misal-pav false
+  // positive, oturum 33 fix). Specific compound'lar yeterli: "antep fıstığı"
+  // + "çam fıstığı" + "dolmalık fıstık" zaten KUSUYEMIS pattern'leri yakalar.
+  KUSUYEMIS: ["badem", "ceviz", "fındık", "kestane", "antep fıstığı", "çam fıstığı", "dolmalık fıstık", "kaju", "macadamia"],
   YER_FISTIGI: ["yer fıstığı"],
   SOYA: ["soya", "tofu", "edamame", "miso", "tempeh"],
   SUSAM: ["susam", "tahin"],
@@ -56,6 +59,13 @@ const ALLERGEN_EXCLUDE: Record<string, string[]> = {
     "fındık rengi", "fındık renginde",
     // Mantar olabilir: kestane mantarı (var zaten allergen-matching'de)
     "kestane mantarı", "kestane mantar",
+    // Garnish / servis öneri pattern'leri (oturum 33 sikhye fix):
+    // "çam fıstığı ile süsleyip", "ceviz ile süsle", "badem serperek"
+    // tipik servis süslemesi, ingredient'te YOKSA allergen-source-guard
+    // (mevcut pre-push 5. katman) yine yakalar; audit-recipe-quality
+    // false positive üretmesin.
+    "ile süsle", "ile süsleyip", "ile süsleyerek",
+    "ile süsleyip soğuk", "üzerine serperek",
   ],
   GLUTEN: [
     // 'un' bazen mısır unu (glutensiz), kestane unu, pirinç unu

@@ -12,6 +12,11 @@ aesthetic drift azaltılır.
   portakal dilimi
 - **menemen.webp**: KAHVALTI, sıcak yemek ama buhar yok
   (kullanıcı kararı)
+- **adana-kebap.webp**: YEMEK (et), lavaş + sumak soğan + maydanoz
+  garnitür + közlenmiş domates/biber. ⚠️ Pilot'ta heavy steam vardı,
+  ama reference'a sadece **plating + composition + et yemeği porselen
+  tabak** kullanımı için alındı. **Steam KOPYA EDİLMESİN, brief §3.3
+  STEAM YOK kuralı bağlayıcı.**
 
 ## Aesthetic kilit
 
@@ -37,10 +42,16 @@ verir. gpt-image-1 multi-input destekler:
 ```
 
 Reference image'lar aesthetic kilidi sağlar: model yeni recipe için
-görsel üretirken bu 3 görselin lighting/composition/booth/table
+görsel üretirken bu 4 görselin lighting/composition/booth/table
 pattern'ini kopya etmeye çalışır, drift azalır.
 
-Pilot Batch 0'ın diğer 2 görseli (adana-kebap, ezogelin-corbasi)
-reference'a alınmadı çünkü her ikisinde de heavy steam vardı,
-kullanıcı steam YOK kararı verdi (oturum 33). Bu 3 reference
-steam-free.
+⚠️ **adana-kebap.webp özel not (oturum 33)**: heavy steam içeriyor
+ama plating + et yemeği porselen tabak + lavaş eşliği reference'i
+için seçildi. Brief §3.3 'STEAM YOK' kuralı reference'tan üst, model
+adana-kebap stilini kopya ederken steam pattern'ini ÇIKARMALI.
+Codex prompt'una emphasis ek: 'reference adana-kebap shows steam
+but DO NOT replicate steam, follow brief §3.3 STEAM YOK rule'.
+
+ezogelin-corbasi reference'a alınmadı: hem heavy steam vardı hem
+de menemen + adana-kebap zaten YEMEK/KAHVALTI tipi reference
+olarak yeterli. Tatlı/kokteyl/yemek/kahvaltı 4 tip kapsanıyor.

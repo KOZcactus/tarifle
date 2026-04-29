@@ -248,18 +248,32 @@ async function main() {
   });
   console.log(`Total prod recipes: ${recipes.length}\n`);
 
-  // GATE A: SÜRE TUTARSIZLIĞI (rafine algoritma, oturum 32):
+  // GATE A: SÜRE TUTARSIZLIĞI (oturum 32 algoritma + oturum 34 defer whitelist):
   //   expected = prepMinutes + cookMinutes + waitMinutes (marine/dinlenme)
   //   waitMinutes = sum of timerSeconds where >= 30 dk (1800s)
   //   activeMinutes = sum of timerSeconds where < 30 dk
   //   Hit if |totalMinutes - expected| > %10 ratio AND > 10 dk absolute
   // Mantık: marine süresi totalMinutes'a dahil edilmesi brief uyumlu, ama
   // active step süreleri prepMinutes+cookMinutes'la uyumlu olmalı.
+  //
+  // GATE_A_DEFER: bilinen yanlış pozitifler (slug bazlı whitelist).
+  // Heuristik "timer >= 30 dk = wait" basit; bazı tarifler için 30 dk üzeri
+  // bir step aktif simmer (cookMinutes'a zaten dahil) olduğunda double-count
+  // oluşur. Bu slug'lar manuel doğrulanmış, defer edilir:
+  //   - ayvalik-zeytinyagli-sevketibostan: 40dk simmer aktif pişirme
+  //     (cookMinutes 75 dk = 5+4+15+40+15 step timer toplamı, total 95 = prep+cook)
+  // Pattern detection (cook verb vs marine verb) global çözüm denemesi
+  // 908 false positive yarattığı için defer whitelist tercih edildi.
+  // Yeni defer eklenmesi gerekiyorsa burada slug + sebep yorum ile.
+  const GATE_A_DEFER = new Set<string>([
+    "ayvalik-zeytinyagli-sevketibostan",
+  ]);
   console.log("=== GATE A: SÜRE TUTARSIZLIĞI (totalMinutes vs prep+cook+marine) ===");
   const sureIssues: { slug: string; totalMin: number; expected: number; diff: number; reason: string }[] = [];
   const WAIT_THRESHOLD_SEC = 1800; // 30 dakika
   for (const r of recipes) {
     if (!r.totalMinutes) continue;
+    if (GATE_A_DEFER.has(r.slug)) continue;
     const prepMin = r.prepMinutes ?? 0;
     const cookMin = r.cookMinutes ?? 0;
     if (prepMin === 0 && cookMin === 0) continue;

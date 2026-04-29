@@ -62,8 +62,12 @@ CAMERA:
 - Sharp focus on the dish surface, gentle background bokeh
 
 COMPOSITION:
-- Dish centered horizontally, slightly toward bottom-third vertically
-- Negative space upper area showing booth and ambiance bokeh
+- Dish fills approximately 50-55% of frame width (tighter framing,
+  closer crop, less negative space). Pilot Batch 0 sonrası kullanıcı
+  kararı, oturum 33.
+- Dish centered horizontally, slightly toward middle-third vertically
+- Booth still visible in upper area but less dominant
+- Brass candle and napkin still visible at edges but cropped tighter
 - 4:3 aspect ratio, 1600x1200 final resolution
 
 STYLE:
@@ -72,6 +76,10 @@ STYLE:
 - No text, no logos, no people, no hands in frame
 - Color grading: warm shadows, natural highlights, ~2800-3400K
 - Saturated but natural colors, never oversaturated
+- NO STEAM, NO SMOKE, NO VAPOR (kullanıcı kararı, oturum 33 pilot
+  sonrası): bar menü estetiği steam istemiyor; sıcak yemek bile
+  buharsız sunulur, warm tungsten ışık ısı hissini görsel olarak
+  zaten veriyor
 ```
 
 ### 2.2. VARIABLE (her tarif için ayrı, sadece bu kısmı değiştir)
@@ -87,7 +95,9 @@ DISH:
   ilk 3 önemli olanı seç): {ingredient 1}, {ingredient 2}, {ingredient 3}
 - Garnish: {bkz. §3 garnish kararı tablosu}
 - Plating: {1-2 cümle, gerçek Türk evi sunum tarzı, Michelin değil}
-- Heat / steam: {bkz. §3 heat kararı tablosu}
+- Heat / steam: NONE (kullanıcı pilot Batch 0 sonrası karar, bar
+  menü estetiği steam istemiyor; sıcak yemekler bile buharsız sunulur,
+  warm tungsten ışık ısı hissi veriyor zaten)
 - Authentic, not over-styled, looks like a real meal at a curated
   restaurant table
 ```
@@ -137,22 +147,29 @@ DISH:
 
 ### 3.3. Heat / steam
 
-| recipe.type | Steam visible? |
-|---|---|
-| `YEMEK` (sıcak servis edilen) | Light, natural steam wisp |
-| `CORBA` | Light steam, subtle |
-| `KAHVALTI` (sıcak yemek) | Light steam |
-| `KAHVALTI` (sandwich/spread soğuk) | Yok |
-| `TATLI` (oda sıcaklığı/buzdolabı) | Yok |
-| `TATLI` (sıcak, sufle veya fırın tatlısı) | Çok hafif |
-| `ATISTIRMALIK` | Yok (genelde) |
-| `SALATA` | Yok |
-| `SOS` | Yok |
-| `ICECEK` (sıcak, çay/kahve/sahlep) | Light steam |
-| `ICECEK` (soğuk) | Yok, glass condensation drops OK |
-| `KOKTEYL` | Yok, ice cube + glass condensation OK |
+**Kural (oturum 33 pilot sonrası, kullanıcı kararı): TÜM TARIFLER
+İÇİN STEAM YOK.** Bar menü estetiği steam istemiyor; sıcak yemekler
+bile buharsız sunulur. Warm tungsten ışık + 3/4 yüksek açı + porselen
+tabak ısı hissini görsel olarak zaten veriyor, ekstra duman görsel
+gürültü.
 
-`recipe.cookMinutes > 0` AND sıcak servis = light steam ekle.
+| recipe.type | Steam | Diğer detaylar |
+|---|---|---|
+| `YEMEK` | YOK | Tabak'ta ısı bağlamı ışıkla verilir |
+| `CORBA` | YOK | Sıvı yüzey hafif buğulu olabilir, steam wisp YASAK |
+| `KAHVALTI` | YOK | Sıcak ya da soğuk fark etmez |
+| `TATLI` | YOK | Şurup parıltısı veya soğuk yoğuşma OK |
+| `ATISTIRMALIK` | YOK | |
+| `SALATA` | YOK | |
+| `SOS` | YOK | |
+| `ICECEK` (sıcak) | YOK | Tütüm yerine cam yansıması, sade |
+| `ICECEK` (soğuk) | YOK | Glass condensation drops OK |
+| `KOKTEYL` | YOK | Ice cube + glass condensation OK |
+
+Steam wisps (yatay duman dalgaları, dik buhar bulutları) hiçbir
+görselde olmasın. Eğer image gen modeli otomatik steam ekliyorsa,
+prompt'a "no visible steam, no smoke, no vapor, dish is hot but no
+steam wisps" emphasis ekle.
 
 ### 3.4. Plating tonu
 
@@ -231,7 +248,7 @@ Her görseli teslim etmeden önce SEN kontrol et:
 | 4 | Aspect ratio 4:3 (1600×1200) mı? | Resize veya yeniden üret |
 | 5 | WebP format mı, quality 85 mi? | Convert + save |
 | 6 | İnsan/el var mı? Yazı/logo var mı? | Regenerate (preamble açıkça yasak diyor) |
-| 7 | Steam doğal seviye mi? (gerçekçi, Photoshop simülasyonu değil) | Regenerate, prompt'ta "subtle natural steam" emphasis |
+| 7 | Steam YOK mu? (sıcak yemek bile, kullanıcı kararı bar menü estetiği) | Regenerate, prompt'ta "no visible steam, no smoke, no vapor" emphasis |
 
 **Self-check geçen görseli kaydet, geçmeyen 3 retry'a kadar regenerate.**
 3 retry sonra hâlâ fail → o tariflerin slug listesini batch report'una "RETRY EXHAUSTED, manuel review gerekli" olarak ekle, atla.
@@ -282,7 +299,7 @@ Bunlar olursa REJECT, regenerate:
 8. ❌ Boyut 1600×1200 dışı, format JPG/PNG (sadece WebP)
 9. ❌ Emerald booth yerine başka renk (kırmızı/mavi/krem) → preamble verbatim ver
 10. ❌ Kuş bakışı 90° top-down (3/4 yüksek açı 35-40°, table edge görünmeli)
-11. ❌ Sıcak yemekte steam yokluğu, soğuk tatlıda fake steam
+11. ❌ Steam wisps her durumda (kullanıcı kararı, bar menü estetiği steam istemiyor)
 12. ❌ Garnish yokluğu (her görselde §3.2'ye göre uygun garnish olmalı)
 
 ---

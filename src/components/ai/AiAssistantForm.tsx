@@ -132,6 +132,7 @@ export function AiAssistantForm({
   const tTag = useTranslations("aiAssistant.tags");
   const tCard = useTranslations("recipes.card");
   const tCuisine = useTranslations("cuisines");
+  const tA11y = useTranslations("a11y");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const hasAutoPantryRef = useRef(false);
   const [currentInput, setCurrentInput] = useState("");
@@ -685,6 +686,7 @@ export function AiAssistantForm({
             <input
               type="text"
               value={currentInput}
+              aria-label={tA11y("aiIngredientInputAria")}
               onChange={(e) => {
                 setCurrentInput(e.target.value);
                 setShowSuggestions(e.target.value.trim().length >= 2);
@@ -822,6 +824,7 @@ export function AiAssistantForm({
             <input
               type="text"
               value={excludeInput}
+              aria-label={tA11y("aiExcludeInputAria")}
               onChange={(e) => setExcludeInput(e.target.value)}
               onKeyDown={handleExcludeKeyDown}
               onBlur={() => excludeInput.trim() && addExclude(excludeInput)}

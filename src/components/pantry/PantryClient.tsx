@@ -43,6 +43,7 @@ function splitCsv(raw: string): string[] {
 export function PantryClient({ initialItems, showExpiry = false }: PantryClientProps) {
   const t = useTranslations("pantry");
   const tCat = useTranslations("shoppingList.category");
+  const tA11y = useTranslations("a11y");
   const [items, setItems] = useState<UserPantryItemView[]>(initialItems);
   const [newName, setNewName] = useState("");
   const [bulkText, setBulkText] = useState("");
@@ -219,6 +220,7 @@ export function PantryClient({ initialItems, showExpiry = false }: PantryClientP
             placeholder={t("addPlaceholder")}
             disabled={isPending}
             className="flex-1 min-w-[200px] rounded-md border border-border bg-bg px-3 py-2 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none"
+            aria-label={tA11y("newPantryItemAria")}
           />
           <button
             type="button"

@@ -1,6 +1,11 @@
 {
   "a11y": {
-    "skipToContent": "Skip to main content"
+    "skipToContent": "Skip to main content",
+    "searchInputAria": "Search recipes",
+    "newCollectionAria": "New collection name",
+    "newPantryItemAria": "New ingredient name",
+    "aiIngredientInputAria": "Add ingredient",
+    "aiExcludeInputAria": "Add excluded ingredient"
   },
   "nav": {
     "recipes": "Recipes",

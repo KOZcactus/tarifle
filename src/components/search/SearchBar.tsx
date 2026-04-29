@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { SEARCH_DEBOUNCE_MS } from "@/lib/constants";
 
 /**
@@ -44,6 +45,7 @@ export function SearchBar({
 }: SearchBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const tA11y = useTranslations("a11y");
   const [query, setQuery] = useState(searchParams.get("q") ?? "");
   const [debounceTimer, setDebounceTimer] = useState<ReturnType<
     typeof setTimeout
@@ -182,7 +184,7 @@ export function SearchBar({
         }}
         placeholder={placeholder}
         className="h-12 w-full rounded-xl border border-border bg-bg-card pl-11 pr-4 text-sm text-text placeholder:text-text-muted focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-        aria-label="Tarif ara"
+        aria-label={tA11y("searchInputAria")}
         autoComplete="off"
         role="combobox"
         aria-expanded={showSuggestions && filtered.length > 0}

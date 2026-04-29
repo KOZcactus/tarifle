@@ -39,6 +39,7 @@ export function SaveMenu({
   const router = useRouter();
   const t = useTranslations("save");
   const tToast = useTranslations("save.toast");
+  const tA11y = useTranslations("a11y");
 
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [collections, setCollections] = useState<CollectionSummary[]>(initialCollections);
@@ -357,6 +358,7 @@ export function SaveMenu({
                   placeholder={t("newCollectionPlaceholder")}
                   maxLength={100}
                   className="flex-1 rounded-md border border-border bg-bg-elevated px-2 py-1 text-sm outline-none focus:border-primary"
+                  aria-label={tA11y("newCollectionAria")}
                 />
                 <button
                   type="submit"

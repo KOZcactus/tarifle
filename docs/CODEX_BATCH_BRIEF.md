@@ -83,36 +83,34 @@
 - Eksik kategoriler için Kerem'e öncelik sor (kahvaltı/çorba/tatlı dengelensin)
 - Marker: `// ── BATCH 30a ──` (küçük `a`/`b` harf)
 
-**⚠️ Helper parametre tipleri ZORUNLU (oturum 17 / 32b+33a v2 dersi, TEKRARLAMA):**
+**⚠️ Helper'lar ARTIK MODÜLDE (oturum 32 IIFE format homojenleştirme,
+TEKRARLAMA):**
 
-Append ettiğin IIFE içinde 4 helper (t, ing, st, r) tanımlarsan
-**parametrelere TypeScript tipi yazmak zorundasın**. 32b ve 33a v2
-retrofit'lerinde Codex helper'ları implicit-any bıraktı, local
-tsc filter nedeniyle gözden kaçtı, Vercel prod build 3 kez fail
-etti (commit 9f2d307 33a bloğu silinmek zorunda kaldı).
+Eskiden her IIFE içinde 4 helper (t, ing, st, r) **local** tanımlanıyordu,
+parametre tipleri zorunluydu. Oturum 32 commit `f3a99c9` ile 63 IIFE
+flatten edildi, helper'lar tek modülde toplandı:
 
-Zorunlu signature (aynen kopyala):
 ```ts
-const t = (enTitle: string, enDescription: string, deTitle: string, deDescription: string) => ({
-  en: { title: enTitle, description: enDescription },
-  de: { title: deTitle, description: deDescription },
-});
-const ing = (specs: string[]) => specs.map((s, i) => {
-  const [name, amount, unit] = s.split("|");
-  return { name, amount, unit, sortOrder: i + 1 };
-});
-const st = (specs: string[]) => specs.map((s, i) => {
-  const [instruction, timer] = s.split("||");
-  return timer
-    ? { stepNumber: i + 1, instruction, timerSeconds: Number(timer) }
-    : { stepNumber: i + 1, instruction };
-});
-const r = (o: Omit<SeedRecipe, "ingredients" | "steps"> & { ingredients: string[]; steps: string[] }) => ({
-  ...o,
-  ingredients: ing(o.ingredients),
-  steps: st(o.steps),
-});
+// scripts/seed-recipes.ts üst kısmında zaten var:
+import { t, ing, st, r } from "./lib/recipe-helpers";
 ```
+
+**Yeni yazım (basit):** IIFE wrapper YOK, doğrudan recipes[] array'inin
+sonuna r({...}) veya plain {} olarak append:
+
+```ts
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }),
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }),
+  // ...batch sonu
+```
+
+Tüm batch öncesi sadece bir `// ── BATCH N ── (tarih, X tarif, Codex)`
+yorum satırı yaz. IIFE wrapper, `const t/ing/st/r = ...`, `return [...]`
+satırları **YAZMA** — modülden import edildi, ortak helper kullanılır.
+
+Önceki IIFE format (tarihsel, dokunma):
+- Eski 63 IIFE bloğu f3a99c9 commit'inde flatten edildi.
+- Yeni eklemeler doğrudan flat array'de, helper-modülünden çağrı.
 
 **⚠️ Allergen self-check ZORUNLU (oturum 17 / 32b+33a v2 dersi):**
 
@@ -877,46 +875,34 @@ güvenlisi.
 dosyanın SON 100-150 satırına bak: önceki batch'in IIFE kapanışı + en
 dıştaki `];` bracketi. Gerisine ihtiyacın yok.
 
-Append yeri (dosyanın son iki satırı):
+Append yeri (dosyanın son birkaç satırı):
 
 ```
-      })(),
-    ];
+  r({ ... }), // önceki batch'in son tarifi
+];
 ```
 
-`];` bracket'ini yerinde bırak, yukarısına yeni IIFE ekle:
+**⚠️ ARTIK IIFE WRAPPER YOK (oturum 32 commit f3a99c9)**: 63 IIFE
+flatten edildi, helper'lar `scripts/lib/recipe-helpers.ts` modülünden
+import. Yeni batch doğrudan `recipes[]` array'inin sonuna append:
 
 ```
-      })(),
-      // ── BATCH N ── (tarih: YYYY-MM-DD, 100 tarif, Codex)
-      ...(() => {
-        const t = (enTitle, enDescription, deTitle, deDescription) => ({
-          en: { title: enTitle, description: enDescription },
-          de: { title: deTitle, description: deDescription },
-        });
-        const ing = (specs) => specs.map((s, i) => {
-          const [name, amount, unit] = s.split("|");
-          return { name, amount, unit, sortOrder: i + 1 };
-        });
-        const st = (specs) => specs.map((s, i) => {
-          const [instruction, timer] = s.split("||");
-          return timer
-            ? { stepNumber: i + 1, instruction, timerSeconds: Number(timer) }
-            : { stepNumber: i + 1, instruction };
-        });
-        const r = (o) => ({
-          ...o,
-          ingredients: ing(o.ingredients),
-          steps: st(o.steps),
-        });
-        return [
-          r({ ... }), // tarif 1
-          ...
-          r({ ... }), // tarif 100
-        ];
-      })(),
-    ];
+  r({ ... }), // önceki batch'in son tarifi
+  // ── BATCH N ── (tarih: YYYY-MM-DD, 100 tarif, Codex)
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }), // tarif 1
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }), // tarif 2
+  // ...
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }), // tarif 100
+];
 ```
+
+Helper'ları (t, ing, st, r) **TANIMLAMA YAZMA** — modül üstte zaten
+import edildi:
+```ts
+import { t, ing, st, r } from "./lib/recipe-helpers";
+```
+
+Sadece kullan: `r({...})`, `ing(["..."])`, `st(["..."])`, `t("EN title", "EN desc", "DE title", "DE desc")`.
 
 **⚠️ Recurring block kapanı (batch 27 v1 dersi):**
 

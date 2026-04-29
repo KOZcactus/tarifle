@@ -81,28 +81,23 @@ Brief §5 Mod A default'u uygula (50 tarif). Önemli güncellemeler
   zaten mevcutsa yeni eklemeyin. docs/existing-slugs.txt + son
   400 satır seed-recipes.ts kontrol.
 
-⚠️ APPEND NOKTASI: seed-recipes.ts ~16000 satır. Son 100-150
-satıra bak, önceki batch'in IIFE kapanışı + `];`. Append yeri:
-      })(),
-    ];
-`];` yerinde kalır, üstüne yeni IIFE:
-      })(),
-      // ── BATCH N ── (tarih: YYYY-MM-DD, 50 tarif, Codex)
-      ...(() => {
-        const t = (enTitle: string, enDescription: string,
-                   deTitle: string, deDescription: string) => ({...});
-        const ing = (specs: string[]) => ...;
-        const st = (specs: string[]) => ...;
-        const r = (o: ...) => ({...});
-        return [
-          r({ ... }), // tarif 1
-          ...
-          r({ ... }), // tarif 50
-        ];
-      })(),
-    ];
+⚠️ APPEND NOKTASI (oturum 32 commit f3a99c9 sonrası YENİ): seed-recipes.ts
+~15300 satır, IIFE wrapper YOK, flat `recipes[]` array. Son satır:
+  r({ ... }), // önceki batch'in son tarifi
+];
+`];` yerinde kalır, üstüne yeni tarifler doğrudan append (IIFE/wrapper YAZMA):
+  r({ ... }), // önceki batch'in son tarifi
+  // ── BATCH N ── (tarih: YYYY-MM-DD, 50 tarif, Codex)
+  r({ title: "...", slug: "...", ..., ingredients: ["X|Y|Z", ...], steps: ["instr||timer", ...] }), // tarif 1
+  ... (50 tarif)
+  r({ ..., ingredients: [...], steps: [...] }), // tarif 50
+];
 
-⚠️ HELPER TİPLERİ ZORUNLU. d / default-helper YASAK. 11 alan
+⚠️ HELPER ARTIK MODÜLDE: scripts/lib/recipe-helpers.ts'tan import
+edildi (üst kısım). Local `const t/ing/st/r = ...` YAZMA, IIFE wrapper
+YAZMA. Sadece `r({...})`, `t(...)`, `ing([...])`, `st([...])` çağrıları.
+
+⚠️ HELPER TİPLERİ ZORUNLU değil artık (modülde tipli). d / default-helper YASAK. 11 alan
 PER-RECIPE: emoji, prepMinutes, cookMinutes, totalMinutes,
 servingCount, averageCalories, protein, carbs, fat, tags,
 EN+DE description.

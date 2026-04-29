@@ -13,6 +13,506 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## 📱 MOBILE APP MASTER PLAN (oturum 33+, Planlı, site açılışı SONRASI)
+
+**Statü**: Plan aşaması, henüz kod yok. Web platformu launch-ready
+oluncaya kadar sadece planlama. Web açılışı + ilk 100-500 kullanıcı
+trafiği toplandıktan sonra mobile app development başlar (~2-3 ay
+sonrası tahmini).
+
+**Vizyon**: iOS + Android native-feel uygulama, Tarifle web sitesinin
+mobile-first reinterpretasyonu. Tarifte arama, mutfak modu (timer +
+adım navigasyonu), bookmark senkronizasyon, AI Asistan, alışveriş
+listesi, menü planlayıcı entegrasyonu. Launch sonrası organic kullanıcı
+yakalamada %70+ mobile davranışına cevap.
+
+### 1. Framework Kararı, Expo Managed (önerilen)
+
+| Seçenek | Pros | Cons | Karar |
+|---|---|---|---|
+| **Expo Managed Workflow** | Single codebase iOS+Android, OTA updates (EAS Update), büyük ekosistem, hot reload, kolay learning curve, Claude/Codex destek güçlü | Native modül kullanımı sınırlı (config plugin gerek), Expo Go performans gap, cold start ~1.5-2s | ⭐ ÖNERİLEN |
+| Expo Bare (eject) | Tam native control, herhangi bir lib | Config kompleks, eject sonrası geri dönüş zor | Sadece native modül zorunluluğu çıkarsa |
+| React Native CLI | En esnek, native module direkt | iOS+Android setup ayrı, build sistemi karmaşık | Hayır, ekstra iş |
+| Capacitor (Ionic) | Mevcut Next.js code'u WebView'da sarar, en hızlı ship | Native feel değil, performance sınırlı, "fake mobile" izlenimi | Hayır, kalite ihlali |
+| Native (Swift + Kotlin) | En iyi performance, native HIG | 2x kod, 2x maintenance, 2x developer cost | Hayır, scope dışı |
+| Flutter | Tek codebase, iyi performance | Dart öğrenme, Tarifle web ekosisteminden ayrı, React/TS knowledge transfer yok | Hayır |
+| PWA enhancement | Sıfır maliyet, mevcut Next.js | App store yok, push notification iOS sınırlı, native feel yok | Yan-yan, web tarafında zaten manifest var ama yetmiyor |
+
+**Karar**: **Expo Managed Workflow + EAS Build/Submit/Update**.
+Sebep: kod paylaşımı web ile maksimum, dev hızı en yüksek, OTA update
+store review beklemeden patch atabilir, Claude/Codex destekli geliştirme
+en verimli.
+
+**Versiyon hedefi**: Expo SDK 52+ (en güncel, React Native 0.76+, New
+Architecture default).
+
+### 2. Repo Strüktürü, Monorepo (npm workspaces)
+
+| Seçenek | Pros | Cons | Karar |
+|---|---|---|---|
+| **Monorepo (npm workspaces, mevcut repo + apps/mobile)** | Shared types/utils/i18n/design-tokens, tek CI, single source of truth, single PR for cross-cutting changes | Build kompleks, mobile build zaman alabilir | ⭐ ÖNERİLEN |
+| Monorepo (pnpm + Turborepo) | npm'den daha hızlı, daha iyi tooling | Mevcut npm setup'tan migration cost (CI, hooks, scripts) | Hayır, mevcut npm yeterli |
+| Ayrı repo (tarifle-mobile) | Temiz scope, mobile takımı izolasyon | Cross-PR yok, types kopyalama drift, sync overhead | Hayır, kod paylaşımı kayıp |
+| Same repo, mobile/ subfolder, no workspace | Basit, monorepo karmaşıklığı yok | Shared kod sembolik link veya copy-paste, drift riski | Hayır, monorepo'nun değeri var |
+
+**Karar**: Mevcut Tarifle repo'sunda `apps/mobile/` + `packages/shared/`,
+`packages/api-client/`, `packages/design-tokens/`, `packages/i18n/`
+olarak npm workspaces. Mevcut Next.js `apps/web/`'e taşınmayacak (cost
+yüksek), `tarifle/` root'unda kalmaya devam.
+
+```
+tarifle/
+├── (mevcut Next.js root, dokunma)
+├── apps/
+│   └── mobile/                    # Expo app
+│       ├── app/                   # Expo Router (file-based routing)
+│       ├── components/
+│       ├── hooks/
+│       ├── package.json
+│       ├── app.config.ts
+│       └── eas.json
+└── packages/
+    ├── shared/                    # types, utils, constants
+    ├── api-client/                # fetch wrappers, query hooks
+    ├── design-tokens/             # colors, spacing, typography
+    └── i18n/                      # tr.json, en.json (web'den kopya)
+```
+
+**Migration cost**: ~2-3 saat (root package.json'a workspaces eklemek,
+mevcut imports'u packages'a taşımak, CI script güncelleme).
+
+### 3. Phase 1 MVP Scope, Read + Auth + Bookmark (4-6 hafta)
+
+**Dahil olanlar**:
+- Tarif arama (fuzzy, mevcut API endpoint), filter (kategori, mutfak,
+  diyet, allergen)
+- Tarif detay sayfası (ingredients, steps, timer, hero image)
+- Mutfak modu (büyük yazı + sesli okuma + timer otomasyon)
+- Bookmark (web ile sync, push'lu favori listesi)
+- Authentication: Google OAuth + email/password
+- Profil sayfası (yapılan tarifler, bookmarks, koleksiyonlar)
+- Offline cache (popüler 100 tarif + bookmark'lar)
+- Push notification altyapı (henüz aktif kampanya yok)
+- Dark/light mode (sistem teması takip)
+- TR + EN dil
+
+**Hariç olanlar (Phase 2'ye atılır)**:
+- Tarif yorumlama (review yazma)
+- Photo upload
+- AI Asistan chat (planlı ama sonra)
+- Menü planlayıcı yazma
+- Alışveriş listesi yönetimi
+- Topluluk feed (followed users)
+- Editör başvurusu
+
+**Kullanıcı flow**:
+1. Splash screen
+2. Onboarding (3 ekran, atlanabilir)
+3. Auth (Google/email/skip-as-guest)
+4. Ana ekran: arama bar + featured tarif şeritleri + kategoriler
+5. Tarif detay: image + tab'lar (Malzemeler / Yapılış / Mutfak Modu)
+6. Bookmark icon → guest ise login prompt, login ise tap toggle
+7. Profile sekmesi: bookmarks + ayarlar + dil
+
+### 4. Phase 2 Scope, Write + Social (4-6 hafta)
+
+- Review yazma (yıldız + metin + isteğe bağlı foto)
+- Photo upload (Cloudinary/S3)
+- Yapılan tarif işaretleme (cooked tracking)
+- AI Asistan v2 mobil interface (text + voice)
+- Alışveriş listesi (offline-first, web sync)
+- Menü planlayıcı (haftalık görsel grid)
+- Topluluk feed (followed users + suggested cooks)
+- Bildirimler (haftalık menü reminder, yeni follower, comment)
+- Email doğrulama akışı
+
+### 5. Phase 3 Scope, Advanced (4-8 hafta)
+
+- Apple Watch / Wear OS companion app (timer + sıradaki adım)
+- iOS 17+ widget (bugünün tarifi, alışveriş listesi)
+- Siri Shortcuts / Google Assistant Actions ("X tarifi göster")
+- Voice interaction (TTS hands-free okuma + cevap)
+- Live Activity (mutfak modu lock screen timer)
+- App Clips (iOS 14+ instant tarif preview without install)
+- Deep links + Universal Links / Android App Links
+- Pinterest-style photo grid feed (community photos)
+
+### 6. Shared Code Strategy (Web + Mobile ortak)
+
+| Package | İçerik | Web kullanır | Mobile kullanır |
+|---|---|---|---|
+| `packages/shared/` | TypeScript types, enums (Allergen, RecipeType), business constants (cuisine codes, category slugs), validation schemas (Zod) | ✅ | ✅ |
+| `packages/api-client/` | fetch/axios wrapper, endpoint paths, request/response types, auth header injection | ✅ | ✅ |
+| `packages/design-tokens/` | colors, spacing, typography, --color-primary token (web CSS var → JS object), shadows, border-radius | ✅ (CSS export) | ✅ (StyleSheet export) |
+| `packages/i18n/` | translations.tr.json + translations.en.json, single source | ✅ | ✅ |
+
+**Web'in mevcut struktürü** (Next.js src/) bozulmaz, sadece bazı
+files packages'a taşınır + import path güncelleme. Estimated migration:
+50-100 file path update.
+
+### 7. Auth Strategy
+
+**Web**: Auth.js v5 cookie sessions, server-side. Çalışıyor.
+
+**Mobile**: JWT tabanlı, çünkü cookie cross-domain mobile'da problemli.
+
+**Plan**:
+- Web Auth.js'e mobile JWT endpoint ekle: `POST /api/auth/mobile-login`
+  → email/password veya Google ID token al, JWT döndür (1 saat access
+  + 30 gün refresh)
+- Mobile: `expo-auth-session` Google OAuth → ID token → mobile-login
+  endpoint'e POST → JWT al → `expo-secure-store`'a kaydet
+- Email/password için mobile-login direkt
+- Token refresh interceptor (api-client içinde)
+- Logout: token'ı silme + sunucuda revoke endpoint
+- Apple Sign-In: iOS App Store kuralı (Google Sign-In varsa Apple zorunlu)
+
+**Endpoint listesi** (web tarafında ek yapılacak, ~3-5 dosya):
+- `POST /api/auth/mobile-login`
+- `POST /api/auth/mobile-refresh`
+- `POST /api/auth/mobile-register`
+- `POST /api/auth/mobile-logout` (revoke)
+- `POST /api/auth/google-id-token`
+
+### 8. Data + Cache Strategy
+
+- **API**: Mevcut Next.js `/api/*` endpoint'leri (REST, JSON)
+- **Client**: TanStack Query (React Query) v5
+  - Stale-while-revalidate
+  - Optimistic updates
+  - Auto retry, deduping
+- **Persistence**: AsyncStorage cache for query results (not sensitive)
+- **Secure**: `expo-secure-store` for JWT tokens
+- **Offline**: SQLite via `expo-sqlite` for bookmark + last 100 viewed
+  tarifler full content
+- **Image cache**: `expo-image` (built-in disk + memory cache)
+
+**Cache invalidation kuralları**:
+- Tarif listesi: 5dk stale
+- Tarif detay: 1 saat stale
+- Bookmarks: 1dk stale + optimistic
+- User profile: 5dk stale
+- Featured/trending: 1 saat stale
+
+### 9. Design System Mobile
+
+**Brand renkler** (web'den):
+- `--color-primary: #a03b0f` (deep terracotta)
+- `--color-secondary: #f4ead5` (warm cream)
+- `--color-accent: #2d5016` (forest green)
+
+**Typography**:
+- Web: PP Editorial New (display), Inter (body)
+- Mobile: System default (San Francisco iOS / Roboto Android) + custom
+  display font (PP Editorial New) sadece h1/h2 için, performans
+
+**Native feel pattern'leri**:
+- iOS: HIG, blur backgrounds, swipe back gesture, haptic feedback
+- Android: Material You dynamic colors (opsiyonel), bottom nav bar
+- Common: Tab navigation (Ana sayfa / Ara / Bookmark / Profil)
+- Theme: Light/dark mode otomatik (sistem)
+
+**Komponent kütüphanesi**: Tamagui (cross-platform UI, Tarifle brand
+kolay özelleştirme) veya direkt React Native + custom. **Karar**:
+**custom + minimal libs** (NativeBase / Tamagui dependency lock-in
+endişesi, kendi tasarımız özgün olsun).
+
+### 10. Performance Hedefleri
+
+| Metrik | Hedef |
+|---|---|
+| Cold start | < 2s |
+| Tarif listesi scroll | 60fps sürekli |
+| Image lazy load + placeholder | < 100ms placeholder visible |
+| Bundle size (release) | < 30MB initial install (iOS), < 25MB (Android) |
+| API response | < 300ms p50 (mevcut backend zaten hızlı) |
+| TTFI (time to interactive) | < 1.5s after cold start |
+
+**Optimizasyon teknikleri**:
+- Image: WebP + adaptive sizing (Cloudinary transform veya Next.js
+  image API mobile)
+- List virtualization: FlashList (Shopify, çok hızlı)
+- Hermes engine (Expo default)
+- Code splitting: Expo Router automatic
+- Memoization: useMemo + memo strategic kullanım
+
+### 11. Test Stratejisi
+
+| Layer | Tool | Kapsam |
+|---|---|---|
+| Unit | Jest + React Native Testing Library | Components, hooks, utils %80+ |
+| Integration | Jest + RNTL + msw (mock API) | Screen flows, navigation, data fetching |
+| E2E | Maestro | Critical user flows (login, search, bookmark, recipe view) |
+| Visual regression | Storybook + Chromatic (opsiyonel) | Component visual freeze |
+| Manual | TestFlight + Internal Testing | Real device beta |
+| Performance | Flipper + React DevTools Profiler | Render perf |
+
+**Coverage hedefi**: %80 unit + integration. E2E sadece critical paths.
+
+### 12. CI/CD Pipeline
+
+- **GitHub Actions**:
+  - PR'da: lint, type-check, unit test, snapshot test
+  - main push'ta: yukarıdakiler + Maestro E2E (Android emulator)
+- **EAS Build**:
+  - Preview profile: PR'da otomatik build, dahili distribusyon
+  - Production profile: main push'ta tag'le otomatik build
+- **EAS Submit**: tag push'ta App Store + Google Play submit
+- **EAS Update**: minor patch'ler için OTA update (JS-only changes)
+
+**Versioning**: SemVer (1.0.0 launch, 1.1.0 feature, 1.0.1 bugfix).
+Build number: GitHub Actions run number.
+
+### 13. App Store + Google Play Hazırlık
+
+**Apple Developer Program**:
+- $99/yıl
+- Türk şirket için Apple Developer Program enrollment ekstra doğrulama
+  isteyebilir (D-U-N-S number, vergi numarası), 1-3 hafta sürer
+- Geç başlama riski: development başlamadan 1-2 hafta önce başvuru
+
+**Google Play Developer**:
+- $25 one-time
+- Daha hızlı onay (1-2 gün)
+
+**Submission gereklilikleri**:
+- Privacy Policy URL (web'de zaten /yasal/gizlilik var)
+- Screenshots (iPhone 6.5" + iPhone 5.5" + iPad 12.9" + Android phone +
+  Android tablet, 5'er adet, ~25 görsel)
+- App icon (1024x1024 master, iOS adaptive + Android adaptive)
+- Description (4000 char), keywords, what's new, age rating
+- Demo video (opsiyonel, store conversion artırır)
+- Support URL, marketing URL
+- TR + EN her ikisi için (App Store ülke ayrı listing)
+
+**Review süresi**:
+- Apple: 1-3 gün ortalama (ilk submission 1-2 hafta olabilir)
+- Google: 1-3 gün
+
+**Reddedilme riskleri**:
+- Eksik privacy policy → kolay fix
+- Test hesabı eksik → demo credentials brief
+- Alkol/yetişkin içerik (kokteyl tarifler) → Age Gate (17+) gerek olabilir
+- Apple guideline 4.0: "minimum functionality" → tarif listesi yetersiz
+  bulunabilirse mutfak modu + offline cache değer gösterimi
+- Sign in with Apple eksik → Google Sign-In varsa Apple zorunlu
+
+### 14. Localization
+
+- TR + EN (mevcut backend altyapısı zaten ikisini destekliyor)
+- `react-i18next` veya `expo-localization` + custom hook
+- Single source: `packages/i18n/translations.{tr,en}.json` web'den
+  kopyalanır + diff sync
+- Date/number formatting: Intl API (built-in)
+- App Store listing: TR + EN ayrı
+
+**Risk**: Web TR/EN updates mobile'a propagate edilmezse drift olur.
+Çözüm: CI'da diff check, eksik translation key'i fail eder.
+
+### 15. Analytics + Monitoring
+
+- **Sentry React Native**: crash reporting + performance (web Sentry
+  ile aynı project, ayrı release)
+- **Custom event tracking**: Mevcut Vercel Analytics + custom backend
+  endpoint, mobile'dan event push
+- **App Store Connect Analytics**: install funnel, in-app event tracking
+- **Google Play Console**: aynı
+
+**Olay setlerinin önceliği** (Phase 1):
+- App open
+- Recipe view (slug bazlı)
+- Recipe bookmark add/remove
+- Search query
+- Auth method
+- Cold start time
+- Crash + ANR
+
+### 16. Push Notifications
+
+- **Expo Notifications** (cross-platform abstraction)
+- Backend send: `expo-server-sdk` Node lib, mevcut Next.js'e ek route
+- **Use case'ler** (Phase 1: opt-in altyapı; Phase 2: aktif kampanya):
+  - Yeni follower / yorum (Phase 2)
+  - Haftalık menü hatırlatması (Phase 2)
+  - Yeni öne çıkan tarif (Phase 2)
+  - Bookmarked tarif uyarlaması yayınlandı (Phase 2)
+- Token persistence: backend `User.expoPushToken` field
+- Permission UI: ilk login sonrası soft prompt (red değilse "şimdi
+  değil" → 7 gün sonra tekrar sor)
+
+**Risk**: iOS push opt-in oranı %30-40 ortalama, low. Çözüm: değer
+gösterimi, "neden push istiyoruz" copy.
+
+### 17. Deep Links + Universal Links
+
+- iOS Universal Links: `apple-app-site-association` JSON dosyası
+  `https://tarifle.app/.well-known/apple-app-site-association`
+- Android App Links: `assetlinks.json`
+  `https://tarifle.app/.well-known/assetlinks.json`
+- URL pattern: `https://tarifle.app/tarif/<slug>` → app açıksa app'te
+  açar, kapalıysa web fallback
+- Expo Linking: built-in support
+
+**Risk**: SSL + DNS doğrulama, AASA dosyası deploy edildikten sonra
+Apple cache 24 saate kadar tutar.
+
+### 18. Görsel + Image URL Stratejisi
+
+**Mevcut web**: `/recipe-images/generated/<slug>.webp` relative path,
+Vercel CDN serve.
+
+**Mobile için**: API response'da `imageUrl` absolute URL olmalı.
+Backend transform:
+```ts
+imageUrl: r.imageUrl ? `https://tarifle.app${r.imageUrl}` : null
+```
+
+**Resize stratejisi**: Mobile farklı boyutlar ister (thumbnail 400px,
+detail 800px, hero 1600px). Seçenekler:
+1. Cloudinary on-the-fly resize (`?w=400&f=auto`)
+2. Next.js Image API (`/_next/image?url=...&w=400`) - Vercel'in Image
+   Optimization
+3. Pre-generate multiple sizes during Mod R (3x storage cost)
+
+**Karar**: **Next.js Image API kullan** (Vercel-native, no extra
+service, automatic format conversion AVIF/WebP).
+
+### 19. Offline Strategy
+
+- TanStack Query persistor (AsyncStorage) cached queries
+- expo-sqlite: bookmark + last 100 viewed tarifler full content
+  (ingredients + steps)
+- expo-image disk cache: tarif görseli kapalıyken görünür
+- @react-native-community/netinfo: offline durum UI
+- Offline-first bookmark: tap toggle local immediate, sync when online
+
+**Trade-off**: Storage 50-200MB user device. UI'da "Offline cache
+boyutu" + "temizle" buton.
+
+### 20. Güvenlik
+
+- **JWT secret rotation**: 30 gün cycle, refresh token revoke list backend
+- **expo-secure-store**: Keychain (iOS) / Keystore (Android), AES-256
+- **API rate limit**: Upstash Redis IP-based + user-id based (mevcut)
+- **Certificate pinning**: pin SSL cert (advanced, opsiyonel)
+- **Code obfuscation**: Hermes bytecode + Android R8 minify
+- **Jailbreak/root detection**: opsiyonel (kullanıcı dostu olmayabilir,
+  skip)
+- **Biometric login**: expo-local-authentication (Touch ID / Face ID /
+  Android biometric), JWT'yi biometric'le unlock
+
+### 21. Öngörülebilen Sıkıntılar + Önlemler
+
+| # | Risk | Olası etki | Önlem |
+|---|---|---|---|
+| 1 | Apple Developer enrollment Türk şirket için 1-3 hafta gecikme | Launch date kayar | Phase 1 başlamadan 4 hafta önce başvuru aç |
+| 2 | App Store guideline 4.0 "minimum functionality" reddi | Submission reddi | Phase 1'e mutfak modu + offline + push notification koy, "tarif görüntüleyici" değil "uygulama" pozisyonla |
+| 3 | Sign in with Apple eksik (Google varsa zorunlu) | Submission reddi | Phase 1'de hem Google hem Apple SignIn ekle |
+| 4 | Apple In-App Purchase (gelecek monetization) | %30 Apple cut | Launch'ta monetization yok. 6+ ay sonra Pro tier düşünülürse external web checkout (kullanıcı browser'a yönlendir, Apple kuralı ihlali değil "digital good" değilse) |
+| 5 | Çocuk + alkol tarif çakışması (kokteyl + 17+ rating) | Age gate gerek | App age rating 17+ koy (alkol tarif var), App Store kategori "Food & Drink" |
+| 6 | iOS 17+ Cookie blocking (web auth değil mobil JWT'yi etkilemez ama WebView varsa) | Auth break | WebView kullanma, native screens |
+| 7 | Web TR/EN translations sync drift | Mobile farklı text gösterir | CI'da diff check, packages/i18n single source, missing key fail |
+| 8 | Image URL relative → absolute dönüşüm her endpoint'te yapılmazsa | Broken image | API middleware ile transform, single layer |
+| 9 | Push notification iOS opt-in oranı düşük (~30-40%) | Engagement düşük | Soft prompt + value-first copy, opt-in 2. session sonrasında |
+| 10 | Universal Links DNS/SSL/AASA cache 24 saat | Deep link çalışmaz | Phase 1 launch öncesi 1 hafta önce AASA deploy + test |
+| 11 | EAS Build ücretli ($99/ay production) | Aylık fix gider | Phase 1 launch öncesi gerekli, hobby plan ($29) Phase 0'da yetebilir |
+| 12 | TestFlight 90-day expiry her beta build | Beta takıma sürekli yeni build push | 30-day cadence release notes ile |
+| 13 | Apple Watch + Wear OS companion ekstra geliştirme | Phase 3 scope büyür | Phase 1+2 launch sonrası analytics ile değerlendir, gerekiyorsa eklenir |
+| 14 | App icon design eksik | Submission gecikir | Phase 0'da designer brief, master 1024x1024 + 17 farklı boyut hazırlat |
+| 15 | Splash screen brand uyumsuz | Kötü ilk izlenim | Splash design + Lottie animation Phase 0'da hazırlat |
+| 16 | Crash rate yüksek launch sonrası | App Store rating düşer | Sentry + uyarı eşiği, aşıldığında EAS Update ile hotfix |
+| 17 | Bundle size > 50MB | Cellular download red flag, conversion düşer | Hermes + image asset optimization + tree-shake unused libs, hedef <30MB |
+| 18 | Recipe content sync timing (web update mobile'a yansımaz) | Stale tarif content | TanStack Query stale time + manual pull-to-refresh |
+| 19 | Search performance 3729 tarifte client-side fuzzy | Lag | Server-side fuzzy mevcut (pg_trgm), mobile sadece API çağırsın, client-side fallback minimum |
+| 20 | KVKK + GDPR compliance Phase 1 | Legal risk | Web'de zaten KVKK altyapısı var (delete-account, data export), mobile aynı endpoint'leri kullanır |
+| 21 | Beta tester eksik | Real-world bug missing | Phase 0 son haftada 10-20 beta tester davet (sosyal medya) |
+| 22 | OTA update bozar | Critical bug propagate | Staged rollout (5% → 25% → 100%), rollback ready |
+| 23 | iOS App Tracking Transparency (ATT) prompt | %50+ opt-out | ATT prompt sadece gerçekten gerekirse, "no tracking" duruşu MARKETING'de değer |
+| 24 | Push notification permission iOS prompt erken | Permanent deny | İlk session'da SORMA, 2. session'da soft inline ask |
+| 25 | App Store listing copy zayıf | Conversion düşük | Phase 0 son hafta App Store optimization (ASO) keywords + screenshot copy A/B |
+| 26 | Apple Sign-In implementation karmaşık | Bug + reddi | Phase 0 başlamadan önce Apple Developer dokümantasyonu okuyup POC yap |
+| 27 | EAS Update binary değişiklikleri kapsamaz | "Update available" prompt yanlış işler | Update strategy dokümante et: minor → OTA, major → store update |
+| 28 | iOS 18+ widget API değişikliği | Phase 3 widget bozulur | Phase 3 başlamadan platform-spesifik test |
+| 29 | Mobil-spesifik feature creep (örn. Apple Watch ihtiyaç olmadan eklenir) | Phase 1 gecikir | Phase 1 scope KILIT, Apple Watch + widget Phase 3'e atılır |
+| 30 | Cross-platform tutarsızlık (iOS pixel-perfect, Android farklı) | Quality variance | Component layer'ında platform-specific styles + visual regression test |
+
+### 22. Timeline + Cost
+
+**Timeline tahmini** (web platform launch sonrası başlar):
+
+| Phase | Süre | Çıktı |
+|---|---|---|
+| Phase 0 (setup + design + Apple/Google enrollment) | 2-3 hafta | Repo struktürü, Expo init, design system port, app icon + splash, store listings |
+| Phase 1 MVP (read + auth + bookmark) | 4-6 hafta | TestFlight + Google Play Internal Testing |
+| Phase 2 (write + social) | 4-6 hafta | Public beta |
+| Phase 3 (advanced) | 4-8 hafta | Production launch v1.0 |
+| **Toplam** | **3.5-5 ay** | iOS + Android public release |
+
+**Cost** (aylık running):
+- Apple Developer: $99/yıl ≈ $8/ay
+- Google Play: $25 one-time
+- EAS Production: $99/ay (Hobby $29 erken Phase için)
+- Sentry React Native: $0 (mevcut Sentry plan'a dahil)
+- Cloudinary (eğer transform burası kullanılırsa): $89/ay Pro
+- App icon + design (one-time): $200-500 freelance designer
+- Beta tester ödüllendirme (opsiyonel): $50-100 hediye kart
+
+**Toplam aylık running**: ~$200/ay (development sonrası)
+**One-time setup**: ~$300-700
+
+### 23. İlk Adımlar (Phase 0 başlangıcı, web launch sonrası)
+
+1. **Hafta 1**:
+   - Apple Developer Program enrollment başvuru (Türk şirket için
+     D-U-N-S + vergi)
+   - Google Play Console hesap aç
+   - `apps/mobile/` Expo init: `npx create-expo-app@latest --template`
+   - Workspace setup (root package.json'a workspaces, packages/ taşıma)
+   - EAS account + CLI setup
+2. **Hafta 2**:
+   - `packages/design-tokens/` build (web CSS vars → JS tokens)
+   - `packages/api-client/` skeleton (axios + interceptor)
+   - App icon + splash screen design (designer)
+   - Privacy Policy + Terms of Use + KVKK store URL doğrulama
+3. **Hafta 3**:
+   - Auth flow POC (Google Sign-In + email/password + Apple Sign-In)
+   - Backend `/api/auth/mobile-*` endpoint'leri (web tarafında)
+   - Token storage (expo-secure-store)
+   - Test build EAS Preview
+
+Phase 0 sonu **Phase 1 MVP development başlangıcı için hazır**.
+
+### 24. Mobile App Plan = Yeni MOBILE_APP_PLAN.md (gelecek)
+
+Bu master plan FUTURE_PLANS.md'de kaldıkça aşamalı olarak ayrı bir
+`docs/MOBILE_APP_PLAN.md`'ye taşınır (web `TARIFLE_ULTIMATE_PLAN.md`
+single source of truth pattern'i ile aynı). Phase 0 başlamadan önce
+ayrı doküman + bu blok FUTURE_PLANS'tan silinir.
+
+### 25. Şu an YAPMA listesi
+
+- Henüz Expo init etme (web platform launch öncesi)
+- Apple Developer enrollment etme (timing önemli, 90 gün önce)
+- App icon design sipariş etme (brand pattern web'de stabilize olsun)
+- Beta tester recruit etme (web 100+ kullanıcı toplandıktan sonra)
+- Mobile-specific marketing kampanyası (web launch + organic growth
+  öncesi anlamsız)
+
+### 26. Şu an YAP listesi (Phase 0 öncesi, web launch öncesi)
+
+- Web tarafında recipe.imageUrl tüm featured 390 doldur (Mod R cycle)
+- Web tarafında `/api/auth/mobile-*` endpoint'leri TASARLA (kod yazma,
+  sadece spec)
+- Web tarafında image URL absolute transform helper (mobile-ready API
+  response)
+- Web tarafında `apple-app-site-association` + `assetlinks.json` rota
+  hazır olsun (Phase 0'da app ID set edilince doldurulur)
+- Web tarafında `recipe.imageUrl` field zaten mevcut, mobile için
+  ek bir `recipe.imageThumbnail` (400x300) field düşünülebilir
+  (cuisine listing fast load için)
+
+---
+
 ## ✅ Oturum 32 SONU FINAL (29 Nis 2026), 26 commit, MARATON
 
 **Oturum 32 final başarı zinciri (26 commit, prod 3508→3714, +206 tarif):**

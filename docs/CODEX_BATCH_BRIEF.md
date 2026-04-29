@@ -7,37 +7,6 @@
 
 ---
 
-## ⚠️ AKTİF RETROFİT TALEBİ (oturum 33, 29 Nis 2026)
-
-**Mod A v2 Batch 41e teslim edildi**, 20 tariften **2 KRİTİK REJECT** Claude
-tarafında yakalandı + source'tan kaldırıldı, **18 tarif apply edildi**
-(prod 3711 → 3729). 41 paket cycle 98/100. **Eksik 2 tarif yerine yeni
-retrofit talebi:**
-
-| Slot | REJECT olan | REJECT sebebi | Ne yaz |
-|---|---|---|---|
-| A | `firinda-karnabahar-kizartmasi` | Eski `firinda-karnabahar` ile aynı temel teknik (haşla + yoğurt-yumurta sosla bula + fırınla), ingredient %95 örtüşüyor, "Kızartması" suffix == açıklama. **KRİTİK REJECT pattern: X vs X-suffix**. | **TR sebze atıştırmalık veya tatlı**, fırın + yoğurt-yumurta sos kullanmasın, mevcut karnabahar tariflerinden net farklı bir fikir (örn. "Soslu Patlıcan Topakları", "Fırında Pırasa Çıtırı", "Kızarmış Kabak Çiçeği"). Slug "firinda-X" pattern'inden kaçın eğer çakışıyorsa. |
-| B | `zeytinyagli-bakla` | Jenerik "Zeytinyağlı Bakla" Türkiye'de = Ege geleneği = mevcut `ege-zeytinyagli-taze-bakla` (Ege orijinali) + `zeytinyagli-ic-bakla` (iç bakla varyantı) ile **3+ versiyon kuralı** ihlali. | **Farklı yöresel zeytinyağlı yemek**, bakla DEĞİL. Örn. "Bursa Zeytinyağlı Pırasa", "Edirne Zeytinyağlı Enginar", "Aydın Zeytinyağlı Devetabanı", "Datça Zeytinyağlı Çıtlık" gibi yöre + farklı malzeme. Mevcut zeytinyağlı yemekleri `docs/all-recipe-titles.md`'de kontrol et, çakışma yapma. |
-
-**Kurallar (her iki retrofit slot için):**
-- §5.0.0 v2 7 GATE zorunlu (Claude validate-mod-a-batch.ts ile kontrol edecek)
-- GATE 1.5 KRİTİK REJECT pattern'i tekrarlama: prod'da slug ya da title benzeri
-  varsa farklı yemek seç. `docs/all-recipe-titles.md` (3729 tarif, oturum 33
-  güncel) duplicate audit referansı.
-- TR mutfağı için BBC Food / yemek.com / nefisyemektarifleri / kültür-bakanlığı
-  yöresel sayfaları gerçek kaynak doğrulama
-- Format: `r({...})` flat, IIFE wrapper YOK (oturum 32 dersi), helper modülünden
-  import edilmiş t/ing/st/r kullanılıyor
-- Marker: yeni eklemeyi `// ── BATCH 41e retrofit (2 tarif, oturum 33 retrofit) ──`
-  yorum satırıyla ayır, mevcut 41e bloğunun hemen altına ekle
-
-**Tetik mesajı şu an:** "Mod A v2 retrofit. Batch 41e (2 tarif). Detay
-docs/CODEX_BATCH_BRIEF.md §AKTİF RETROFİT TALEBİ."
-
-Bu blok retrofit teslim edilip apply tamamlandığında SİLİNECEK.
-
----
-
 ## 🚀 HIZLI TETİKLEYİCİ, Kerem ne derse ne yap
 
 | Kerem der | Sen anla | Git direkt | Çıktı |

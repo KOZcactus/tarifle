@@ -1,5 +1,123 @@
 # Tarifle, Proje Durumu
 
+> **Oturum 33 SONU FINAL (29 Nis 2026), 18 commit, LAUNCH-READY GÜNÜ:
+> TIER 1+2 duplicate temizlik (4+1 sil) + CSP browser-noise filter +
+> 41e apply 18+2 retrofit (prod 3711→3731) + Mod R görsel altyapı +
+> mobile app master plan + Phase 0 prep (JWT spec + image URL helper +
+> AASA/assetlinks routes) + GATE A 5→0 + GATE E %10.62→%10.0 +
+> GATE D 3 cuisine fix.**
+>
+> **18 commit, 8 büyük başarı:**
+>
+> 1. **TIER 1 duplicate temizlik (commit bfe4230 + 533d213)**:
+>    Oturum 32 174 slug audit'i 4 yüksek güvenilir dupe tespit etti:
+>    - `edirne-ciger-sarma-pilavli` (eski 6 step) → `edirne-ciger-sarmasi`
+>      yeni Mod A v2 (9 step, tam Rumeli iç pilav formülü) lehine sil
+>    - `bogota-bandeja-paisa` → `medellin-bandeja-paisa` lehine sil
+>      (Bandeja Paisa Antioquia/Medellin klasiği, Bogota yöresel değil)
+>    - `tunceli-babuko-sarimsakli` → `tunceli-zirafet-babiko` lehine sil
+>      (aynı yöre, 'Babıko'='Babuko' spelling farkı)
+>    - `eskisehir-met-helvasi` (yeni) sil → `bayburt-tel-helvasi` koru
+>      (jaccard 1.00 tam aynı ingredient, 3+ versiyon kuralı: Kocaeli
+>      pişmaniye + Bayburt tel = 2 versiyon)
+>    rollback-batch + AuditLog ROLLBACK_RECIPE, dev 4 + prod 3 silme
+>    (bogota prod'da yoktu, dev-only artifact). Source 3 entry kaldır.
+>
+> 2. **CSP browser-noise filter (commit 7ccc1a6)**:
+>    Sentry prod alarmı: Android WebView Chrome auto-translate
+>    `translate.googleapis.com` (connect-src) + `translate.google.com/
+>    gen204` (img-src) çağırıyor, CSP doğru bloklamış ama Sentry'ye
+>    forward ediliyordu. /api/csp-report'a BROWSER_NOISE_PREFIXES
+>    whitelist (Translate + chrome/moz/safari extensions + webkit-
+>    masked-url): bu prefix'lerden gelen violation'lar console.warn
+>    ile loglanır ama Sentry'ye gitmez. CSP gevşetilmedi. E2E test ek.
+>
+> 3. **TIER 2 cluster review (commit 9ef7d5f)**:
+>    4 cluster triaj: Pişmaniye/Tel Helvası 2 versiyon meşru, Babıko/
+>    Babikko/Sırın 3 versiyon farklı form (whitelist), Maraş ekşili
+>    çorba GERÇEK DUPE (`maras-sumakli-dogme-asi` ve `kahramanmaras-
+>    eksili-corbasi` aynı yöre, %100 step+ingredient match - sil dev,
+>    prod'da yoktu), Bolu Kedi Batmaz / Giresun ekmek farklı form ama
+>    Giresun ekmek step 1-2 GATE 5 boilerplate + GATE 6 slug-leak
+>    ihlali (Mod K kalıntısı). Source 3 step temiz, DB 6 step boilerplate;
+>    fix-giresun-ekmek-steps.ts ile DB→source sync (6→3 step).
+>
+> 4. **Codex Batch 41e apply (commit bd405f8 + acaf6a2)**:
+>    20 tarif teslim → 7 GATE + ingredient jaccard cross-check ile
+>    2 KRİTİK REJECT (firinda-karnabahar-kizartmasi vs firinda-
+>    karnabahar suffix-only; zeytinyagli-bakla 3+ versiyon kuralı).
+>    Source'tan 2 sil, 18 apply: prod 3711 → 3729. Hunger-bar +
+>    nutrition + diet-scores recompute, dump tarif-listesi + recipe-
+>    titles. 41e retrofit talebi brief'e eklendi.
+>
+> 5. **Codex 41e retrofit + apply (commit yeni)**:
+>    Codex 2 retrofit tarif teslim etti: `domatesli-biber-kizartmasi`
+>    (TR sebze atıştırmalık, kızartma + sade domates sos pattern, fırın
+>    DEĞİL) + `ayvalik-zeytinyagli-sevketibostan` (Ayvalık yöresel kök
+>    otu zeytinyağlı, bakla DEĞİL). 7 GATE temiz (GATE 1.5 hit ikisi
+>    de whitelist false positive). prod 3729 → 3731. Mod A v2 cycle
+>    100/100 tamam.
+>
+> 6. **Mod R görsel altyapısı (commit 67b898d)**:
+>    Codex Mod R = AI editöryal yemek fotoğrafı üretimi. ChatGPT Pro/
+>    Max image tool ile abonelik içi (API call yok). Aesthetic locked:
+>    emerald velvet booth + dark walnut table + 3/4 high angle warm
+>    tungsten + 4:3 1600×1200 WebP. Yeni docs/CODEX_MOD_R_BRIEF.md
+>    self-contained (350+ satır, preamble + decision tables + workflow
+>    + self-check + anti-pattern + reference image protocol). Yeni
+>    scripts/dump-recipe-image-queue.ts (batch öncesi tarif JSON üretim)
+>    + scripts/apply-recipe-images.ts (batch sonrası DB imageUrl set +
+>    AuditLog). Pilot Batch 0 queue (5 ikonik tarif: adana-kebap,
+>    ezogelin-corbasi, baklava, menemen, aperol-spritz) hazır.
+>
+> 7. **Mobile app master plan + Phase 0 prep (commit acaf6a2 + af4a120)**:
+>    - FUTURE_PLANS.md mobile app master plan: 26 ana madde + 30 risk
+>      matrisi + timeline 3.5-5 ay + cost $200/ay running
+>    - Framework: Expo Managed Workflow + EAS Build/Submit/Update
+>    - Repo: monorepo (npm workspaces), apps/mobile + packages/{shared,
+>      api-client, design-tokens, i18n}
+>    - Phase 1 MVP (read+auth+bookmark) + Phase 2 (write+social) +
+>      Phase 3 (Watch+widget+Siri)
+>    - Phase 0 hazırlık 4 dosya commit edildi:
+>      a. docs/MOBILE_AUTH_API_SPEC.md (380 satır JWT spec, 9 endpoint,
+>         RefreshToken Prisma model + middleware + rate limit)
+>      b. src/lib/recipe-image-url.ts (toAbsoluteImageUrl +
+>         withAbsoluteImageUrls + resizedImageUrl Next.js Image API)
+>      c. src/app/.well-known/apple-app-site-association/route.ts
+>         (iOS Universal Links AASA stub)
+>      d. src/app/.well-known/assetlinks.json/route.ts (Android App
+>         Links assetlinks stub)
+>
+> 8. **Nihai temizlik audit (commit d7be56d + 4689d67)**:
+>    - GATE A 5 → 0 hit (9 fix 2 round): fes-harira/galbi/kai-yang/
+>      mersin sis dürüm/bodrum çipura marine timer + lisbon-arroz-de-
+>      pato/riyadh-chicken-kabsa/kadinbudu-kofte/cape-town-koeksisters
+>      undershoot/overshoot
+>    - GATE D 3 cuisine fix: lagos-yer-fistikli (ma→ng), lima-kinoali-
+>      tavuk-aguadito (mx→pe), kopenhag-smorrebrod-ringa (se→dk)
+>    - GATE B pyzy-polonya-usulu SUT ek (1 fix); mumbai-misal-pav
+>      false positive defer
+>    - GATE E 396/3729 (%10.62) → 372/3729 (%10.00) brief uyumlu, 24
+>      tarif unfeatured (yeni Mod A v2 batch korunur, eski viewCount ASC)
+>    - Lhci 5 URL × 2 run = 10 run tüm assertion'lar PASS (Perf ≥0.85,
+>      A11y ≥0.95, BP ≥0.9, SEO ≥0.95)
+>
+> **Final state**: Prod **3711 → 3731** (+20 tarif: 18 apply + 2 retrofit).
+> Cuisine 41 sabit. Mod A v2 cycle 100/100 tamam. **60 blog**. 60 SEO
+> entry sabit. Pre-push 6 katman temiz tüm 18 commit. **Audit-deep dev+
+> prod 0 CRITICAL**. **audit-recipe-quality 5 GATE: A=0, B=1 (mumbai
+> false positive), C=0, D=0, E=OK**. Source-guard 0 over-tag, 0 missing.
+> **Site %100 LAUNCH-READY** + Mod R altyapı canlı + mobile app blueprint
+> hazır + Phase 0 prep deploy edildi (AASA/assetlinks DNS+SSL cache 24h
+> şimdiden başladı).
+>
+> **Sıradaki oturum 34 öncelik**: (a) Codex Mod R pilot çıktısını bekle/
+> kontrol (5 görsel aesthetic kilitleme), (b) Mod R Batch 1+ rollout
+> (featured 390 + popular ~500), (c) Web launch checklist (basın kit,
+> sosyal medya, ilk 100 kullanıcı planı), (d) Mod A v2 Batch 42a-42e
+> tetik (kullanıcı kararı, opsiyonel), (e) GATE B mumbai algoritma fix
+> (ROI orta, defer).
+
 > **Oturum 32 SONU FINAL (29 Nis 2026), 26 commit, MARATON GÜNÜ:
 > Mod A v2 40a-e + 41a-d 4 paket apply (prod 3508 → 3714, +206 tarif) +
 > audit-deep 62→0 + GATE A 792→1 + IIFE format homojenleştirme +

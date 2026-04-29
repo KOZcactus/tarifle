@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "adana-kebap",
+    "title": "Adana Kebap",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Kuyruk yağı",
+      "Pul biber",
+      "Tuz",
+      "Karabiber",
+      "Kimyon",
+      "Sarımsak",
+      "Kuzu kıyma"
+    ],
+    "servingSuggestion": "Lavaş, közlenmiş domates, biber ve soğan salatası ile servis edin.",
+    "tipNote": "Kıymayı en az 15 dakika yoğurun, yapışkan hale gelsin. Şişe sararken elinizi ıslak tutun."
+  },
+  {
+    "slug": "ezogelin-corbasi",
+    "title": "Ezogelin Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Kırmızı mercimek",
+      "İnce bulgur",
+      "Pirinç",
+      "Soğan",
+      "Domates salçası",
+      "Biber salçası",
+      "Tereyağı",
+      "Nane",
+      "Pul biber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Üstüne naneli yağ gezdirip limon dilimiyle sıcak kase içinde sunun.",
+    "tipNote": "Mercimek iyice açılınca bir kez karıştırın; ezogelin taneli dokusunu daha iyi korur."
+  },
+  {
+    "slug": "baklava",
+    "title": "Baklava",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Baklava yufkası",
+      "Ceviz içi",
+      "Tereyağı",
+      "Şeker",
+      "Su",
+      "Limon suyu"
+    ],
+    "servingSuggestion": "Üstüne bir parça fıstık tozu veya ince tarçın gezdirip porselen tabakta servis yapın.",
+    "tipNote": "Baklava fırından yeni çıkmışsa üzerine soğuk şerbet dök. Baklava soğumuşsa sıcak şerbet kullan. İkisi birden sıcak olursa şerbet emmez."
+  },
+  {
+    "slug": "menemen",
+    "title": "Menemen",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Yumurta",
+      "Domates",
+      "Sivri biber",
+      "Tereyağı",
+      "Tuz",
+      "Karabiber",
+      "Pul biber"
+    ],
+    "servingSuggestion": "Bakır tavada, yanında sıcak ekmek ve beyaz peynirle kahvaltıya çıkarın.",
+    "tipNote": "Domates suyunu çekince yumurtayı ekleyin; menemen sulu kalır, cıvık olmaz."
+  },
+  {
+    "slug": "aperol-spritz",
+    "title": "Aperol Spritz",
+    "type": "KOKTEYL",
+    "cuisine": "it",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Aperol",
+      "Prosecco",
+      "Soda",
+      "Buz",
+      "Portakal dilimi"
+    ],
+    "servingSuggestion": "Portakal dilimini bardağın içine bırakıp gün batımı saatinde iyice soğuk sunun.",
+    "tipNote": "Bardağı büyük buzla doldurun; prosecco ve soda eklenince köpük daha dengeli kalır."
+  }
+]

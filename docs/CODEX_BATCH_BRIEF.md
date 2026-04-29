@@ -49,6 +49,7 @@ Bu blok retrofit teslim edilip apply tamamlandığında SİLİNECEK.
 | **"Mod E"**, "step revize", "adım kalitesi düzelt", "boilerplate steps" | **MOD E**, mevcut tariflerin steps array'ini yeniden yaz + opsiyonel ingredient düzeltme (araştırmaya göre eksik malzeme/yanlış oran) | §14 | `docs/step-revisions-batch-N.json` (slug + steps + opsiyonel ingredients) |
 | **"Mod F"**, "Retrofit-N", "step count retrofit" | **MOD F**, mevcut tariflerin step sayısını min/max kuralına çekmek + kalite gate (varyasyon, notes, timer, muğlak yasak, kritik nokta) | §15 | `docs/retrofit-step-count-N.json` (slug + newSteps + notes) |
 | **"Mod FA"**, "Retrofit-N revize", "FA Batch N", "Retrofit revize-N" | **MOD FA**, daha önce Mod F ile teslim edilmiş bir batch'i SCAFFOLD'dan arındırarak DOĞRULUK önceliğiyle yeniden teslim et (suffix smuggling temizlik + tarif-spesifik step + web kaynak doğrulama zorunlu) | §16 | `docs/retrofit-step-count-N-revize.json` (aynı slug listesi, temiz newSteps) |
+| **"Mod R"**, "Batch N görsel", "resim üret" | **MOD R** (oturum 33+, görsel üretim), 20 tarif için editöryal yemek fotoğrafı üret. Sabit aesthetic preamble (emerald velvet booth + dark walnut table + 3/4 high angle warm tungsten) + per-recipe variable. Pilot Batch 0 = 5 tarif. | **docs/CODEX_MOD_R_BRIEF.md** (self-contained, ayrı brief, batch brief'i okumana gerek yok) | `public/recipe-images/generated/{slug}.webp` (1600×1200 WebP) |
 
 **Default'lar (soru sorma, direkt başla):**
 

@@ -1,0 +1,361 @@
+[
+  {
+    "slug": "enginarli-domatesli-pide-manisa-usulu",
+    "title": "Enginarlı Domatesli Pide",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Enginar kalbi",
+      "Domates",
+      "Zeytinyağı",
+      "Kuru maya",
+      "Ilık su",
+      "Tuz"
+    ],
+    "servingSuggestion": "Enginarlı domatesli pideyi uzun dilimleyip enginar kalpleri ezilmeden tahta servis tahtasına alın.",
+    "tipNote": "Domatesi çekirdeklerini alarak kullanmak pidenin ortasının sulanmasını önler."
+  },
+  {
+    "slug": "beyti-sarma",
+    "title": "Beyti Sarma",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Dana kıyma",
+      "Soğan",
+      "Sarımsak",
+      "Kimyon",
+      "Lavaş",
+      "Domates sosu",
+      "Yoğurt",
+      "Tereyağı",
+      "Tuz"
+    ],
+    "servingSuggestion": "Üstüne yoğurt ve tereyağlı sos gezdirip sıcak servis edin.",
+    "tipNote": "Köfte harcını 10 dakika yoğurun; şişte dağılmayan sıkı bir doku oluşur."
+  },
+  {
+    "slug": "empanada",
+    "title": "Empanada",
+    "type": "YEMEK",
+    "cuisine": "ar",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Tereyağı",
+      "Su",
+      "Dana kıyma",
+      "Soğan",
+      "Kırmızı biber",
+      "Yumurta sarısı"
+    ],
+    "servingSuggestion": "Domatesli acı sosla servis edin.",
+    "tipNote": "İç harcı soğutmadan hamura koymayın; sıcak harç hamuru yumuşatır."
+  },
+  {
+    "slug": "moussaka",
+    "title": "Moussaka",
+    "type": "YEMEK",
+    "cuisine": "gr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Patlıcan",
+      "Dana kıyma",
+      "Domates püresi",
+      "Un",
+      "Süt",
+      "Yumurta",
+      "Kuru soğan",
+      "Tereyağı",
+      "Muskat",
+      "Tarçın",
+      "Tuz"
+    ],
+    "servingSuggestion": "Dilimleri 10 dakika dinlendirip yanında salata ve ekmekle sıcak ana tabakta sunun.",
+    "tipNote": "Fırından çıkan moussakayı 15 dakika bekletin; katlar dağılmadan kesilir."
+  },
+  {
+    "slug": "acai-bowl",
+    "title": "Açai Bowl",
+    "type": "ICECEK",
+    "cuisine": "br",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Açai püresi",
+      "Donmuş muz",
+      "Yaban mersini",
+      "Granola",
+      "Badem"
+    ],
+    "servingSuggestion": "Üzerine granola ve taze meyve dizin.",
+    "tipNote": "Muz ve açai püresi donuk olursa kase kaşıkla yenebilir koyulukta kalır."
+  },
+  {
+    "slug": "espresso-protein-shake",
+    "title": "Espresso Protein Shake",
+    "type": "ICECEK",
+    "cuisine": "us",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Espresso",
+      "Süt",
+      "Muz",
+      "Protein tozu",
+      "Buz"
+    ],
+    "servingSuggestion": "Spor sonrası soğuk servis edin.",
+    "tipNote": "Espressoyu shake'e eklemeden soğutun; buz hızlı erimez."
+  },
+  {
+    "slug": "mole-poblano",
+    "title": "Mole Poblano",
+    "type": "YEMEK",
+    "cuisine": "mx",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk but",
+      "Kuru acı biber",
+      "Bitter çikolata",
+      "Yer fıstığı",
+      "Susam",
+      "Badem",
+      "Kuru soğan",
+      "Sarımsak",
+      "Domates",
+      "Tavuk suyu",
+      "Kuru üzüm",
+      "Tarçın",
+      "Karanfil",
+      "Tuz"
+    ],
+    "servingSuggestion": "Pilav ve mısır tortilla ile servis edin.",
+    "tipNote": "Sosu pürüzsüz çekip süzün; mole kadifemsi dokusunu böyle alır."
+  },
+  {
+    "slug": "simit-tost",
+    "title": "Simit Tost",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Simit",
+      "Kaşar peyniri",
+      "Domates",
+      "Tereyağı"
+    ],
+    "servingSuggestion": "Yanına sıcak çayla servis edin.",
+    "tipNote": "Simit içini çok doldurmayın; preslenirken peynir dışarı taşmaz."
+  },
+  {
+    "slug": "pankek",
+    "title": "Pankek",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Un",
+      "Süt",
+      "Yumurta",
+      "Şeker",
+      "Kabartma tozu",
+      "Vanilin",
+      "Tuz",
+      "Sıvı yağ"
+    ],
+    "servingSuggestion": "Bal, reçel veya taze meyveyle servis edin.",
+    "tipNote": "Hamuru karıştırdıktan sonra 10 dakika dinlendirin; kabartma tozu daha eşit çalışır."
+  },
+  {
+    "slug": "acma",
+    "title": "Açma",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Ilık süt",
+      "Ilık su",
+      "Kuru maya",
+      "Şeker",
+      "Tuz",
+      "Sıvı yağ",
+      "Tereyağı",
+      "Yumurta sarısı"
+    ],
+    "servingSuggestion": "Beyaz peynir, zeytin ve çayla servis edin.",
+    "tipNote": "Şekil verdikten sonra ikinci mayayı atlamayın; açmanın lifli dokusu bu dinlenmeyle oluşur."
+  },
+  {
+    "slug": "moutabal",
+    "title": "Moutabal",
+    "type": "SOS",
+    "cuisine": "me",
+    "categorySlug": "soslar-dippler",
+    "ingredients": [
+      "Patlıcan",
+      "Tahin",
+      "Yoğurt",
+      "Limon suyu",
+      "Sarımsak",
+      "Tuz",
+      "Zeytinyağı"
+    ],
+    "servingSuggestion": "Zeytinyağı, nar taneleri ve sıcak pideyle servis edin.",
+    "tipNote": "Patlıcanı közledikten sonra süzgeçte 10 dakika bekletin; fazla su mezeyi gevşetir."
+  },
+  {
+    "slug": "oladi",
+    "title": "Oladi",
+    "type": "KAHVALTI",
+    "cuisine": "ru",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Kefir",
+      "Un",
+      "Yumurta",
+      "Şeker"
+    ],
+    "servingSuggestion": "Yanına ekşi krema ve reçel koyarak servis edin.",
+    "tipNote": "Hamuru fazla çırpmayın; hafif pütürlü kalırsa oladi daha kabarık olur."
+  },
+  {
+    "slug": "msemen",
+    "title": "Msemen",
+    "type": "KAHVALTI",
+    "cuisine": "ma",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "İrmik",
+      "Zeytinyağı",
+      "Su",
+      "Tuz",
+      "Toz şeker"
+    ],
+    "servingSuggestion": "Bal ve tereyağını ayrı kasede verip msemeni tavadan çıkar çıkmaz sıcak sunun.",
+    "tipNote": "Hamur bezelerini yağladıktan sonra 10 dakika dinlendirin; katları tavada daha net açılır."
+  },
+  {
+    "slug": "san-sebastian-cheesecake",
+    "title": "San Sebastian Cheesecake",
+    "type": "TATLI",
+    "cuisine": "es",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Krem peynir",
+      "Krema",
+      "Yumurta",
+      "Şeker",
+      "Un",
+      "Vanilin"
+    ],
+    "servingSuggestion": "Soğuttuktan sonra kalın dilimleyip yanında sade kahveyle oda sıcaklığında sunun.",
+    "tipNote": "Keki fırından aldığınızda ortası sallanmalı; soğurken kıvamı oturur."
+  },
+  {
+    "slug": "ananasli-smoothie",
+    "title": "Ananaslı Smoothie",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Ananas",
+      "Muz",
+      "Ananas suyu",
+      "Limon suyu",
+      "Buz"
+    ],
+    "servingSuggestion": "Uzun bardakta, üstüne ananas küpleri koyarak iyice soğuk servis edin.",
+    "tipNote": "Donmuş ananas kullanırsanız ekstra buz eklemeden yoğun kıvam alır."
+  },
+  {
+    "slug": "pad-thai",
+    "title": "Pad Thai",
+    "type": "YEMEK",
+    "cuisine": "th",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Pirinç noodle",
+      "Karides",
+      "Yumurta",
+      "Soya sosu",
+      "Balık sosu",
+      "Esmer şeker",
+      "Yer fıstığı",
+      "Taze soğan",
+      "Demirhindi ezmesi",
+      "Fasulye filizi",
+      "Misket limonu"
+    ],
+    "servingSuggestion": "Misket limonu ve taze kişnişle servis edin.",
+    "tipNote": "Noodleları sıcak suda yumuşatıp süzün; tavada fazla pişerse kırılır."
+  },
+  {
+    "slug": "hamsikoy-sutlaci",
+    "title": "Hamsiköy Sütlacı",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Süt",
+      "Pirinç",
+      "Şeker",
+      "Tarçın"
+    ],
+    "servingSuggestion": "Üzerine tarçın serperek ılık servis edin.",
+    "tipNote": "Pirinci çok diri bırakmayın; sütlaç fırın gördükten sonra toparlanırken tane tane kalmalıdır."
+  },
+  {
+    "slug": "naneli-limonata",
+    "title": "Naneli Limonata",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Limon",
+      "Şeker",
+      "Su",
+      "Taze nane",
+      "Buz"
+    ],
+    "servingSuggestion": "Bol buz ve taze nane yapraklarıyla servis edin.",
+    "tipNote": "Limon kabuğunu beyaz kısmına inmeden rendeleyin; beyaz kısım acılık verir."
+  },
+  {
+    "slug": "lazanya",
+    "title": "Lazanya",
+    "type": "YEMEK",
+    "cuisine": "it",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Lazanya yaprağı",
+      "Dana kıyma",
+      "Domates sosu",
+      "Soğan",
+      "Süt",
+      "Un",
+      "Kaşar peyniri"
+    ],
+    "servingSuggestion": "Dilimleri 10 dakika dinlendirip yeşil salata ve rendelenmiş parmesanla sıcak sunun.",
+    "tipNote": "Raguyu sulu bırakın; lazanya yaprakları fırında bu sosla yumuşar."
+  },
+  {
+    "slug": "baharatli-patlamis-misir",
+    "title": "Baharatlı Patlamış Mısır",
+    "type": "ATISTIRMALIK",
+    "cuisine": "tr",
+    "categorySlug": "atistirmaliklar",
+    "ingredients": [
+      "Mısır tanesi",
+      "Ayçiçek yağı",
+      "Füme paprika",
+      "Sarımsak tozu",
+      "Limon kabuğu"
+    ],
+    "servingSuggestion": "Kaseye alıp bekletmeden servis edin.",
+    "tipNote": "Baharatı mısır sıcakken ekleyin; yağla birlikte yüzeye tutunur."
+  }
+]

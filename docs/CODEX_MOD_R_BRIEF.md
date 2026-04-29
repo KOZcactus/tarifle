@@ -49,8 +49,12 @@ FOREGROUND:
   highly polished, edge of frame visible at bottom
 - Glass surface reflects the dish gently from below; emerald booth
   visible softly through the transparent glass
-- Optional small detail: charcoal linen napkin corner OR single brass
-  candle holder at frame edge, subtle, never dominant
+- Optional small detail: charcoal linen napkin corner at frame edge,
+  subtle, never dominant
+- NO LAMP, NO CANDLE, NO BRASS HOLDER (kullanıcı kararı oturum 33
+  Batch 1 sonrası): masada herhangi bir mum, lamba, tealight veya
+  brass detay olmasın. Sadece dish + opsiyonel charcoal linen napkin
+  köşesi
 - Avoid wood, marble, or stone surfaces; the table is glass and
   transparent
 
@@ -67,7 +71,8 @@ COMPOSITION:
   kararı, oturum 33.
 - Dish centered horizontally, slightly toward middle-third vertically
 - Booth still visible in upper area but less dominant
-- Brass candle and napkin still visible at edges but cropped tighter
+- Charcoal linen napkin still visible at edge (cropped tighter)
+- NO brass candle, NO lamp, NO tealight (kullanıcı kararı oturum 33)
 - 4:3 aspect ratio, 1600x1200 final resolution
 
 STYLE:
@@ -301,6 +306,9 @@ Bunlar olursa REJECT, regenerate:
 10. ❌ Kuş bakışı 90° top-down (3/4 yüksek açı 35-40°, table edge görünmeli)
 11. ❌ Steam wisps her durumda (kullanıcı kararı, bar menü estetiği steam istemiyor)
 12. ❌ Garnish yokluğu (her görselde §3.2'ye göre uygun garnish olmalı)
+13. ❌ Brass candle, lamp, tealight, mum (kullanıcı kararı oturum 33
+    Batch 1 sonrası): masada lamb DEĞİL, sadece dish + opsiyonel
+    charcoal linen napkin köşesi
 
 ---
 

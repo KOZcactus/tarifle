@@ -14,7 +14,7 @@
  * Tüm preset'lerin criteria max toplamı = 100. Scorer runtime check eder.
  */
 
-import type { DietProfile, RecipeForScoring } from "./types";
+import type { DietProfile, RecipeForScoring as _RecipeForScoring } from "./types";
 import { fitRange, fitUpper, fitLower, macroPercents } from "./fit";
 
 const VEGETARIAN_TAGS = ["vejetaryen", "vegetarian"];

@@ -22,7 +22,6 @@ import {
   ALLERGEN_RULES,
   ingredientMatchesAllergen,
   trLower,
-  asciiNormalize,
 } from "../src/lib/allergen-matching";
 export {
   ALLERGEN_RULES,

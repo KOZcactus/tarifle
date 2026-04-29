@@ -1,0 +1,67 @@
+{
+  "expo": {
+    "name": "Tarifle",
+    "slug": "tarifle",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "tarifle",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#a03b0f"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tarifle.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Tarif fotoğrafı eklemek için kameraya erişim.",
+        "NSPhotoLibraryUsageDescription": "Tarif fotoğrafı eklemek için galeriye erişim."
+      },
+      "associatedDomains": ["applinks:tarifle.app"]
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#a03b0f"
+      },
+      "package": "com.tarifle.app",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "tarifle.app"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-localization",
+      "expo-secure-store",
+      "expo-font",
+      "expo-splash-screen"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "apiBaseUrl": "https://tarifle.app",
+      "eas": {
+        "projectId": "REPLACE_AT_PHASE_0_WITH_EAS_INIT"
+      }
+    }
+  }
+}

@@ -76,7 +76,7 @@ interface DbRecipe {
 // Kural 10 (oturum 25 GPT audit), yüksek-yağ ingredient lookup. Set
 // içinde geçen ingredient adı varsa nutrition anomaly suspect flag.
 // TR locale lowercase, ASCII fold + diakritik versiyonları dahil.
-const HIGH_FAT_INGREDIENTS = new Set([
+const _HIGH_FAT_INGREDIENTS = new Set([
   "kuyruk yağı", "kuyruk yagi",
   "tereyağı", "tereyagi", "tere yağı", "tere yagi",
   "zeytinyağı", "zeytinyagi", "zeytin yağı", "zeytin yagi",

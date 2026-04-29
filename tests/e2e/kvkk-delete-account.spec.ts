@@ -93,7 +93,7 @@ test("delete account full flow + DB cascade doğrulama", async ({ page }) => {
   expect(stillExists).toBeNull();
 });
 
-test("rate limit: 3'üncü deneme sonrası bloklanmalı", async ({ request }) => {
+test("rate limit: 3'üncü deneme sonrası bloklanmalı", async ({ request: _request }) => {
   // Aynı user ile 4 kere deleteAccountAction'a benzer payload yollanmaz
   // (form action server action olduğu için direkt POST etmek zor),
   // bu test placeholder olarak rate-limit scope tanımının var olduğunu

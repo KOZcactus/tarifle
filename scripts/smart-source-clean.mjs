@@ -107,7 +107,7 @@ while (i < lines.length) {
     continue;
   }
 
-  const startedWithR = open[2] === "r({";
+  const _startedWithR = open[2] === "r({";
   const delta = braceDelta(line);
 
   if (delta === 0) {

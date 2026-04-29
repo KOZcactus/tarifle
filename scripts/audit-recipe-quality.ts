@@ -264,14 +264,14 @@ async function main() {
     const cookMin = r.cookMinutes ?? 0;
     if (prepMin === 0 && cookMin === 0) continue;
     let waitMinutes = 0;
-    let activeMinutes = 0;
+    let _activeMinutes = 0;
     for (const s of r.steps) {
       if (!s.timerSeconds) continue;
       const min = s.timerSeconds / 60;
       if (s.timerSeconds >= WAIT_THRESHOLD_SEC) {
         waitMinutes += min;
       } else {
-        activeMinutes += min;
+        _activeMinutes += min;
       }
     }
     const expected = prepMin + cookMin + waitMinutes;

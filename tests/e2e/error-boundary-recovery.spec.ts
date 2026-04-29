@@ -37,7 +37,7 @@ test.describe("Sub-route error boundary smoke", () => {
   test("/dolap login gerektirir, hata vermeden login redirect", async ({
     page,
   }) => {
-    const res = await page.goto("/dolap");
+    const _res = await page.goto("/dolap");
     // Auth-gated sayfa; anonim user'da middleware veya layout
     // /giris'e redirect eder. Status 200 olabilir (intermediate),
     // final URL /giris olmalı, error.tsx tetiklenmemeli.

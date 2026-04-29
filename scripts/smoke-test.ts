@@ -49,7 +49,7 @@ async function fetchUrl(
     const res = await fetch(url, init);
     const text = await res.text();
     return { status: res.status, headers: res.headers, text };
-  } catch (err) {
+  } catch (_err) {
     return null;
   }
 }

@@ -13,6 +13,281 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
 
 ---
 
+## 🚀 WEB LAUNCH CHECKLIST (oturum 33+, Planlı, web platform tamamlanınca)
+
+**Statü**: Plan aşaması, henüz iş yok. Tarifle teknik olarak şu an hazır
+(3731 tarif, 60 blog, audit yeşil, Lhci PASS) ama **henüz public
+paylaşılmadı**. Memory kuralı: "açılış öncesi 10+ oturum daha
+teknik+içerik mükemmel sonra açılış".
+
+**Vizyon**: Site kapısının açılması (sosyal medyada paylaşım, ilk
+organic trafik) yapılandırılmış bir playbook ile yapılsın. Acil değil,
+ama açılış zamanı geldiğinde "ne yapmalıyım" sorusuna anında cevap
+verecek hazır blueprint.
+
+**Zamanlama**: Mobile app development öncesi (Phase 0'a paralel) ya da
+mobile app v1 launch sonrası. Kerem kararına bağlı, web kapı açılışı
+mobile'dan bağımsız tetiklenebilir.
+
+### 1. Basın Kit, /basin sayfası + zip paketi
+
+Yazarlar, blogger'lar, gazeteciler tarifle.app hakkında yazmak isterse
+hazır içerik + görsel paketi.
+
+**İçerikler**:
+
+| Item | Format | Hazır mı |
+|---|---|---|
+| Tek cümle pitch | metin | YAZILMALI |
+| 1 paragraf tanıtım | metin | YAZILMALI |
+| 1 sayfa hikaye + vizyon + ekip | metin | YAZILMALI |
+| Logo paketi (PNG + SVG, light/dark, 4 boyut) | dosya | logo/ klasöründe mevcut, paketle |
+| Hero ekran görüntüleri (3-5) | PNG/JPG, mobile + desktop | ÜRETİLECEK (Mod R'den faydalanılabilir) |
+| Brand quote / slogan (3 alıntı) | metin | YAZILMALI |
+| Faktoid liste (tarif sayısı, blog, dil, allergen filter, vs.) | metin | YAZILMALI (otomatik dump script önerilir) |
+| İletişim (isim, email, sosyal medya) | metin | YAZILMALI |
+| Cuisine breakdown (41 mutfak) | metin/tablo | docs/all-recipe-titles.md'den çıkar |
+
+**Yapılacak iş**:
+- `src/app/basin/page.tsx` (yeni route, /basin)
+- Markdown içerik `content/basin/press-kit.mdx`
+- Zip paketi `public/press-kit.zip` (logo + screenshot)
+- Footer'a "Basın" linki ek
+
+**Süre**: 3-4 saat içerik yazımı + 1-2 saat sayfa kurulum.
+
+### 2. Sosyal Medya Kurulum
+
+**Hesap listesi (oluşturulacak)**:
+
+| Platform | Handle önerisi | Öncelik | Sebep |
+|---|---|---|---|
+| Instagram | `@tarifle.app` | YÜKSEK | Yemek görseli organic reach, ana platform |
+| Pinterest | `@tarifleapp` | YÜKSEK | Pin'leme tarif trafiği SEO + organic, Pinterest rich pin altyapı zaten kod tarafında var |
+| Twitter/X | `@tarifleapp` | ORTA | Duyuru, blog cross-post, basın takibi |
+| TikTok | `@tarifle.app` | ORTA | Kısa video tarif (gelecek), launch'ta opsiyonel |
+| YouTube | `@tarifle` | DÜŞÜK | Uzun video tarif (gelecek, Faz 2+) |
+| Threads / Mastodon | `@tarifleapp` | DÜŞÜK | Niş, opsiyonel |
+
+**Her hesap için yapılacak**:
+- Profil avatarı (logo PNG, 400x400 minimum)
+- Banner (mobile + web boyut, marka tonu)
+- Bio metni TR + EN (160 char Twitter, 150 Instagram, vs.)
+- Link in Bio: tarifle.app
+- İlk 10 post backlog (launch öncesi hazır, ilk hafta günlük yayın)
+
+**Brand voice + content calendar**:
+- Hangi gün ne paylaşılacak şablon (haftada 5-7 post):
+  - Pazartesi: Yeni tarif tanıtım (görsel + 1 cümle)
+  - Salı: Blog post cross-post (yazıdan alıntı + link)
+  - Çarşamba: Hızlı ipucu (mutfak rehberi mini)
+  - Perşembe: Mevsimsel tarif öneri
+  - Cuma: Cuisine spotlight (haftada 1 mutfak derinlemesine)
+  - Cumartesi: Kullanıcı UGC veya tarif video (gelecek)
+  - Pazar: Haftanın özeti / koleksiyon önerisi
+- 4 hafta için ilk şablon (28 post), launch sonrası açıklamalı backlog
+
+**Yapılacak iş**:
+- `docs/SOCIAL_MEDIA_BRAND_VOICE.md` (yazılı: ton, yasaklar, hashtag
+  listesi, emoji kullanımı, post format)
+- `docs/SOCIAL_MEDIA_CONTENT_CALENDAR.md` (haftalık şablon + ilk 28
+  post taslakları)
+- Hesap kurulumu (Kerem manuel, ~1 gün)
+
+**Süre**: 1-2 gün dokümantasyon + 1 gün hesap setup.
+
+### 3. İlk 100 Kullanıcı Planı (Organic Recruit)
+
+Memory hedefi: 10+ oturum sonra ilk 100 organic kullanıcı.
+
+**Aşamalı recruit stratejisi**:
+
+| Aşama | Hedef | Kullanıcı tahmini | Ne yap |
+|---|---|---|---|
+| 1. Soft launch | Yakın çevre, aile + arkadaş | 10-20 | WhatsApp gruplarında "denedim, fikriniz?" mesajı, gerçek kullanım feedback |
+| 2. Niş topluluklar | Türk yemek forumları, Reddit, Ekşi/İnci Sözlük | 30-50 | r/Turkey + r/Turkish + r/foodtr, Reddit AMA, sözlük entry, Twitter relevant hashtag (#yemek #tarif) |
+| 3. Yemek blogger outreach | 10 blogger personalized email | 50-100 trafik | "Tarifle'ye bakar mısınız?" mesaj + screenshot, 5-10 yazar muhtemelen yazar |
+| 4. Forum AMA | Reddit + forumlar | 30-50 ek | Launch sonrası 1-2 hafta, "Ben Kerem, Tarifle'yi yaptım, sorun" formatı |
+| 5. İlk basın hit | 1-2 yemek/teknoloji yazısı | 50-100+ | İlk yazılan inceleme, organic SEO başlangıç |
+
+**Email template örnekleri** (`docs/EMAIL_TEMPLATES.md`):
+- Personalized blogger outreach (TR + EN)
+- Press inquiry response
+- Welcome email (mevcut, kontrol)
+- "Tarifle'yi denediniz mi?" follow-up
+
+**Welcome flow** (kod tarafı):
+- Yeni kullanıcı ilk girişte 3 ekran tutorial (mevcut, kontrol)
+- "Geri bildirim" floating widget (Sentry feedback widget veya custom)
+- "Tarifi nereden duydunuz?" tek soruluk anket (sosyal medya, blog,
+  arkadaş, vs.)
+
+**Yapılacak iş**:
+- `docs/USER_RECRUITMENT_PLAYBOOK.md` (5 aşama detay + email template
+  + KPI tracking)
+- Kod: `/api/source-tracking` endpoint (referrer + utm tracking)
+- Welcome flow polish (mevcut altyapı kontrolü)
+- Newsletter signup hero ek (mevcut form var, prominent yerleştir)
+
+**Süre**: 1-2 gün playbook + 1 gün kod polish.
+
+### 4. Teknik Altyapı Hazırlık (Launch öncesi son kontrol)
+
+| İtem | Durum | Yapılacak |
+|---|---|---|
+| Sentry alert eşiği | Mevcut, normal | Launch öncesi düşür (ilk hafta error spike yakala), sonra geri kaldır |
+| Vercel Analytics | Aktif | Plausible eklenebilir (privacy-first), Vercel default yeterli olabilir |
+| Newsletter altyapı | Mevcut (Resend + cron) | Hero'da signup form vurgulu yer |
+| Geri bildirim widget | Yok | Sentry feedback widget veya custom, sayfa sağ alt sabit |
+| Welcome flow | Mevcut | İlk giriş 3 ekran tutorial kontrol, screenshot güncel mi |
+| /sitemap.xml | Mevcut | 3731 tarif + 60 blog dolu, kontrol |
+| /robots.txt | Mevcut | Production'a uygun (admin disallow) |
+| /llms.txt | Mevcut (oturum 8) | Güncel mi? (3731 tarif sayısı reflectı yapılır) |
+| Apple-app-site-association | Stub (oturum 33) | Mobile app launch zamanı doldurulur |
+| Cloudflare DNS + caching | Mevcut | Launch öncesi cache rules kontrol |
+| Pre-push 6 katman | Aktif | Tüm commit'lerde temiz |
+| Lhci baseline | PASS (oturum 33) | Launch öncesi son rerun |
+
+**Yapılacak iş**:
+- `docs/LAUNCH_DAY_TECHNICAL_CHECKLIST.md` (T-1 hafta + T-1 gün + T+1
+  hafta kontrol listesi)
+- Geri bildirim widget kurulumu (~1 saat)
+- Welcome flow polish (~1 saat)
+
+### 5. KPI + Metrikler (İlk 30 gün hedef)
+
+**Açılış sonrası 30 gün**:
+
+| Metrik | Hedef | Ölçüm |
+|---|---|---|
+| Yeni kayıtlı kullanıcı | 100 | DB User.createdAt |
+| Toplam ziyaret | 5000 oturum | Vercel Analytics |
+| Bookmark | 50 toplam | DB Bookmark count |
+| Koleksiyon | 20 | DB Collection count |
+| Yapılan tarif (cooked) | 30 | DB CookedRecipe count |
+| Yorum / review | 5+ | DB Review count |
+| Newsletter abone | 30 | DB NewsletterSubscriber |
+| 2. ziyaret kullanıcı | 30+ | Vercel Analytics returning |
+| Lighthouse Perf score | ≥85 (5 URL) | Lhci weekly run |
+| Sentry error rate | <5/gün | Sentry dashboard |
+| App Store / Play Store rating (mobile zaten) | n/a Phase 1+ | n/a |
+
+**Aylık inceleme**: Memory'deki feedback_project_status_format ile uyumlu kısa rapor.
+
+### 6. Haftalık Zaman Çizelgesi (Launch sprint, 1 hafta önce başlar)
+
+**T-7 gün** (1 hafta önce):
+- Basın kit final review + zip
+- Sosyal medya hesapları kuruldu, ilk 10 post backlog hazır
+- Welcome flow + geri bildirim widget canlı
+- Email template'ler hazır
+- Lhci son rerun, audit-deep + audit-recipe-quality + allergen-source-guard yeşil
+
+**T-3 gün**:
+- Yakın çevre soft launch (10-20 kişi)
+- İlk gerçek kullanıcı feedback toplama
+- Kritik bug varsa fix
+
+**T-1 gün**:
+- Sentry alert eşiği düşür
+- Vercel Analytics + Plausible canlı
+- Sosyal medya ilk 5 post zamanlanmış
+- DNS + Cloudflare cache rule kontrol
+- Final smoke test (manuel + Lhci)
+
+**T (Launch günü)**:
+- Sosyal medya duyuru postu (Instagram + Twitter + Pinterest)
+- Reddit post (r/Turkey, r/Turkish)
+- Sözlük entry yazımı
+- Blogger outreach email gönderimi (10 kişi)
+- Sentry + Analytics yakın takip
+
+**T+3 gün**:
+- İlk feedback derleme
+- Sosyal medya engagement analiz
+- Kritik bug varsa hotfix
+- Reddit AMA bekleme (1 hafta sonrası)
+
+**T+7 gün**:
+- 1 haftalık metric raporu
+- Reddit AMA başlat
+- Yeni içerik backlog'undan post devam (haftalık 5-7)
+- 1. blogger inceleme yazısı bekle/follow-up
+
+**T+30 gün**:
+- 30 gün KPI raporu (yukarıdaki tablo doldur)
+- Strategy adjust (hangi kanal en iyi performans, çift)
+- Phase 2 plan (mobile app development başlangıç tetiği gerekirse)
+
+### 7. Öngörülebilen Riskler + Önlemler
+
+| # | Risk | Olası etki | Önlem |
+|---|---|---|---|
+| 1 | İlk hafta çok düşük trafik (organic recruit yetersiz) | Demotivasyon, "kapı açtık ama kimse gelmedi" | Realistic expectation: ilk 30 gün 100 user makul, exponential growth ay 3+ olur |
+| 2 | İlk hafta yüksek error spike (gerçek kullanıcı edge case'leri) | Sentry alert flood, kullanıcı kötü deneyim | Sentry alert eşiği düşür, hızlı triaj kapasitesi (ben + Codex), hotfix hazır |
+| 3 | Sosyal medya hesabı reklamlanma şüphesi (Instagram spam policy) | Hesap suspend | İlk hafta organic post, paid promote yok, hashtag spam'i yok |
+| 4 | Reddit post downvote / removed | İtibar kaybı | r/Turkey + r/Turkish kuralları okuyup uy, "kendi reklam yapıyor" yerine "ben yaptım, fikrinizi alabilir miyim" formatı |
+| 5 | Blogger outreach %0 response | Manuel iş, getiri yok | Personalized + spesifik (her blogger'ın yazdığı yazıya referans), template değil |
+| 6 | İlk kullanıcılar boş site izlenimi (henüz topluluk yok) | "Burada kimse yok" hissi | Editör seçimi rozeti + Featured shelf görünür, "yeni başlayan platform" pozisyonu |
+| 7 | Negatif yorum / sosyal medya troll | İtibar kaybı | Yorum moderation altyapı zaten var, hızlı triaj + cevap + gerekirse silme |
+| 8 | KVKK uyum sorunu (gerçek kullanıcı ile) | Legal risk | KVKK altyapı zaten kod tarafında (delete-account, data export, çerez banner) |
+| 9 | Featured tarifin görseli yok (Mod R bitmemiş) | Görsel boş hero | Mod R Batch 0 + 1 tamamlanmış olsun launch öncesi (en az featured 50 tarif görselli) |
+| 10 | Niş topluluk için TR yetmez, EN versiyon eksikse uluslararası mahdut | Reach düşük | i18n EN zaten %100, /en/ rotaları sağlam (Phase 1 launch TR, Phase 2'de EN promotion) |
+| 11 | Vercel limit aşımı (yüksek trafik) | Site yavaş/down | Pro plan sınırı 1TB bandwidth/ay, alarm kurulu mu kontrol |
+| 12 | Email gönderim limiti (Resend) | Newsletter atılamaz | Resend free 100/gün, 30 abone ile sorun yok, growth ile pro plan |
+| 13 | Basın kit eksik kalır | Yazar yazma gönüllüsü olmaz | Launch'tan en az T-7 gün önce hazır olsun |
+| 14 | Welcome flow kötü (kullanıcı bocalar) | Bounce yüksek | Kullanıcı testi (5 kişi soft launch'ta), feedback ile iterate |
+| 15 | Sosyal medya yetersiz takip (5-10 follower haftalar) | Low growth | İlk 100 user'dan davet ile büyütme, ücretsiz organic, paid 6+ ay sonrası |
+
+### 8. Şu an YAPMA listesi
+
+- Ücretli reklam (Google Ads, Instagram Ads), 6+ ay erken
+- Influencer partnership, 1000+ user sonrası
+- Paid topluluk seed (editör hire), 5000+ aktif user sonrası
+- Apple App Store + Google Play submission (mobile separate plan)
+- Premium / Pro tier (paid subscription), minimum 5000 user
+- Press release (resmi, agency üzerinden), önce organic 1000 user
+
+### 9. Şu an YAP listesi (sırayla, web launch + mobile arası)
+
+1. **Mod R Batch 1+ rollout**: featured 390 + popular 500 görselli olsun
+   launch öncesi (T-2 hafta)
+2. **`docs/WEB_LAUNCH_CHECKLIST.md` ayrı dokümana taşı**: Bu blok
+   FUTURE_PLANS'ten çıkar, dedicated playbook olur
+3. **Basın kit içerik üretim**: 1 paragraf + 1 sayfa + faktoidler (3-4
+   saat)
+4. **Sosyal medya brand voice yazımı**: 1 gün (`docs/SOCIAL_MEDIA_
+   BRAND_VOICE.md`)
+5. **İlk 28 post backlog**: 1 gün (`docs/SOCIAL_MEDIA_CONTENT_
+   CALENDAR.md`)
+6. **/basin sayfası**: 1-2 saat Next.js route + MDX
+7. **Geri bildirim widget**: Sentry feedback veya custom, 1 saat
+8. **Email template'ler**: 1 gün (`docs/EMAIL_TEMPLATES.md`)
+9. **Soft launch yakın çevre**: ~1 hafta T-7 gün
+10. **Public launch**: T günü, sosyal medya + Reddit + blogger outreach
+
+### 10. Bu plan ne zaman uygulanır
+
+**Senaryo A** (önerilen): Mobile app development öncesi web platform
+launch. Web 100 user toplar, sonra mobile app Phase 0 başlar. Mobile
+launch sonrası 5000+ user'da Phase 2/3 features açılır.
+
+**Senaryo B**: Web + mobile birlikte launch. 1 hafta öne çekme,
+mobile app Phase 1 MVP de hazır olduğunda iki kanaldan birden açılır.
+Daha kompleks, daha riskli, ama mobile organic discovery daha hızlı.
+
+**Karar Kerem'in**. Bu blok plan olarak hazır, kapı açma kararı
+geldiğinde 1 hafta sprint ile uygulanır.
+
+### 11. Web Launch Plan = Yeni WEB_LAUNCH_PLAYBOOK.md (gelecek)
+
+Bu blok FUTURE_PLANS.md'de kaldıkça aşamalı olarak ayrı bir
+`docs/WEB_LAUNCH_PLAYBOOK.md`'ye taşınır (`MOBILE_APP_PLAN.md` ile
+aynı pattern). Launch sprint başlamadan önce ayrı doküman + bu blok
+FUTURE_PLANS'tan silinir.
+
+---
+
 ## 📱 MOBILE APP MASTER PLAN (oturum 33+, Planlı, site açılışı SONRASI)
 
 **Statü**: Plan aşaması, henüz kod yok. Web platformu launch-ready

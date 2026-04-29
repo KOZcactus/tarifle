@@ -1,57 +1,56 @@
-# Mod R Reference Görseller
+# Mod R Reference Görseller (v2, oturum 33 Batch 1 sonrası)
 
-Pilot Batch 0 sonrası seçilen 3 reference image. Codex Batch 1+
-batch'lerinde bu görseller image-input olarak prompt'a eklenir,
-aesthetic drift azaltılır.
+Mod R Codex Batch N+ batch'lerinde bu görseller image-input olarak
+prompt'a eklenir, aesthetic drift azaltılır.
 
-## Görseller
+## v2 Görseller (Batch 1 retry sonrası, lamb-free)
 
-- **baklava.webp**: TATLI, yüzey yansıması + porselen tabak
-  + emerald booth glass'tan görünüyor
-- **aperol-spritz.webp**: KOKTEYL, highball glass + buz +
-  portakal dilimi
-- **menemen.webp**: KAHVALTI, sıcak yemek ama buhar yok
-  (kullanıcı kararı)
-- **adana-kebap.webp**: YEMEK (et), lavaş + sumak soğan + maydanoz
-  garnitür + közlenmiş domates/biber. ⚠️ Pilot'ta heavy steam vardı,
-  ama reference'a sadece **plating + composition + et yemeği porselen
-  tabak** kullanımı için alındı. **Steam KOPYA EDİLMESİN, brief §3.3
-  STEAM YOK kuralı bağlayıcı.**
+- **iskender-kebap.webp** (YEMEK, TR): porselen tabak, et + yoğurt
+  + tereyağı sosu, glass table reflection
+- **mojito.webp** (KOKTEYL, CU): highball glass, buz + nane
+  yaprakları, glass table reflection
+- **sucuklu-yumurta.webp** (KAHVALTI, TR): demir tava, sucuk dilimi
+  + yumurta + maydanoz, glass table reflection
 
-## Aesthetic kilit
+3 farklı recipe.type (YEMEK + KOKTEYL + KAHVALTI) çeşitliliği,
+aesthetic kilidi sağlar.
+
+## v1 (oturum 33 pilot, lamb'lı, ARCHIVED)
+
+Eski reference (baklava + aperol-spritz + menemen) lamb'lı idi,
+kullanıcı Batch 1 sonrası lamp YASAK kararı verdi. v1 silindi.
+Pilot 5 görsel hâlâ `public/recipe-images/generated/` altında
+prod'da live (DB recipe.imageUrl set), sadece reference'tan
+kaldırıldı.
+
+## Aesthetic kilit (v2 reference + brief §2 preamble)
 
 - Round clear glass bistro table (transparent + reflective)
 - Deep emerald green button-tufted velvet booth (background)
-- Brass candle holder at frame edge (left side)
-- Charcoal linen napkin corner (left lower)
+- Charcoal linen napkin corner at frame edge (left side)
 - 3/4 high angle, ~35-40° above table
 - Warm tungsten side lighting
 - Dish 50-55% of frame width (tighter framing)
-- NO STEAM (kullanıcı kararı oturum 33 pilot sonrası)
+- **NO LAMP, NO CANDLE, NO BRASS HOLDER** (kullanıcı kararı)
+- **NO STEAM, NO SMOKE, NO VAPOR** (kullanıcı kararı)
 - 4:3 1600×1200 WebP
 
-## Kullanım (Codex Batch 1+)
+## Kullanım (Codex Batch N+)
 
 Codex her image gen call'una bu 3 reference image'ı input olarak
-verir. gpt-image-1 multi-input destekler:
+verir:
 
 ```
-[reference: baklava.webp, aperol-spritz.webp, menemen.webp]
+[reference: iskender-kebap.webp, mojito.webp, sucuklu-yumurta.webp]
 + §2.1 FIXED PREAMBLE (verbatim)
 + §2.2 VARIABLE per recipe
 ```
 
 Reference image'lar aesthetic kilidi sağlar: model yeni recipe için
-görsel üretirken bu 4 görselin lighting/composition/booth/table
-pattern'ini kopya etmeye çalışır, drift azalır.
+görsel üretirken bu 3 görselin lighting/composition/booth/table/
+no-lamp/no-steam pattern'ini kopya etmeye çalışır, drift minimum.
 
-⚠️ **adana-kebap.webp özel not (oturum 33)**: heavy steam içeriyor
-ama plating + et yemeği porselen tabak + lavaş eşliği reference'i
-için seçildi. Brief §3.3 'STEAM YOK' kuralı reference'tan üst, model
-adana-kebap stilini kopya ederken steam pattern'ini ÇIKARMALI.
-Codex prompt'una emphasis ek: 'reference adana-kebap shows steam
-but DO NOT replicate steam, follow brief §3.3 STEAM YOK rule'.
+## Reference değişikliği zamanı
 
-ezogelin-corbasi reference'a alınmadı: hem heavy steam vardı hem
-de menemen + adana-kebap zaten YEMEK/KAHVALTI tipi reference
-olarak yeterli. Tatlı/kokteyl/yemek/kahvaltı 4 tip kapsanıyor.
+Yeni kalıcı kural eklenirse (örn. yeni renk paleti, yeni booth tipi),
+reference v2 → v3 olarak yenilenir, yine 3 görsel + 3 type çeşitliliği.

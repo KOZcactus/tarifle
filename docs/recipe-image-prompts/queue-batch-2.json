@@ -1,0 +1,352 @@
+[
+  {
+    "slug": "kunefe",
+    "title": "Künefe",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Tel kadayıf",
+      "Künefe peyniri",
+      "Tereyağı (eritilmiş)",
+      "Şeker",
+      "Su",
+      "Limon suyu",
+      "Antep fıstığı"
+    ],
+    "servingSuggestion": "Antep fıstığı ile sıcak servis edin.",
+    "tipNote": "Tuzlu peynir kullanıyorsanız 30 dakika suda bekletip süzün."
+  },
+  {
+    "slug": "margarita",
+    "title": "Margarita",
+    "type": "KOKTEYL",
+    "cuisine": "mx",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Tekila",
+      "Lime suyu",
+      "Triple sec",
+      "Buz",
+      "Tuz (kenar için)"
+    ],
+    "servingSuggestion": "Tuzlu kısa bardakta, lime dilimiyle ve süzdürülmüş olarak çok soğuk servis edin.",
+    "tipNote": "Bardak kenarına tuz çekmek için lime dilimi kullanın."
+  },
+  {
+    "slug": "ayran",
+    "title": "Ayran",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Yoğurt",
+      "Su",
+      "Tuz"
+    ],
+    "servingSuggestion": "Soğuk bardakta, üstüne ince nane serperek kebap yanında köpüklü sunun.",
+    "tipNote": "Yoğurt ve suyu 1 dakika çırpın; üstte kalın köpük daha uzun durur."
+  },
+  {
+    "slug": "anzac-biscuits",
+    "title": "ANZAC Bisküvisi",
+    "type": "TATLI",
+    "cuisine": "au",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Yulaf",
+      "Un",
+      "Hindistan cevizi",
+      "Altın şurup",
+      "Tereyağı",
+      "Karbonat",
+      "Kaynar su"
+    ],
+    "servingSuggestion": "Çay ya da kahve yanında soğuduktan sonra servis edin.",
+    "tipNote": "Kurabiyeler arası 5 cm boşluk bırakmak fırında yayılmaları için yeterli alan verir."
+  },
+  {
+    "slug": "salgam-suyu",
+    "title": "Şalgam Suyu",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Hazır şalgam suyu",
+      "Limon"
+    ],
+    "servingSuggestion": "Soğuk içecek için 1 saat önceden bardakları buzdolabında bekletin; sıcak camda aroma zayıflar.",
+    "tipNote": "Acılı versiyonu için pul biber ekleyebilirsiniz."
+  },
+  {
+    "slug": "yayla-corbasi",
+    "title": "Yayla Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Yoğurt",
+      "Pirinç",
+      "Yumurta",
+      "Un",
+      "Su",
+      "Tereyağı",
+      "Kuru nane",
+      "Tuz"
+    ],
+    "servingSuggestion": "Üstüne naneli tereyağı gezdirip yanında limon dilimiyle sıcak servis edin.",
+    "tipNote": "Yoğurt karışımını çorbaya eklerken sürekli karıştırın, kesilmesin."
+  },
+  {
+    "slug": "su-boregi",
+    "title": "Su Böreği",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Beyaz peynir",
+      "Maydanoz",
+      "Yumurta",
+      "Tereyağı",
+      "Un (hamur için)",
+      "Yumurta (hamur için)",
+      "Su (hamur için, ılık)",
+      "Tuz (hamur ve haşlama suyu için)",
+      "Lor peyniri"
+    ],
+    "servingSuggestion": "Sıcak servis edin, yanına demli çay ve isteğe göre yoğurt veya cevizli yeşillik salata. Bayram sofrası ve özel gün böreği olarak sunulur.",
+    "tipNote": "Yufkaları tek tek haşlayın, üst üste haşlamayın yapışırlar. Haşlama suyu mutlaka tuzlu olmalı; tuz hamurun parlaklığını ve elastikiyetini korur. En alttaki ve en üstteki yufka kuru kalmalı; aksi halde börek dağılır."
+  },
+  {
+    "slug": "muzlu-milkshake",
+    "title": "Muzlu Milkshake",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Muz",
+      "Süt",
+      "Vanilyalı dondurma",
+      "Bal",
+      "Tarçın"
+    ],
+    "servingSuggestion": "Uzun bardakta, üstüne muz dilimi ve tarçın serperek hemen sunun.",
+    "tipNote": "Donmuş muz kullanırsanız daha kremamsı olur."
+  },
+  {
+    "slug": "asure",
+    "title": "Aşure",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Aşurelik buğday",
+      "Nohut",
+      "Kuru fasulye",
+      "Şeker",
+      "Kuru kayısı",
+      "Kuru üzüm",
+      "İncir",
+      "Ceviz içi",
+      "Fındık",
+      "Su"
+    ],
+    "servingSuggestion": "Nar, tarçın ve cevizle kaselerde servis edin.",
+    "tipNote": "Buğday, nohut ve fasulyeyi ayrı haşlayın; her malzeme kendi süresinde yumuşar ve tatlı bulanıklaşmaz."
+  },
+  {
+    "slug": "akdeniz-salatasi",
+    "title": "Akdeniz Salatası",
+    "type": "SALATA",
+    "cuisine": "tr",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "Akdeniz yeşilliği",
+      "Cherry domates",
+      "Salatalık",
+      "Siyah zeytin",
+      "Beyaz peynir",
+      "Zeytinyağı",
+      "Limon suyu"
+    ],
+    "servingSuggestion": "Izgara tavuk yanında servis edin.",
+    "tipNote": "Sosu servis öncesi ekleyin; yeşillikler diri kalır."
+  },
+  {
+    "slug": "tavuk-sote",
+    "title": "Tavuk Sote",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk göğsü",
+      "Soğan",
+      "Biber",
+      "Domates",
+      "Patates",
+      "Sıvı yağ",
+      "Tuz",
+      "Sarımsak",
+      "Domates salçası",
+      "Karabiber",
+      "Pul biber",
+      "Kekik",
+      "Maydanoz"
+    ],
+    "servingSuggestion": "Servis tabağına paylaştırıp üzerine bol kıyılmış maydanoz serpin; yanında pirinç pilavı veya bulgur pilavıyla servis edin.",
+    "tipNote": "Salçayı yağda 2 dakika kavurmadan suyu eklemeyin; aksi halde çiğ tat kalır. Patatesi sotenin başında değil, soğanla birlikte ekleyip kalın doğrayın; içi pişerken dışı dağılmaz."
+  },
+  {
+    "slug": "humus",
+    "title": "Humus",
+    "type": "APERATIF",
+    "cuisine": "me",
+    "categorySlug": "aperatifler",
+    "ingredients": [
+      "Haşlanmış nohut",
+      "Tahin",
+      "Limon suyu",
+      "Sarımsak",
+      "Zeytinyağı",
+      "Tuz",
+      "Kimyon",
+      "Pul biber"
+    ],
+    "servingSuggestion": "Ortayı havuz yapıp zeytinyağı gezdirin; sıcak pideyle meze tabağında sunun.",
+    "tipNote": "Nohudu 1 kaşık suyla çekin; humus daha ipeksi ve açık kıvamlı olur."
+  },
+  {
+    "slug": "limonata",
+    "title": "Limonata",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Limon",
+      "Şeker",
+      "Su",
+      "Nane"
+    ],
+    "servingSuggestion": "Soğuk sürahide, bol buz ve nane yapraklarıyla yaz sofralarına çıkarın.",
+    "tipNote": "Soğuk servis edilecekse karışımı buzdolabında en az 2 saat dinlendirmek aromanın oturmasını sağlar."
+  },
+  {
+    "slug": "kabak-mucveri",
+    "title": "Kabak Mücveri",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Kabak",
+      "Yumurta",
+      "Un",
+      "Dereotu",
+      "Beyaz peynir",
+      "Tuz",
+      "Karabiber",
+      "Sıvı yağ"
+    ],
+    "servingSuggestion": "Haydari veya yoğurt ile servis edin.",
+    "tipNote": "Kabağın suyunu çok iyi sıkın, gevrek olması için şart."
+  },
+  {
+    "slug": "butter-chicken",
+    "title": "Butter Chicken",
+    "type": "YEMEK",
+    "cuisine": "in",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk kalça",
+      "Yoğurt",
+      "Domates püresi",
+      "Tereyağı",
+      "Garam masala",
+      "Krema",
+      "Zencefil",
+      "Sarımsak",
+      "Limon suyu"
+    ],
+    "servingSuggestion": "Naan veya basmati pilavla servis edin.",
+    "tipNote": "Tavuğu yoğurtlu marinada en az 30 dakika bekletin, otantik Delhi tadı için 3 saate kadar uzatabilirsiniz. Zencefil ve sarımsak ezmesi marinaya yumuşak baharat tabanı verir. Yoğurtlu karışımı tavukla iyice kaplayın; 30 dakika kısa ama yeterli bir başlangıçtır."
+  },
+  {
+    "slug": "kai-yang",
+    "title": "Kai Yang",
+    "type": "YEMEK",
+    "cuisine": "th",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk but",
+      "Soya sosu",
+      "Bal",
+      "Limon otu",
+      "Sarımsak"
+    ],
+    "servingSuggestion": "Yanına yapışkan pirinç ve tatlı acı sos koyarak servis edin.",
+    "tipNote": "Tavuğu marine ettikten sonra oda sıcaklığında 15 dakika bekletmek ızgarada daha dengeli pişmesini sağlar. Tavuğu önce buzdolabında 3 saat bekletin, sonra pişirmeden önce 15 dakika oda ısısına yakınlaştırın."
+  },
+  {
+    "slug": "turk-kahvesi",
+    "title": "Türk Kahvesi",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "kahve-sicak-icecekler",
+    "ingredients": [
+      "Türk kahvesi",
+      "Su",
+      "Şeker"
+    ],
+    "servingSuggestion": "Yanına su ve küçük lokum koyup köpüğü bozmadan hemen servis edin.",
+    "tipNote": "Köpük yükselince ilkini fincana alın; ikinci taşım kahveyi daha dolgun yapar."
+  },
+  {
+    "slug": "mango-smoothie",
+    "title": "Mango Smoothie",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "smoothie-shake",
+    "ingredients": [
+      "Mango",
+      "Yoğurt",
+      "Bal",
+      "Süt",
+      "Buz"
+    ],
+    "servingSuggestion": "Tahta tepsiye buzlu bardağı, yanına limon dilimleri ve taze nane sapıyla sunum kurun.",
+    "tipNote": "Dondurulmuş mango kullanırsanız buz eklemenize gerek kalmaz."
+  },
+  {
+    "slug": "kuzu-tandir",
+    "title": "Kuzu Tandır",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Kuzu kol",
+      "Zeytinyağı",
+      "Sarımsak",
+      "Biberiye",
+      "Tuz",
+      "Karabiber",
+      "Su"
+    ],
+    "servingSuggestion": "İç pilav ve közlenmiş biberle servis edin.",
+    "tipNote": "Eti yağlı kağıt ve folyo ile sıkı kapatın; düşük ısıda kendi suyuyla pişer."
+  },
+  {
+    "slug": "kuymak",
+    "title": "Kuymak",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Mısır unu",
+      "Tereyağı",
+      "Kolot peyniri",
+      "Su",
+      "Tuz"
+    ],
+    "servingSuggestion": "Mısır ekmeği ve sıcak çayla servis edin.",
+    "tipNote": "Peyniri ekledikten sonra kısık ateşte karıştırın; yağ yüzeye çıkınca kıvam hazırdır."
+  }
+]

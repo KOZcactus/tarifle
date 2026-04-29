@@ -27,6 +27,7 @@ import { getLandingCopy } from "@/lib/seo/landing-copy";
 import { LandingIntroAndFaq } from "@/components/landing/LandingIntroAndFaq";
 import { DIETS } from "@/lib/diets";
 import { getLocale } from "next-intl/server";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface PageProps {
   params: Promise<{ cuisine: string }>;
@@ -81,7 +82,7 @@ export async function generateMetadata({
   return {
     title: pageTitle,
     description: pageDescription,
-    alternates: { canonical: `/mutfak/${cuisine}` },
+    alternates: { canonical: `/mutfak/${cuisine}`, languages: buildLanguageAlternates(`/mutfak/${cuisine}`) },
     openGraph: {
       title: pageTitle,
       description: pageDescription,

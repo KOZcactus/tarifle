@@ -11,6 +11,7 @@ import {
 } from "@/lib/blog";
 import { mdxComponents } from "@/components/blog/mdxComponents";
 import { SITE_URL } from "@/lib/constants";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 // MDX remarkPlugins config: GFM table + strikethrough + autolink desteği.
 // Tum bloglar bu config ile render olur, table syntax artik raw text yerine
@@ -40,7 +41,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: { canonical: `/blog/${slug}`, languages: buildLanguageAlternates(`/blog/${slug}`) },
     openGraph: {
       title: post.title,
       description: post.description,

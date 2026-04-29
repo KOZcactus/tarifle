@@ -7,13 +7,14 @@ import {
   type BlogCategoryMeta,
 } from "@/components/blog/BlogListingClient";
 import { SITE_URL } from "@/lib/constants";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.blog");
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/blog" },
+    alternates: { canonical: "/blog", languages: buildLanguageAlternates("/blog") },
   };
 }
 

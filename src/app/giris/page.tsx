@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.login");
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     robots: { index: false, follow: true },
-    alternates: { canonical: "/giris" },
+    alternates: { canonical: "/giris", languages: buildLanguageAlternates("/giris") },
   };
 }
 

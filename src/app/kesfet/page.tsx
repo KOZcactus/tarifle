@@ -18,13 +18,14 @@ import { getRandomRecipe } from "@/lib/queries/random-recipe";
 import { auth } from "@/lib/auth";
 import { getDietBadgesIfApplicable } from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.discover");
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/kesfet" },
+    alternates: { canonical: "/kesfet", languages: buildLanguageAlternates("/kesfet") },
   };
 }
 

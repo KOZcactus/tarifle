@@ -14,13 +14,14 @@ import { AddToShoppingListButton } from "@/components/meal-plan/AddToShoppingLis
 import { PrintButton } from "@/components/meal-plan/PrintButton";
 import { DemoMealPlanGrid } from "@/components/meal-plan/DemoMealPlanGrid";
 import { AiFillModal } from "@/components/meal-plan/AiFillModal";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.mealPlanner");
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/menu-planlayici" },
+    alternates: { canonical: "/menu-planlayici", languages: buildLanguageAlternates("/menu-planlayici") },
     // Login yoksa demo preview serve ediliyor; Google bot demo'yu
     // indexleyebilir cunku zengin icerik + CTA sinyali var. Ancak
     // interactive planner login-gated oldugu icin private index sinyali

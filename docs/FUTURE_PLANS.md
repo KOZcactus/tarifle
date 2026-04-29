@@ -24,23 +24,21 @@ Bu dosya **sadece yapılmamış planlar** içerir. Bir madde bitince SİLİNİR
   - Tab tuşu ile odaklanınca görünür, "#main-content"'a atlar
   - Brand renk #a03b0f + white outline, yüksek kontrast
 
-**Defer edilen iyileştirme 1: hreflang / language alternates**
+**✅ Yapıldı (oturum 33): hreflang / language alternates**
 
-Google'a "bu URL TR + EN her ikisi destekli" sinyalini vermek için
-`<link rel="alternate" hreflang="tr">` + `hreflang="en"` + `x-default`
-eksik. Tarifle next-intl cookie-based locale switching kullanıyor
-(URL aynı, cookie ile dil değişir), bu yüzden hreflang aynı URL'i
-gösterse de Google'a sinyal değer.
+`src/lib/seo/hreflang.ts` helper (`buildLanguageAlternates(path)`)
++ 21 priority route'a alternates.languages ek (root layout, tarif
+detay, tarifler, blog + blog/[slug], mutfak/[cuisine], diyet/[diet],
+etiket/[tag], kategoriler, hakkimizda, iletisim, ai-asistan, menu-
+planlayici, dolap, akis, giris, kesfet, leaderboard, koleksiyon,
+profil/[username] + takip/takipciler).
 
-Çözüm: Helper fonksiyon (`buildHreflangAlternates(path)`) yarat,
-tüm 60 generateMetadata'ya `alternates.languages = { tr-TR: ..., en-US:
-..., x-default: ... }` ek.
+Layout root + tarif/[slug] inline pattern'i helper'a migrate edildi.
 
-**Süre**: ~1-1.5 saat (helper + 60 generateMetadata güncelleme +
-sitemap.xml hreflang ek + Google Search Console doğrulama).
-
-**ROI**: Orta. Cookie-based locale switching SEO'ya tam friendly değil
-ama hreflang ek değer sağlar. Web launch öncesi yapılması iyi.
+Defer:
+- Sitemap.xml entry-level hreflang (page-level head hreflang yeterli,
+  sitemap'te duplicate marginal value)
+- Admin route'lar (Disallow robots.txt, hreflang gereksiz)
 
 **Defer edilen iyileştirme 2: Form input label coverage rapor**
 

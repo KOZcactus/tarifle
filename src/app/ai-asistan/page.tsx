@@ -5,6 +5,7 @@ import { getUniqueIngredientNames } from "@/lib/queries/ingredient";
 import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import type { Allergen } from "@prisma/client";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 /** Personalization tur 5 (oturum 13): logged-in user'in tercihlerinden
  *  AI Asistan formunu on-doldurma. Mantik:
@@ -77,7 +78,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/ai-asistan" },
+    alternates: { canonical: "/ai-asistan", languages: buildLanguageAlternates("/ai-asistan") },
     robots: hasParams ? { index: false, follow: true } : undefined,
   };
 }

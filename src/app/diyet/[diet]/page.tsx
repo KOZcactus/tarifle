@@ -15,6 +15,7 @@ import { getLandingCopy } from "@/lib/seo/landing-copy";
 import { LandingIntroAndFaq } from "@/components/landing/LandingIntroAndFaq";
 import { DIETS, dietConfigBySlug } from "@/lib/diets";
 import { CUISINE_CODES, CUISINE_FLAG, CUISINE_LABEL, CUISINE_SLUG } from "@/lib/cuisines";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface PageProps {
   params: Promise<{ diet: string }>;
@@ -54,7 +55,7 @@ export async function generateMetadata({
   return {
     title: pageTitle,
     description: pageDescription,
-    alternates: { canonical: `/diyet/${diet}` },
+    alternates: { canonical: `/diyet/${diet}`, languages: buildLanguageAlternates(`/diyet/${diet}`) },
     openGraph: {
       title: pageTitle,
       description: pageDescription,

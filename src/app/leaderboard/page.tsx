@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { getLeaderboard, type ScorePeriod } from "@/lib/leaderboard/score";
 import { isLeaderboardEnabled } from "@/lib/site-settings";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface LeaderboardPageProps {
   searchParams: Promise<{ period?: string }>;
@@ -26,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/leaderboard" },
+    alternates: { canonical: "/leaderboard", languages: buildLanguageAlternates("/leaderboard") },
     // Feature flag kapalıyken sayfa 404 verir, aynı zamanda meta
     // robots noindex ile arama motorlarına da "yok" diyor.
     robots: enabled

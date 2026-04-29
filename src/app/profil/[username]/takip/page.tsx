@@ -9,6 +9,7 @@ import {
   getFollowingUserIds,
 } from "@/lib/queries/follow";
 import { FollowUserCard } from "@/components/profile/FollowUserCard";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface PageProps {
   params: Promise<{ username: string }>;
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: t("followingPageTitle", { username }),
     robots: { index: false, follow: true },
-    alternates: { canonical: `/profil/${username}/takip` },
+    alternates: { canonical: `/profil/${username}/takip`, languages: buildLanguageAlternates(`/profil/${username}/takip`) },
   };
 }
 

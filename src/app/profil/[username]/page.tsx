@@ -21,6 +21,7 @@ import { FollowButton } from "@/components/profile/FollowButton";
 import { DeleteOwnVariationButton } from "@/components/recipe/DeleteOwnVariationButton";
 import { getFollowCounts, isFollowing } from "@/lib/queries/follow";
 import { getUserCookedRecipes } from "@/lib/queries/recipe-cooked";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface ProfilePageProps {
   params: Promise<{ username: string }>;
@@ -54,7 +55,7 @@ export async function generateMetadata({ params }: ProfilePageProps) {
   return {
     title: `${user.name || user.username} | Tarifle`,
     description: user.bio || `${user.name || user.username} profili`,
-    alternates: { canonical: `/profil/${username}` },
+    alternates: { canonical: `/profil/${username}`, languages: buildLanguageAlternates(`/profil/${username}`) },
   };
 }
 

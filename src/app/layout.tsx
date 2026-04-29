@@ -18,6 +18,7 @@ import {
   buildOrganizationSchema,
   buildWebSiteSchema,
 } from "@/lib/seo/structured-data";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -86,11 +87,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // tanımlandı. x-default Türkçe (primary audience).
     alternates: {
       canonical: "/",
-      languages: {
-        "tr-TR": SITE_URL,
-        "en-US": SITE_URL,
-        "x-default": SITE_URL,
-      },
+      languages: buildLanguageAlternates("/"),
       types: {
         "application/rss+xml": `${SITE_URL}/feed.xml`,
       },

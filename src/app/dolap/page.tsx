@@ -5,6 +5,7 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getUserPantryAction } from "@/lib/actions/pantry";
 import { PantryClient } from "@/components/pantry/PantryClient";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.pantry");
@@ -12,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t("title"),
     description: t("description"),
     robots: { index: false, follow: false },
-    alternates: { canonical: "/dolap" },
+    alternates: { canonical: "/dolap", languages: buildLanguageAlternates("/dolap") },
   };
 }
 

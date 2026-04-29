@@ -13,6 +13,7 @@ import { auth } from "@/lib/auth";
 import { ITEMS_PER_PAGE } from "@/lib/constants";
 import { ALLERGEN_ORDER } from "@/lib/allergens";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface PageProps {
   params: Promise<{ tag: string }>;
@@ -32,7 +33,7 @@ export async function generateMetadata({
   return {
     title: t("tagMetaTitle", { label: dbTag.name, count: total }),
     description: t("tagMetaDescription", { label: dbTag.name, count: total }),
-    alternates: { canonical: `/etiket/${tag}` },
+    alternates: { canonical: `/etiket/${tag}`, languages: buildLanguageAlternates(`/etiket/${tag}`) },
   };
 }
 

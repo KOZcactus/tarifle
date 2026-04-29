@@ -8,6 +8,7 @@ import { formatMinutes, getDifficultyLabel } from "@/lib/utils";
 import { CollectionActions } from "@/components/collection/CollectionActions";
 import { ShareMenu } from "@/components/recipe/ShareMenu";
 import { SITE_URL } from "@/lib/constants";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 interface CollectionPageProps {
   params: Promise<{ id: string }>;
@@ -28,7 +29,7 @@ export async function generateMetadata({
     description:
       collection.description ||
       `${collection.user.name || collection.user.username} tarafından oluşturulan ${collection.items.length} tariflik koleksiyon.`,
-    alternates: { canonical: `/koleksiyon/${collection.id}` },
+    alternates: { canonical: `/koleksiyon/${collection.id}`, languages: buildLanguageAlternates(`/koleksiyon/${collection.id}`) },
     robots: collection.isPublic ? undefined : { index: false, follow: false },
     openGraph: {
       title: `${collection.name} | @${collection.user.username}`,

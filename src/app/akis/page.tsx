@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { auth } from "@/lib/auth";
 import { getFollowFeedVariations } from "@/lib/queries/follow";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("feed");
@@ -12,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t("pageDescription"),
     // Feed sayfası kişiye özel + anonymous için yönlendirme yapıyoruz.
     robots: { index: false, follow: true },
-    alternates: { canonical: "/akis" },
+    alternates: { canonical: "/akis", languages: buildLanguageAlternates("/akis") },
   };
 }
 

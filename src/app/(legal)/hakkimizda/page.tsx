@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { getSiteStats } from "@/lib/queries/site-stats";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.legal");
   return {
     title: t("aboutTitle"),
     description: t("aboutDescription"),
-    alternates: { canonical: "/hakkimizda" },
+    alternates: { canonical: "/hakkimizda", languages: buildLanguageAlternates("/hakkimizda") },
   };
 }
 

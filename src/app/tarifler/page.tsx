@@ -40,6 +40,7 @@ import {
   getDietSortedRecipeIds,
 } from "@/lib/queries/diet-score";
 import type { Metadata } from "next";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata({ searchParams }: TariflerPageProps): Promise<Metadata> {
   const params = await searchParams;
@@ -81,7 +82,7 @@ export async function generateMetadata({ searchParams }: TariflerPageProps): Pro
   return {
     title,
     description,
-    alternates: { canonical },
+    alternates: { canonical, languages: buildLanguageAlternates(canonical) },
     robots: shouldIndex ? undefined : { index: false, follow: true },
   };
 }

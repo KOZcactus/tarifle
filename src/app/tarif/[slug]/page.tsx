@@ -25,6 +25,7 @@ import { UserPhotoGrid } from "@/components/recipe/UserPhotoGrid";
 import { UserPhotoUpload } from "@/components/recipe/UserPhotoUpload";
 import { isUserPhotosEnabled } from "@/lib/site-settings";
 import { generateRecipeJsonLd, generateBreadcrumbJsonLd, generateRecipeFaqJsonLd } from "@/lib/seo";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 import { CUISINE_FLAG, type CuisineCode } from "@/lib/cuisines";
 import { SITE_URL } from "@/lib/constants";
 import {
@@ -183,14 +184,10 @@ export async function generateMetadata({ params }: TarifPageProps): Promise<Meta
     description: metaDescription,
     alternates: {
       canonical: `/tarif/${recipe.slug}`,
-      // Cookie-based i18n, aynı URL iki dilde render ediyor. Google'a
-      // x-default + tr + en sinyali ver; bilingual arama EN trafiği için
-      // faydalı.
-      languages: {
-        "tr-TR": `/tarif/${recipe.slug}`,
-        "en-US": `/tarif/${recipe.slug}`,
-        "x-default": `/tarif/${recipe.slug}`,
-      },
+      // Cookie-based i18n, aynı URL iki dilde render ediyor. Helper
+      // (buildLanguageAlternates) tr-TR + en-US + x-default sinyalini
+      // Google'a verir; bilingual arama EN trafiği için faydalı.
+      languages: buildLanguageAlternates(`/tarif/${recipe.slug}`),
     },
     openGraph: {
       title,

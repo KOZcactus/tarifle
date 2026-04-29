@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 import { isValidLocale, type Locale } from "@/i18n/config";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const rawLocale = await getLocale();
@@ -10,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/iletisim" },
+    alternates: { canonical: "/iletisim", languages: buildLanguageAlternates("/iletisim") },
   };
 }
 

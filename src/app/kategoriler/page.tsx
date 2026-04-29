@@ -9,13 +9,14 @@ import {
   CUISINE_SLUG,
 } from "@/lib/cuisines";
 import { DIETS } from "@/lib/diets";
+import { buildLanguageAlternates } from "@/lib/seo/hreflang";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("metadata.categoriesPage");
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: "/kategoriler" },
+    alternates: { canonical: "/kategoriler", languages: buildLanguageAlternates("/kategoriler") },
   };
 }
 

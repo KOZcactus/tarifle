@@ -412,7 +412,10 @@ async function main(): Promise<void> {
       const stepText = steps.map((s) => s.instruction).join(" ").toLocaleLowerCase("tr-TR");
       const tipText = (r.tipNote ?? "").toLocaleLowerCase("tr-TR");
       const allText = stepText + " " + tipText;
-      const hasMarinate = /\b(marine|dinlendir|beklet|soğut|buzdolab|oda sıcaklığında|gecelik|gece boyu|mayalan|kabar|fermente|kürle|salamur|tuzlay|yıllandır|terbiye|şerbet çeksin|şerbet çek|ıslat|haşla|kaynat|haşlandık|ıslan)\w*/u.test(allText);
+      // Genişletilmiş marina/wait pattern (oturum 34 parça 3 rafine):
+      // granita/parfe (donduruculuğa, buzlukta), uzun pişirme (geceden,
+      // asılı/asarak kuruma), demlenme (demlen)
+      const hasMarinate = /\b(marine|dinlendir|beklet|soğut|buzdolab|oda sıcaklığında|gecelik|gece boyu|geceden|saatler|saatte|saat boyu|mayalan|kabar|fermente|kürle|salamur|tuzlay|yıllandır|terbiye|şerbet çeksin|şerbet çek|ıslat|ıslan|haşla|kaynat|haşlandık|haşlan|dondur|donsa|donmus|buzluk|buzluğa|dem(le)?n|asılı|asarak|tepside dinlen|granita)\w*/u.test(allText);
       // Marina mention yoksa flag (gerçek discrepancy, totalMinutes overshoot
       // ya da prep+cook eksik)
       if (!hasMarinate) {

@@ -73,11 +73,11 @@ async function main() {
       if (et && es) both++;
     }
     const topDuplicatesTip = [...tipHist.entries()]
-      .filter(([, n]) => n >= 5)
+      .filter(([, n]) => n >= 7)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 20);
     const topDuplicatesServ = [...servHist.entries()]
-      .filter(([, n]) => n >= 5)
+      .filter(([, n]) => n >= 7)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 20);
     // Boilerplate-eslesen tarifler (Mod G batch input)

@@ -1,0 +1,351 @@
+[
+  {
+    "slug": "chilaquiles",
+    "title": "Chilaquiles",
+    "type": "KAHVALTI",
+    "cuisine": "mx",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Tortilla cipsi",
+      "Salsa verde",
+      "Yumurta",
+      "Beyaz peynir",
+      "Krema",
+      "Kişniş",
+      "Soğan"
+    ],
+    "servingSuggestion": "Üstüne peynir, krema ve yumurta koyup sıcak servis edin.",
+    "tipNote": "Tortilla cipslerini sosa son anda ekleyin; hafif diri doku korunur."
+  },
+  {
+    "slug": "katsu-sando",
+    "title": "Katsu Sando",
+    "type": "KAHVALTI",
+    "cuisine": "jp",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Domuzsuz tonkatsu için tavuk göğsü",
+      "Japon süt ekmeği",
+      "Galeta unu",
+      "Yumurta",
+      "Lahana"
+    ],
+    "servingSuggestion": "Yanına ince kıyım lahana salatası ekleyin.",
+    "tipNote": "Tonkatsu dilimlerini ekmeğe koymadan 2 dakika dinlendirirseniz pane yumuşamaz."
+  },
+  {
+    "slug": "karadutlu-votka-fizz-polonya-usulu",
+    "title": "Karadutlu Votka Fizz",
+    "type": "KOKTEYL",
+    "cuisine": "pl",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Votka",
+      "Karadut",
+      "Soda",
+      "Buz"
+    ],
+    "servingSuggestion": "Karadutlu votka fizz'i buzlu bardakta hazırlayıp soda köpüğü sönmeden hemen sunun.",
+    "tipNote": "Karadudu ezip süzmek içecekte parlak bir renk bırakır."
+  },
+  {
+    "slug": "reyhan-serbeti",
+    "title": "Reyhan Şerbeti",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Taze reyhan",
+      "Şeker",
+      "Limon suyu",
+      "Sıcak su",
+      "Karanfil"
+    ],
+    "servingSuggestion": "Bol buz ve limon dilimiyle servis edin.",
+    "tipNote": "Reyhanı kaynatmayın; sıcak su içinde demlemek parlak mor rengi korur."
+  },
+  {
+    "slug": "tavuklu-sultan-kebabi",
+    "title": "Tavuklu Sultan Kebabı",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk göğsü",
+      "Yufka",
+      "Bezelye",
+      "Havuç",
+      "Mantar",
+      "Süt",
+      "Un",
+      "Kaşar peyniri",
+      "Tereyağı",
+      "Zeytinyağı",
+      "Tuz",
+      "Karabiber",
+      "Muskat (rendelenmiş)"
+    ],
+    "servingSuggestion": "Domatesli pilavla servis edin.",
+    "tipNote": "Beşamel sosu sürekli çırparak orta ateşte koyulaştırın; harcı yufkaya koymadan önce ılıtın, sıcak harç yufkayı yırtar."
+  },
+  {
+    "slug": "cevizli-medovik",
+    "title": "Cevizli Medovik",
+    "type": "TATLI",
+    "cuisine": "ru",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Un",
+      "Bal",
+      "Yumurta",
+      "Ekşi krema",
+      "Ceviz içi"
+    ],
+    "servingSuggestion": "Bir gece dinlendirip dilimleri soğuk ya da serin halde servis edin.",
+    "tipNote": "Katları çok kalın açmayın; Medovik bekledikçe incelikle yumuşamalı."
+  },
+  {
+    "slug": "kremali-mantar-corbasi",
+    "title": "Kremalı Mantar Çorbası",
+    "type": "CORBA",
+    "cuisine": "tr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Kültür mantarı",
+      "Soğan",
+      "Un",
+      "Tereyağı",
+      "Zeytinyağı",
+      "Sebze suyu",
+      "Krema",
+      "Tuz",
+      "Karabiber"
+    ],
+    "servingSuggestion": "Üstüne ince kıyılmış maydanoz serpip kızarmış ekmekle sıcak çorba kasesinde sunun.",
+    "tipNote": "Mantarları yüksek ateşte soteleyin; suyunu salıp çektiğinde aroması belirginleşir."
+  },
+  {
+    "slug": "cilekli-magnolia",
+    "title": "Çilekli Magnolia",
+    "type": "TATLI",
+    "cuisine": "tr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Süt",
+      "Şeker",
+      "Un",
+      "Nişasta",
+      "Yumurta sarısı",
+      "Krema",
+      "Vanilin",
+      "Bebe bisküvisi",
+      "Çilek"
+    ],
+    "servingSuggestion": "Kupları iyice soğutup üstüne çilek koyarak servis edin.",
+    "tipNote": "Muhallebiyi kuplara almadan önce 5 dakika çırpın; pürüzsüz ve hafif bir kıvam elde edilir."
+  },
+  {
+    "slug": "creme-brulee",
+    "title": "Crème Brûlée",
+    "type": "TATLI",
+    "cuisine": "fr",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Krema",
+      "Yumurta sarısı",
+      "Şeker",
+      "Vanilya",
+      "Esmer şeker"
+    ],
+    "servingSuggestion": "Şekeri servis öncesi karamelize edin.",
+    "tipNote": "Kremaları benmaride düşük ısıda pişirin; yüzey çatlamadan kıvam alır."
+  },
+  {
+    "slug": "tabbouleh",
+    "title": "Tabbouleh",
+    "type": "SALATA",
+    "cuisine": "me",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "İnce bulgur",
+      "Maydanoz",
+      "Domates",
+      "Taze nane",
+      "Limon suyu",
+      "Zeytinyağı",
+      "Tuz"
+    ],
+    "servingSuggestion": "Marul yapraklarıyla servis edin.",
+    "tipNote": "Maydanozu keskin bıçakla ince kıyın; ezilirse salata sulu olur."
+  },
+  {
+    "slug": "karidesli-smorrebrod",
+    "title": "Karidesli Smørrebrød",
+    "type": "KAHVALTI",
+    "cuisine": "se",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Çavdar ekmeği",
+      "Haşlanmış yumurta",
+      "Haşlanmış karides",
+      "Dereotu"
+    ],
+    "servingSuggestion": "Yanına dereotlu salatalık koyarak servis edin.",
+    "tipNote": "Ekmeği hafif kızartın; yumurta ve karides nemi tabanı gevşetmez."
+  },
+  {
+    "slug": "kavrulmus-hojicha-latte",
+    "title": "Kavrulmuş Hojicha Latte",
+    "type": "ICECEK",
+    "cuisine": "jp",
+    "categorySlug": "kahve-sicak-icecekler",
+    "ingredients": [
+      "Hojicha tozu",
+      "Sıcak su",
+      "Süt",
+      "Bal"
+    ],
+    "servingSuggestion": "Seramik kupada, üstüne ince süt köpüğü bırakarak sıcak servis edin.",
+    "tipNote": "Hojicha tozunu önce az sıcak suyla açarsanız topak kalmaz."
+  },
+  {
+    "slug": "firinda-karnabahar",
+    "title": "Fırında Karnabahar",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Karnabahar",
+      "Yoğurt",
+      "Yumurta",
+      "Un",
+      "Zeytinyağı",
+      "Kaşar peyniri",
+      "Tuz",
+      "Karabiber"
+    ],
+    "servingSuggestion": "Sarımsaklı yoğurtla ılık servis edin.",
+    "tipNote": "Karnabaharı fazla haşlamayın; çatal giren ama dağılmayan kıvam fırın için idealdir."
+  },
+  {
+    "slug": "bruschetta",
+    "title": "Bruschetta",
+    "type": "APERATIF",
+    "cuisine": "it",
+    "categorySlug": "aperatifler",
+    "ingredients": [
+      "Baget ekmek",
+      "Domates",
+      "Sarımsak",
+      "Taze fesleğen",
+      "Zeytinyağı",
+      "Balzamik sirke",
+      "Tuz"
+    ],
+    "servingSuggestion": "Zeytinyağlı başlangıç tabağı içinde sunun.",
+    "tipNote": "Domates harcını ekmeğin üzerine servis öncesi koyun; ekmek çıtırlığını korur."
+  },
+  {
+    "slug": "visne-kompostosu",
+    "title": "Vişne Kompostosu",
+    "type": "ICECEK",
+    "cuisine": "tr",
+    "categorySlug": "icecekler",
+    "ingredients": [
+      "Vişne",
+      "Şeker",
+      "Su",
+      "Tarçın çubuğu",
+      "Karanfil"
+    ],
+    "servingSuggestion": "Buzdolabında soğutup kaselerde servis edin.",
+    "tipNote": "Vişneleri fazla kaynatmayın; meyve dağılmadan rengini suya verir."
+  },
+  {
+    "slug": "bao-bun",
+    "title": "Bao Bun",
+    "type": "YEMEK",
+    "cuisine": "cn",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Ilık su",
+      "Kuru maya",
+      "Şeker",
+      "Sıvı yağ",
+      "Kabartma tozu"
+    ],
+    "servingSuggestion": "Soya soslu mantar veya sebzeli harçla doldurun.",
+    "tipNote": "Hamurları buharda pişirirken kapağın altına bez gerin; damlayan su yüzeyi bozmaz."
+  },
+  {
+    "slug": "coq-au-vin",
+    "title": "Coq au Vin",
+    "type": "YEMEK",
+    "cuisine": "fr",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk but",
+      "Kırmızı şarap",
+      "Mantar",
+      "Arpacık soğan",
+      "Tereyağı",
+      "Un",
+      "Tavuk suyu",
+      "Maydanoz",
+      "Tuz"
+    ],
+    "servingSuggestion": "Patates püresiyle servis edin.",
+    "tipNote": "Tavuğu önce kızartın; sosun rengi ve tadı bu karamelleşmeyle güçlenir."
+  },
+  {
+    "slug": "bouillabaisse",
+    "title": "Bouillabaisse",
+    "type": "CORBA",
+    "cuisine": "fr",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Beyaz balık fileto",
+      "Karides",
+      "Balık suyu",
+      "Rezene",
+      "Domates",
+      "Safran",
+      "Ekmek",
+      "Zeytinyağı"
+    ],
+    "servingSuggestion": "Kızarmış ekmek ve rouille sosla, çorbayı sıcak şekilde sunun.",
+    "tipNote": "Balığı son bölümde ekleyin; uzun kaynama eti parçalar."
+  },
+  {
+    "slug": "paper-plane",
+    "title": "Paper Plane",
+    "type": "KOKTEYL",
+    "cuisine": "us",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Aperol",
+      "Limon suyu",
+      "Bourbon viski",
+      "Amaro Nonino"
+    ],
+    "servingSuggestion": "Soğuk coupe bardakta garnitürsüz servis edin.",
+    "tipNote": "Bardağı önceden soğutun; ısınan kokteylde acılık öne çıkar."
+  },
+  {
+    "slug": "nuoc-cham",
+    "title": "Nuoc Cham",
+    "type": "SOS",
+    "cuisine": "vn",
+    "categorySlug": "soslar-dippler",
+    "ingredients": [
+      "Balık sosu",
+      "Lime suyu",
+      "Şeker",
+      "Sarımsak",
+      "Kırmızı biber"
+    ],
+    "servingSuggestion": "Goi cuon, bun cha veya ızgara tavuk yanında küçük kaselerde servis edin.",
+    "tipNote": "Şekeri önce ılık suda eritin; tanecik kalırsa denge değişir."
+  }
+]

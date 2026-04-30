@@ -130,7 +130,27 @@ function stripTitleLeak(instruction: string, title: string): string | null {
     return capFirst(after);
   }
 
-  // Diğer durumlar: skip (manuel review gerek)
+  // Generic fallback (oturum 34 batch 2): title boşluk sonrası bir kelime
+  // ile başlıyor (object suffix'li veya başlangıç verb), strip + cap.
+  // Sample:
+  //   'Ensalada de Aguacate avokadolarını iri...' → 'Avokadolarını iri...'
+  //   'Mai Tai bardağını taze buzla...' → 'Bardağını taze buzla...'
+  //   'Erikli Rezene Salatası rezenesini ince...' → 'Rezenesini ince...'
+  //   'Keftalı Bulgur Tava başlangıcı olarak...' → 'Başlangıç olarak...'
+  // Boşluksuz suffix bitişik durumları (title.length === instruction.length
+  // veya bitişik harf) ÜSTTE handle edildi (return null).
+  // Sanity: en az 2 kelime sonrası, anlamlı cümle olsun.
+  const wordCount = after.split(/\s+/).filter(Boolean).length;
+  if (wordCount >= 3) {
+    // 'başlangıcı olarak' özel pattern: 'Başlangıç olarak' yapısı
+    if (afterLower.startsWith("başlangıcı olarak ")) {
+      const rest = after.slice("başlangıcı olarak ".length);
+      return "Başlangıç olarak " + rest;
+    }
+    return capFirst(after);
+  }
+
+  // Çok kısa kalanlar: skip (manuel review gerek)
   return null;
 }
 

@@ -89,7 +89,12 @@ function detectCompositeName(name: string): boolean {
  */
 function detectCommaComposite(name: string): string[] | null {
   if (!name.includes(",")) return null;
-  const parts = name.split(",").map((p) => p.trim()).filter(Boolean);
+  // Oturum 34 rafine: parantez içindeki comma flag'lenmesin (false positive).
+  // 'Su (hamur için, ılık)' = 1 ingredient + 2 not, gerçek dupe değil.
+  // Sadece parantez DIŞINDAKI comma'lar gerçek composite.
+  const stripParens = name.replace(/\([^)]*\)/g, "").trim();
+  if (!stripParens.includes(",")) return null;
+  const parts = stripParens.split(",").map((p) => p.trim()).filter(Boolean);
   return parts.length >= 2 ? parts : null;
 }
 

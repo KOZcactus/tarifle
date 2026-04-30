@@ -28,7 +28,13 @@ import dotenv from "dotenv";
 import path from "node:path";
 import fs from "node:fs";
 neonConfig.webSocketConstructor = ws;
-dotenv.config({ path: path.resolve(".env.local"), override: false });
+// Default: PROD DB (apply prod'a gidiyor, dump dev'den olunca drift bug
+// queue Batch 3 slug'larını yine seçer, Codex tekrar üretir, idempotent
+// skip + boşa effort). Oturum 34 root cause fix.
+// Override için --dev flag (dev DB'si üzerinden test).
+const useDev = process.argv.includes("--dev");
+const envFile = useDev ? ".env.local" : ".env.production.local";
+dotenv.config({ path: path.resolve(envFile), override: true });
 
 interface QueueEntry {
   slug: string;

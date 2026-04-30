@@ -1,6 +1,6 @@
 # Tarifle, tarif listesi (alfabetik, TR locale)
 # Toplam: 3731 tarif
-# Son guncelleme: 2026-04-29
+# Son guncelleme: 2026-04-30
 #
 # Bu liste DB'den otomatik uretilir. Tarif silindigi/eklendiginde
 # 'npx tsx scripts/dump-tarif-listesi.ts' ile yeniden uretilir.
@@ -337,8 +337,8 @@ Banh Cuon
 Bánh Cuốn Chay
 Banh Flan Vietnam
 Banh Mi
-Banh Tom
 Bánh Tôm
+Banh Tom
 Banh Xeo
 Banoffee Posset
 Bao Bun
@@ -434,6 +434,7 @@ Biscuit Gravy Tepsi
 Biscuits and Gravy
 Bissara
 Bitlis Büryan Çorbası
+Bitlis Büryan Kebabı
 Bitlis Büryan Pilav
 Bitlis Gari Aşı
 Bitlis Gılorik
@@ -648,8 +649,8 @@ Char Siu
 Char Siu Bao
 Char Siu Chicken
 Chawanmushi
-Chè Ba Màu
 Che Ba Mau
+Chè Ba Màu
 Che Chuoi
 Cheddarlı Mantarlı Crumpet
 Cheddarlı Pırasa Scone
@@ -1232,6 +1233,7 @@ Giresun Isırganlı Mısır Çorbası
 Giresun Karalahana Diblesi
 Giresun Karalahanalı Pirinçli Tava
 Giresun Kiraz Tuzlusu Kavurması
+Giresun Mendek Çorbası
 Giresun Mısır Unlu Yağlı Ekmek
 Giresun Mısırlı Pancar Diblesi
 Giresun Soğanlı Fasulye Turşu Kavurması
@@ -1739,7 +1741,6 @@ Kayseri Şebit Yağlaması Katlı
 Kayseri Tereyağlı Domatesli Bulgur
 Kayseri Yağ Mantısı
 Kayseri Yağ Mantısı Kızartma
-Kayseri Yağlaması
 Kayseri Yağlaması
 Kayseri Yağlaması Şebit
 Kayseri Yağlı Biber Çorbası
@@ -2283,7 +2284,6 @@ Melbourne Avokadolu Yumurtalı Tost
 Melbourne Pancar Avokado Tostu
 Melbourne Pancar Relishli Tavuk Burger
 Melomakarona
-Mendekli Fasulye Aşı
 Menekşe Şerbeti
 Menemen
 Menengiç Kahvesi
@@ -2609,8 +2609,8 @@ Panettone
 Pankek
 Panna Cotta
 Panzanella
-Pão de Queijo
 Pao de Queijo
+Pão de Queijo
 Pão de Queijo Waffle
 Pão na Chapa
 Papa a la Huancaína
@@ -2803,7 +2803,6 @@ Portakallı Tarçınlı İrmik Kup
 Portakallı Tavuk Kapama
 Portakallı Tavuk Külbastı
 Portakallı Un Helvası
-Porto Bacalhau à Brás
 Porto Bolinho de Bacalhau
 Porto Caldo Verde
 Porto Francesinha
@@ -2884,6 +2883,7 @@ Rize Hamsili Pilav
 Rize Karalahanalı Kuru Fasulye Diblesi
 Rize Kayganası
 Rize Mincili Laz Böreği
+Rize Muhlama
 Rize Pancarlı Mısır Ekmeği
 Rize Pazılı Kaygana
 Rize Pepeçura
@@ -3500,6 +3500,7 @@ Uskumrulu Patates Salata
 Uşak Döndürme
 Uşak Haşhaşlı Cevizli İrmik Tatlısı
 Uşak Kabaklı Badem Çorbası
+Uşak Tarhana Çorbası
 Uşak Tarhanalı Mercimek Çorbası
 Uunijuusto
 Uzo Limon Spritz
@@ -3731,7 +3732,6 @@ Zingil Tatlısı Diyarbakır Usulü
 Zonguldak Bulgurlu Uğmaç Çorbası
 Zonguldak Kiremitte Mantar Kavurma
 Zonguldak Lahanalı Mantar Güveci
-Zonguldak Malay
 Zonguldak Malay
 Zonguldak Mancar Diblesi
 Zonguldak Mantarlı Mısır Yarması

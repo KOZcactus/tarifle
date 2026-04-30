@@ -111,6 +111,10 @@ const STEP_BASELINE_PATTERNS: { re: RegExp; keywords: string[]; label: string }[
   { re: /(?:^|[\s,;.!?/()\-])un(?=$|[\s,;.!?/()\-lu])/i, keywords: ["un"], label: "un" },
 ];
 
+// Step text'inde 'un' mention false positive guard: 'un EKLEMEDEN'
+// (tarif un kullanmıyor, negative reference). Oturum 34 audit refine.
+const UN_NEGATIVE_PATTERNS = [/un\s+ekle(meden|mez|miyor)/i];
+
 // ── Multi-section content detection ─────────────────────────────────
 //
 // If description/steps mention "şerbetle", "hamur", "marine edin",
@@ -236,6 +240,9 @@ async function main(): Promise<void> {
       for (const bp of STEP_BASELINE_PATTERNS) {
         if (flaggedBaselines.has(bp.label)) continue;
         if (!bp.re.test(instrLower)) continue;
+        // 'un' negative reference guard: 'un eklemeden/eklemez/eklemiyor'
+        // tarif un kullanmıyor demek, false positive flag'i engelle.
+        if (bp.label === "un" && UN_NEGATIVE_PATTERNS.some((np) => np.test(instrLower))) continue;
         const found = bp.keywords.some((kw) => ingTextLower.includes(kw));
         if (found) continue;
         flaggedBaselines.add(bp.label);

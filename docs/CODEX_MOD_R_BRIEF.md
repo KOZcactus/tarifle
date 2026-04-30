@@ -184,6 +184,32 @@ steam wisps" emphasis ekle.
 - Kenarda lekeler doğal, mahsus silinmiş gibi olmasın
 - Renk paleti: doğal yiyecek renkleri, lighting'le kontrast verir
 
+### 3.5. GERÇEKÇİLİK (oturum 34 ders, kullanıcı geri bildirimi sonrası)
+
+Görsel gerçekçi porsiyon, gerçekçi miktar, gerçekçi renk olmalı. Sokak
+tezgahı veya restoran show-off değil, ev kasesi/tabağı disiplinine sadık.
+
+**Porsiyon kuralı:** Tarifin servingCount alanı kaç kişilikse görseldeki
+porsiyon o kadar görünmeli. 4 kişilik tarif tek tabakta servis edilir,
+ama tabak overflow değil, normal porsiyon.
+
+**Miktar kuralı:** Meyve/sebze sayısı doğal. 4 kişilik vişne kompostosu
+~30-40 vişne, 200 değil. Salatada 5-7 zeytin, 50 değil. Tabakta 8-10
+köfte, 30 değil.
+
+**Renk kuralı:** Yemek gerçek hayatta nasıl görünüyorsa öyle, abartı yok.
+- Crème brûlée: açık altın caramel kabuk, koyu kahverengi değil
+- Yoğurt + çorba: doğal beyaz/krem, sarı/parlak plastik değil
+- Et: tarafa göre kahverengi-pembe, mor değil
+- Tatlı şerbet: berrak amber, koyu kola rengi değil
+- Salata yeşili: canlı yeşil, mat asit yeşili değil
+
+**Kıvam kuralı:** Doku doğal akış. Sos akar, kompoto bireysel meyveler
+ayırt edilebilir, çorba kaşıkta tutar ama plastik gibi değil.
+
+Şüphe varsa: "bu yemek bir lokantada gerçekçi servis edilse nasıl
+görünür" sorusunu sor. CGI render veya marketing photo değil.
+
 ---
 
 ## 4. INPUT, tarif listesi nasıl alınır
@@ -266,6 +292,8 @@ Her görseli teslim etmeden önce SEN kontrol et:
 | 5 | WebP format mı, quality 85 mi? | Convert + save |
 | 6 | İnsan/el var mı? Yazı/logo var mı? | Regenerate (preamble açıkça yasak diyor) |
 | 7 | Steam YOK mu? (sıcak yemek bile, kullanıcı kararı bar menü estetiği) | Regenerate, prompt'ta "no visible steam, no smoke, no vapor" emphasis |
+| 8 | **GERÇEKÇİ porsiyon + miktar mı?** (servingCount kişilik tek tabak, kase üst üste yığın değil; kompostoda 4-6 vişne, 25 değil; tatlıda standart porsiyon, abartı yok) | Regenerate, prompt'ta "natural single serving size, no overflow, no excessive quantity" emphasis |
+| 9 | **GERÇEKÇİ renk + kıvam mı?** (yemek doğal renk yelpazesinde; crème brûlée caramel açık altın, koyu kahverengi değil; yoğurt açık beyaz, sarı değil; çorba doku akıcı, plastik gibi parlak değil) | Regenerate, prompt'ta yemeğin doğru rengini açıkça yazmak (örn. "light golden caramel top, not dark brown") |
 
 **Self-check geçen görseli kaydet, geçmeyen 3 retry'a kadar regenerate.**
 3 retry sonra hâlâ fail → o tariflerin slug listesini batch report'una "RETRY EXHAUSTED, manuel review gerekli" olarak ekle, atla.

@@ -415,11 +415,15 @@ async function main(): Promise<void> {
       );
     }
 
-    // ── 10. Short step instructions (<20 char or 1-2 words) ──
+    // ── 10. Short step instructions (oturum 34 rafine) ──
+    // Önceki threshold <20 char OR <4 kelime çok agresif idi:
+    // 'Soğuk servis edin.' (18c, 3w) gibi meşru servis cümleleri yakalanıyordu.
+    // Yeni threshold <15 char OR <3 kelime, gerçek yetersiz step'leri yakalar
+    // ('Buzu ekleyin.', 'Soğanı kavurun.' tarzı tek-eylem yetersiz).
     for (const step of steps) {
       const instr = step.instruction.trim();
       const wordCount = instr.split(/\s+/).length;
-      if (instr.length < 20 || wordCount < 4) {
+      if (instr.length < 15 || wordCount < 3) {
         add(
           "MEDIUM",
           "STEP_TOO_SHORT",

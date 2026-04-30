@@ -52,21 +52,30 @@ function parseArgs() {
   const batchIdx = args.indexOf("--batch");
   const sizeIdx = args.indexOf("--size");
   const filterIdx = args.indexOf("--filter");
+  const skipIdx = args.indexOf("--skip");
+  const countIdx = args.indexOf("--count");
   const pilot = args.includes("--pilot");
   return {
     batch: batchIdx >= 0 ? parseInt(args[batchIdx + 1] ?? "0", 10) : 0,
     size: sizeIdx >= 0 ? parseInt(args[sizeIdx + 1] ?? "20", 10) : 20,
     filter: filterIdx >= 0 ? args[filterIdx + 1] : null,
+    // Skip first N rows (multi-batch ardışık dump için, ofset)
+    skip: skipIdx >= 0 ? parseInt(args[skipIdx + 1] ?? "0", 10) : 0,
+    // Multi-batch: --count N --batch START → START, START+1, ..., START+N-1
+    // her biri size kadar farklı slug (skip otomatik 0, size, 2*size, ...)
+    count: countIdx >= 0 ? parseInt(args[countIdx + 1] ?? "1", 10) : 1,
     pilot,
   };
 }
 
-async function main() {
-  const { batch, size, filter, pilot } = parseArgs();
-  const url = process.env.DATABASE_URL!;
-  console.log("DB:", new URL(url).host);
-  const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) });
-
+async function dumpOne(
+  prisma: PrismaClient,
+  batch: number,
+  size: number,
+  skip: number,
+  filter: string | null,
+  pilot: boolean,
+): Promise<void> {
   let entries: QueueEntry[] = [];
 
   if (pilot) {
@@ -129,6 +138,7 @@ async function main() {
       where,
       orderBy: [{ isFeatured: "desc" }, { viewCount: "desc" }, { createdAt: "asc" }],
       take: size,
+      skip,
       select: {
         slug: true, title: true, type: true, cuisine: true,
         category: { select: { slug: true } },
@@ -151,10 +161,31 @@ async function main() {
   fs.writeFileSync(outFile, JSON.stringify(entries, null, 2), "utf-8");
 
   console.log(`\n✅ Queue yazıldı: ${outFile}`);
-  console.log(`   ${entries.length} tarif, batch ${batch}${pilot ? " (pilot)" : ""}${filter ? `, filter '${filter}'` : ""}`);
+  console.log(`   ${entries.length} tarif, batch ${batch}${pilot ? " (pilot)" : ""}${filter ? `, filter '${filter}'` : ""}, skip ${skip}`);
   for (const e of entries) {
     console.log(`   - ${e.slug} (${e.type}/${e.cuisine ?? "?"})`);
   }
+}
+
+async function main(): Promise<void> {
+  const { batch, size, filter, skip, count, pilot } = parseArgs();
+  const url = process.env.DATABASE_URL!;
+  console.log("DB:", new URL(url).host);
+  const prisma = new PrismaClient({ adapter: new PrismaNeon({ connectionString: url }) });
+
+  if (count > 1 && !pilot) {
+    // Multi-batch dump: ardışık N batch, her biri size kadar farklı slug
+    // (skip ofseti = (i * size) + initial skip)
+    console.log(`\n📦 Multi-batch dump: ${count} batch (${batch} → ${batch + count - 1})`);
+    for (let i = 0; i < count; i++) {
+      const currentBatch = batch + i;
+      const currentSkip = skip + i * size;
+      await dumpOne(prisma, currentBatch, size, currentSkip, filter, false);
+    }
+  } else {
+    await dumpOne(prisma, batch, size, skip, filter, pilot);
+  }
+
   await prisma.$disconnect();
 }
 main().catch((e) => { console.error(e); process.exit(1); });

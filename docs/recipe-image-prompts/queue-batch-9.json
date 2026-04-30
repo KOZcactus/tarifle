@@ -1,0 +1,350 @@
+[
+  {
+    "slug": "izmir-enginarli-bakla-pilakisi",
+    "title": "İzmir Enginarlı Bakla Pilakisi",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Taze bakla",
+      "Enginar kalbi",
+      "Soğan",
+      "Zeytinyağı",
+      "Limon suyu",
+      "Dereotu",
+      "Tuz"
+    ],
+    "servingSuggestion": "Dereotu ve zeytinyağıyla soğuk servis edin.",
+    "tipNote": "Enginarı limonlu suda tutmak rengini açık bırakır."
+  },
+  {
+    "slug": "kars-kazli-bulgur-pilavi",
+    "title": "Kars Kazlı Bulgur Pilavı",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Kaz eti",
+      "Pilavlık bulgur",
+      "Soğan",
+      "Tereyağı",
+      "Kaz suyu",
+      "Karabiber",
+      "Tuz"
+    ],
+    "servingSuggestion": "Turşu ve ayranla sıcak servis edin.",
+    "tipNote": "Kaz etini haşlama suyunda ılıtmak pilavı daha kokulu yapar."
+  },
+  {
+    "slug": "old-fashioned",
+    "title": "Old Fashioned",
+    "type": "KOKTEYL",
+    "cuisine": "us",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Burbon viski",
+      "Kesme şeker",
+      "Angostura bitter",
+      "Buz",
+      "Portakal kabuğu"
+    ],
+    "servingSuggestion": "Portakal kabuğu ile servis edin.",
+    "tipNote": "Buz eklemeden önce şekerin bitterle çözünmesini sağlayın; tat dengeli olur."
+  },
+  {
+    "slug": "deniz-mahsullu-paella",
+    "title": "Deniz Mahsullü Paella",
+    "type": "YEMEK",
+    "cuisine": "es",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Paella pirinci",
+      "Karides",
+      "Midye içi",
+      "Balık suyu",
+      "Safran",
+      "Kırmızı biber"
+    ],
+    "servingSuggestion": "Limon dilimleriyle sofraya getirin.",
+    "tipNote": "Pirinç eklendikten sonra karıştırmayın; tavada kızaran taban paellanın karakteridir."
+  },
+  {
+    "slug": "boeuf-bourguignon",
+    "title": "Boeuf Bourguignon",
+    "type": "YEMEK",
+    "cuisine": "fr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Dana kuşbaşı",
+      "Kırmızı şarap",
+      "Mantar",
+      "Arpacık soğan",
+      "Un",
+      "Tereyağı"
+    ],
+    "servingSuggestion": "Patates püresi veya tereyağlı erişteyle servis edin.",
+    "tipNote": "Eti tencereye tek kat yerleştirip kızartın; buharlaşma lezzet kabuğunu engeller."
+  },
+  {
+    "slug": "shoyu-ramen",
+    "title": "Shoyu Ramen",
+    "type": "CORBA",
+    "cuisine": "jp",
+    "categorySlug": "corbalar",
+    "ingredients": [
+      "Ramen eriştesi",
+      "Tavuk suyu",
+      "Soya sosu",
+      "Yumurta",
+      "Taze soğan",
+      "Nori"
+    ],
+    "servingSuggestion": "Yumurta, taze soğan ve noriyle servis edin.",
+    "tipNote": "Erişteyi ayrı haşlayın; çorba içinde beklerse nişasta suyu bulanıklaştırır."
+  },
+  {
+    "slug": "camarao-na-moranga",
+    "title": "Camarão na Moranga",
+    "type": "YEMEK",
+    "cuisine": "br",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Balkabağı",
+      "Karides",
+      "Krema peyniri",
+      "Domates",
+      "Soğan",
+      "Yeşil biber"
+    ],
+    "servingSuggestion": "Beyaz pirinç ve lime dilimleriyle servis edin.",
+    "tipNote": "Balkabağını fazla pişirmeyin; kabuk çökerse karidesli dolgu taşar."
+  },
+  {
+    "slug": "huevos-motulenos",
+    "title": "Huevos Motuleños",
+    "type": "KAHVALTI",
+    "cuisine": "mx",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Mısır tortilla",
+      "Yumurta",
+      "Refried beans",
+      "Domates salsa"
+    ],
+    "servingSuggestion": "Üzerine avokado ve taze kişniş ekleyin.",
+    "tipNote": "Tortillayı kısa süre kızartın; gevrek kalsın ama kırılacak kadar sertleşmesin."
+  },
+  {
+    "slug": "croque-madame",
+    "title": "Croque Madame",
+    "type": "KAHVALTI",
+    "cuisine": "fr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Tost ekmeği",
+      "Jambon",
+      "Gruyere peyniri",
+      "Krema",
+      "Yumurta"
+    ],
+    "servingSuggestion": "Yanına kornişon turşu ve yeşil salata ekleyin.",
+    "tipNote": "Beşamel yerine az miktar krema kullanıyorsanız ekmeği tamamen ıslatmayın; üst yüzey kızarmalı kalır."
+  },
+  {
+    "slug": "ca-phe-sua-da",
+    "title": "Cà Phê Sữa Đá",
+    "type": "ICECEK",
+    "cuisine": "vn",
+    "categorySlug": "kahve-sicak-icecekler",
+    "ingredients": [
+      "Vietnam kahvesi",
+      "Yoğunlaştırılmış süt",
+      "Buz"
+    ],
+    "servingSuggestion": "Uzun bardakta bol buzla servis edin.",
+    "tipNote": "Kahveyi çok ince değil orta-ince öğütün; filtre çok yavaş akarsa içecek gereğinden sertleşir."
+  },
+  {
+    "slug": "sebit-yaglamasi",
+    "title": "Şebit Yağlaması",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Kuru maya",
+      "Su",
+      "Dana kıyma",
+      "Soğan",
+      "Domates rendesi",
+      "Tuz",
+      "Yoğurt",
+      "Sarımsak"
+    ],
+    "servingSuggestion": "Üzerine sarımsaklı yoğurt gezdirerek sıcak servis edin.",
+    "tipNote": "Şebitleri tavada fazla kurutmayın; katlanacak kadar yumuşak kalmaları gerekir."
+  },
+  {
+    "slug": "cevizli-cokelek-ezmesi",
+    "title": "Cevizli Çökelek Ezmesi",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "kahvaltiliklar",
+    "ingredients": [
+      "Çökelek",
+      "Ceviz",
+      "Maydanoz",
+      "Zeytinyağı",
+      "Tuz",
+      "Pul biber"
+    ],
+    "servingSuggestion": "Kızarmış ekmek üstünde, çökelek ezmesini serin meze olarak servis edin.",
+    "tipNote": "Cevizi son anda eklemek ezmenin dişe gelen dokusunu korur."
+  },
+  {
+    "slug": "fava-izmir-usulu",
+    "title": "Fava",
+    "type": "SALATA",
+    "cuisine": "tr",
+    "categorySlug": "salatalar",
+    "ingredients": [
+      "Kuru iç bakla",
+      "Soğan",
+      "Zeytinyağı",
+      "Şeker",
+      "Tuz",
+      "Dereotu"
+    ],
+    "servingSuggestion": "Üzerine dereotu ve zeytinyağı gezdirerek soğuk servis edin.",
+    "tipNote": "Baklayı tamamen yumuşatıp sıcakken çekmek daha ipeksi bir doku verir."
+  },
+  {
+    "slug": "lamington",
+    "title": "Lamington",
+    "type": "TATLI",
+    "cuisine": "au",
+    "categorySlug": "tatlilar",
+    "ingredients": [
+      "Un",
+      "Yumurta",
+      "Toz şeker",
+      "Bitter çikolata",
+      "Süt",
+      "Hindistan cevizi"
+    ],
+    "servingSuggestion": "Kahve yanında oda sıcaklığında servis edin.",
+    "tipNote": "Keki bir gün dinlendirmek glazüre batırırken dağılmasını azaltır."
+  },
+  {
+    "slug": "mandalinali-adacayi-fizz-bodrum-usulu",
+    "title": "Bodrum Mandalinalı Adaçayı Fizz",
+    "type": "KOKTEYL",
+    "cuisine": "tr",
+    "categorySlug": "kokteyller",
+    "ingredients": [
+      "Cin",
+      "Mandalina suyu",
+      "Adaçayı",
+      "Toz şeker",
+      "Soda"
+    ],
+    "servingSuggestion": "Bol buz ve mandalina kabuğuyla soğuk servis edin.",
+    "tipNote": "Adaçayı şurubunu tamamen soğutmak kokteylin bardağı sulandırmadan canlı kalmasına yardım eder."
+  },
+  {
+    "slug": "nar-eksili-patlican-dizmesi-gaziantep-usulu",
+    "title": "Gaziantep Nar Ekşili Patlıcan Dizmesi",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "sebze-yemekleri",
+    "ingredients": [
+      "Patlıcan",
+      "Domates",
+      "Nar ekşisi",
+      "Sarımsak",
+      "Bulgur pilavı",
+      "Tuz"
+    ],
+    "servingSuggestion": "Yanına bulgur pilavıyla sıcak servis edin.",
+    "tipNote": "Patlıcanları çok kalın kesmemek fırında sosu daha hızlı çekmelerini sağlar."
+  },
+  {
+    "slug": "tepsi-simit-kebabi-adiyaman-usulu",
+    "title": "Tepside Simit Kebabı (Güneydoğu Esintili)",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Kıyma",
+      "İnce bulgur",
+      "Kapya biber",
+      "Domates",
+      "Tuz",
+      "Kuru soğan (rendelenmiş)",
+      "Sarımsak (ezilmiş)",
+      "Taze maydanoz (ince doğranmış)",
+      "İsot veya pul biber",
+      "Karabiber",
+      "Kimyon",
+      "Sızma zeytinyağı"
+    ],
+    "servingSuggestion": "Yanında soğan, maydanoz, sumak salatası, közlenmiş yeşil biber ve domates, ayran veya şalgam suyuyla servis edin.",
+    "tipNote": "Bulguru ılık suda iyice şişir, harcı en az 10 dakika yoğur; bulgur ve kıyma birbirini tuttukça pişerken dağılmaz. Tepsiye yaymadan önce baklava dilimi izleri çiz, hem pişme dengeli olur hem servis dilimi temiz çıkar."
+  },
+  {
+    "slug": "kasik-boregi-yozgat-usulu",
+    "title": "Yozgat Kaşık Böreği",
+    "type": "KAHVALTI",
+    "cuisine": "tr",
+    "categorySlug": "hamur-isleri",
+    "ingredients": [
+      "Un",
+      "Yumurta",
+      "Yoğurt",
+      "Beyaz peynir"
+    ],
+    "servingSuggestion": "Ilık servis edin, yanında ayran ve domates dilimleri sunabilirsiniz.",
+    "tipNote": "Hamuru çok koyu bırakmamak kaşık böreğinin tavada eşit yayılmasını sağlar."
+  },
+  {
+    "slug": "seco-de-res-peru-usulu",
+    "title": "Seco de Res",
+    "type": "YEMEK",
+    "cuisine": "pe",
+    "categorySlug": "et-yemekleri",
+    "ingredients": [
+      "Dana kuşbaşı",
+      "Kişniş",
+      "Kuru soğan",
+      "Sarımsak",
+      "Su",
+      "Tuz",
+      "Aji amarillo püresi",
+      "Bezelye",
+      "Havuç"
+    ],
+    "servingSuggestion": "Seco de res etini kişnişli suyuyla birlikte derin tabağa alıp sarımsaklı sosunu üstte bırakın.",
+    "tipNote": "Kişnişi sonda eklemek rengini korur."
+  },
+  {
+    "slug": "bun-thit-nuong-vietnam-usulu",
+    "title": "Bun Thit Nuong",
+    "type": "YEMEK",
+    "cuisine": "vn",
+    "categorySlug": "makarna-pilav",
+    "ingredients": [
+      "Pirinç eriştesi",
+      "Dana ince dilim",
+      "Nane",
+      "Marul",
+      "Lime suyu",
+      "Limon otu",
+      "Sarımsak",
+      "Balık sosu",
+      "Salatalık",
+      "Yer fıstığı"
+    ],
+    "servingSuggestion": "Üstüne yer fıstığı serpip kaseyi nuoc cham ile servis edin.",
+    "tipNote": "Erişteyi soğuk sudan geçirmek tane yapıyı korur. Eti ince dilimleyin; 30 dakika bekleme yüzeyi tatlandırır, gece bekleme daha derin aroma verir."
+  }
+]

@@ -1,5 +1,29 @@
 [
   {
+    "slug": "tavuklu-sultan-kebabi",
+    "title": "Tavuklu Sultan Kebabı",
+    "type": "YEMEK",
+    "cuisine": "tr",
+    "categorySlug": "tavuk-yemekleri",
+    "ingredients": [
+      "Tavuk göğsü",
+      "Yufka",
+      "Bezelye",
+      "Havuç",
+      "Mantar",
+      "Süt",
+      "Un",
+      "Kaşar peyniri",
+      "Tereyağı",
+      "Zeytinyağı",
+      "Tuz",
+      "Karabiber",
+      "Muskat (rendelenmiş)"
+    ],
+    "servingSuggestion": "Domatesli pilavla servis edin.",
+    "tipNote": "Beşamel sosu sürekli çırparak orta ateşte koyulaştırın; harcı yufkaya koymadan önce ılıtın, sıcak harç yufkayı yırtar."
+  },
+  {
     "slug": "chilaquiles",
     "title": "Chilaquiles",
     "type": "KAHVALTI",
@@ -63,30 +87,6 @@
     ],
     "servingSuggestion": "Bol buz ve limon dilimiyle servis edin.",
     "tipNote": "Reyhanı kaynatmayın; sıcak su içinde demlemek parlak mor rengi korur."
-  },
-  {
-    "slug": "tavuklu-sultan-kebabi",
-    "title": "Tavuklu Sultan Kebabı",
-    "type": "YEMEK",
-    "cuisine": "tr",
-    "categorySlug": "tavuk-yemekleri",
-    "ingredients": [
-      "Tavuk göğsü",
-      "Yufka",
-      "Bezelye",
-      "Havuç",
-      "Mantar",
-      "Süt",
-      "Un",
-      "Kaşar peyniri",
-      "Tereyağı",
-      "Zeytinyağı",
-      "Tuz",
-      "Karabiber",
-      "Muskat (rendelenmiş)"
-    ],
-    "servingSuggestion": "Domatesli pilavla servis edin.",
-    "tipNote": "Beşamel sosu sürekli çırparak orta ateşte koyulaştırın; harcı yufkaya koymadan önce ılıtın, sıcak harç yufkayı yırtar."
   },
   {
     "slug": "cevizli-medovik",

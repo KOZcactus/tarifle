@@ -404,15 +404,26 @@ async function main(): Promise<void> {
       );
     }
 
-    // ── 9. Time deviation, handled in audit-deep already, spot check ──
+    // ── 9. Time deviation (oturum 34 rafine) ──
+    // total > prep+cook+30dk = marina/dinlenme süresi var. Eğer step text
+    // veya tipNote'ta marina/dinlenme/buzdolabı/mayalan/fermente keyword
+    // varsa total doğru, flag etme. Aksi halde gerçek discrepancy.
     if (r.prepMinutes + r.cookMinutes < r.totalMinutes - 30) {
-      add(
-        "MEDIUM",
-        "TIME_GAP",
-        slug,
-        title,
-        `prep(${r.prepMinutes})+cook(${r.cookMinutes})=${r.prepMinutes + r.cookMinutes} << total(${r.totalMinutes}), missing rest/marinate time?`,
-      );
+      const stepText = steps.map((s) => s.instruction).join(" ").toLocaleLowerCase("tr-TR");
+      const tipText = (r.tipNote ?? "").toLocaleLowerCase("tr-TR");
+      const allText = stepText + " " + tipText;
+      const hasMarinate = /\b(marine|dinlendir|beklet|soğut|buzdolab|oda sıcaklığında|gecelik|gece boyu|mayalan|kabar|fermente|kürle|salamur|tuzlay|yıllandır|terbiye|şerbet çeksin|şerbet çek|ıslat|haşla|kaynat|haşlandık|ıslan)\w*/u.test(allText);
+      // Marina mention yoksa flag (gerçek discrepancy, totalMinutes overshoot
+      // ya da prep+cook eksik)
+      if (!hasMarinate) {
+        add(
+          "MEDIUM",
+          "TIME_GAP",
+          slug,
+          title,
+          `prep(${r.prepMinutes})+cook(${r.cookMinutes})=${r.prepMinutes + r.cookMinutes} << total(${r.totalMinutes}), missing rest/marinate time?`,
+        );
+      }
     }
 
     // ── 10. Short step instructions (oturum 34 rafine) ──

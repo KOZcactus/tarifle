@@ -37,12 +37,18 @@ export interface IngredientShorthand {
   amount: string;
   unit: string;
   sortOrder: number;
+  group?: string;
 }
 
+// Opsiyonel 4. pipe parçası group field'ına gider (oturum 34):
+//   "Su|2.5|su bardağı|Şerbet için" → { name, amount, unit, sortOrder, group: "Şerbet için" }
+// Composite ingredient name'leri (örn. "Şerbet suyu") audit-content CRITICAL
+// flag eder; group ayrımı temiz yazma yolu.
 export const ing = (specs: string[]): IngredientShorthand[] =>
   specs.map((s, i) => {
-    const [name, amount, unit] = s.split("|");
-    return { name, amount, unit, sortOrder: i + 1 };
+    const [name, amount, unit, group] = s.split("|");
+    const base: IngredientShorthand = { name, amount, unit, sortOrder: i + 1 };
+    return group ? { ...base, group } : base;
   });
 
 export interface StepShorthand {

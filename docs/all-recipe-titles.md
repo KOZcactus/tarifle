@@ -1,6 +1,6 @@
 # Tarifle, tüm yayında tarif başlıkları
 
-Toplam: **3731 tarif** (cuisine + type bazında gruplanmış, alfabetik).
+Toplam: **3730 tarif** (cuisine + type bazında gruplanmış, alfabetik).
 Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 
 Üretildi: 2026-04-30
@@ -296,7 +296,7 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Sesame Balls** [sesame-balls] (6i/6s, 50dk, 190kcal)
 - **Tangyuan** [tangyuan] (5i/6s, 30dk, 230kcal)
 
-## cn / YEMEK (36)
+## cn / YEMEK (35)
 
 - **Asya Esintili Tavuklu Noodle** [tavuklu-noodle] (12i/5s, 30dk, 520kcal)
 - ⭐**Bao Bun** [bao-bun] (6i/7s, 75dk, 260kcal)
@@ -321,7 +321,6 @@ Duplicate spot audit için: aynı grup içindeki yakın başlıklar yan yana.
 - **Sebzeli Dumpling** [sebzeli-dumpling] (7i/6s, 70dk, 240kcal)
 - ⭐**Sesame Noodles** [sesame-noodles-cin-soguk-usulu] (7i/5s, 18dk, 288kcal)
 - **Sichuan Dan Dan Noodle** [sichuan-dan-dan-noodle] (9i/7s, 38dk, 560kcal)
-- **Sichuan Dan Dan Noodle** [sanghay-susamli-dan-dan-noodle] (12i/5s, 27dk, 560kcal)
 - **Sichuan Kung Pao Tavuk** [sichuan-kung-pao-tavuk] (10i/6s, 35dk, 420kcal)
 - **Sichuan Mapo Tofu** [sichuan-mapo-tofu] (10i/7s, 27dk, 310kcal)
 - **Sichuan Yeşil Fasulye** [sichuan-yesil-fasulye] (6i/6s, 22dk, 140kcal)

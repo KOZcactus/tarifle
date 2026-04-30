@@ -118,6 +118,11 @@ const EXCLUDE_CONTEXT: { allergen: Allergen; if_contains: string }[] = [
   { allergen: "SUT", if_contains: "badem sutu" },
   { allergen: "SUT", if_contains: "yulaf sutu" },
   { allergen: "SUT", if_contains: "soya sutu" },
+  // "tereyağı yerine" deyimi: tarif tereyağı KULLANMIYOR, vegan substitute.
+  // Oturum 34: tarka-dal "Tereyağı yerine sıvı yağ" ingredient false positive
+  // SUT eklenmesini önerdi, gerçekte tarif vegan. Aynı pattern audit-recipe-
+  // quality.ts'te mevcut, burada da yansıt.
+  { allergen: "SUT", if_contains: "tereyagi yerine" },
   { allergen: "GLUTEN", if_contains: "kavun cekirdegi" },
   { allergen: "GLUTEN", if_contains: "kabak cekirdegi" },
   { allergen: "GLUTEN", if_contains: "karabugday" },

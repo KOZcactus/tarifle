@@ -58,18 +58,18 @@ const FIXES: Fix[] = [
   },
   {
     slug: "kai-yang",
-    changes: { stepFix: { stepNumber: 2, newTimerSeconds: 10800 } }, // 3 saat
-    reason: "Step 2 marine 15dk → 3 saat. Tay kai yang geleneksel marinasyon (Hot Thai Kitchen, Serious Eats). Total 225 = 45 active + 180 marine, doğru.",
+    changes: { totalMinutes: 225, stepFix: { stepNumber: 2, newTimerSeconds: 10800 } }, // 3 saat
+    reason: "Step 2 marine 15dk → 3 saat. Tay kai yang geleneksel marinasyon (Hot Thai Kitchen, Serious Eats). Total 45 → 225 = prep 20 + cook 25 + 180 marine, brief 'marine totalMinutes'a dahil' uyumlu.",
   },
   {
     slug: "limonlu-susamli-tavuk-sis-durumu-mersin-usulu",
-    changes: { stepFix: { stepNumber: 1, newTimerSeconds: 3600 } }, // 60dk
-    reason: "Step 1 marine 10dk → 60dk. Sis dürümü tavuk marinasyonu min 60dk (yemek.com referans). Total 88 = 28 active + 60 marine, doğru.",
+    changes: { totalMinutes: 88, stepFix: { stepNumber: 1, newTimerSeconds: 3600 } }, // 60dk
+    reason: "Step 1 marine 10dk → 60dk. Sis dürümü tavuk marinasyonu min 60dk (yemek.com referans). Total 38 → 88 = prep 14 + cook 14 + 60 marine.",
   },
   {
     slug: "kekikli-cipura-izgara-bodrum-usulu",
-    changes: { stepFix: { stepNumber: 1, newTimerSeconds: 3600 } }, // 60dk
-    reason: "Step 1 'balığı marine edin' timer null → 60dk. Çipura kekik+limon+zeytinyağı marinasyon 30-60dk (Bodrum yöresel). Total 88 = 28 active + 60 marine, doğru.",
+    changes: { totalMinutes: 88, stepFix: { stepNumber: 1, newTimerSeconds: 3600 } }, // 60dk
+    reason: "Step 1 'balığı marine edin' timer null → 60dk. Çipura kekik+limon+zeytinyağı marinasyon 30-60dk (Bodrum yöresel). Total 28 → 88 = prep 14 + cook 14 + 60 marine.",
   },
   // 2. round (oturum 33 audit re-run sonucu yeni 4 hit, totalMinutes adjustment)
   {

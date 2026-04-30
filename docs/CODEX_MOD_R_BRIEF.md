@@ -213,6 +213,18 @@ Format (her tarif için):
 
 Sen sadece bu JSON'u oku, her entry için §2 + §3'e göre prompt compose et + image gen + save. JSON'u ben hazırlarım, sen üretmiyorsun.
 
+### 4.1. JSON yoksa, KENDİN ÜRETME
+
+**KRİTİK kural** (oturum 34 ders): "Mod R. Batch N." tetiklendiğinde ilk iş `docs/recipe-image-prompts/queue-batch-N.json` dosyasının diskte var olduğunu kontrol etmek.
+
+- **Dosya VARSA**: oku, içindeki tarif slug'larını kullan, görselleri üret.
+- **Dosya YOKSA**:
+  - `STOP. queue-batch-N.json bulunamadı, Claude'dan dump edilmesini iste.`
+  - **Kendi başına slug seçme, eski queue'yu kullanma, tahmin etme.** Bu drift bug'ına yol açar (yanlış tarif veya prod'da zaten görselli olan tarifeleri tekrar üretme).
+  - Cache'inde önceki bir queue olsa bile **kullanma**, dosyayı diskten yeniden oku.
+
+**Neden:** Queue dump prod DB state'ini görüyor, hangi tariflerin `imageUrl IS NULL` olduğunu o belirler. Eski queue cache'i kullanırsan zaten görselli olan tarifeleri yeniden üretirsin (boşa effort, prod'da idempotent skip). Doğru süreç: queue dosya yok → Claude'a haber → Claude dump → sen oku.
+
 ---
 
 ## 5. OUTPUT, dosya kaydı
@@ -358,7 +370,9 @@ Pilot 5/5 PASS olduktan sonra Claude en iyi 3'ü reference'a alır, ardından Ba
 
 ## 12. ÖZETLE NE YAPACAKSIN
 
-1. Kerem "Mod R. Batch N" der → Claude `docs/recipe-image-prompts/queue-batch-N.json` hazırlamış olur (sen beklersin)
+1. Kerem "Mod R. Batch N" der → ilk iş: `docs/recipe-image-prompts/queue-batch-N.json` dosyasının diskte var olup olmadığını kontrol et
+   - **Dosya YOKSA**: `STOP. queue-batch-N.json yok, Claude dump etsin.` Kendin slug seçme, cache kullanma, tahmin etme.
+   - **Dosya VARSA**: oku, devam et
 2. JSON'u oku, 20 tarif var
 3. Her tarif için:
    - §2.1 preamble + §2.2 variable + §3 kararları → prompt compose

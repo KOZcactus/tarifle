@@ -150,7 +150,7 @@ function resolveDirectUrl(): string {
 async function main() {
   const directUrl = resolveDirectUrl();
   const host = new URL(directUrl).host;
-  const isProd = host.startsWith("ep-broad-pond");
+  const isProd = host.startsWith("ep-prod-redacted");
 
   if (isProd && !CONFIRM_PROD) {
     console.error(`⛔ migrate-prod: production host detected (${host})`);
@@ -192,7 +192,7 @@ Kerem onaylayınca:
 
 POC'yi gerçek koşmadan önce:
 
-1. Dev branch'i için script'i koş (dev host `ep-dry-bread`, pool'lu URL → derive direct → migrate status)
+1. Dev branch'i için script'i koş (dev host `ep-dev-redacted`, pool'lu URL → derive direct → migrate status)
 2. `--apply` dev'de, idempotent (0 pending migration → no-op)
 3. Prod ortamına dokunmadan önce Kerem'e direct URL'in Neon console'dan alındığını göster
 4. İlk prod koşusu sadece `migrate status` (read-only) ile → connection çalıştığını doğrula

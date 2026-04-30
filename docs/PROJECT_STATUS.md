@@ -2029,7 +2029,7 @@ sonrası getSearchSuggestions unstable_cache 10dk TTL beklendi.
 **A · Mod F Retrofit-22 revize prod** (`e939ac7`): Codex 22 reject
 sonrası v2, suffix max 11x → 2x temizlik (oturum 20 brief Kural 17
 disiplin sonrası). 100 YEMEK 567 step, dry-run + dev + audit-deep PASS
-+ prod apply (ep-icy-mountain), smoke japchae 200 OK.
++ prod apply (ep-prod-redacted), smoke japchae 200 OK.
 
 **B · Diet-score Faz 3 polish** (`9a9294c`): USDA batch 4 (top 80
 ingredient + 5 alias = 85 entry), 130 → 210 ingredient prod. **TR-fold
@@ -2424,7 +2424,7 @@ SEO>=0.95. Local sonuc: Perf 98-100 / A11y 96-100 / BP 96 / SEO 100, 0
 assertion fail. PR'larda otomatik gerileme yakalama.
 
 **W · Neon old org cleanup baslangic** (`16502be`): db-env.ts eski prefix
-kaldirildi (ep-broad-pond + ep-dry-bread). Lokal backup dosyalari +
+kaldirildi (ep-prod-redacted + ep-dev-redacted). Lokal backup dosyalari +
 scripts/tmp-migration/ silindi. 5 gunluk stabilite kanitlandi (Vercel
 Pro DB credits + idle Free tier $0). 30 Nis trigger date 5 gun erken
 karsilandi.
@@ -2930,8 +2930,8 @@ global CSS'de çözüldü. OS prefers-color-scheme'ten bağımsız, tek
 attribute üzerinden yönetim.
 
 **B · Neon → Vercel Marketplace migration** (commit `1506441` +
-`a17267d`) — Standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-
-managed Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı. **$240/yıl
+`a17267d`) — Standalone Neon (ep-prod-redacted + ep-dev-redacted) Vercel-
+managed Neon'a (ep-prod-redacted + ep-dev-redacted) taşındı. **$240/yıl
 tasarruf** (Neon Launch $20/ay Vercel Pro credit içinde eriyor, tek
 fatura). Docker postgres:17 ile pg_dump + pg_restore, 2772 prod + 2753
 dev row count 1:1 eşleşti, 22 migration history intact.
@@ -4052,7 +4052,7 @@ Bu oturum uzun, çok iş yapıldı. Kısa özet:
 
 **CODEX_HANDOFF §6.7 kural 6** (`3a7bfdc`), ingredient-implied alerjen tablosu (Tereyağı/Yulaf/Tahin gibi 8 ingredient family → zorunlu allergen). Batch 12'de bu ihlal yakalanır.
 
-**Neon dev/prod branch separation** (`34c6aab` + `690f3cf`), prod (`ep-broad-pond`) + dev (`ep-dry-bread`) ayrıldı. `.env.local` dev'e, `.env.production.local` prod'a (gitignore'lı). 34 destructive script'e `assertDbTarget()` guard (`scripts/lib/db-env.ts`), prod host + `--confirm-prod` flag yoksa exit 1. Vercel Production env prod URL, Preview/Development env dev URL. Runbook: `docs/PROD_PROMOTE.md`.
+**Neon dev/prod branch separation** (`34c6aab` + `690f3cf`), prod (`ep-prod-redacted`) + dev (`ep-dev-redacted`) ayrıldı. `.env.local` dev'e, `.env.production.local` prod'a (gitignore'lı). 34 destructive script'e `assertDbTarget()` guard (`scripts/lib/db-env.ts`), prod host + `--confirm-prod` flag yoksa exit 1. Vercel Production env prod URL, Preview/Development env dev URL. Runbook: `docs/PROD_PROMOTE.md`.
 
 **AI Asistan v2, synonym + pantry expansion** (`85fbd86`), SYNONYM_GROUPS 10 → 45 (et ayrıştırıldı, balık/karides/süt ürünleri/bitkisel yağ/otlar/sebze/baklagil/un-nişasta/sirke-limon/salça eklendi). PANTRY_STAPLES 15 → 20 (tereyağı, maydanoz, maya, sirke, limon suyu). +35 test.
 
@@ -4169,7 +4169,7 @@ Kural-tabanlı matcher'ın data tabloları TR mutfağı için zenginleşti. Algo
 
 | Katman | Production | Dev |
 |---|---|---|
-| Neon host | `ep-broad-pond` | `ep-dry-bread` |
+| Neon host | `ep-prod-redacted` | `ep-dev-redacted` |
 | Vercel scope | Production | Preview + Development |
 | Lokal env | `.env.production.local` (elle) | `.env.local` (default) |
 | Script guard | `--confirm-prod` zorunlu | Serbest |

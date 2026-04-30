@@ -10,7 +10,7 @@ Tarifle'nin iki Neon branch'i var:
 | Katman | Production | Dev |
 |---|---|---|
 | Neon DB branch | `production` | `dev` (child of production) |
-| Neon host prefix | `ep-broad-pond-...` | `ep-dry-bread-...` |
+| Neon host prefix | `ep-prod-redacted...` | `ep-dev-redacted...` |
 | Vercel env scope | Production | Preview + Development (a.k.a "All Pre-Production") |
 | Vercel deploy tetikleyici | `main` branch push → tarifle.app | PR → `<hash>.vercel.app` preview URL |
 | Lokal `.env.local` |, | ✅ dev URL (default) |
@@ -30,7 +30,7 @@ Lokal `.env.local` varsayılan olarak **dev** branch'ine bakar. Prod'a yazmak i�
 Her destructive script (`seed-recipes`, `fix-*`, `retrofit-*`, `rollback-batch`, `sync-*`, `patch-source-from-db`) `assertDbTarget()` ile başlar. Flag yoksa script durur:
 
 ```
-⛔ [script-name] PRODUCTION DB (ep-broad-pond-...)
+⛔ [script-name] PRODUCTION DB (ep-prod-redacted...)
 
 Bu script prod'a yazıyor. Emin değilsen durdur.
 Devam etmek için: --confirm-prod flag'i gerekli.
@@ -118,7 +118,7 @@ Remove-Item Env:\DATABASE_URL
 Her adımda 3 saniye "son şans" warning görürsün:
 
 ```
-⚠️ [seed-recipes] PRODUCTION write (ep-broad-pond-...), 3 saniye içinde başlayacak...
+⚠️ [seed-recipes] PRODUCTION write (ep-prod-redacted...), 3 saniye içinde başlayacak...
    İptal için Ctrl+C (şimdi).
 ```
 
@@ -161,7 +161,7 @@ Codex'in PC'sindeki `.env.local` **her zaman dev URL** içerir, prod URL'ini gö
 
 ### Guard beni bloklıyor, ama dev'de çalışmak istiyorum
 
-`.env.local` dev URL'ye bakmalı. Host prefix `ep-dry-bread` → guard "dev branch" der, serbest geçer. Eğer `ep-broad-pond` görürsen `.env.local` yanlış.
+`.env.local` dev URL'ye bakmalı. Host prefix `ep-dev-redacted` → guard "dev branch" der, serbest geçer. Eğer `ep-prod-redacted` görürsen `.env.local` yanlış.
 
 ### Prod'a yanlışlıkla yazdım
 
@@ -181,8 +181,8 @@ Yine de şüphedeysen `audit-deep.ts` koş, değerleri prod'la karşılaştır (
 `scripts/lib/db-env.ts`'de iki sabit var:
 
 ```ts
-const PROD_HOST_PREFIX = "ep-broad-pond";
-const DEV_HOST_PREFIX = "ep-dry-bread";
+const PROD_HOST_PREFIX = "ep-prod-redacted";
+const DEV_HOST_PREFIX = "ep-dev-redacted";
 ```
 
 Neon branch'i sıfırlayıp farklı host alırsan buraya da yeni prefix'i yaz. Yoksa guard "unknown branch" der, warn verir ama devam eder, ideal değil.

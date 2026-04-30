@@ -1533,7 +1533,7 @@ ingredients.ts ile gerçek gap görülebilir.
 
 <!-- Vercel env DATABASE_URL_OLD kontrol ✅ YOK (oturum 21'de doğrulandı)
      Eski standalone Neon kalıntısı Vercel env'de yok, mevcut DATABASE_URL
-     Vercel-managed Neon (ep-icy-mountain). Cleanup TAMAM. -->
+     Vercel-managed Neon (ep-prod-redacted). Cleanup TAMAM. -->
 
 <!-- Neon password rotate ✅ GEREKSIZ (oturum 21'de netleşti)
      Vercel-managed Neon connection string'i Vercel otomatik yönetiyor;
@@ -1722,15 +1722,15 @@ Kural 6 + 7 (oturum 21'de eklendi, step-ingredient + alkol tag drift
 
 ### Neon → Vercel Marketplace migration cleanup (TAMAM, oturum 20)
 
-Oturum 15'te standalone Neon (ep-broad-pond + ep-dry-bread) Vercel-managed
-Neon'a (ep-icy-mountain + ep-jolly-haze) taşındı. Oturum 20'de cleanup
+Oturum 15'te standalone Neon (ep-prod-redacted + ep-dev-redacted) Vercel-managed
+Neon'a (ep-prod-redacted + ep-dev-redacted) taşındı. Oturum 20'de cleanup
 tamamlandı (5 günlük stabilite kanıtı sonrası, finansal aciliyet yoktu
 çünkü Vercel Pro DB credits yeni branch'leri karşılıyor):
 
 - [x] Eski Neon `tarifle` project (curly-hill-43162204) silindi
       console.neon.tech "Kerem's projects" org boş kaldı
 - [x] `scripts/lib/db-env.ts` PROD_HOST_PREFIXES + DEV_HOST_PREFIXES
-      eski prefix'ler kaldırıldı (`ep-broad-pond`, `ep-dry-bread`)
+      eski prefix'ler kaldırıldı (`ep-prod-redacted`, `ep-dev-redacted`)
 - [x] Lokal backup dosyaları silindi (`.env.*.bak-oturum15-neon-migration`)
 - [x] `scripts/tmp-migration/` dizini silindi
 - [ ] Vercel env `DATABASE_URL_OLD` (varsa, Kerem dashboard'tan kontrol)
@@ -1991,8 +1991,8 @@ severity + "biraz" muğlak fix + em-dash kod yorumu temizliği
   UTF-8 no-BOM zorunlu + cümle tekrar yasağı + self-check bash
   komutları.
 - Neon → Vercel Marketplace migration (commit `1506441`): standalone
-  Neon (ep-broad-pond + ep-dry-bread) Vercel-managed Neon'a
-  (ep-icy-mountain + ep-jolly-haze) taşındı. Docker postgres:17 ile
+  Neon (ep-prod-redacted + ep-dev-redacted) Vercel-managed Neon'a
+  (ep-prod-redacted + ep-dev-redacted) taşındı. Docker postgres:17 ile
   pg_dump + pg_restore (prod 2.5MB / dev 2.3MB), row count 1:1 eşleşti,
   22 migration history intact. `scripts/lib/prisma.ts` runtime URL
   seçimi (VERCEL_ENV check, Preview/Dev `DATABASE_URL_DEV`) integration

@@ -135,8 +135,20 @@ function hasMultiSectionText(text: string): string[] {
 }
 
 // ── Vague language patterns ─────────────────────────────────────────
-const VAGUE_PATTERNS: { re: RegExp; tag: string }[] = [
-  { re: /\bbiraz(cık)?\b/i, tag: "biraz/birazcık" },
+// Oturum 34 rafine: 'biraz' Türkçede iki kullanımı var:
+//   A) Vague miktar ("biraz tuz", "biraz su") → flag (kullanıcı için belirsiz)
+//   B) Niteleyici/comparative ("biraz daha sert", "biraz koyu", "biraz daha
+//      pişirin") → flag DEĞİL, doğal dil
+// Comparative pattern'ler exclude edilir, sadece miktar belirsizliği yakalanır.
+const VAGUE_BIRAZ_EXCLUDE = [
+  /\bbiraz(cık)?\s+daha\b/i, // "biraz daha pişirin/karıştırın/koyu"
+  /\bbiraz(cık)?\s+(sert|yumuşak|koyu|sulu|kalın|ince|açık|sıkı|gevşek|hafif|yoğun|sıcak|soğuk|ılık|açıp|açın)\b/i,
+  /\bkeskinliğinin biraz\b/i, // "keskinliğinin biraz yumuşaması"
+  /\bkıvamın(d|ı)an biraz\b/i, // "kıvamından biraz koyu"
+  /\bmemesinden biraz\b/i, // "kulak memesinden biraz sert"
+];
+const VAGUE_PATTERNS: { re: RegExp; tag: string; exclude?: RegExp[] }[] = [
+  { re: /\bbiraz(cık)?\b/i, tag: "biraz/birazcık", exclude: VAGUE_BIRAZ_EXCLUDE },
   { re: /\bazıcık\b/i, tag: "azıcık" },
   { re: /\byeteri kadar\b/i, tag: "yeteri kadar" },
   { re: /\bepey(ce)?\b/i, tag: "epey/epeyce" },
@@ -328,20 +340,23 @@ async function main(): Promise<void> {
 
     // ── 6. Vague language ──
     const vagueHits = new Map<string, number>();
-    for (const step of steps) {
-      for (const { re, tag } of VAGUE_PATTERNS) {
-        if (re.test(step.instruction)) {
-          vagueHits.set(tag, (vagueHits.get(tag) ?? 0) + 1);
-        }
-      }
-    }
-    for (const { re, tag } of VAGUE_PATTERNS) {
-      if (re.test(r.tipNote ?? "") || re.test(r.servingSuggestion ?? "")) {
+    const matchVague = (text: string): void => {
+      for (const { re, tag, exclude } of VAGUE_PATTERNS) {
+        if (!re.test(text)) continue;
+        // Exclude pattern'lerden biri eşleşirse atla (false positive guard)
+        if (exclude && exclude.some((ex) => ex.test(text))) continue;
         vagueHits.set(tag, (vagueHits.get(tag) ?? 0) + 1);
       }
-    }
+    };
+    for (const step of steps) matchVague(step.instruction);
+    matchVague(r.tipNote ?? "");
+    matchVague(r.servingSuggestion ?? "");
     if (vagueHits.size > 0) {
-      const sev: Severity = vagueHits.has("ya da tersi") || vagueHits.has("biraz/birazcık") || vagueHits.has("duruma göre")
+      // Oturum 34 rafine: 'biraz/birazcık' Türkçe doğal dilde çok yaygın
+      // (comparative 'biraz daha sert/koyu', küçük miktar 'biraz isot serpin'),
+      // çoğu kullanım vague değil. HIGH severity'den çıkar, LOW threshold'da
+      // kalsın. Gerçek vague: 'yeteri kadar', 'duruma göre', 'ya da tersi'.
+      const sev: Severity = vagueHits.has("ya da tersi") || vagueHits.has("duruma göre") || vagueHits.has("yeteri kadar")
         ? "HIGH" : "LOW";
       add(
         sev,

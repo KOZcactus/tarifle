@@ -292,8 +292,12 @@ async function main(): Promise<void> {
       );
     }
 
-    // ── 4. Suspicious ingredient counts ──
-    if (ingredients.length < 3) {
+    // ── 4. Suspicious ingredient counts (tip-aware) ──
+    // ICECEK tipi 2 ingredient ile geçerli (americano = kahve + su, latte =
+    // espresso + süt, oralet = toz oralet + sıcak su). Oturum 34 audit
+    // refine: ICECEK için min 2, diğer tip'ler min 3.
+    const minIngredients = r.type === "ICECEK" ? 2 : 3;
+    if (ingredients.length < minIngredients) {
       add(
         "HIGH",
         "INGREDIENT_COUNT",

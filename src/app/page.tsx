@@ -184,7 +184,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       {/* Hero */}
       <section className="flex flex-col items-center py-16 text-center lg:py-24">
         <span className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
-          🍳 {t("heroBadgePrefix")} <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
+          🍳 {t("heroBadgePrefix", { count: CUISINE_CODES.length })} <CountUp target={recipeCount} /> {t("heroBadgeSuffix")}
         </span>
         <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
           {t.rich(heroTitleKey, {
